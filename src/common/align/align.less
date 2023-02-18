@@ -1,0 +1,42 @@
+@import (once) "../../include/media";
+
+.va-top {vertical-align: top;}
+.va-bottom {vertical-align: bottom;}
+.va-baseline {vertical-align: baseline;}
+.va-middle {vertical-align: middle;}
+.va-sub {vertical-align: sub;}
+.va-super {vertical-align: super;}
+.va-text-top {vertical-align: text-top;}
+.va-text-bottom {vertical-align: text-bottom;}
+
+.text-upper {text-transform: uppercase;}
+.text-lower {text-transform: lowercase;}
+.text-cap   {text-transform: capitalize;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+.text-center {text-align: center;}
+.text-just {text-align: justify;}
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+each(@media-rules, {
+  @media screen and (min-width: @value) {
+    .text-left-@{key} {text-align: left;}
+    .text-right-@{key} {text-align: right;}
+    .text-center-@{key} {text-align: center;}
+    .text-just-@{key} {text-align: justify;}
+
+    .va-top-@{key} {vertical-align: top;}
+    .va-bottom-@{key} {vertical-align: bottom;}
+    .va-baseline-@{key} {vertical-align: baseline;}
+    .va-middle-@{key} {vertical-align: middle;}
+    .va-sub-@{key} {vertical-align: sub;}
+    .va-super-@{key} {vertical-align: super;}
+    .va-text-top-@{key} {vertical-align: text-top;}
+    .va-text-bottom-@{key} {vertical-align: text-bottom;}
+  }
+})
+

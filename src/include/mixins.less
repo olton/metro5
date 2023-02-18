@@ -1,0 +1,102 @@
+.clear() {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+.hide-element(@el){
+    @{el} {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+}
+
+.square(@size){
+    width: @size;
+    height: @size;
+}
+
+.circle(@size){
+    .square(@size);
+    border-radius: 50%;
+}
+
+.rect(@width, @height, @round: 0){
+    width: @width;
+    height: @height;
+    border-radius: @round;
+}
+
+.perspective(@perspective) {
+    transform+_: perspective(@perspective);
+}
+
+.rotate(@degrees) {
+    transform+_: rotate(@degrees);
+}
+
+.rotateX(@degrees) {
+    transform+_: rotateX(@degrees);
+}
+
+.rotateY(@degrees) {
+    transform+_: rotateY(@degrees);
+}
+
+.rotateZ(@degrees) {
+    transform+_: rotateZ(@degrees);
+}
+
+.scale(@ratio) {
+    transform+_: scale(@ratio);
+}
+
+.scaleX(@ratio) {
+    transform+_: scaleX(@ratio);
+}
+
+.scaleY(@ratio) {
+    transform+_: scaleY(@ratio);
+}
+
+.translate(@x: 0, @y: 0) {
+    transform+_: translate(@x, @y);
+}
+
+.skew(@x: 0, @y: 0) {
+    transform+_: skew(@x, @y);
+}
+
+.skewX(@x: 0) {
+    transform+_: skewX(@x);
+}
+
+.skewY(@y: 0) {
+    transform+_: skewY(@y);
+}
+
+.translate3d(@x: 0, @y: 0, @z: 0) {
+    transform+_: translate3d(@x, @y, @z);
+}
+
+.transformOrigin(@origin) {
+    transform-origin: @origin;
+}
+
+.transition(@time: 1s, @func: ease, @target: all){
+    transition: @target @time @func;
+}
+
+.translateX(@x: 0) {
+    transform+_: translateX(@x);
+}
+
+.translateY(@y: 0) {
+    transform+_: translateY(@y);
+}

@@ -1,0 +1,843 @@
+.display4 {
+  font-size: 112px;
+  font-weight: 200;
+}
+.display3 {
+  font-size: 56px;
+  font-weight: 400;
+}
+.display2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+.display1 {
+  font-size: 36px;
+  font-weight: 400;
+}
+.display1,
+.display2,
+.display3,
+.display4 {
+  margin: 20px 0;
+  line-height: 1;
+}
+.display4,
+.display3,
+.display2,
+.display1 {
+  color: #757575;
+}
+.text-ultralight {
+  font-weight: 100;
+}
+.text-light {
+  font-weight: 200;
+}
+.text-normal {
+  font-weight: 400;
+}
+.text-medium {
+  font-weight: 500;
+}
+.text-bold {
+  font-weight: 700;
+}
+.text-small {
+  font-weight: 400;
+  font-size: 12px;
+}
+.text-secondary {
+  font-weight: 400;
+  font-size: 14px;
+}
+.text-leader {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.text-leader2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.text-muted {
+  color: #c0c0c0;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-oblique {
+  font-style: oblique;
+}
+.text-overline {
+  text-decoration: overline;
+}
+.text-linethrough {
+  text-decoration: line-through;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.text-underover {
+  text-decoration: underline overline;
+}
+.reduce-1 {
+  font-size: 0.9em;
+}
+.reduce-2 {
+  font-size: 0.8em;
+}
+.reduce-3 {
+  font-size: 0.7em;
+}
+.reduce-4 {
+  font-size: 0.6em;
+}
+.reduce-5 {
+  font-size: 0.5em;
+}
+.reduce-6 {
+  font-size: 0.4em;
+}
+.reduce-7 {
+  font-size: 0.3em;
+}
+.reduce-8 {
+  font-size: 0.2em;
+}
+.reduce-9 {
+  font-size: 0.1em;
+}
+.align-size {
+  font-size: 1em;
+}
+.enlarge-1 {
+  font-size: 1.1em;
+}
+.enlarge-2 {
+  font-size: 1.2em;
+}
+.enlarge-3 {
+  font-size: 1.3em;
+}
+.enlarge-4 {
+  font-size: 1.4em;
+}
+.enlarge-5 {
+  font-size: 1.5em;
+}
+.enlarge-6 {
+  font-size: 1.6em;
+}
+.enlarge-7 {
+  font-size: 1.7em;
+}
+.enlarge-8 {
+  font-size: 1.8em;
+}
+.enlarge-9 {
+  font-size: 1.9em;
+}
+.enlarge-2x {
+  font-size: 2em;
+}
+.enlarge-3x {
+  font-size: 3em;
+}
+.enlarge-4x {
+  font-size: 4em;
+}
+@media screen and (min-width: 0) {
+  .text-upper-fs {
+    text-transform: uppercase;
+  }
+  .text-lower-fs {
+    text-transform: lowercase;
+  }
+  .text-cap-fs {
+    text-transform: capitalize;
+  }
+  .reduce-1-fs {
+    font-size: 0.9em;
+  }
+  .reduce-2-fs {
+    font-size: 0.8em;
+  }
+  .reduce-3-fs {
+    font-size: 0.7em;
+  }
+  .reduce-4-fs {
+    font-size: 0.6em;
+  }
+  .reduce-5-fs {
+    font-size: 0.5em;
+  }
+  .reduce-6-fs {
+    font-size: 0.4em;
+  }
+  .reduce-7-fs {
+    font-size: 0.3em;
+  }
+  .reduce-8-fs {
+    font-size: 0.2em;
+  }
+  .reduce-9-fs {
+    font-size: 0.1em;
+  }
+  .align-size-fs {
+    font-size: 1em;
+  }
+  .enlarge-1-fs {
+    font-size: 1.1em;
+  }
+  .enlarge-2-fs {
+    font-size: 1.2em;
+  }
+  .enlarge-3-fs {
+    font-size: 1.3em;
+  }
+  .enlarge-4-fs {
+    font-size: 1.4em;
+  }
+  .enlarge-5-fs {
+    font-size: 1.5em;
+  }
+  .enlarge-6-fs {
+    font-size: 1.6em;
+  }
+  .enlarge-7-fs {
+    font-size: 1.7em;
+  }
+  .enlarge-8-fs {
+    font-size: 1.8em;
+  }
+  .enlarge-9-fs {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-fs {
+    font-size: 2em;
+  }
+  .enlarge-3x-fs {
+    font-size: 3em;
+  }
+  .enlarge-4x-fs {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 360px) {
+  .text-upper-xs {
+    text-transform: uppercase;
+  }
+  .text-lower-xs {
+    text-transform: lowercase;
+  }
+  .text-cap-xs {
+    text-transform: capitalize;
+  }
+  .reduce-1-xs {
+    font-size: 0.9em;
+  }
+  .reduce-2-xs {
+    font-size: 0.8em;
+  }
+  .reduce-3-xs {
+    font-size: 0.7em;
+  }
+  .reduce-4-xs {
+    font-size: 0.6em;
+  }
+  .reduce-5-xs {
+    font-size: 0.5em;
+  }
+  .reduce-6-xs {
+    font-size: 0.4em;
+  }
+  .reduce-7-xs {
+    font-size: 0.3em;
+  }
+  .reduce-8-xs {
+    font-size: 0.2em;
+  }
+  .reduce-9-xs {
+    font-size: 0.1em;
+  }
+  .align-size-xs {
+    font-size: 1em;
+  }
+  .enlarge-1-xs {
+    font-size: 1.1em;
+  }
+  .enlarge-2-xs {
+    font-size: 1.2em;
+  }
+  .enlarge-3-xs {
+    font-size: 1.3em;
+  }
+  .enlarge-4-xs {
+    font-size: 1.4em;
+  }
+  .enlarge-5-xs {
+    font-size: 1.5em;
+  }
+  .enlarge-6-xs {
+    font-size: 1.6em;
+  }
+  .enlarge-7-xs {
+    font-size: 1.7em;
+  }
+  .enlarge-8-xs {
+    font-size: 1.8em;
+  }
+  .enlarge-9-xs {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-xs {
+    font-size: 2em;
+  }
+  .enlarge-3x-xs {
+    font-size: 3em;
+  }
+  .enlarge-4x-xs {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 576px) {
+  .text-upper-sm {
+    text-transform: uppercase;
+  }
+  .text-lower-sm {
+    text-transform: lowercase;
+  }
+  .text-cap-sm {
+    text-transform: capitalize;
+  }
+  .reduce-1-sm {
+    font-size: 0.9em;
+  }
+  .reduce-2-sm {
+    font-size: 0.8em;
+  }
+  .reduce-3-sm {
+    font-size: 0.7em;
+  }
+  .reduce-4-sm {
+    font-size: 0.6em;
+  }
+  .reduce-5-sm {
+    font-size: 0.5em;
+  }
+  .reduce-6-sm {
+    font-size: 0.4em;
+  }
+  .reduce-7-sm {
+    font-size: 0.3em;
+  }
+  .reduce-8-sm {
+    font-size: 0.2em;
+  }
+  .reduce-9-sm {
+    font-size: 0.1em;
+  }
+  .align-size-sm {
+    font-size: 1em;
+  }
+  .enlarge-1-sm {
+    font-size: 1.1em;
+  }
+  .enlarge-2-sm {
+    font-size: 1.2em;
+  }
+  .enlarge-3-sm {
+    font-size: 1.3em;
+  }
+  .enlarge-4-sm {
+    font-size: 1.4em;
+  }
+  .enlarge-5-sm {
+    font-size: 1.5em;
+  }
+  .enlarge-6-sm {
+    font-size: 1.6em;
+  }
+  .enlarge-7-sm {
+    font-size: 1.7em;
+  }
+  .enlarge-8-sm {
+    font-size: 1.8em;
+  }
+  .enlarge-9-sm {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-sm {
+    font-size: 2em;
+  }
+  .enlarge-3x-sm {
+    font-size: 3em;
+  }
+  .enlarge-4x-sm {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 640px) {
+  .text-upper-ld {
+    text-transform: uppercase;
+  }
+  .text-lower-ld {
+    text-transform: lowercase;
+  }
+  .text-cap-ld {
+    text-transform: capitalize;
+  }
+  .reduce-1-ld {
+    font-size: 0.9em;
+  }
+  .reduce-2-ld {
+    font-size: 0.8em;
+  }
+  .reduce-3-ld {
+    font-size: 0.7em;
+  }
+  .reduce-4-ld {
+    font-size: 0.6em;
+  }
+  .reduce-5-ld {
+    font-size: 0.5em;
+  }
+  .reduce-6-ld {
+    font-size: 0.4em;
+  }
+  .reduce-7-ld {
+    font-size: 0.3em;
+  }
+  .reduce-8-ld {
+    font-size: 0.2em;
+  }
+  .reduce-9-ld {
+    font-size: 0.1em;
+  }
+  .align-size-ld {
+    font-size: 1em;
+  }
+  .enlarge-1-ld {
+    font-size: 1.1em;
+  }
+  .enlarge-2-ld {
+    font-size: 1.2em;
+  }
+  .enlarge-3-ld {
+    font-size: 1.3em;
+  }
+  .enlarge-4-ld {
+    font-size: 1.4em;
+  }
+  .enlarge-5-ld {
+    font-size: 1.5em;
+  }
+  .enlarge-6-ld {
+    font-size: 1.6em;
+  }
+  .enlarge-7-ld {
+    font-size: 1.7em;
+  }
+  .enlarge-8-ld {
+    font-size: 1.8em;
+  }
+  .enlarge-9-ld {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-ld {
+    font-size: 2em;
+  }
+  .enlarge-3x-ld {
+    font-size: 3em;
+  }
+  .enlarge-4x-ld {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .text-upper-md {
+    text-transform: uppercase;
+  }
+  .text-lower-md {
+    text-transform: lowercase;
+  }
+  .text-cap-md {
+    text-transform: capitalize;
+  }
+  .reduce-1-md {
+    font-size: 0.9em;
+  }
+  .reduce-2-md {
+    font-size: 0.8em;
+  }
+  .reduce-3-md {
+    font-size: 0.7em;
+  }
+  .reduce-4-md {
+    font-size: 0.6em;
+  }
+  .reduce-5-md {
+    font-size: 0.5em;
+  }
+  .reduce-6-md {
+    font-size: 0.4em;
+  }
+  .reduce-7-md {
+    font-size: 0.3em;
+  }
+  .reduce-8-md {
+    font-size: 0.2em;
+  }
+  .reduce-9-md {
+    font-size: 0.1em;
+  }
+  .align-size-md {
+    font-size: 1em;
+  }
+  .enlarge-1-md {
+    font-size: 1.1em;
+  }
+  .enlarge-2-md {
+    font-size: 1.2em;
+  }
+  .enlarge-3-md {
+    font-size: 1.3em;
+  }
+  .enlarge-4-md {
+    font-size: 1.4em;
+  }
+  .enlarge-5-md {
+    font-size: 1.5em;
+  }
+  .enlarge-6-md {
+    font-size: 1.6em;
+  }
+  .enlarge-7-md {
+    font-size: 1.7em;
+  }
+  .enlarge-8-md {
+    font-size: 1.8em;
+  }
+  .enlarge-9-md {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-md {
+    font-size: 2em;
+  }
+  .enlarge-3x-md {
+    font-size: 3em;
+  }
+  .enlarge-4x-md {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .text-upper-lg {
+    text-transform: uppercase;
+  }
+  .text-lower-lg {
+    text-transform: lowercase;
+  }
+  .text-cap-lg {
+    text-transform: capitalize;
+  }
+  .reduce-1-lg {
+    font-size: 0.9em;
+  }
+  .reduce-2-lg {
+    font-size: 0.8em;
+  }
+  .reduce-3-lg {
+    font-size: 0.7em;
+  }
+  .reduce-4-lg {
+    font-size: 0.6em;
+  }
+  .reduce-5-lg {
+    font-size: 0.5em;
+  }
+  .reduce-6-lg {
+    font-size: 0.4em;
+  }
+  .reduce-7-lg {
+    font-size: 0.3em;
+  }
+  .reduce-8-lg {
+    font-size: 0.2em;
+  }
+  .reduce-9-lg {
+    font-size: 0.1em;
+  }
+  .align-size-lg {
+    font-size: 1em;
+  }
+  .enlarge-1-lg {
+    font-size: 1.1em;
+  }
+  .enlarge-2-lg {
+    font-size: 1.2em;
+  }
+  .enlarge-3-lg {
+    font-size: 1.3em;
+  }
+  .enlarge-4-lg {
+    font-size: 1.4em;
+  }
+  .enlarge-5-lg {
+    font-size: 1.5em;
+  }
+  .enlarge-6-lg {
+    font-size: 1.6em;
+  }
+  .enlarge-7-lg {
+    font-size: 1.7em;
+  }
+  .enlarge-8-lg {
+    font-size: 1.8em;
+  }
+  .enlarge-9-lg {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-lg {
+    font-size: 2em;
+  }
+  .enlarge-3x-lg {
+    font-size: 3em;
+  }
+  .enlarge-4x-lg {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .text-upper-xl {
+    text-transform: uppercase;
+  }
+  .text-lower-xl {
+    text-transform: lowercase;
+  }
+  .text-cap-xl {
+    text-transform: capitalize;
+  }
+  .reduce-1-xl {
+    font-size: 0.9em;
+  }
+  .reduce-2-xl {
+    font-size: 0.8em;
+  }
+  .reduce-3-xl {
+    font-size: 0.7em;
+  }
+  .reduce-4-xl {
+    font-size: 0.6em;
+  }
+  .reduce-5-xl {
+    font-size: 0.5em;
+  }
+  .reduce-6-xl {
+    font-size: 0.4em;
+  }
+  .reduce-7-xl {
+    font-size: 0.3em;
+  }
+  .reduce-8-xl {
+    font-size: 0.2em;
+  }
+  .reduce-9-xl {
+    font-size: 0.1em;
+  }
+  .align-size-xl {
+    font-size: 1em;
+  }
+  .enlarge-1-xl {
+    font-size: 1.1em;
+  }
+  .enlarge-2-xl {
+    font-size: 1.2em;
+  }
+  .enlarge-3-xl {
+    font-size: 1.3em;
+  }
+  .enlarge-4-xl {
+    font-size: 1.4em;
+  }
+  .enlarge-5-xl {
+    font-size: 1.5em;
+  }
+  .enlarge-6-xl {
+    font-size: 1.6em;
+  }
+  .enlarge-7-xl {
+    font-size: 1.7em;
+  }
+  .enlarge-8-xl {
+    font-size: 1.8em;
+  }
+  .enlarge-9-xl {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-xl {
+    font-size: 2em;
+  }
+  .enlarge-3x-xl {
+    font-size: 3em;
+  }
+  .enlarge-4x-xl {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 1452px) {
+  .text-upper-xxl {
+    text-transform: uppercase;
+  }
+  .text-lower-xxl {
+    text-transform: lowercase;
+  }
+  .text-cap-xxl {
+    text-transform: capitalize;
+  }
+  .reduce-1-xxl {
+    font-size: 0.9em;
+  }
+  .reduce-2-xxl {
+    font-size: 0.8em;
+  }
+  .reduce-3-xxl {
+    font-size: 0.7em;
+  }
+  .reduce-4-xxl {
+    font-size: 0.6em;
+  }
+  .reduce-5-xxl {
+    font-size: 0.5em;
+  }
+  .reduce-6-xxl {
+    font-size: 0.4em;
+  }
+  .reduce-7-xxl {
+    font-size: 0.3em;
+  }
+  .reduce-8-xxl {
+    font-size: 0.2em;
+  }
+  .reduce-9-xxl {
+    font-size: 0.1em;
+  }
+  .align-size-xxl {
+    font-size: 1em;
+  }
+  .enlarge-1-xxl {
+    font-size: 1.1em;
+  }
+  .enlarge-2-xxl {
+    font-size: 1.2em;
+  }
+  .enlarge-3-xxl {
+    font-size: 1.3em;
+  }
+  .enlarge-4-xxl {
+    font-size: 1.4em;
+  }
+  .enlarge-5-xxl {
+    font-size: 1.5em;
+  }
+  .enlarge-6-xxl {
+    font-size: 1.6em;
+  }
+  .enlarge-7-xxl {
+    font-size: 1.7em;
+  }
+  .enlarge-8-xxl {
+    font-size: 1.8em;
+  }
+  .enlarge-9-xxl {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-xxl {
+    font-size: 2em;
+  }
+  .enlarge-3x-xxl {
+    font-size: 3em;
+  }
+  .enlarge-4x-xxl {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .text-upper-xxxl {
+    text-transform: uppercase;
+  }
+  .text-lower-xxxl {
+    text-transform: lowercase;
+  }
+  .text-cap-xxxl {
+    text-transform: capitalize;
+  }
+  .reduce-1-xxxl {
+    font-size: 0.9em;
+  }
+  .reduce-2-xxxl {
+    font-size: 0.8em;
+  }
+  .reduce-3-xxxl {
+    font-size: 0.7em;
+  }
+  .reduce-4-xxxl {
+    font-size: 0.6em;
+  }
+  .reduce-5-xxxl {
+    font-size: 0.5em;
+  }
+  .reduce-6-xxxl {
+    font-size: 0.4em;
+  }
+  .reduce-7-xxxl {
+    font-size: 0.3em;
+  }
+  .reduce-8-xxxl {
+    font-size: 0.2em;
+  }
+  .reduce-9-xxxl {
+    font-size: 0.1em;
+  }
+  .align-size-xxxl {
+    font-size: 1em;
+  }
+  .enlarge-1-xxxl {
+    font-size: 1.1em;
+  }
+  .enlarge-2-xxxl {
+    font-size: 1.2em;
+  }
+  .enlarge-3-xxxl {
+    font-size: 1.3em;
+  }
+  .enlarge-4-xxxl {
+    font-size: 1.4em;
+  }
+  .enlarge-5-xxxl {
+    font-size: 1.5em;
+  }
+  .enlarge-6-xxxl {
+    font-size: 1.6em;
+  }
+  .enlarge-7-xxxl {
+    font-size: 1.7em;
+  }
+  .enlarge-8-xxxl {
+    font-size: 1.8em;
+  }
+  .enlarge-9-xxxl {
+    font-size: 1.9em;
+  }
+  .enlarge-2x-xxxl {
+    font-size: 2em;
+  }
+  .enlarge-3x-xxxl {
+    font-size: 3em;
+  }
+  .enlarge-4x-xxxl {
+    font-size: 4em;
+  }
+}
+/*# sourceMappingURL=typography-ext.css.map */

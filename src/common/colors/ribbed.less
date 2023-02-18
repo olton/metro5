@@ -1,0 +1,18 @@
+@import "../../include/colors";
+
+@ribbedSize: 20px;
+@ribbedAlpha: .15;
+@ribbedAngle: -45deg;
+
+each(@color-list, {
+  .ribbed-@{value} {
+    background: @@value
+    linear-gradient(@ribbedAngle, rgba(255,255,255,@ribbedAlpha) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255,255,255,@ribbedAlpha) 50%,
+    rgba(255,255,255,@ribbedAlpha) 75%,
+    transparent 75%, transparent) !important;
+    background-size: @ribbedSize @ribbedSize !important;
+  }
+})

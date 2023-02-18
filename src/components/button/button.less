@@ -1,0 +1,283 @@
+@import "../../include/colors";
+
+.button, .outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0 12px;
+    line-height: 1.2;
+    height: 36px;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: visible;
+    opacity: .8;
+    box-sizing: border-box;
+    background-color: var(--defaultColor);
+    color: var(--text-color);
+
+    &:hover {
+        opacity: 1;
+    }
+    &:active {
+        opacity: .9;
+    }
+}
+
+.button.shadowed:not(.disabled) {
+    box-shadow: 0 1px 3px var(--shadowColor);
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.button {
+    &.primary {
+        background-color: @cyan;
+        color: @white;
+    }
+    &.secondary {
+        background-color: @blue;
+        color: @white;
+    }
+    &.success {
+        background-color: @green;
+        color: @white;
+    }
+    &.warning {
+        background-color: @orange;
+        color: @white;
+    }
+    &.alert {
+        background-color: @red;
+        color: @white;
+    }
+}
+
+.button, .outline-button {
+    &.mini {
+        font-size: 10px;
+        padding: 0 4px;
+        height: 20px;
+    }
+    &.small {
+        font-size: 12px;
+        padding: 0 8px;
+        height: 26px;
+    }
+    &.medium {
+        font-size: 14px;
+    }
+    &.large {
+        font-size: 22px;
+        height: 54px;
+        padding: 0 16px;
+    }
+}
+
+.button.rounded, .outline-button.rounded {
+    &.mini {
+        border-radius: 10px;
+    }
+    &.small {
+        border-radius: 12px;
+    }
+    &.medium {
+        border-radius: 20px;
+    }
+    &.large {
+        border-radius: 28px;
+    }
+}
+
+.button {
+    &.disabled {
+        pointer-events: none;
+        background-color: var(--disableColor);
+        color: var(--body-color-invert);
+    }
+}
+
+.button, .outline {
+    .button-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    &.mini {
+        .button-icon {width: 14px; height: 14px;}
+        .button-icon + * { margin-left: 2px; }
+        * + .button-icon { margin-left: 2px; }
+    }
+    &.small {
+        .button-icon {width: 16px; height: 16px}
+        .button-icon + * { margin-left: 4px; }
+        * + .button-icon { margin-left: 4px; }
+    }
+    &.medium {
+        .button-icon {width: 22px; height: 22px}
+        .button-icon + * { margin-left: 6px; }
+        * + .button-icon { margin-left: 6px; }
+    }
+    &.large {
+        .button-icon {width: 30px; height: 30px}
+        .button-icon + * { margin-left: 12px;}
+        * + .button-icon { margin-left: 12px;}
+    }
+}
+
+.button, .outline {
+    &.left-rounded .button-icon {
+        order: 0;
+    }
+    &.right-rounded .button-icon {
+        order: 2;
+    }
+
+    &.mini {
+        &.right-rounded {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            .icon { margin-left: 2px; }
+        }
+        &.left-rounded {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    }
+    &.small {
+        &.right-rounded {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            .button-icon { margin-left: 4px; }
+        }
+        &.left-rounded {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+        }
+    }
+    &.medium {
+        &.right-rounded {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            .button-icon { margin-left: 6px; }
+
+        }
+        &.left-rounded {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    }
+    &.large {
+        &.right-rounded {
+            border-top-right-radius: 28px;
+            border-bottom-right-radius: 28px;
+            .button-icon { margin-left: 12px; }
+        }
+        &.left-rounded {
+            border-top-left-radius: 28px;
+            border-bottom-left-radius: 28px;
+        }
+    }
+
+    &.icon-right {
+        .button-icon {order: 2!important;}
+        &.mini {.button-icon { margin-left: 2px; }}
+        &.small {.button-icon { margin-left: 4px; }}
+        &.medium {.button-icon { margin-left: 6px; }}
+        &.large {.button-icon { margin-left: 12px; }}
+    }
+}
+
+.outline {
+    background-color: transparent!important;
+}
+
+.outline {
+    border-color: var(--defaultColor);
+    color: var(--text-color);
+    &:hover {
+        background-color: var(--defaultColor)!important;
+    }
+
+    &.primary {
+        border-color: @cyan;
+        color: @cyan;
+        &:hover {
+            background-color: @cyan!important;
+            color: #ffffff!important;
+        }
+    }
+    &.secondary {
+        border-color: @blue;
+        color: @blue;
+        &:hover {
+            background-color: @blue!important;
+            color: #ffffff!important;
+        }
+    }
+    &.success {
+        border-color: @green;
+        color: @green;
+        &:hover {
+            background-color: @green!important;
+            color: #ffffff!important;
+        }
+    }
+    &.warning {
+        border-color: @orange;
+        color: @orange;
+        &:hover {
+            background-color: @orange!important;
+            color: #ffffff!important;
+        }
+    }
+    &.alert {
+        border-color: @red;
+        color: @red;
+        &:hover {
+            background-color: @red!important;
+            color: #ffffff!important;
+        }
+    }
+}
+
+.square, .circle {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0!important;
+
+    &.mini {
+        width: 20px;
+        height: 20px;
+    }
+    &.small {
+        width: 26px;
+        height: 26px;
+    }
+    &.medium {
+        width: 36px;
+        height: 36px;
+    }
+    &.large {
+        width: 54px;
+        height: 54px;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+}

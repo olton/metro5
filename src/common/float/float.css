@@ -1,0 +1,199 @@
+.clear-float::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.place-right,
+.float-right {
+  float: right !important;
+}
+.place-left,
+.float-left {
+  float: left !important;
+}
+.place-none,
+.float-none,
+.no-float {
+  float: none !important;
+}
+@media screen and (min-width: 0) {
+  .place-left-fs {
+    float: left;
+  }
+  .place-right-fs {
+    float: right;
+  }
+  .place-none-fs {
+    float: none;
+  }
+  .float-left-fs {
+    float: left;
+  }
+  .float-right-fs {
+    float: right;
+  }
+  .float-none-fs {
+    float: none;
+  }
+}
+@media screen and (min-width: 360px) {
+  .place-left-xs {
+    float: left;
+  }
+  .place-right-xs {
+    float: right;
+  }
+  .place-none-xs {
+    float: none;
+  }
+  .float-left-xs {
+    float: left;
+  }
+  .float-right-xs {
+    float: right;
+  }
+  .float-none-xs {
+    float: none;
+  }
+}
+@media screen and (min-width: 576px) {
+  .place-left-sm {
+    float: left;
+  }
+  .place-right-sm {
+    float: right;
+  }
+  .place-none-sm {
+    float: none;
+  }
+  .float-left-sm {
+    float: left;
+  }
+  .float-right-sm {
+    float: right;
+  }
+  .float-none-sm {
+    float: none;
+  }
+}
+@media screen and (min-width: 640px) {
+  .place-left-ld {
+    float: left;
+  }
+  .place-right-ld {
+    float: right;
+  }
+  .place-none-ld {
+    float: none;
+  }
+  .float-left-ld {
+    float: left;
+  }
+  .float-right-ld {
+    float: right;
+  }
+  .float-none-ld {
+    float: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .place-left-md {
+    float: left;
+  }
+  .place-right-md {
+    float: right;
+  }
+  .place-none-md {
+    float: none;
+  }
+  .float-left-md {
+    float: left;
+  }
+  .float-right-md {
+    float: right;
+  }
+  .float-none-md {
+    float: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .place-left-lg {
+    float: left;
+  }
+  .place-right-lg {
+    float: right;
+  }
+  .place-none-lg {
+    float: none;
+  }
+  .float-left-lg {
+    float: left;
+  }
+  .float-right-lg {
+    float: right;
+  }
+  .float-none-lg {
+    float: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .place-left-xl {
+    float: left;
+  }
+  .place-right-xl {
+    float: right;
+  }
+  .place-none-xl {
+    float: none;
+  }
+  .float-left-xl {
+    float: left;
+  }
+  .float-right-xl {
+    float: right;
+  }
+  .float-none-xl {
+    float: none;
+  }
+}
+@media screen and (min-width: 1452px) {
+  .place-left-xxl {
+    float: left;
+  }
+  .place-right-xxl {
+    float: right;
+  }
+  .place-none-xxl {
+    float: none;
+  }
+  .float-left-xxl {
+    float: left;
+  }
+  .float-right-xxl {
+    float: right;
+  }
+  .float-none-xxl {
+    float: none;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .place-left-xxxl {
+    float: left;
+  }
+  .place-right-xxxl {
+    float: right;
+  }
+  .place-none-xxxl {
+    float: none;
+  }
+  .float-left-xxxl {
+    float: left;
+  }
+  .float-right-xxxl {
+    float: right;
+  }
+  .float-none-xxxl {
+    float: none;
+  }
+}
+/*# sourceMappingURL=float.css.map */

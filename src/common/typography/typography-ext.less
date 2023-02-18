@@ -1,0 +1,138 @@
+@import "../../include/colors";
+@import "../../include/media";
+
+.display4 {
+  font-size: 112px;
+  font-weight: 200;
+}
+
+.display3 {
+  font-size: 56px;
+  font-weight: 400;
+}
+
+.display2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.display1 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.display1, .display2, .display3, .display4 {
+  margin: 20px 0;
+  line-height: 1;
+}
+
+.display4, .display3, .display2, .display1 {
+  color: lighten(#000000, 46%);
+}
+
+.text {
+  &-ultralight {
+    font-weight: 100;
+  }
+  &-light {
+    font-weight: 200;
+  }
+  &-normal {
+    font-weight: 400;
+  }
+  &-medium {
+    font-weight: 500;
+  }
+  &-bold {
+    font-weight: 700;
+  }
+}
+
+.text-small {
+  font-weight: 400;
+  font-size: 12px;
+}
+.text-secondary {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.text-leader {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.text-leader2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.text-muted {
+  color: @gray;
+}
+
+.text-italic { font-style: italic; }
+.text-oblique {font-style: oblique; }
+.text-overline { text-decoration: overline; }
+.text-linethrough { text-decoration: line-through; }
+.text-underline { text-decoration: underline; }
+.text-underover { text-decoration: underline overline; }
+
+.reduce-1 {font-size: .9em;}
+.reduce-2 {font-size: .8em;}
+.reduce-3 {font-size: .7em;}
+.reduce-4 {font-size: .6em;}
+.reduce-5 {font-size: .5em;}
+.reduce-6 {font-size: .4em;}
+.reduce-7 {font-size: .3em;}
+.reduce-8 {font-size: .2em;}
+.reduce-9 {font-size: .1em;}
+
+.align-size {font-size: 1em;}
+
+.enlarge-1 {font-size: 1.1em;}
+.enlarge-2 {font-size: 1.2em;}
+.enlarge-3 {font-size: 1.3em;}
+.enlarge-4 {font-size: 1.4em;}
+.enlarge-5 {font-size: 1.5em;}
+.enlarge-6 {font-size: 1.6em;}
+.enlarge-7 {font-size: 1.7em;}
+.enlarge-8 {font-size: 1.8em;}
+.enlarge-9 {font-size: 1.9em;}
+.enlarge-2x {font-size: 2em;}
+.enlarge-3x {font-size: 3em;}
+.enlarge-4x {font-size: 4em;}
+
+each(@media-rules, {
+  @media screen and (min-width: @value) {
+    .text-upper-@{key} {text-transform: uppercase;}
+    .text-lower-@{key} {text-transform: lowercase;}
+    .text-cap-@{key}   {text-transform: capitalize;}
+
+    .reduce-1-@{key} {font-size: .9em;}
+    .reduce-2-@{key} {font-size: .8em;}
+    .reduce-3-@{key} {font-size: .7em;}
+    .reduce-4-@{key} {font-size: .6em;}
+    .reduce-5-@{key} {font-size: .5em;}
+    .reduce-6-@{key} {font-size: .4em;}
+    .reduce-7-@{key} {font-size: .3em;}
+    .reduce-8-@{key} {font-size: .2em;}
+    .reduce-9-@{key} {font-size: .1em;}
+
+    .align-size-@{key} {font-size: 1em;}
+
+    .enlarge-1-@{key} {font-size: 1.1em;}
+    .enlarge-2-@{key} {font-size: 1.2em;}
+    .enlarge-3-@{key} {font-size: 1.3em;}
+    .enlarge-4-@{key} {font-size: 1.4em;}
+    .enlarge-5-@{key} {font-size: 1.5em;}
+    .enlarge-6-@{key} {font-size: 1.6em;}
+    .enlarge-7-@{key} {font-size: 1.7em;}
+    .enlarge-8-@{key} {font-size: 1.8em;}
+    .enlarge-9-@{key} {font-size: 1.9em;}
+    .enlarge-2x-@{key} {font-size: 2em;}
+    .enlarge-3x-@{key} {font-size: 3em;}
+    .enlarge-4x-@{key} {font-size: 4em;}
+  }
+})

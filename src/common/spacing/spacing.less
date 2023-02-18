@@ -1,0 +1,126 @@
+@import (once) "../../include/media";
+@import (once) "../../include/mixins";
+
+@mpStep: 4;
+@mpUnit: px;
+
+.mx-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+.my-auto {
+    margin-top: auto!important;
+    margin-left: auto!important;
+}
+
+.ml-auto {margin-left: auto!important;}
+.mr-auto {margin-right: auto!important;}
+.mt-auto {margin-top: auto!important;}
+.mb-auto {margin-bottom: auto!important;}
+
+.p-0 {padding: 0!important;}
+.pl-0 {padding-left: 0!important;}
+.pr-0 {padding-right: 0!important;}
+.pt-0 {padding-top: 0!important;}
+.pb-0 {padding-bottom: 0!important;}
+.px-0 {padding-left: 0!important; padding-right: 0!important;}
+.py-0 {padding-top: 0!important; padding-bottom: 0!important;}
+.m-0 {margin: 0!important;}
+.ml-0 {margin-left: 0!important;}
+.mr-0 {margin-right: 0!important;}
+.mt-0 {margin-top: 0!important;}
+.mb-0 {margin-bottom: 0!important;}
+.mx-0 {margin-left: 0!important; margin-right: 0!important;}
+.my-0 {margin-top: 0!important; margin-bottom: 0!important;}
+
+.generate-padding-and-margin(@i, @k: 1) when (@k =< @i) {
+
+    @calculatedSize: unit(@k * @mpStep, @mpUnit);
+    @calculatedSizeNegative: unit(-1 * @k * @mpStep, @mpUnit);
+
+    .p-@{k} {padding: @calculatedSize !important;}
+    .pr-@{k} {padding-right: @calculatedSize !important;}
+    .pl-@{k} {padding-left: @calculatedSize !important;}
+    .pt-@{k} {padding-top: @calculatedSize !important;}
+    .pb-@{k} {padding-bottom: @calculatedSize !important;}
+    .px-@{k} {padding-left: @calculatedSize!important; padding-right: @calculatedSize!important;}
+    .py-@{k} {padding-top: @calculatedSize!important; padding-bottom: @calculatedSize!important;}
+
+    .m-@{k} {margin: @calculatedSize !important;}
+    .mr-@{k} {margin-right: @calculatedSize !important;}
+    .ml-@{k} {margin-left: @calculatedSize !important;}
+    .mt-@{k} {margin-top: @calculatedSize !important;}
+    .mb-@{k} {margin-bottom: @calculatedSize !important;}
+    .mx-@{k} {margin-left: @calculatedSize!important; margin-right: @calculatedSize!important;}
+    .my-@{k} {margin-top: @calculatedSize!important; margin-bottom: @calculatedSize!important;}
+
+    .mr-@{k}-minus {margin-right: @calculatedSizeNegative !important;}
+    .ml-@{k}-minus {margin-left: @calculatedSizeNegative !important;}
+    .mt-@{k}-minus {margin-top: @calculatedSizeNegative !important;}
+    .mb-@{k}-minus {margin-bottom: @calculatedSizeNegative !important;}
+
+    .generate-padding-and-margin(@i, @k + 1);
+}
+.generate-padding-and-margin(20);
+
+each(@media-rules, {
+    @media screen and (min-width: @value) {
+        .mx-auto-@{key} {
+            margin-left: auto!important;
+            margin-right: auto!important;
+        }
+
+        .my-auto-@{key} {
+            margin-top: auto!important;
+            margin-bottom: auto!important;
+        }
+
+        .ml-auto-@{key} {margin-left: auto!important;}
+        .mr-auto-@{key} {margin-right: auto!important;}
+        .mt-auto-@{key} {margin-top: auto!important;}
+        .mb-auto-@{key} {margin-bottom: auto!important;}
+
+        .p-0-@{key} {padding: 0!important;}
+        .pl-0-@{key} {padding-left: 0!important;}
+        .pr-0-@{key} {padding-right: 0!important;}
+        .pt-0-@{key} {padding-top: 0!important;}
+        .pb-0-@{key} {padding-bottom: 0!important;}
+        .m-0-@{key} {margin: 0!important;}
+        .ml-0-@{key} {margin-left: 0!important;}
+        .mr-0-@{key} {margin-right: 0!important;}
+        .mt-0-@{key} {margin-top: 0!important;}
+        .mb-0-@{key} {margin-bottom: 0!important;}
+
+        .generate-indents(@j, @k: 0) when (@k =< @j) {
+
+            @calculatedSize: unit(@k * @mpStep, @mpUnit);
+            @calculatedSizeNegative: unit(-1 * @k * @mpStep, @mpUnit);
+
+            .p-@{k}-@{key} {padding: @calculatedSize !important;}
+            .pr-@{k}-@{key} {padding-right: @calculatedSize !important;}
+            .pl-@{k}-@{key} {padding-left: @calculatedSize !important;}
+            .pt-@{k}-@{key} {padding-top: @calculatedSize !important;}
+            .pb-@{k}-@{key} {padding-bottom: @calculatedSize !important;}
+            .px-@{k}-@{key} {padding-left: @calculatedSize!important; padding-right: @calculatedSize!important;}
+            .py-@{k}-@{key} {padding-top: @calculatedSize!important; padding-bottom: @calculatedSize!important;}
+
+            .m-@{k}-@{key} {margin: @calculatedSize !important;}
+            .mr-@{k}-@{key} {margin-right: @calculatedSize !important;}
+            .ml-@{k}-@{key} {margin-left: @calculatedSize !important;}
+            .mt-@{k}-@{key} {margin-top: @calculatedSize !important;}
+            .mb-@{k}-@{key} {margin-bottom: @calculatedSize !important;}
+            .mx-@{k}-@{key} {margin-left: @calculatedSize!important; margin-right: @calculatedSize!important;}
+            .my-@{k}-@{key} {margin-top: @calculatedSize!important; margin-bottom: @calculatedSize!important;}
+
+            .m-@{k}-@{key}-minus {margin: @calculatedSizeNegative !important;}
+            .mr-@{k}-@{key}-minus {margin-right: @calculatedSizeNegative !important;}
+            .ml-@{k}-@{key}-minus {margin-left: @calculatedSizeNegative !important;}
+            .mt-@{k}-@{key}-minus {margin-top: @calculatedSizeNegative !important;}
+            .mb-@{k}-@{key}-minus {margin-bottom: @calculatedSizeNegative !important;}
+
+            .generate-indents(@j, (@k + 1));
+        }
+        .generate-indents(20);
+    }
+})
+

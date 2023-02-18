@@ -1,0 +1,314 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem 0;
+}
+.h1,
+h1 {
+  font-weight: 100;
+  font-size: 48px;
+}
+.h2,
+h2 {
+  font-weight: 400;
+  font-size: 32px;
+}
+.h3,
+h3 {
+  font-weight: 500;
+  font-size: 28px;
+}
+.h4,
+h4 {
+  font-weight: 500;
+  font-size: 24px;
+}
+.h5,
+h5 {
+  font-weight: 500;
+  font-size: 20px;
+}
+.h6,
+h6 {
+  font-weight: 500;
+  font-size: 18px;
+}
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+  color: inherit;
+  margin: 1rem 0;
+  line-height: 1.1;
+}
+.h1 > small,
+h1 > small,
+.h2 > small,
+h2 > small,
+.h3 > small,
+h3 > small,
+.h4 > small,
+h4 > small,
+.h5 > small,
+h5 > small,
+.h6 > small,
+h6 > small,
+.h1 > .small,
+h1 > .small,
+.h2 > .small,
+h2 > .small,
+.h3 > .small,
+h3 > .small,
+.h4 > .small,
+h4 > .small,
+.h5 > .small,
+h5 > .small,
+.h6 > .small,
+h6 > .small {
+  font-weight: 400;
+  font-size: 0.7em;
+  line-height: 1;
+}
+.h1:nth-child(1),
+h1:nth-child(1),
+.h2:nth-child(1),
+h2:nth-child(1),
+.h3:nth-child(1),
+h3:nth-child(1),
+.h4:nth-child(1),
+h4:nth-child(1),
+.h5:nth-child(1),
+h5:nth-child(1),
+.h6:nth-child(1),
+h6:nth-child(1) {
+  margin-top: 0;
+}
+abbr {
+  text-decoration: none;
+  border-bottom: 1px var(--border-color) dotted;
+  cursor: help;
+  display: inline;
+}
+address {
+  font-weight: normal;
+  margin-bottom: 1rem;
+  font-style: normal;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 16px;
+}
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+code {
+  white-space: nowrap;
+}
+pre code {
+  white-space: inherit;
+}
+a:not([class]),
+a.default {
+  position: relative;
+  color: var(--link-color);
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  box-shadow: none;
+}
+a:not([class]):hover,
+a.default:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+a:not([class]):not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+a:not([class]):not([href]):not([tabindex]):focus,
+a:not([class]):not([href]):not([tabindex]):hover {
+  color: inherit;
+  text-decoration: none;
+  outline: 0;
+}
+.no-decor {
+  text-decoration: none;
+}
+mark {
+  padding: 3px;
+  background-color: var(--invert-background);
+  color: var(--invert-color);
+}
+del {
+  color: var(--secondary-color);
+}
+* + p {
+  margin-top: 1rem;
+}
+dl,
+ul,
+ol {
+  margin: 1rem;
+  list-style-position: inside;
+}
+dl dl,
+ul dl,
+ol dl,
+dl ul,
+ul ul,
+ol ul,
+dl ol,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 24px;
+}
+ul,
+menu,
+dir {
+  display: block;
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+}
+ul ul {
+  list-style: circle;
+}
+ul ul ul {
+  list-style: square;
+}
+ol {
+  list-style-type: upper-roman;
+}
+ol ol {
+  list-style-type: decimal;
+}
+ol ol ol {
+  list-style-type: lower-alpha;
+}
+dl dt,
+dl dd {
+  line-height: 1.25rem;
+}
+dl dt {
+  font-weight: bold;
+}
+dl dd {
+  margin-left: 0.9375rem;
+}
+dl.horizontal dt {
+  float: left;
+  width: 10rem;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+dl.horizontal dd {
+  margin-left: 11.25rem;
+}
+.indent:first-letter {
+  margin-left: 2.5rem;
+}
+.indent-letter:first-letter {
+  font-weight: bold;
+  float: left;
+  padding: 0;
+  line-height: 40px;
+  font-size: 48px;
+  margin: 2px 8px 2px -2px;
+}
+blockquote {
+  margin-bottom: 1rem;
+  padding: 0 0 0 10px;
+  border-left: 4px var(--border-color) solid;
+}
+blockquote small {
+  color: var(--secondary-color);
+}
+blockquote small:before {
+  content: "\2014 \00A0";
+}
+blockquote.right-side {
+  border: 0;
+  border-right: 4px var(--border-color) solid;
+  padding-right: 10px;
+  text-align: right;
+}
+blockquote.right-side small:before {
+  content: "";
+}
+blockquote.right-side small:after {
+  content: " \00A0 \2014";
+}
+hr {
+  border: 0;
+  height: 2px;
+  background-color: var(--border-color);
+}
+hr.thin {
+  height: 1px;
+}
+hr.fat {
+  height: 3px;
+}
+code,
+kbd {
+  display: inline-block;
+  padding: 0 6px;
+  font-size: 90%;
+  border-radius: 4px;
+  line-height: 20px;
+  vertical-align: middle;
+  height: 20px;
+}
+a code,
+a kbd {
+  text-decoration: underline;
+  cursor: pointer;
+}
+code {
+  color: var(--code-color);
+  background-color: var(--code-background);
+}
+kbd {
+  background-color: var(--kbd-background);
+  color: var(--kbd-color);
+}
+pre code {
+  background-color: inherit;
+  height: auto;
+}
+/*# sourceMappingURL=typography.css.map */

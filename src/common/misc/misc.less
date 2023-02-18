@@ -1,0 +1,40 @@
+@import "../../include/colors";
+@import "../../include/media";
+
+.overflow {overflow: auto;}
+.no-overflow {overflow: hidden;}
+.scroll {overflow: scroll;}
+.scroll-x {overflow-x: auto;}
+.scroll-y {overflow-y: auto;}
+.no-scroll {overflow: hidden;}
+.no-scroll-x {overflow-x: hidden;}
+.no-scroll-y {overflow-y: hidden;}
+.wrap {white-space: normal;}
+.no-wrap {white-space: nowrap;}
+.no-user-select {user-select: none;}
+.no-appearance {appearance: none;}
+
+.disabled, .-disabled {
+  pointer-events: none;
+  color: @lightGray;
+}
+
+.stop-pointer {
+  pointer-events: none;
+  user-select: none;
+}
+
+each(@media-rules, {
+  @media screen and (min-width: @value) {
+    .overflow-@{key} {overflow: auto;}
+    .no-overflow-@{key} {overflow: hidden;}
+    .scroll-@{key} {overflow: scroll;}
+    .scroll-x-@{key} {overflow-x: auto;}
+    .scroll-y-@{key} {overflow-y: auto;}
+    .no-scroll-@{key} {overflow: hidden;}
+    .no-scroll-x-@{key} {overflow-x: hidden;}
+    .no-scroll-y-@{key}{overflow-y: hidden;}
+    .wrap-@{key} {white-space: normal;}
+    .no-wrap-@{key} {white-space: nowrap;}
+  }
+})

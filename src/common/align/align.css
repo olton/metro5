@@ -1,0 +1,393 @@
+.va-top {
+  vertical-align: top;
+}
+.va-bottom {
+  vertical-align: bottom;
+}
+.va-baseline {
+  vertical-align: baseline;
+}
+.va-middle {
+  vertical-align: middle;
+}
+.va-sub {
+  vertical-align: sub;
+}
+.va-super {
+  vertical-align: super;
+}
+.va-text-top {
+  vertical-align: text-top;
+}
+.va-text-bottom {
+  vertical-align: text-bottom;
+}
+.text-upper {
+  text-transform: uppercase;
+}
+.text-lower {
+  text-transform: lowercase;
+}
+.text-cap {
+  text-transform: capitalize;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-just {
+  text-align: justify;
+}
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 0) {
+  .text-left-fs {
+    text-align: left;
+  }
+  .text-right-fs {
+    text-align: right;
+  }
+  .text-center-fs {
+    text-align: center;
+  }
+  .text-just-fs {
+    text-align: justify;
+  }
+  .va-top-fs {
+    vertical-align: top;
+  }
+  .va-bottom-fs {
+    vertical-align: bottom;
+  }
+  .va-baseline-fs {
+    vertical-align: baseline;
+  }
+  .va-middle-fs {
+    vertical-align: middle;
+  }
+  .va-sub-fs {
+    vertical-align: sub;
+  }
+  .va-super-fs {
+    vertical-align: super;
+  }
+  .va-text-top-fs {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-fs {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 360px) {
+  .text-left-xs {
+    text-align: left;
+  }
+  .text-right-xs {
+    text-align: right;
+  }
+  .text-center-xs {
+    text-align: center;
+  }
+  .text-just-xs {
+    text-align: justify;
+  }
+  .va-top-xs {
+    vertical-align: top;
+  }
+  .va-bottom-xs {
+    vertical-align: bottom;
+  }
+  .va-baseline-xs {
+    vertical-align: baseline;
+  }
+  .va-middle-xs {
+    vertical-align: middle;
+  }
+  .va-sub-xs {
+    vertical-align: sub;
+  }
+  .va-super-xs {
+    vertical-align: super;
+  }
+  .va-text-top-xs {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-xs {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 576px) {
+  .text-left-sm {
+    text-align: left;
+  }
+  .text-right-sm {
+    text-align: right;
+  }
+  .text-center-sm {
+    text-align: center;
+  }
+  .text-just-sm {
+    text-align: justify;
+  }
+  .va-top-sm {
+    vertical-align: top;
+  }
+  .va-bottom-sm {
+    vertical-align: bottom;
+  }
+  .va-baseline-sm {
+    vertical-align: baseline;
+  }
+  .va-middle-sm {
+    vertical-align: middle;
+  }
+  .va-sub-sm {
+    vertical-align: sub;
+  }
+  .va-super-sm {
+    vertical-align: super;
+  }
+  .va-text-top-sm {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-sm {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 640px) {
+  .text-left-ld {
+    text-align: left;
+  }
+  .text-right-ld {
+    text-align: right;
+  }
+  .text-center-ld {
+    text-align: center;
+  }
+  .text-just-ld {
+    text-align: justify;
+  }
+  .va-top-ld {
+    vertical-align: top;
+  }
+  .va-bottom-ld {
+    vertical-align: bottom;
+  }
+  .va-baseline-ld {
+    vertical-align: baseline;
+  }
+  .va-middle-ld {
+    vertical-align: middle;
+  }
+  .va-sub-ld {
+    vertical-align: sub;
+  }
+  .va-super-ld {
+    vertical-align: super;
+  }
+  .va-text-top-ld {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-ld {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 768px) {
+  .text-left-md {
+    text-align: left;
+  }
+  .text-right-md {
+    text-align: right;
+  }
+  .text-center-md {
+    text-align: center;
+  }
+  .text-just-md {
+    text-align: justify;
+  }
+  .va-top-md {
+    vertical-align: top;
+  }
+  .va-bottom-md {
+    vertical-align: bottom;
+  }
+  .va-baseline-md {
+    vertical-align: baseline;
+  }
+  .va-middle-md {
+    vertical-align: middle;
+  }
+  .va-sub-md {
+    vertical-align: sub;
+  }
+  .va-super-md {
+    vertical-align: super;
+  }
+  .va-text-top-md {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-md {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 992px) {
+  .text-left-lg {
+    text-align: left;
+  }
+  .text-right-lg {
+    text-align: right;
+  }
+  .text-center-lg {
+    text-align: center;
+  }
+  .text-just-lg {
+    text-align: justify;
+  }
+  .va-top-lg {
+    vertical-align: top;
+  }
+  .va-bottom-lg {
+    vertical-align: bottom;
+  }
+  .va-baseline-lg {
+    vertical-align: baseline;
+  }
+  .va-middle-lg {
+    vertical-align: middle;
+  }
+  .va-sub-lg {
+    vertical-align: sub;
+  }
+  .va-super-lg {
+    vertical-align: super;
+  }
+  .va-text-top-lg {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-lg {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .text-left-xl {
+    text-align: left;
+  }
+  .text-right-xl {
+    text-align: right;
+  }
+  .text-center-xl {
+    text-align: center;
+  }
+  .text-just-xl {
+    text-align: justify;
+  }
+  .va-top-xl {
+    vertical-align: top;
+  }
+  .va-bottom-xl {
+    vertical-align: bottom;
+  }
+  .va-baseline-xl {
+    vertical-align: baseline;
+  }
+  .va-middle-xl {
+    vertical-align: middle;
+  }
+  .va-sub-xl {
+    vertical-align: sub;
+  }
+  .va-super-xl {
+    vertical-align: super;
+  }
+  .va-text-top-xl {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-xl {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 1452px) {
+  .text-left-xxl {
+    text-align: left;
+  }
+  .text-right-xxl {
+    text-align: right;
+  }
+  .text-center-xxl {
+    text-align: center;
+  }
+  .text-just-xxl {
+    text-align: justify;
+  }
+  .va-top-xxl {
+    vertical-align: top;
+  }
+  .va-bottom-xxl {
+    vertical-align: bottom;
+  }
+  .va-baseline-xxl {
+    vertical-align: baseline;
+  }
+  .va-middle-xxl {
+    vertical-align: middle;
+  }
+  .va-sub-xxl {
+    vertical-align: sub;
+  }
+  .va-super-xxl {
+    vertical-align: super;
+  }
+  .va-text-top-xxl {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-xxl {
+    vertical-align: text-bottom;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .text-left-xxxl {
+    text-align: left;
+  }
+  .text-right-xxxl {
+    text-align: right;
+  }
+  .text-center-xxxl {
+    text-align: center;
+  }
+  .text-just-xxxl {
+    text-align: justify;
+  }
+  .va-top-xxxl {
+    vertical-align: top;
+  }
+  .va-bottom-xxxl {
+    vertical-align: bottom;
+  }
+  .va-baseline-xxxl {
+    vertical-align: baseline;
+  }
+  .va-middle-xxxl {
+    vertical-align: middle;
+  }
+  .va-sub-xxxl {
+    vertical-align: sub;
+  }
+  .va-super-xxxl {
+    vertical-align: super;
+  }
+  .va-text-top-xxxl {
+    vertical-align: text-top;
+  }
+  .va-text-bottom-xxxl {
+    vertical-align: text-bottom;
+  }
+}
+/*# sourceMappingURL=align.css.map */

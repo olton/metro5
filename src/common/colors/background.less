@@ -1,0 +1,8 @@
+@import "../../include/colors";
+
+each( @color-list, {
+  .bg-@{value} {background-color: @@value;}
+  .bg-@{value}-active {&:active {background-color: @@value;}}
+  .bg-@{value}-hover {&:hover {background-color: @@value;}}
+  .bg-@{value}-focus {&:focus {background-color: @@value;}}
+})

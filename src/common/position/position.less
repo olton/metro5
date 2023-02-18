@@ -1,0 +1,102 @@
+@import (once) "../../include/media";
+@import (once) "../../include/mixins";
+
+.fixed-top, .fixed-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.fixed-top {
+    top: 0;
+    bottom: auto;
+}
+
+.fixed-bottom {
+    top: auto;
+    bottom: 0;
+}
+
+.pos-relative {position: relative!important;}
+.pos-absolute {position: absolute!important;}
+.pos-static {position: static!important;}
+.pos-fixed {position: fixed!important;}
+
+each(@media-rules, {
+    @media screen and (min-width: @value) {
+        .pos-relative-@{key} {position: relative!important;}
+        .pos-absolute-@{key} {position: absolute!important;}
+        .pos-static-@{key} {position: static!important;}
+        .pos-fixed-@{key} {position: fixed!important;}
+    }
+})
+
+.pos-top-left {
+    top: 0!important;
+    left: 0!important;
+    right: auto!important;
+    bottom: auto!important;
+}
+
+.pos-top-center {
+    top: 0!important;
+    left: 50%!important;
+    right: auto!important;
+    bottom: auto!important;
+    .translateX(-50%);
+}
+
+.pos-top-right {
+    right: 0!important;
+    top: 0!important;
+    left: auto!important;
+    bottom: auto!important;
+}
+
+.pos-bottom-left {
+    top: auto!important;
+    right: auto!important;
+    left: 0!important;
+    bottom: 0!important;
+}
+
+.pos-bottom-center {
+    top: auto!important;
+    left: 50%!important;
+    bottom: 0!important;
+    right: auto!important;
+    .translateX(-50%);
+}
+
+.pos-bottom-right {
+    bottom: 0!important;
+    right: 0!important;
+    top: auto!important;
+    left: auto!important;
+}
+
+.pos-left-center {
+    left: 0!important;
+    top: 50%!important;
+    bottom: auto!important;
+    right: auto!important;
+    .translateY(-50%);
+}
+
+.pos-right-center {
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    .translateY(-50%);
+}
+
+.pos-center {
+    top: 50%!important;
+    left: 50%!important;
+    bottom: auto!important;
+    right: auto!important;
+    .translateX(-50%);
+    .translateY(-50%);
+}

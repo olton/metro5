@@ -1,0 +1,8 @@
+@import "../../include/colors";
+
+each( @color-list, {
+  .fg-@{value} {color: @@value;}
+  .fg-@{value}-active {&:active {color: @@value;}}
+  .fg-@{value}-hover {&:hover {color: @@value;}}
+  .fg-@{value}-focus {&:focus {color: @@value;}}
+})

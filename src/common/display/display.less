@@ -1,0 +1,30 @@
+@import (once) "../../include/media";
+
+.visible {visibility: visible;}
+.no-visible {visibility: hidden;}
+
+.d-none {display: none;}
+.d-block {display: block;}
+.d-inline {display: inline;}
+.d-inline-block {display: inline-block;}
+
+// TODO move to table.css
+.d-table {display: table;}
+.d-table-row {display: table-row;}
+.d-table-cell {display: table-cell;}
+
+each(@media-rules, {
+    @media screen and (min-width: @value) {
+        .visible-@{key} { visibility: visible; }
+        .no-visible-@{key} { visibility: hidden; }
+        .d-none-@{key} { display: none; }
+        .d-block-@{key} { display: block; }
+        .d-inline-@{key} { display: inline; }
+        .d-inline-block-@{key} { display: inline-block; }
+
+        // TODO move to table.css
+        .d-table-@{key} { display: table; }
+        .d-table-row-@{key} { display: table-row; }
+        .d-table-cell-@{key} { display: table-cell; }
+    }
+})
