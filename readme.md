@@ -9,7 +9,7 @@ All contributions are welcome. Learn more about how you can contribute to this p
 
 ### Docs
 
-Please click [here](https://metro5.org.ua/) for Documentation and Demo.
+Please click [here](https://metroui.org.ua/) for Documentation and Demo.
 
 ### Releases
 
