@@ -1,0 +1,65 @@
+@import "../../include/transition";
+
+
+.accordion {
+    display: flex;
+    flex-flow: column;
+    border: 1px solid var(--border-color);
+}
+
+.accordion__frame {
+    display: block;
+    overflow: hidden;
+}
+
+.accordion__frame:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accordion__frame__heading {
+    font-size: 16px;
+    padding: 10px 0 10px 10px;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+}
+
+.accordion__frame__content {
+}
+
+.accordion {
+    &.marker-on {
+        .accordion__frame__heading {
+
+            &::before {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                content: "\203A";
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 44px;
+                height: 100%;
+                line-height: 34px;
+                font-size: 2em;
+                transform: rotate(0);
+                transition: transform @transition-speed;
+                transform-origin: center center;
+            }
+        }
+
+        .accordion__frame {
+            &.active {
+                .accordion__frame__heading {
+                    &::before {
+                        transform: rotate(90deg);
+                        transition: transform @transition-speed;
+                    }
+                }
+            }
+        }
+    }
+}

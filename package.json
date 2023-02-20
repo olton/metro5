@@ -1,6 +1,7 @@
 {
   "name": "@olton/metro5",
-  "private": true,
+  "description": "Components library",
+  "private": false,
   "version": "0.1.0",
   "type": "module",
   "funding": [
@@ -68,7 +69,7 @@
     "@olton/color": "^0.1.0",
     "@olton/datetime": "^3.0.0",
     "@olton/html": "^0.4.1",
-    "@olton/query": "^0.4.4",
+    "@olton/query": "^0.4.5",
     "@olton/string": "^0.4.0"
   }
 }

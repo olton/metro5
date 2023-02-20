@@ -1,13 +1,12 @@
 import {Registry} from "./registry.js";
 import {merge} from "../routines/merge.js";
 import {globalize} from "./globalize.js";
-import {glob} from "glob";
 
 const MetroOptions = {
-    removeCloakTimeout: 1000
+    removeCloakTimeout: 100
 }
 
-export class MetroUI {
+export class Metro {
     version = "5.0.0"
     status = "pre-alpha"
     plugins = {}
@@ -135,5 +134,21 @@ export class MetroUI {
         plugin.destroy()
         plugin.component.remove()
         delete this.plugins[pluginId]
+    }
+
+    registerPlugin(name, _class){
+        return Registry.register(name, _class)
+    }
+
+    unregisterPlugin(name, _class){
+        return Registry.unregister(name, _class)
+    }
+
+    getRegistry(){
+        return Registry.getRegistry()
+    }
+
+    dumpRegistry(){
+        return Registry.dump()
     }
 }

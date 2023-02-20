@@ -1,5 +1,7 @@
-import {MetroUI} from "../src/core/metro"
+import {Metro} from "../src/core/metro"
 import * as CommonCss from "../src/common"
 import * as Components from "../src/components"
 
-globalThis.Metro = new MetroUI({})
+globalThis.Metro = new Metro({
+    onInit: ()=>console.log("Hello world!")
+})

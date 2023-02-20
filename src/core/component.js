@@ -17,15 +17,16 @@ export class Component {
         this.component = this.element
         this.name = name || `component`
 
-        this.#setOptionsFromAttributes()
+        this.setOptionsFromAttributes()
     }
 
-    #setOptionsFromAttributes(){
+    setOptionsFromAttributes(){
         const element = this.element, o = this.options;
         const data = element.data()
 
-        $.each(element.data(), function(key, value){
-            key = key.substring(5)
+        $.each(data, function(key, value){
+            if (key === 'data-role') return
+            key = new Str(key.substring(5)).camelCase().value
             if (key in o) {
                 try {
                     o[key] = JSON.parse(value);
@@ -39,9 +40,6 @@ export class Component {
     fireEvent(eventName, data){
         const element = this.element, o = this.options;
         const event = str(eventName).camelCase().capitalize().value;
-
-        data = $.extend({}, data, {__this: element[0]});
-        data = data ? Object.values(data) : {};
 
         element.fire(event.toLowerCase(), data);
 
