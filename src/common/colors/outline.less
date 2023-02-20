@@ -1,8 +1,8 @@
 @import "../../include/colors";
 
 each(@color-list, {
-  .ol-@{value} {outline-color: @@value !important;}
-  .ol-@{value}-active {&:active {outline-color: @@value !important;}}
-  .ol-@{value}-hover {&:hover {outline-color: @@value !important;}}
-  .ol-@{value}-focus {&:focus {outline-color: @@value !important;}}
+  .ol-@{value} {outline-color: @@value ;}
+  .ol-@{value}-active {&:active {outline-color: @@value ;}}
+  .ol-@{value}-hover {&:hover {outline-color: @@value ;}}
+  .ol-@{value}-focus {&:focus {outline-color: @@value ;}}
 })

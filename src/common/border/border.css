@@ -286,33 +286,33 @@
   border-radius: 1px;
 }
 .rounded {
-  border-radius: 4px !important;
+  border-radius: 4px;
 }
 .border-50 {
-  border-radius: 50% !important;
+  border-radius: 50%;
 }
 .border-solid {
-  border-style: solid!important;
+  border-style: solid;
 }
 .border-dashed {
-  border-style: dashed!important;
+  border-style: dashed;
 }
 .border-dotted {
-  border-style: dotted!important;
+  border-style: dotted;
 }
 .border-double {
-  border-style: double!important;
+  border-style: double;
 }
 .border-groove {
-  border-style: groove!important;
+  border-style: groove;
 }
 .border-inset {
-  border-style: inset!important;
+  border-style: inset;
 }
 .border-outset {
-  border-style: outset!important;
+  border-style: outset;
 }
 .border-ridge {
-  border-style: ridge!important;
+  border-style: ridge;
 }
 /*# sourceMappingURL=border.css.map */

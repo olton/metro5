@@ -1,17 +1,17 @@
 @import "../../include/colors";
 
 .bd-default {
-  border-color: var(--border-color)!important;
+  border-color: var(--border-color);
 }
 .bd-transparent {
-  border-color: transparent!important;
+  border-color: transparent;
 }
 
 each(@color-list, {
-  .bd-@{value} {border-color: @@value !important;}
-  .bd-@{value}-active {&:active {border-color: @@value !important;}}
-  .bd-@{value}-hover {&:hover {border-color: @@value !important;}}
-  .bd-@{value}-focus {&:focus {border-color: @@value !important;}}
+  .bd-@{value} {border-color: @@value ;}
+  .bd-@{value}-active {&:active {border-color: @@value ;}}
+  .bd-@{value}-hover {&:hover {border-color: @@value ;}}
+  .bd-@{value}-focus {&:focus {border-color: @@value ;}}
   .tg-@{value} {
     &::before {
       border-color: @@value;

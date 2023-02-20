@@ -3,7 +3,7 @@ import {Component} from "../../core/component.js";
 import {merge} from "../../routines/merge.js";
 import {Registry} from "../../core/registry.js";
 
-const AccordionDefaultOptions = {
+let AccordionDefaultOptions = {
     deferred: 0,
     showMarker: true,
     markerPosition: "left",
@@ -25,6 +25,9 @@ const AccordionDefaultOptions = {
 export class Accordion extends Component {
     frames = []
     constructor(elem, options = {}) {
+        if (typeof globalThis["metroAccordionSetup"] !== 'undefined') {
+            AccordionDefaultOptions = merge({}, AccordionDefaultOptions, globalThis["metroAccordionSetup"])
+        }
         super(elem, "accordion", merge({}, AccordionDefaultOptions, options));
         setTimeout(()=>{
             this.createStruct()

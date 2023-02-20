@@ -5,16 +5,16 @@
 }
 .place-right,
 .float-right {
-  float: right !important;
+  float: right ;
 }
 .place-left,
 .float-left {
-  float: left !important;
+  float: left ;
 }
 .place-none,
 .float-none,
 .no-float {
-  float: none !important;
+  float: none ;
 }
 @media screen and (min-width: 0) {
   .place-left-fs {
