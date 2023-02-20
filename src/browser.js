@@ -1,5 +1,5 @@
 import * as CommonCss from "./common"
 import * as Components from "./components"
-import {MetroUI} from "./core/metro"
+import {Metro} from "./core/metro"
 
-globalThis.Metro = new MetroUI()
+globalThis.Metro = new Metro()

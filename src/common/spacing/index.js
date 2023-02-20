@@ -1,3 +1,3 @@
-import {SpacingCss} from "./spacing.css"
+import * as SpacingCss from "./spacing.css"
 
 export {SpacingCss}
