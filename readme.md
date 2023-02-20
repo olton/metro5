@@ -30,4 +30,4 @@ Thanks to all Metro UI community. Special thanks to all those who financially su
 
 ---
 
-2022 © Copyright by Serhii Pimenov. All Rights Reserved. Created by Serhii Pimenov.
+2023 © Copyright by Serhii Pimenov. All Rights Reserved. Created by Serhii Pimenov.
