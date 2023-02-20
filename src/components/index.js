@@ -1,6 +1,8 @@
 import {Accordion} from "./accordion";
 import {Activity} from "./activities"
-import {Adblock} from "./adblock"
+import {AdblockHunter} from "./adblock"
+import {Appbar} from "./appbar"
+import {Gravatar} from "./gravatar"
 import {Grid} from "./grid"
 import {Cloak} from "./cloak"
 import {Button} from "./button"
@@ -9,7 +11,9 @@ import {Image} from "./image"
 export {
     Accordion,
     Activity,
-    Adblock,
+    AdblockHunter,
+    Appbar,
+    Gravatar,
     Grid,
     Cloak,
     Button,

@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: column;
   border: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 .accordion__frame {
   display: block;
@@ -17,6 +18,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  background-color: white;
 }
 .accordion.marker-on .accordion__frame__heading::before {
   display: table-cell;
@@ -44,5 +46,8 @@
 .accordion[dir=rtl] .accordion__frame__heading::before {
   right: auto;
   left: 0;
+}
+.dark-mode .accordion__frame__heading {
+  background-color: #1e2228;
 }
 /*# sourceMappingURL=accordion.css.map */

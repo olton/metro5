@@ -1,5 +1,5 @@
 :root {
-  --color-dark: #1d1d1d;
+  --color-dark: #1e2228;
   --color-light: #f8f8f8;
   --color-gray: #c0c0c0;
   --color-grayBlue: #607d8b;
@@ -826,16 +826,16 @@
   color: #aea073;
 }
 .fg-dark {
-  color: #1d1d1d;
+  color: #1e2228;
 }
 .fg-dark-active:active {
-  color: #1d1d1d;
+  color: #1e2228;
 }
 .fg-dark-hover:hover {
-  color: #1d1d1d;
+  color: #1e2228;
 }
 .fg-dark-focus:focus {
-  color: #1d1d1d;
+  color: #1e2228;
 }
 .fg-white {
   color: #ffffff;
@@ -1666,16 +1666,16 @@
   background-color: #aea073;
 }
 .bg-dark {
-  background-color: #1d1d1d;
+  background-color: #1e2228;
 }
 .bg-dark-active:active {
-  background-color: #1d1d1d;
+  background-color: #1e2228;
 }
 .bg-dark-hover:hover {
-  background-color: #1d1d1d;
+  background-color: #1e2228;
 }
 .bg-dark-focus:focus {
-  background-color: #1d1d1d;
+  background-color: #1e2228;
 }
 .bg-white {
   background-color: #ffffff;
@@ -2701,19 +2701,19 @@
   border-color: #aea073;
 }
 .bd-dark {
-  border-color: #1d1d1d;
+  border-color: #1e2228;
 }
 .bd-dark-active:active {
-  border-color: #1d1d1d;
+  border-color: #1e2228;
 }
 .bd-dark-hover:hover {
-  border-color: #1d1d1d;
+  border-color: #1e2228;
 }
 .bd-dark-focus:focus {
-  border-color: #1d1d1d;
+  border-color: #1e2228;
 }
 .tg-dark::before {
-  border-color: #1d1d1d;
+  border-color: #1e2228;
 }
 .bd-white {
   border-color: #ffffff;
@@ -3562,16 +3562,16 @@
   fill: #aea073;
 }
 .fc-dark {
-  fill: #1d1d1d;
+  fill: #1e2228;
 }
 .fc-dark-active:active {
-  fill: #1d1d1d;
+  fill: #1e2228;
 }
 .fc-dark-hover:hover {
-  fill: #1d1d1d;
+  fill: #1e2228;
 }
 .fc-dark-focus:focus {
-  fill: #1d1d1d;
+  fill: #1e2228;
 }
 .fc-white {
   fill: #ffffff;
@@ -4213,13 +4213,13 @@
   background-color: rgba(174, 160, 115, 0.8);
 }
 .op-dark {
-  background-color: rgba(29, 29, 29, 0.5);
+  background-color: rgba(30, 34, 40, 0.5);
 }
 .op-dark-hi {
-  background-color: rgba(29, 29, 29, 0.2);
+  background-color: rgba(30, 34, 40, 0.2);
 }
 .op-dark-low {
-  background-color: rgba(29, 29, 29, 0.8);
+  background-color: rgba(30, 34, 40, 0.8);
 }
 .op-white {
   background-color: rgba(255, 255, 255, 0.5);
@@ -5032,16 +5032,16 @@
   outline-color: #aea073;
 }
 .ol-dark {
-  outline-color: #1d1d1d;
+  outline-color: #1e2228;
 }
 .ol-dark-active:active {
-  outline-color: #1d1d1d;
+  outline-color: #1e2228;
 }
 .ol-dark-hover:hover {
-  outline-color: #1d1d1d;
+  outline-color: #1e2228;
 }
 .ol-dark-focus:focus {
-  outline-color: #1d1d1d;
+  outline-color: #1e2228;
 }
 .ol-white {
   outline-color: #ffffff;
@@ -6250,22 +6250,22 @@
   outline-color: #aea073;
 }
 .before-bg-dark::before {
-  background: #1d1d1d;
+  background: #1e2228;
 }
 .before-fg-dark::before {
-  color: #1d1d1d;
+  color: #1e2228;
 }
 .after-bg-dark::after {
-  background: #1d1d1d;
+  background: #1e2228;
 }
 .after-fg-dark::after {
-  color: #1d1d1d;
+  color: #1e2228;
 }
 .after-bd-dark::after {
-  border-color: #1d1d1d;
+  border-color: #1e2228;
 }
 .after-ol-dark::after {
-  outline-color: #1d1d1d;
+  outline-color: #1e2228;
 }
 .before-bg-white::before {
   background: #ffffff;
@@ -6628,7 +6628,7 @@
   background-size: 20px 20px;
 }
 .ribbed-dark {
-  background: #1d1d1d linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background: #1e2228 linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 20px 20px;
 }
 .ribbed-white {

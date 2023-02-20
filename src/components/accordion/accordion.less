@@ -5,6 +5,7 @@
     display: flex;
     flex-flow: column;
     border: 1px solid var(--border-color);
+    color: var(--text-color);
 }
 
 .accordion__frame {
@@ -23,7 +24,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-
+    background-color: white;
 }
 
 .accordion__frame__content {
@@ -74,5 +75,11 @@
                 left: 0;
             }
         }
+    }
+}
+
+.dark-mode {
+    .accordion__frame__heading {
+        background-color: #1e2228;
     }
 }

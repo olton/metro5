@@ -10,11 +10,6 @@ let AccordionDefaultOptions = {
     singleFrame: true,
     duration: 100,
     frameHeight: 0,
-    clsAccordion: "",
-    clsFrame: "",
-    clsActiveFrame: "",
-    clsFrameHeading: "",
-    clsFrameContent: "",
     onFrameOpen: f => f,
     onFrameClose: f => f,
     onBeforeFrameOpen: f => true,
@@ -39,7 +34,7 @@ export class Accordion extends Component {
     createStruct(){
         const o = this.options
 
-        this.element.addClass("accordion").addClass(o.clsAccordion)
+        this.element.addClass("accordion")
 
         if (o.showMarker) {
             this.element.addClass("marker-on")
@@ -55,18 +50,15 @@ export class Accordion extends Component {
                 </div>
             `).insertBefore(div)
 
-            frame.addClass(o.clsFrame)
 
             const content = frame.find(".accordion__frame__content").append(div)
             const heading = frame.find(".accordion__frame__heading")
 
-            content.addClass(o.clsFrameContent)
-            heading.addClass(o.clsFrameContent)
 
             div.attr("title", "")
 
             if (div.hasClass("active")) {
-                frame.addClass("active").addClass(o.clsActiveFrame)
+                frame.addClass("active")
                 div.removeClass("active")
                 if (o.frameHeight) {
                     content.css({
@@ -108,7 +100,7 @@ export class Accordion extends Component {
             this.closeAll()
         }
 
-        fr.addClass("active").addClass(o.clsActiveFrame)
+        fr.addClass("active")
 
         const content = fr.find(".accordion__frame__content")
 
@@ -131,7 +123,7 @@ export class Accordion extends Component {
         if (!fr.hasClass("active")) return
         if (typeof o.onBeforeFrameClose === 'function' && !o.onBeforeFrameClose.apply(this, [fr[0]])) return
 
-        fr.removeClass("active").removeClass(o.clsActiveFrame)
+        fr.removeClass("active")
 
         const content = fr.find(".accordion__frame__content")
 

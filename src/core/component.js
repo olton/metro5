@@ -63,6 +63,10 @@ export class Component {
         return objectLength(events)
     }
 
-    updateAttr(attr, newVal, oldVal){}
-    destroy(){}
+    updateAttr(attr, newVal, oldVal){
+
+    }
+    destroy(){
+        this.element.remove()
+    }
 }

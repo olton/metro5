@@ -39,7 +39,8 @@ export class AdblockHunter extends Component {
                 overflow: "hidden",
                 visibility: "visible",
                 top: 0,
-                left: 0
+                left: 0,
+                zIndex: -1
             })
             .append($("<a href='https://dblclick.net'>").html('dblclick.net'))
     }

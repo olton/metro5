@@ -1,0 +1,1 @@
+export const encURI = s => encodeURI(s).replace(/%5B/g, '[').replace(/%5D/g, ']')
