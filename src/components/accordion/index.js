@@ -58,6 +58,8 @@ export class Accordion extends Component {
             content.addClass(o.clsFrameContent)
             heading.addClass(o.clsFrameContent)
 
+            div.attr("title", "")
+
             if (div.hasClass("active")) {
                 frame.addClass("active").addClass(o.clsActiveFrame)
                 div.removeClass("active")

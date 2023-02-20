@@ -63,3 +63,16 @@
         }
     }
 }
+
+.accordion {
+    &[dir=rtl] {
+        .accordion__frame__heading {
+            padding-right: 10px;
+
+            &::before {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+}

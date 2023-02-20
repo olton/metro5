@@ -8,13 +8,6 @@
 
 <!--    <link rel="stylesheet" href="../lib/metro5.min.css">-->
     <style>
-        .activeFrame .accordion__frame__heading{
-            font-weight: bold;
-        }
-        .activeFrame .accordion__frame__content{
-            background: #0b98dc;
-            color: #fff;
-        }
     </style>
     <title>Document</title>
 </head>
@@ -45,14 +38,14 @@
         <button class="button alert outline">Button</button>
     </div>
 
-    <div data-role="accordion" data-on-create="console.log('Hello from accordion!')" class="m-10" data-duration="100" data-cls-active-frame="activeFrame">
-        <div title="Frame1" class="active p-10">
+    <div data-role="accordion" data-on-create="console.log('Hello from accordion!')" class="m-10" data-duration="100" data-cls-active-frame="activeFrame" dir="rtl">
+        <div title="Frame 1" class="active p-10">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam amet blanditiis cumque doloremque enim illum in ipsam itaque maxime nulla perferendis placeat porro praesentium, quod repellendus sed, totam veritatis.
         </div>
-        <div title="Frame2" class="p-10">
+        <div class="p-10">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, animi at deleniti explicabo fugit in incidunt itaque iusto labore minus molestiae nobis odit repellat sunt tenetur veniam veritatis voluptate voluptatibus?
         </div>
-        <div title="Frame3" class="p-10">
+        <div class="p-10">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt fugit natus nisi officia officiis quaerat vel! Assumenda, at consequuntur est, fugit itaque iure laborum minus molestiae nulla ut veritatis.
         </div>
     </div>

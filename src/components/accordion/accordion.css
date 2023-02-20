@@ -38,4 +38,11 @@
   transform: rotate(90deg);
   transition: transform 0.3s;
 }
+.accordion[dir=rtl] .accordion__frame__heading {
+  padding-right: 10px;
+}
+.accordion[dir=rtl] .accordion__frame__heading::before {
+  right: auto;
+  left: 0;
+}
 /*# sourceMappingURL=accordion.css.map */
