@@ -1,0 +1,74 @@
+.activity-type {
+    &-square {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        transform-origin: bottom left;
+
+        .activity-element-square {
+            position: absolute;
+            width: 19px;
+            height: 19px;
+
+            &:nth-child(1) {
+                left: 0;
+                top: 21px;
+                //animation: rotate-box 1s linear infinite;
+            }
+
+            &:nth-child(2) {
+                left: 21px;
+                top: 21px;
+                //animation: rotate-box 1.2s linear infinite;
+            }
+
+            &:nth-child(3) {
+                left: 0;
+                top: 0;
+                //animation: rotate-box 1.4s linear infinite;
+            }
+
+            &:nth-child(4) {
+                left: 21px;
+                top: 0;
+                animation: rotate-box .8s linear infinite;
+            }
+        }
+
+        &.activity-style-light {
+            & > .activity-element-square {
+                background-color: var(--lightColor);
+            }
+        }
+
+        &.activity-style-dark {
+            & > .activity-element-square {
+                background-color: var(--darkColor);
+            }
+        }
+
+        &.activity-style-color {
+            & > .activity-element-square:nth-child(1) {
+                background-color: var(--orangeColor);
+            }
+
+            & > .activity-element-square:nth-child(2) {
+                background-color: var(--greenColor);
+            }
+
+            & > .activity-element-square:nth-child(3) {
+                background-color: var(--blueColor);
+            }
+
+            & > .activity-element-square:nth-child(4) {
+                background-color: var(--redColor);
+            }
+        }
+    }
+}
+
+@keyframes rotate-box {
+    100%{
+        transform: rotate(90deg);
+    }
+}

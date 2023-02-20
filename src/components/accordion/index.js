@@ -1,4 +1,4 @@
-import * as AccordionCss from "./accordion.css"
+import "./accordion.css"
 import {Component} from "../../core/component.js";
 import {merge} from "../../routines/merge.js";
 import {Registry} from "../../core/registry.js";
@@ -8,7 +8,7 @@ const AccordionDefaultOptions = {
     showMarker: true,
     markerPosition: "left",
     singleFrame: true,
-    duration: 300,
+    duration: 100,
     frameHeight: 0,
     clsAccordion: "",
     clsFrame: "",
@@ -26,9 +26,11 @@ export class Accordion extends Component {
     frames = []
     constructor(elem, options = {}) {
         super(elem, "accordion", merge({}, AccordionDefaultOptions, options));
-        this.createStruct()
-        this.createEvents()
-        this.fireEvent("create", {})
+        setTimeout(()=>{
+            this.createStruct()
+            this.createEvents()
+            this.fireEvent("create", {})
+        }, this.options.deferred)
     }
 
     createStruct(){

@@ -1,0 +1,96 @@
+.activity-type {
+    &-cycle {
+        width: 64px;
+        height: 64px;
+        position: relative;
+        overflow: hidden;
+
+        .activity-element-circle {
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            width: 58px;
+            height: 58px;
+            margin: -32px 0 0 -32px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            animation: spin 1s linear infinite;
+            z-index: 1001;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                border: 3px solid transparent;
+            }
+
+            &:before {
+                top: 5px;
+                left: 5px;
+                right: 5px;
+                bottom: 5px;
+                animation: spin 2s linear infinite;
+            }
+
+            &:after {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                animation: spin 1.5s linear infinite;
+            }
+        }
+
+        &.activity-style-light {
+            .activity-element-circle {
+                border-top-color: var(--lightColor);
+
+                &:before {
+                    border-top-color: var(--lightColor);
+                }
+
+                &:after {
+                    border-top-color: var(--lightColor);
+                }
+            }
+        }
+
+        &.activity-style-dark {
+            .activity-element-circle {
+                border-top-color: var(--darkColor);
+
+                &:before {
+                    border-top-color: var(--darkColor);
+                }
+
+                &:after {
+                    border-top-color: var(--darkColor);
+                }
+            }
+        }
+
+        &.activity-style-color {
+            .activity-element-circle {
+                border-top-color: var(--blueColor);
+
+                &:before {
+                    border-top-color: var(--redColor);
+                }
+
+                &:after {
+                    border-top-color: var(--orangeColor);
+                }
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0%   {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,531 @@
+:root {
+  --lightColor: #ffffff;
+  --darkColor: #000000;
+  --redColor: #de0a0a;
+  --orangeColor: #ffaa35;
+  --greenColor: #61bd17;
+  --blueColor: #3c8aff;
+  --violetColor: #733cff;
+  --pinkColor: #c937ea;
+}
+.activity-type-simple {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  transform-origin: center;
+}
+.activity-type-simple .circular {
+  animation: rotate 2s linear infinite;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.activity-type-simple .path {
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+.activity-type-simple.activity-style-light .path {
+  stroke: var(--lightColor);
+}
+.activity-type-simple.activity-style-dark .path {
+  stroke: var(--darkColor);
+}
+.activity-type-simple.activity-style-color .path {
+  animation: dash 1.5s ease-in-out infinite, color 3s ease-in-out infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes color {
+  100%,
+  0% {
+    stroke: var(--redColor);
+  }
+  40% {
+    stroke: var(--blueColor);
+  }
+  66% {
+    stroke: var(--greenColor);
+  }
+  80%,
+  90% {
+    stroke: var(--orangeColor);
+  }
+}
+.activity-type-atom {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+.activity-type-atom .activity-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.activity-type-atom .activity-element-electron {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.activity-type-atom .activity-element-electron:nth-child(1) {
+  left: 0;
+  top: 0;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid;
+}
+.activity-type-atom .activity-element-electron:nth-child(2) {
+  right: 0;
+  top: 0;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid;
+}
+.activity-type-atom .activity-element-electron:nth-child(3) {
+  right: 0;
+  bottom: 0;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid;
+}
+.activity-type-atom.activity-style-light .activity-element-electron:nth-child(1) {
+  border-bottom-color: var(--lightColor);
+}
+.activity-type-atom.activity-style-light .activity-element-electron:nth-child(2) {
+  border-right-color: var(--lightColor);
+}
+.activity-type-atom.activity-style-light .activity-element-electron:nth-child(3) {
+  border-top-color: var(--lightColor);
+}
+.activity-type-atom.activity-style-dark .activity-element-electron:nth-child(1) {
+  border-bottom-color: var(--darkColor);
+}
+.activity-type-atom.activity-style-dark .activity-element-electron:nth-child(2) {
+  border-right-color: var(--darkColor);
+}
+.activity-type-atom.activity-style-dark .activity-element-electron:nth-child(3) {
+  border-top-color: var(--darkColor);
+}
+.activity-type-atom.activity-style-color .activity-element-electron:nth-child(1) {
+  border-bottom-color: var(--blueColor);
+}
+.activity-type-atom.activity-style-color .activity-element-electron:nth-child(2) {
+  border-right-color: var(--redColor);
+}
+.activity-type-atom.activity-style-color .activity-element-electron:nth-child(3) {
+  border-top-color: var(--orangeColor);
+}
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+.activity-type-bars {
+  width: 60px;
+  height: 50px;
+}
+.activity-type-bars .activity-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.activity-type-bars .activity-element-bar {
+  height: 100%;
+  width: 8px;
+  display: inline-block;
+  float: left;
+  margin-left: 2px;
+  animation: bars 0.8s infinite ease-in-out;
+}
+.activity-type-bars .activity-element-bar:nth-child(2) {
+  animation-delay: -0.7s;
+}
+.activity-type-bars .activity-element-bar:nth-child(3) {
+  animation-delay: -0.6s;
+}
+.activity-type-bars .activity-element-bar:nth-child(4) {
+  animation-delay: -0.5s;
+}
+.activity-type-bars .activity-element-bar:nth-child(5) {
+  animation-delay: -0.4s;
+}
+.activity-type-bars .activity-element-bar:nth-child(6) {
+  animation-delay: -0.3s;
+}
+.activity-type-bars.activity-style-light .activity-element-bar {
+  background-color: var(--lightColor);
+}
+.activity-type-bars.activity-style-dark .activity-element-bar {
+  background-color: var(--darkColor);
+}
+.activity-type-bars.activity-style-color .activity-element-bar:nth-child(1) {
+  background-color: var(--violetColor);
+}
+.activity-type-bars.activity-style-color .activity-element-bar:nth-child(2) {
+  background-color: var(--blueColor);
+}
+.activity-type-bars.activity-style-color .activity-element-bar:nth-child(3) {
+  background-color: var(--greenColor);
+}
+.activity-type-bars.activity-style-color .activity-element-bar:nth-child(4) {
+  background-color: var(--orangeColor);
+}
+.activity-type-bars.activity-style-color .activity-element-bar:nth-child(5) {
+  background-color: var(--redColor);
+}
+.activity-type-bars.activity-style-color .activity-element-bar:nth-child(6) {
+  background-color: var(--pinkColor);
+}
+@keyframes bars {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.05);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+.activity-type-cycle {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.activity-type-cycle .activity-element-circle {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  margin: -32px 0 0 -32px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: spin 1s linear infinite;
+  z-index: 1001;
+}
+.activity-type-cycle .activity-element-circle::before,
+.activity-type-cycle .activity-element-circle::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+.activity-type-cycle .activity-element-circle:before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  animation: spin 2s linear infinite;
+}
+.activity-type-cycle .activity-element-circle:after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  animation: spin 1.5s linear infinite;
+}
+.activity-type-cycle.activity-style-light .activity-element-circle {
+  border-top-color: var(--lightColor);
+}
+.activity-type-cycle.activity-style-light .activity-element-circle:before {
+  border-top-color: var(--lightColor);
+}
+.activity-type-cycle.activity-style-light .activity-element-circle:after {
+  border-top-color: var(--lightColor);
+}
+.activity-type-cycle.activity-style-dark .activity-element-circle {
+  border-top-color: var(--darkColor);
+}
+.activity-type-cycle.activity-style-dark .activity-element-circle:before {
+  border-top-color: var(--darkColor);
+}
+.activity-type-cycle.activity-style-dark .activity-element-circle:after {
+  border-top-color: var(--darkColor);
+}
+.activity-type-cycle.activity-style-color .activity-element-circle {
+  border-top-color: var(--blueColor);
+}
+.activity-type-cycle.activity-style-color .activity-element-circle:before {
+  border-top-color: var(--redColor);
+}
+.activity-type-cycle.activity-style-color .activity-element-circle:after {
+  border-top-color: var(--orangeColor);
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.activity-type-ring {
+  position: relative;
+  padding-top: 0.22rem;
+  width: 48px;
+  height: 48px;
+  margin: 0.625rem;
+}
+.activity-type-ring > .activity-element-wrap {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+}
+.activity-type-ring > .activity-element-wrap > .activity-element-circle {
+  opacity: 0;
+  width: 46px;
+  height: 46px;
+  transform: rotate(225deg);
+  animation: orbit 4000ms infinite;
+}
+.activity-type-ring > .activity-element-wrap > .activity-element-circle:after {
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+}
+.activity-type-ring > .activity-element-wrap:nth-child(2) {
+  transform: rotate(-14deg);
+}
+.activity-type-ring > .activity-element-wrap:nth-child(2) > .activity-element-circle {
+  animation-delay: 133.33333333ms;
+}
+.activity-type-ring > .activity-element-wrap:nth-child(3) {
+  transform: rotate(-28deg);
+}
+.activity-type-ring > .activity-element-wrap:nth-child(3) > .activity-element-circle {
+  animation-delay: 266.66666667ms;
+}
+.activity-type-ring > .activity-element-wrap:nth-child(4) {
+  transform: rotate(-42deg);
+}
+.activity-type-ring > .activity-element-wrap:nth-child(4) > .activity-element-circle {
+  animation-delay: 400ms;
+}
+.activity-type-ring > .activity-element-wrap:nth-child(5) {
+  transform: rotate(-56deg);
+}
+.activity-type-ring > .activity-element-wrap:nth-child(5) > .activity-element-circle {
+  animation-delay: 533.33333333ms;
+}
+.activity-type-ring.activity-style-light > .activity-element-wrap > .activity-element-circle:after {
+  background-color: var(--lightColor);
+}
+.activity-type-ring.activity-style-dark > .activity-element-wrap > .activity-element-circle:after {
+  background-color: var(--darkColor);
+}
+.activity-type-ring.activity-style-color > .activity-element-wrap > .activity-element-circle:after {
+  background-color: var(--blueColor);
+}
+.activity-type-ring.activity-style-color > .activity-element-wrap:nth-child(2) > .activity-element-circle:after {
+  background-color: var(--orangeColor);
+}
+.activity-type-ring.activity-style-color > .activity-element-wrap:nth-child(3) > .activity-element-circle:after {
+  background-color: var(--greenColor);
+}
+.activity-type-ring.activity-style-color > .activity-element-wrap:nth-child(4) > .activity-element-circle:after {
+  background-color: var(--redColor);
+}
+.activity-type-ring.activity-style-color > .activity-element-wrap:nth-child(5) > .activity-element-circle:after {
+  background-color: var(--pinkColor);
+}
+@keyframes orbit {
+  0% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+    transform: rotate(225deg);
+  }
+  7% {
+    transform: rotate(345deg);
+    animation-timing-function: linear;
+  }
+  35% {
+    transform: rotate(495deg);
+    animation-timing-function: ease-in-out;
+  }
+  42% {
+    transform: rotate(690deg);
+    animation-timing-function: linear;
+  }
+  70% {
+    opacity: 1;
+    transform: rotate(835deg);
+    animation-timing-function: linear;
+  }
+  76% {
+    opacity: 1;
+  }
+  77% {
+    transform: rotate(955deg);
+    animation-timing-function: ease-in;
+  }
+  78% {
+    transform: rotate(955deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(955deg);
+    opacity: 0;
+  }
+}
+.activity-type-square {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transform-origin: bottom left;
+}
+.activity-type-square .activity-element-square {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+}
+.activity-type-square .activity-element-square:nth-child(1) {
+  left: 0;
+  top: 21px;
+}
+.activity-type-square .activity-element-square:nth-child(2) {
+  left: 21px;
+  top: 21px;
+}
+.activity-type-square .activity-element-square:nth-child(3) {
+  left: 0;
+  top: 0;
+}
+.activity-type-square .activity-element-square:nth-child(4) {
+  left: 21px;
+  top: 0;
+  animation: rotate-box 0.8s linear infinite;
+}
+.activity-type-square.activity-style-light > .activity-element-square {
+  background-color: var(--lightColor);
+}
+.activity-type-square.activity-style-dark > .activity-element-square {
+  background-color: var(--darkColor);
+}
+.activity-type-square.activity-style-color > .activity-element-square:nth-child(1) {
+  background-color: var(--orangeColor);
+}
+.activity-type-square.activity-style-color > .activity-element-square:nth-child(2) {
+  background-color: var(--greenColor);
+}
+.activity-type-square.activity-style-color > .activity-element-square:nth-child(3) {
+  background-color: var(--blueColor);
+}
+.activity-type-square.activity-style-color > .activity-element-square:nth-child(4) {
+  background-color: var(--redColor);
+}
+@keyframes rotate-box {
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.activity-type-metro {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-width: 200px;
+  height: 10px;
+  background-color: transparent;
+}
+.activity-type-metro > .activity-element-circle {
+  display: inline-block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  margin-left: 5px;
+  animation: metro-slide 3s cubic-bezier(0.1, 0.85, 0.9, 0.15) infinite, metro-opacity 2s ease-in-out infinite alternate;
+}
+.activity-type-metro > .activity-element-circle:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.activity-type-metro > .activity-element-circle:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.activity-type-metro > .activity-element-circle:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.activity-type-metro > .activity-element-circle:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.activity-type-metro.activity-style-light > .activity-element-circle {
+  background-color: var(--lightColor);
+}
+.activity-type-metro.activity-style-dark > .activity-element-circle {
+  background-color: var(--darkColor);
+}
+.activity-type-metro.activity-style-color > .activity-element-circle {
+  background-color: var(--blueColor);
+}
+.activity-type-metro.activity-style-color > .activity-element-circle:nth-child(2) {
+  background-color: var(--orangeColor);
+}
+.activity-type-metro.activity-style-color > .activity-element-circle:nth-child(3) {
+  background-color: var(--greenColor);
+}
+.activity-type-metro.activity-style-color > .activity-element-circle:nth-child(4) {
+  background-color: var(--redColor);
+}
+.activity-type-metro.activity-style-color > .activity-element-circle:nth-child(5) {
+  background-color: var(--pinkColor);
+}
+@keyframes metro-slide {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+@keyframes metro-opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=activities.css.map */

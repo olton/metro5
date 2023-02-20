@@ -1,0 +1,175 @@
+@activityRingTime: 4000ms;
+@activityRingSize: 48px;
+@activityColor: #ffffff;
+@activityColorDark: #000000;
+@activityRingRotate: -14deg;
+@activityRingTimeMute: 30;
+
+
+.activity-type {
+    &-ring {
+        position: relative;
+
+        padding-top: .22rem;
+        width: @activityRingSize;
+        height: @activityRingSize;
+        margin: .625rem;
+
+        & > .activity-element-wrap {
+            position: absolute;
+            width: @activityRingSize - 2;
+            height: @activityRingSize - 2;
+
+            & > .activity-element-circle {
+                opacity: 0;
+                width: @activityRingSize - 2;
+                height: @activityRingSize - 2;
+                transform: rotate(225deg);
+                animation: orbit @activityRingTime infinite;
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    width: (@activityRingSize / 8);
+                    height: (@activityRingSize / 8);
+                    border-radius: (@activityRingSize / 8);
+                }
+            }
+
+            &:nth-child(2) {
+                transform: rotate(@activityRingRotate);
+
+                & > .activity-element-circle {
+                    animation-delay: (@activityRingTime / @activityRingTimeMute);
+                }
+            }
+
+            &:nth-child(3) {
+                transform: rotate(@activityRingRotate*2);
+                & > .activity-element-circle {
+                    animation-delay: (@activityRingTime / @activityRingTimeMute*2);
+                }
+            }
+
+            &:nth-child(4) {
+                transform: rotate(@activityRingRotate*3);
+                & > .activity-element-circle {
+                    animation-delay: (@activityRingTime / @activityRingTimeMute*3);
+                }
+            }
+
+            &:nth-child(5) {
+                transform: rotate(@activityRingRotate*4);
+                & > .activity-element-circle {
+                    animation-delay: (@activityRingTime / @activityRingTimeMute*4);
+                }
+            }
+        }
+
+        &.activity-style-light {
+            & > .activity-element-wrap {
+                & > .activity-element-circle {
+                    &:after {
+                        background-color: var(--lightColor);
+                    }
+                }
+            }
+        }
+
+        &.activity-style-dark {
+            & > .activity-element-wrap {
+                & > .activity-element-circle {
+                    &:after {
+                        background-color: var(--darkColor);
+                    }
+                }
+            }
+        }
+
+        &.activity-style-color {
+            & > .activity-element-wrap {
+                & > .activity-element-circle {
+                    &:after {
+                        background-color: var(--blueColor);
+                    }
+                }
+            }
+            & > .activity-element-wrap:nth-child(2) {
+                & > .activity-element-circle {
+                    &:after {
+                        background-color: var(--orangeColor);
+                    }
+                }
+            }
+            & > .activity-element-wrap:nth-child(3) {
+                & > .activity-element-circle {
+                    &:after {
+                        background-color: var(--greenColor);
+                    }
+                }
+            }
+            & > .activity-element-wrap:nth-child(4) {
+                & > .activity-element-circle {
+                    &:after {
+                        background-color: var(--redColor);
+                    }
+                }
+            }
+            & > .activity-element-wrap:nth-child(5) {
+                & > .activity-element-circle {
+                    &:after {
+                        background-color: var(--pinkColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes orbit {
+    0% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+        transform: rotate(225deg);
+    }
+
+    7% {
+        transform: rotate(345deg);
+        animation-timing-function: linear;
+    }
+
+    35% {
+        transform: rotate(495deg);
+        animation-timing-function: ease-in-out;
+    }
+
+    42% {
+        transform: rotate(690deg);
+        animation-timing-function: linear;
+    }
+
+    70% {
+        opacity: 1;
+        transform: rotate(835deg);
+        animation-timing-function: linear;
+    }
+
+    76% {
+        opacity: 1;
+    }
+
+    77% {
+        transform: rotate(955deg);
+        animation-timing-function: ease-in;
+    }
+
+    78% {
+        transform: rotate(955deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(955deg);
+        opacity: 0;
+    }
+}
