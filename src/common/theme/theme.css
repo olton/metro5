@@ -1,6 +1,6 @@
 :root {
   --body-background: #fff;
-  --body-color: #000;
+  --text-color-secondary: #000;
   --text-color: #000;
   --body-color-invert: #fff;
   --border-color: #C0C0C0FF;
@@ -13,16 +13,14 @@
   --code-color: #bd4147;
   --kbd-background: #1e2228;
   --kbd-color: #ffffff;
-  --defaultColor: #ebebeb;
-  --disableColor: #ececec;
-  --shadowColor: rgba(0, 0, 0, 0.4);
-  --imageButtonSecondaryColor: rgba(69, 90, 100, 0.55);
-  --toolbarBeforeColor: rgba(69, 90, 100, 0.55);
+  --control-color: #ebebeb;
+  --disable-color: #ececec;
+  --shadow-color: rgba(0, 0, 0, 0.4);
 }
 .dark-mode {
   --body-background: #1e2228;
-  --body-color: #adbaa9;
-  --text-color: #adbaa9;
+  --text-color-secondary: #adbaa9;
+  --text-color: #ffffff;
   --border-color: #444c56;
   --link-color: #4db5ff;
   --secondary-color: #777;
@@ -32,5 +30,11 @@
   --code-color: #bd4147;
   --kbd-background: #1e2228;
   --kbd-color: #ffffff;
+  --control-color: #54575e;
+  --disable-color: #ececec;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+body {
+  background-color: var(--body-background);
 }
 /*# sourceMappingURL=theme.css.map */
