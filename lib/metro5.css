@@ -27084,6 +27084,32 @@ body {
 }
 /*# sourceMappingURL=activities.css.map */
 
+.dropdown {
+  overflow: hidden;
+}
+.dropdown-toggle.marker-on {
+  padding-right: 32px;
+}
+.dropdown-toggle.marker-on::before {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  content: "\203A";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 1.6em;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  transform-origin: center center;
+  background-color: #0b98dc;
+}
+.dropdown-toggle.marker-on.dropped-toggle::before {
+  transform: rotate(270deg);
+}
+/*# sourceMappingURL=dropdown.css.map */
 .grid {
   display: flex;
   flex-direction: column;
