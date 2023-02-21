@@ -1,6 +1,8 @@
 import {Registry} from "./registry.js";
 import {merge} from "../routines/merge.js";
 import {globalize} from "./globalize.js";
+import {md5} from "../routines/md5.js";
+import {uniqueId} from "../routines/unique-id"
 
 const MetroOptions = {
     removeCloakTimeout: 100
@@ -105,12 +107,17 @@ export class Metro {
     }
 
     getPlugin(elem, name){
-        return this.plugins[btoa(`${name}::${JSON.stringify(elem)}`)]
+        const pluginId = md5(`${name}::${$(elem).id()}`)
+        return this.plugins[pluginId]
     }
 
     makePlugin(elem, name, options){
-        const pluginId = btoa(`${name}::${JSON.stringify(elem)}`)
-
+        let elemId = $(elem).id()
+        if (!elemId) {
+            elemId = `${name}${uniqueId(16)}`
+            $(elem).id(elemId)
+        }
+        const pluginId = md5(`${name}::${$(elem).id()}`)
         if ($(elem).hasAttr(`data-role-${name}`) && $(elem).attr(`data-role-${name}`) === true) {
             return this.plugins[pluginId]
         }
