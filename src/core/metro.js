@@ -6,12 +6,13 @@ import {uniqueId} from "../routines/unique-id"
 import {clearName} from "../routines/clear-name.js";
 import {media, media_mode, medias} from "../routines/media.js";
 import {to_array} from "../routines/to-array.js";
+import {exec} from "../routines/exec.js";
 
 const MetroOptions = {
     removeCloakTimeout: 100
 }
 
-export class Metro {
+export class Metro5 {
     version = "5.0.0"
     status = "pre-alpha"
     plugins = {}
@@ -177,5 +178,20 @@ export class Metro {
 
     dumpRegistry(){
         return Registry.dump()
+    }
+
+    static playSound (src, volume = 0.5, cb){
+        const audio = new Audio(src)
+        audio.volume = volume
+
+        audio.addEventListener('loadeddata', function(){
+            audio.pause();
+            audio.currentTime = 0;
+            audio.play();
+        });
+
+        audio.addEventListener('ended', function(){
+            exec(cb, [src, audio])
+        });
     }
 }

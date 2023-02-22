@@ -1,0 +1,76 @@
+.breadcrumbs {
+    margin-bottom: 1rem;
+    margin-left: 0;
+    padding: 0;
+    list-style: none inside;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: var(--body-background);
+    color: var(--text-color-secondary);
+
+    .crumb {
+        position: relative;
+        cursor: pointer;
+        display: list-item;
+        background-color: inherit;
+        color: inherit;
+        transition: all .15s ease-in-out;
+        margin: 4px;
+        opacity: .8;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: .9;
+        }
+    }
+
+    .crumb + .crumb {
+        &::before, &::after {
+            display: block;
+            position: absolute;
+            vertical-align: middle;
+            color: transparent;
+            font-size: 0;
+            content: "";
+            height: 1px;
+            width: .375rem;
+            background-color: var(--text-color-secondary);
+            top: 50%;
+            left: 0;
+            margin-left: -.5rem;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+            margin-top: -.125rem;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            margin-top: .125rem;
+        }
+    }
+
+    .crumb-link {
+        display: block;
+        position: relative;
+        padding: .5rem .75rem;
+        line-height: 1;
+        font-size: 1rem;
+        text-decoration: none;
+        color: inherit;
+        background-color: transparent;
+    }
+
+    .crumb-link:hover {
+        color: var(--link-color);
+    }
+
+    .crumb:last-child {
+        font-weight: bold;
+    }
+}

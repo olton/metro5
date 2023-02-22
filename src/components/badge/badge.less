@@ -1,0 +1,38 @@
+@import "../../include/mixins";
+
+.badge {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--control-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+
+    .translateY(-50%);
+    .translateX(50%);
+}
+
+.badge {
+    &.inline {
+        position: relative;
+        display: inline-block;
+        right: auto;
+        top: -1px;
+        .translateY(0);
+        .translateX(0);
+    }
+
+    &.inside {
+        .translateY(0);
+        .translateX(0);
+    }
+}

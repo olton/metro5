@@ -13,6 +13,8 @@ import {Hamburger} from "./hamburger"
 import {AudioButton} from "./audio-button"
 import {Embed} from "./embed"
 import {Overlay} from "./overlay"
+import {Badge} from "./badge"
+import {Breadcrumbs} from "./breadcrumbs"
 
 export {
     Accordion,
@@ -30,4 +32,6 @@ export {
     AudioButton,
     Embed,
     Overlay,
+    Badge,
+    Breadcrumbs,
 }
