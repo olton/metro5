@@ -9,6 +9,7 @@ import {Cloak} from "./cloak"
 import {Button} from "./button"
 import {Image} from "./image"
 import {ThemeToggle} from "./theme-toggle"
+import {Hamburger} from "./hamburger"
 
 export {
     Accordion,
@@ -21,5 +22,6 @@ export {
     Cloak,
     Button,
     Image,
-    ThemeToggle
+    ThemeToggle,
+    Hamburger
 }

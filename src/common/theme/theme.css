@@ -16,6 +16,14 @@
   --control-color: #ebebeb;
   --disable-color: #ececec;
   --shadow-color: rgba(0, 0, 0, 0.4);
+  --menu-background: #ebebeb;
+  --menu-text-color: #000000;
+  --menu-background-active: #468CFFFF;
+  --menu-text-color-active: #ffffff;
+  --appbar-background: #ebebeb;
+  --appbar-text-color: #000000;
+  --appbar-background-hover: rgba(30, 34, 40, 0.1);
+  --appbar-text-color-hover: #000000;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -30,9 +38,17 @@
   --code-color: #bd4147;
   --kbd-background: #1e2228;
   --kbd-color: #ffffff;
-  --control-color: #54575e;
+  --control-color: #2b2d30;
   --disable-color: #ececec;
   --shadow-color: rgba(0, 0, 0, 0.4);
+  --menu-background: #2b2d30;
+  --menu-text-color: #adbaa9;
+  --menu-background-active: #468CFFFF;
+  --menu-text-color-active: #ffffff;
+  --appbar-background: #2b2d30;
+  --appbar-text-color: #adbaa9;
+  --appbar-background-hover: rgba(0, 0, 0, 0.1);
+  --appbar-text-color-hover: #fff;
 }
 body {
   background-color: var(--body-background);

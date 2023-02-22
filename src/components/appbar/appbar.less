@@ -1,0 +1,271 @@
+@import "../../include/z-index";
+@import "../../include/colors";
+@import "../../include/mixins";
+
+.appbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    min-height: 52px;
+    z-index: @zindex-fixed;
+    background-color: var(--appbar-background);
+    color: var(--appbar-text-color);
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.appbar-brand,
+.appbar-item,
+.appbar-container,
+.appbar-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 52px;
+    line-height: 52px;
+    padding: 0 16px;
+    background-color: inherit;
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+    flex-shrink: 0;
+    border: none;
+    justify-content: center;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.appbar-container {
+    background-color: inherit;
+    color: inherit;
+    padding: 0;
+}
+
+.appbar-item {
+    white-space: nowrap;
+}
+
+.appbar-button {
+    width: 52px;
+    padding: 0;
+}
+
+.appbar-menu {
+    flex-shrink: 0;
+    list-style: none inside;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: inherit;
+    color: inherit;
+}
+
+.appbar-menu {
+    & > li, & > li  > a {
+        display: block;
+        line-height: 52px;
+        background-color: inherit;
+        color: inherit;
+        flex-shrink: 0;
+    }
+
+    & > li  > a {
+        padding: 0 16px;
+        text-decoration: none;
+        font-size: 14px;
+        position: relative;
+    }
+
+    & > li {
+        position: relative;
+    }
+
+    a {
+        &:hover {
+            text-decoration: none;
+            color: var(--appbar-text-color-hover)
+        }
+    }
+}
+
+.appbar-brand:not(.no-hover),
+.appbar-menu li:not(.no-hover),
+.appbar .hamburger:not(.no-hover),
+.appbar-item:not(.no-hover) {
+    &:hover, &:active, .active {
+        background: var(--appbar-background-hover);
+        color: var(--appbar-text-color-hover);
+    }
+}
+
+.appbar .hamburger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display:block;
+    height: 52px;
+    width: 52px;
+
+    &.chevron-down {
+        &.active {
+            .line:nth-child(1), .line:nth-child(3) {
+                margin: -4px 16px;
+            }
+        }
+    }
+}
+
+.appbar-menu {
+    .dropdown-menu {
+        box-shadow: none;
+        position: relative;
+        width: 100%;
+    }
+}
+
+.appbar-menu, .appbar-container {
+    .divider {
+        height: 1px!important;
+        line-height: 1px!important;
+        //background-color: @lightGray;
+    }
+}
+
+.appbar-container {
+    .dropdown-menu {
+        position: absolute;
+        width: auto;
+        .default-shadow();
+    }
+
+    & > .dropdown-menu {
+        top: 100%;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+a {
+    outline: none!important;
+}
+
+.appbar-menu .dropdown-menu .dropdown-menu
+{
+    left: 0;
+}
+
+.appbar-menu {
+    &.opened {
+        max-height: ~"calc(100vh - 52px)";
+        overflow-y: auto;
+    }
+}
+
+.appbar {
+    .appbar-input {
+        width: 100px;
+        height: 30px;
+        font-size: .875rem;
+        border: none!important;
+        border-radius: 4px;
+    }
+}
+
+
+.appbar {
+    .hamburger:not(.hidden) ~ .ml-auto {
+        margin-right: 48px;
+    }
+}
+
+.appbar-expand {
+
+    flex-wrap: nowrap;
+    flex-flow: row;
+
+    .appbar-brand, .appbar-item, .appbar-container {
+        width: auto;
+        flex-shrink: 1;
+    }
+
+    .appbar-menu {
+        float: left;
+    }
+
+    .appbar-menu {
+        width: auto;
+        flex-direction: row;
+    }
+
+    .appbar-menu {
+        .dropdown-menu {
+            position: absolute;
+            width: auto;
+            .default-shadow();
+
+            li, a {
+                height: 38px;
+                line-height: 38px;
+            }
+        }
+
+        &.collapsed {
+            display: flex!important;
+        }
+    }
+
+    .appbar-menu .dropdown-menu .dropdown-menu
+    {
+        left: 100%;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+.p-ab {
+    padding-top: 52px!important;
+}
+
+.m-ab {
+    margin-top: 52px!important;
+}
+
+.h-ab {
+    height: ~"calc(100% - 52px)";
+}
+
+.appbar {
+    .appbar-menu {
+        & > li > a.dropdown-toggle {
+            &::before {
+                top: 10px;
+            }
+        }
+    }
+}
+
+.appbar {
+    .theme-toggle-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .hamburger:not(.hidden) ~ .theme-toggle-wrapper {
+        right: 52px;
+    }
+}

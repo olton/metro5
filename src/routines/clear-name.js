@@ -1,0 +1,1 @@
+export const clearName = n => n ? n.replaceAll("-", "") : ""

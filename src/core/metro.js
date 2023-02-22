@@ -3,6 +3,9 @@ import {merge} from "../routines/merge.js";
 import {globalize} from "./globalize.js";
 import {md5} from "../routines/md5.js";
 import {uniqueId} from "../routines/unique-id"
+import {clearName} from "../routines/clear-name.js";
+import {media, media_mode, medias} from "../routines/media.js";
+import {to_array} from "../routines/to-array.js";
 
 const MetroOptions = {
     removeCloakTimeout: 100
@@ -57,6 +60,15 @@ export class Metro {
                 },this.options.removeCloakTimeout)
             }
         })
+
+        $(window).on("resize", function(){
+            globalThis.METRO_MEDIA = [];
+            $.each(medias, function(key, query){
+                if (media(query)) {
+                    globalThis.METRO_MEDIA.push(media_mode[key]);
+                }
+            });
+        });
     }
 
     observe(){
@@ -91,10 +103,20 @@ export class Metro {
                         const nodes = mutation.addedNodes
 
                         if (nodes.length) {
-                            for(let node of nodes) {
+                            for (let node of nodes) {
                                 const $node = $(node)
-                                if ($node.hasAttr("data-role")) {
-                                    that.makePlugin(node, $node.attr('data-role'))
+                                if ($node.attr("data-role")) {
+                                    const roles = to_array($node.attr("data-role"), ",")
+                                    $.each(roles, (i, r) => {
+                                        that.makePlugin(node, r)
+                                    })
+                                } else {
+                                    $.each($node.find("[data-role"), (i, el) => {
+                                        const roles = to_array($(el).attr("data-role"), ",")
+                                        $.each(roles, (i, r) => {
+                                            that.makePlugin(el, r)
+                                        })
+                                    })
                                 }
                             }
                         }
@@ -107,12 +129,13 @@ export class Metro {
     }
 
     getPlugin(elem, name){
-        const pluginId = md5(`${name}::${$(elem).id()}`)
+        const pluginId = md5(`${clearName(name)}::${$(elem).id()}`)
         return this.plugins[pluginId]
     }
 
     makePlugin(elem, name, options){
         let elemId = $(elem).id()
+        name = clearName(name)
         if (!elemId) {
             elemId = `${name}${uniqueId(16)}`
             $(elem).id(elemId)
@@ -121,13 +144,10 @@ export class Metro {
         if ($(elem).hasAttr(`data-role-${name}`) && $(elem).attr(`data-role-${name}`) === true) {
             return this.plugins[pluginId]
         }
-
         const _class = Registry.getClass(name)
-
         if (!_class) {
             throw new Error(`Can't create component ${name}`)
         }
-
         const plugin = new _class(elem, options)
         this.plugins[pluginId] = plugin
         elem.setAttribute(`data-role-${name}`, true)
@@ -135,7 +155,7 @@ export class Metro {
     }
 
     destroyPlugin(elem, name){
-        const pluginId = btoa(`${name}::${JSON.stringify(elem)}`)
+        const pluginId = md5(`${clearName(name)}::${$(elem).id()}`)
         const plugin = this.plugins[pluginId]
         if (!plugin) return
         plugin.destroy()

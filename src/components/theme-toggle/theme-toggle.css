@@ -1,12 +1,9 @@
 .theme-toggle {
-  display: block;
+  display: flex;
   width: 24px;
   height: 24px;
   cursor: pointer;
-  position: fixed;
-  z-index: 1000;
-  top: 10px;
-  right: 10px;
+  position: relative;
 }
 .theme-toggle img {
   width: 100%;

@@ -4,6 +4,7 @@ globalThis.METRO5_COMPONENTS_REGISTRY = {}
 
 export const Registry = {
     register(name, _class){
+        name = name.replaceAll("-", "")
         if (METRO5_COMPONENTS_REGISTRY[name]) {
             return
         }
@@ -11,6 +12,7 @@ export const Registry = {
     },
 
     unregister(name, _class){
+        name = name.replaceAll("-", "")
         if (!METRO5_COMPONENTS_REGISTRY[name] || METRO5_COMPONENTS_REGISTRY[name] !== _class) {
             return
         }

@@ -11,10 +11,48 @@
     </style>
     <title>Document</title>
 </head>
-<body class="cloak">
+<body class="cloak" style="padding-top: 52px">
+    <div data-role="appbar" data-expand-point="lg">
+        <a href="#" class="appbar-brand no-hover">Metro 5</a>
+
+        <ul class="appbar-menu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle marker-on">Products</a>
+                <ul class="dropdown-menu" data-role="dropdown">
+                    <li><a href="#">Windows 10</a></li>
+                    <li><a href="#">Office 365</a></li>
+                    <li class="divider bg-lightGray"></li>
+                    <li><a href="#">Skype</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </div>
+
     <div data-role="adblock-hunter" data-on-bite="console.log('Adblock detected!')" data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
-    <div data-role="theme-toggle"></div>
+
     <h1 class="text-center">HelloWorld Metro5!</h1>
+
+    <div class="mt-10 clear-float d-flex flex-justify-center">
+        <ul class="dropdown-menu" style="position: relative; display: block">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle marker-on">Item 3</a>
+                <ul data-role="dropdown" class="dropdown-menu">
+                    <li><a href="#">Sub Item 1</a></li>
+                    <li><a href="#">Sub Item 2</a></li>
+                    <li><a href="#">Sub Item 3</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#"><span class="mif-home icon"></span> Item 4</a></li>
+            <li><a href="#"><span class="mif-checkmark icon"></span>Item 5</a></li>
+            <li><a href="#">Item 6</a></li>
+        </ul>
+    </div>
 
     <div class="row mt-10">
         <div class="cell-md-4">
@@ -35,6 +73,29 @@
                 <div style="height: 300px">Test block</div>
             </div>
         </div>
+    </div>
+
+    <div class="mt-10 text-center">
+        <button class="hamburger chevron-down">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <button class="hamburger chevron-up">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <button class="hamburger arrow-left">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <button class="hamburger arrow-right">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
     </div>
 
     <div class="text-center mt-10">
