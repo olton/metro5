@@ -2,8 +2,8 @@ import "./appbar.css"
 import {Component} from "../../core/component.js";
 import {Registry} from "../../core/registry.js";
 import {merge} from "../../routines/merge.js";
-import {getStyleOne} from "../../routines/get-style.js";
 import {mediaExist} from "../../routines/media.js";
+import {noop} from "../../routines/noop.js";
 
 let AppbarDefaultOptions = {
     deferred: 0,
@@ -11,10 +11,10 @@ let AppbarDefaultOptions = {
     expandPoint: "",
     duration: 100,
     themeToggle: true,
-    onMenuOpen: f => f,
-    onMenuClose: f => f,
-    onResize: f => f,
-    onCreate: f => f
+    onMenuOpen: noop,
+    onMenuClose: noop,
+    onResize: noop,
+    onCreate: noop
 }
 
 export class Appbar extends Component {

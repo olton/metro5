@@ -1,334 +1,334 @@
 .overflow {
-  overflow: auto;
+  overflow: auto!important;
 }
 .no-overflow {
-  overflow: hidden;
+  overflow: hidden!important;
 }
 .scroll {
-  overflow: scroll;
+  overflow: scroll!important;
 }
 .scroll-x {
-  overflow-x: auto;
+  overflow-x: auto!important;
 }
 .scroll-y {
-  overflow-y: auto;
+  overflow-y: auto!important;
 }
 .no-scroll {
-  overflow: hidden;
+  overflow: hidden!important;
 }
 .no-scroll-x {
-  overflow-x: hidden;
+  overflow-x: hidden!important;
 }
 .no-scroll-y {
-  overflow-y: hidden;
+  overflow-y: hidden!important;
 }
 .wrap {
-  white-space: normal;
+  white-space: normal!important;
 }
 .no-wrap {
-  white-space: nowrap;
+  white-space: nowrap!important;
 }
 .no-user-select {
-  user-select: none;
+  user-select: none!important;
 }
 .no-appearance {
-  appearance: none;
+  appearance: none!important;
 }
 .disabled,
 .-disabled {
-  pointer-events: none;
-  color: #e6e6e6;
+  pointer-events: none!important;
+  color: var(--disable-color) !important;
 }
 .stop-pointer {
-  pointer-events: none;
-  user-select: none;
+  pointer-events: none!important;
+  user-select: none!important;
 }
 @media screen and (min-width: 0) {
   .overflow-fs {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-fs {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-fs {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-fs {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-fs {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-fs {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-fs {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-fs {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-fs {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-fs {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 360px) {
   .overflow-xs {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-xs {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-xs {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-xs {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-xs {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-xs {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-xs {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-xs {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-xs {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-xs {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 576px) {
   .overflow-sm {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-sm {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-sm {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-sm {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-sm {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-sm {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-sm {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-sm {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-sm {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-sm {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 640px) {
   .overflow-ld {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-ld {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-ld {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-ld {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-ld {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-ld {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-ld {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-ld {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-ld {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-ld {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 768px) {
   .overflow-md {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-md {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-md {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-md {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-md {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-md {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-md {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-md {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-md {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-md {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 992px) {
   .overflow-lg {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-lg {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-lg {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-lg {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-lg {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-lg {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-lg {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-lg {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-lg {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-lg {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 1200px) {
   .overflow-xl {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-xl {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-xl {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-xl {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-xl {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-xl {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-xl {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-xl {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-xl {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-xl {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 1452px) {
   .overflow-xxl {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-xxl {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-xxl {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-xxl {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-xxl {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-xxl {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-xxl {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-xxl {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-xxl {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-xxl {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 @media screen and (min-width: 2000px) {
   .overflow-xxxl {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-xxxl {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-xxxl {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-xxxl {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-xxxl {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-xxxl {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-xxxl {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-xxxl {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-xxxl {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-xxxl {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 /*# sourceMappingURL=misc.css.map */

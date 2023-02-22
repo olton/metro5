@@ -5,17 +5,17 @@
   .clear();
 }
 
-.place-right, .float-right {float: right ;}
-.place-left, .float-left {float: left ;}
-.place-none, .float-none, .no-float {float: none ;}
+.place-right, .float-right {float: right !important;}
+.place-left, .float-left {float: left !important;}
+.place-none, .float-none, .no-float {float: none !important;}
 
 each(@media-rules, {
   @media screen and (min-width: @value) {
-    .place-left-@{key} {float: left;}
-    .place-right-@{key} {float: right;}
-    .place-none-@{key} {float: none;}
-    .float-left-@{key} {float: left;}
-    .float-right-@{key} {float: right;}
-    .float-none-@{key} {float: none;}
+    .place-left-@{key} {float: left!important;}
+    .place-right-@{key} {float: right!important;}
+    .place-none-@{key} {float: none!important;}
+    .float-left-@{key} {float: left!important;}
+    .float-right-@{key} {float: right!important;}
+    .float-none-@{key} {float: none!important;}
   }
 })

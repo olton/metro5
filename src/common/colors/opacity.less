@@ -1,7 +1,7 @@
 @import "../../include/colors";
 
 each(@color-list, {
-  .op-@{value} {background-color: rgba(red(@@value), green(@@value), blue(@@value), .5) ;}
-  .op-@{value}-hi {background-color: rgba(red(@@value), green(@@value), blue(@@value), .2) ;}
-  .op-@{value}-low {background-color: rgba(red(@@value), green(@@value), blue(@@value), .8) ;}
+  .op-@{value} {background-color: rgba(red(@@value), green(@@value), blue(@@value), .5) !important;}
+  .op-@{value}-hi {background-color: rgba(red(@@value), green(@@value), blue(@@value), .2) !important;}
+  .op-@{value}-low {background-color: rgba(red(@@value), green(@@value), blue(@@value), .8) !important;}
 })

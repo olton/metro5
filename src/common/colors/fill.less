@@ -1,8 +1,8 @@
 @import "../../include/colors";
 
 each(@color-list, {
-  .fc-@{value} {fill: @@value ;}
-  .fc-@{value}-active {&:active {fill: @@value ;}}
-  .fc-@{value}-hover {&:hover {fill: @@value ;}}
-  .fc-@{value}-focus {&:focus {fill: @@value ;}}
+  .fc-@{value} {fill: @@value !important;}
+  .fc-@{value}-active {&:active {fill: @@value !important;}}
+  .fc-@{value}-hover {&:hover {fill: @@value !important;}}
+  .fc-@{value}-focus {&:focus {fill: @@value !important;}}
 })

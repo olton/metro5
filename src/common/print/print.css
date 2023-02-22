@@ -1,66 +1,66 @@
 @media print {
   .d-none-print {
-    display: none;
+    display: none!important;
   }
   .d-block-print {
-    display: block;
+    display: block!important;
   }
   .d-inline-print {
-    display: inline;
+    display: inline!important;
   }
   .d-inline-block-print {
-    display: inline-block;
+    display: inline-block !important;
   }
   .d-table-print {
-    display: table;
+    display: table!important;
   }
   .d-table-row-print {
-    display: table-row;
+    display: table-row !important;
   }
   .d-table-cell-print {
-    display: table-cell;
+    display: table-cell !important;
   }
   .d-flex-print {
-    display: flex;
+    display: flex!important;
   }
   .d-inline-flex-print {
-    display: inline-flex;
+    display: inline-flex !important;
   }
   .visible-print {
-    visibility: visible;
+    visibility: visible!important;
   }
   .no-visible-print {
-    visibility: hidden;
+    visibility: hidden!important;
   }
   .overflow-print {
-    overflow: auto;
+    overflow: auto!important;
   }
   .no-overflow-print {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .scroll-print {
-    overflow: scroll;
+    overflow: scroll!important;
   }
   .scroll-x-print {
-    overflow-x: auto;
+    overflow-x: auto!important;
   }
   .scroll-y-print {
-    overflow-y: auto;
+    overflow-y: auto!important;
   }
   .no-scroll-print {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   .no-scroll-x-print {
-    overflow-x: hidden;
+    overflow-x: hidden!important;
   }
   .no-scroll-y-print {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
   }
   .wrap-print {
-    white-space: normal;
+    white-space: normal!important;
   }
   .no-wrap-print {
-    white-space: nowrap;
+    white-space: nowrap!important;
   }
 }
 /*# sourceMappingURL=print.css.map */

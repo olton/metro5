@@ -1,42 +1,42 @@
 @import (once) "../../include/media";
 
-.va-top {vertical-align: top;}
-.va-bottom {vertical-align: bottom;}
-.va-baseline {vertical-align: baseline;}
-.va-middle {vertical-align: middle;}
-.va-sub {vertical-align: sub;}
-.va-super {vertical-align: super;}
-.va-text-top {vertical-align: text-top;}
-.va-text-bottom {vertical-align: text-bottom;}
+.va-top {vertical-align: top!important;}
+.va-bottom {vertical-align: bottom!important;}
+.va-baseline {vertical-align: baseline!important;}
+.va-middle {vertical-align: middle!important;}
+.va-sub {vertical-align: sub!important;}
+.va-super {vertical-align: super!important;}
+.va-text-top {vertical-align: text-top!important;}
+.va-text-bottom {vertical-align: text-bottom!important;}
 
-.text-upper {text-transform: uppercase;}
-.text-lower {text-transform: lowercase;}
-.text-cap   {text-transform: capitalize;}
-.text-left {text-align: left;}
-.text-right {text-align: right;}
-.text-center {text-align: center;}
-.text-just {text-align: justify;}
+.text-upper {text-transform: uppercase!important;}
+.text-lower {text-transform: lowercase!important;}
+.text-cap   {text-transform: capitalize!important;}
+.text-left {text-align: left!important;}
+.text-right {text-align: right!important;}
+.text-center {text-align: center!important;}
+.text-just {text-align: justify!important;}
 .text-ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow: hidden!important;
+  white-space: nowrap!important;
+  text-overflow: ellipsis!important;
 }
 
 each(@media-rules, {
   @media screen and (min-width: @value) {
-    .text-left-@{key} {text-align: left;}
-    .text-right-@{key} {text-align: right;}
-    .text-center-@{key} {text-align: center;}
-    .text-just-@{key} {text-align: justify;}
+    .text-left-@{key} {text-align: left!important;}
+    .text-right-@{key} {text-align: right!important;}
+    .text-center-@{key} {text-align: center!important;}
+    .text-just-@{key} {text-align: justify!important;}
 
-    .va-top-@{key} {vertical-align: top;}
-    .va-bottom-@{key} {vertical-align: bottom;}
-    .va-baseline-@{key} {vertical-align: baseline;}
-    .va-middle-@{key} {vertical-align: middle;}
-    .va-sub-@{key} {vertical-align: sub;}
-    .va-super-@{key} {vertical-align: super;}
-    .va-text-top-@{key} {vertical-align: text-top;}
-    .va-text-bottom-@{key} {vertical-align: text-bottom;}
+    .va-top-@{key} {vertical-align: top!important;}
+    .va-bottom-@{key} {vertical-align: bottom!important;}
+    .va-baseline-@{key} {vertical-align: baseline!important;}
+    .va-middle-@{key} {vertical-align: middle!important;}
+    .va-sub-@{key} {vertical-align: sub!important;}
+    .va-super-@{key} {vertical-align: super!important;}
+    .va-text-top-@{key} {vertical-align: text-top!important;}
+    .va-text-bottom-@{key} {vertical-align: text-bottom!important;}
   }
 })
 

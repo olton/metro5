@@ -5,195 +5,195 @@
 }
 .place-right,
 .float-right {
-  float: right ;
+  float: right !important;
 }
 .place-left,
 .float-left {
-  float: left ;
+  float: left !important;
 }
 .place-none,
 .float-none,
 .no-float {
-  float: none ;
+  float: none !important;
 }
 @media screen and (min-width: 0) {
   .place-left-fs {
-    float: left;
+    float: left!important;
   }
   .place-right-fs {
-    float: right;
+    float: right!important;
   }
   .place-none-fs {
-    float: none;
+    float: none!important;
   }
   .float-left-fs {
-    float: left;
+    float: left!important;
   }
   .float-right-fs {
-    float: right;
+    float: right!important;
   }
   .float-none-fs {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 360px) {
   .place-left-xs {
-    float: left;
+    float: left!important;
   }
   .place-right-xs {
-    float: right;
+    float: right!important;
   }
   .place-none-xs {
-    float: none;
+    float: none!important;
   }
   .float-left-xs {
-    float: left;
+    float: left!important;
   }
   .float-right-xs {
-    float: right;
+    float: right!important;
   }
   .float-none-xs {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 576px) {
   .place-left-sm {
-    float: left;
+    float: left!important;
   }
   .place-right-sm {
-    float: right;
+    float: right!important;
   }
   .place-none-sm {
-    float: none;
+    float: none!important;
   }
   .float-left-sm {
-    float: left;
+    float: left!important;
   }
   .float-right-sm {
-    float: right;
+    float: right!important;
   }
   .float-none-sm {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 640px) {
   .place-left-ld {
-    float: left;
+    float: left!important;
   }
   .place-right-ld {
-    float: right;
+    float: right!important;
   }
   .place-none-ld {
-    float: none;
+    float: none!important;
   }
   .float-left-ld {
-    float: left;
+    float: left!important;
   }
   .float-right-ld {
-    float: right;
+    float: right!important;
   }
   .float-none-ld {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 768px) {
   .place-left-md {
-    float: left;
+    float: left!important;
   }
   .place-right-md {
-    float: right;
+    float: right!important;
   }
   .place-none-md {
-    float: none;
+    float: none!important;
   }
   .float-left-md {
-    float: left;
+    float: left!important;
   }
   .float-right-md {
-    float: right;
+    float: right!important;
   }
   .float-none-md {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 992px) {
   .place-left-lg {
-    float: left;
+    float: left!important;
   }
   .place-right-lg {
-    float: right;
+    float: right!important;
   }
   .place-none-lg {
-    float: none;
+    float: none!important;
   }
   .float-left-lg {
-    float: left;
+    float: left!important;
   }
   .float-right-lg {
-    float: right;
+    float: right!important;
   }
   .float-none-lg {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 1200px) {
   .place-left-xl {
-    float: left;
+    float: left!important;
   }
   .place-right-xl {
-    float: right;
+    float: right!important;
   }
   .place-none-xl {
-    float: none;
+    float: none!important;
   }
   .float-left-xl {
-    float: left;
+    float: left!important;
   }
   .float-right-xl {
-    float: right;
+    float: right!important;
   }
   .float-none-xl {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 1452px) {
   .place-left-xxl {
-    float: left;
+    float: left!important;
   }
   .place-right-xxl {
-    float: right;
+    float: right!important;
   }
   .place-none-xxl {
-    float: none;
+    float: none!important;
   }
   .float-left-xxl {
-    float: left;
+    float: left!important;
   }
   .float-right-xxl {
-    float: right;
+    float: right!important;
   }
   .float-none-xxl {
-    float: none;
+    float: none!important;
   }
 }
 @media screen and (min-width: 2000px) {
   .place-left-xxxl {
-    float: left;
+    float: left!important;
   }
   .place-right-xxxl {
-    float: right;
+    float: right!important;
   }
   .place-none-xxxl {
-    float: none;
+    float: none!important;
   }
   .float-left-xxxl {
-    float: left;
+    float: left!important;
   }
   .float-right-xxxl {
-    float: right;
+    float: right!important;
   }
   .float-none-xxxl {
-    float: none;
+    float: none!important;
   }
 }
 /*# sourceMappingURL=float.css.map */

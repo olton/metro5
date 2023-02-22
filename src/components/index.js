@@ -10,6 +10,9 @@ import {Button} from "./button"
 import {Image} from "./image"
 import {ThemeToggle} from "./theme-toggle"
 import {Hamburger} from "./hamburger"
+import {AudioButton} from "./audio-button"
+import {Embed} from "./embed"
+import {Overlay} from "./overlay"
 
 export {
     Accordion,
@@ -23,5 +26,8 @@ export {
     Button,
     Image,
     ThemeToggle,
-    Hamburger
+    Hamburger,
+    AudioButton,
+    Embed,
+    Overlay,
 }

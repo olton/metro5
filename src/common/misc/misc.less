@@ -1,40 +1,40 @@
 @import "../../include/colors";
 @import "../../include/media";
 
-.overflow {overflow: auto;}
-.no-overflow {overflow: hidden;}
-.scroll {overflow: scroll;}
-.scroll-x {overflow-x: auto;}
-.scroll-y {overflow-y: auto;}
-.no-scroll {overflow: hidden;}
-.no-scroll-x {overflow-x: hidden;}
-.no-scroll-y {overflow-y: hidden;}
-.wrap {white-space: normal;}
-.no-wrap {white-space: nowrap;}
-.no-user-select {user-select: none;}
-.no-appearance {appearance: none;}
+.overflow {overflow: auto!important;}
+.no-overflow {overflow: hidden!important;}
+.scroll {overflow: scroll!important;}
+.scroll-x {overflow-x: auto!important;}
+.scroll-y {overflow-y: auto!important;}
+.no-scroll {overflow: hidden!important;}
+.no-scroll-x {overflow-x: hidden!important;}
+.no-scroll-y {overflow-y: hidden!important;}
+.wrap {white-space: normal!important;}
+.no-wrap {white-space: nowrap!important;}
+.no-user-select {user-select: none!important;}
+.no-appearance {appearance: none!important;}
 
 .disabled, .-disabled {
-  pointer-events: none;
-  color: @lightGray;
+  pointer-events: none!important;
+  color: var(--disable-color)!important;
 }
 
 .stop-pointer {
-  pointer-events: none;
-  user-select: none;
+  pointer-events: none!important;
+  user-select: none!important;
 }
 
 each(@media-rules, {
   @media screen and (min-width: @value) {
-    .overflow-@{key} {overflow: auto;}
-    .no-overflow-@{key} {overflow: hidden;}
-    .scroll-@{key} {overflow: scroll;}
-    .scroll-x-@{key} {overflow-x: auto;}
-    .scroll-y-@{key} {overflow-y: auto;}
-    .no-scroll-@{key} {overflow: hidden;}
-    .no-scroll-x-@{key} {overflow-x: hidden;}
-    .no-scroll-y-@{key}{overflow-y: hidden;}
-    .wrap-@{key} {white-space: normal;}
-    .no-wrap-@{key} {white-space: nowrap;}
+    .overflow-@{key} {overflow: auto!important;}
+    .no-overflow-@{key} {overflow: hidden!important;}
+    .scroll-@{key} {overflow: scroll!important;}
+    .scroll-x-@{key} {overflow-x: auto!important;}
+    .scroll-y-@{key} {overflow-y: auto!important;}
+    .no-scroll-@{key} {overflow: hidden!important;}
+    .no-scroll-x-@{key} {overflow-x: hidden!important;}
+    .no-scroll-y-@{key}{overflow-y: hidden!important;}
+    .wrap-@{key} {white-space: normal!important;}
+    .no-wrap-@{key} {white-space: nowrap!important;}
   }
 })

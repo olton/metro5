@@ -18,17 +18,17 @@
     bottom: 0;
 }
 
-.pos-relative {position: relative;}
-.pos-absolute {position: absolute;}
-.pos-static {position: static;}
-.pos-fixed {position: fixed;}
+.pos-relative {position: relative!important;}
+.pos-absolute {position: absolute!important;}
+.pos-static {position: static!important;}
+.pos-fixed {position: fixed!important;}
 
 each(@media-rules, {
     @media screen and (min-width: @value) {
-        .pos-relative-@{key} {position: relative;}
-        .pos-absolute-@{key} {position: absolute;}
-        .pos-static-@{key} {position: static;}
-        .pos-fixed-@{key} {position: fixed;}
+        .pos-relative-@{key} {position: relative!important;}
+        .pos-absolute-@{key} {position: absolute!important;}
+        .pos-static-@{key} {position: static!important;}
+        .pos-fixed-@{key} {position: fixed!important;}
     }
 })
 
