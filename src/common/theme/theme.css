@@ -20,12 +20,21 @@
   --menu-text-color: #000000;
   --menu-background-active: rgba(0, 0, 0, 0.1);
   --menu-text-color-active: #ffffff;
-  --menu-title-background: #b6b6b6;
+  --menu-title-background: #9f9f9f;
   --menu-title-text-color: #ffffff;
   --appbar-background: #ebebeb;
   --appbar-text-color: #000000;
   --appbar-background-hover: rgba(30, 34, 40, 0.1);
   --appbar-text-color-hover: #000000;
+  --breadcrumbs-color-hover: #000000;
+  --image-button-primary-color: #ebebeb;
+  --image-button-secondary-color: #777777;
+  --image-button-text-color: #000000;
+  --image-button-icon-color: #ffffff;
+  --info-button-background: #ffffff;
+  --info-button-background-primary: #777777;
+  --info-button-text-color: #000000;
+  --info-button-text-color-primary: #ffffff;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -53,6 +62,14 @@
   --appbar-text-color: #adbaa9;
   --appbar-background-hover: rgba(0, 0, 0, 0.1);
   --appbar-text-color-hover: #fff;
+  --breadcrumbs-color-hover: #adbaa9;
+  --image-button-primary-color: #2b2d30;
+  --image-button-secondary-color: #1e2228;
+  --image-button-text-color: #ffffff;
+  --info-button-background: #2b2d30;
+  --info-button-background-primary: #1e2228;
+  --info-button-text-color: #ffffff;
+  --info-button-text-color-primary: #adbaa9;
 }
 body {
   background-color: var(--body-background);

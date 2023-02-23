@@ -18,6 +18,8 @@ import {Breadcrumbs} from "./breadcrumbs"
 import {CommandButton} from "./command-button"
 import {ButtonGroup} from "./button-group"
 import {VerticalMenu} from "./vertical-menu"
+import {ImageButton} from "./image-button"
+import {InfoButton} from "./info-button"
 
 export {
     Accordion,
@@ -39,5 +41,7 @@ export {
     Breadcrumbs,
     CommandButton,
     ButtonGroup,
-    VerticalMenu
+    VerticalMenu,
+    ImageButton,
+    InfoButton,
 }

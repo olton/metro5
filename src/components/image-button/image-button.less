@@ -1,11 +1,9 @@
 @import "../../include/mixins";
 
-.command-button {
-    padding: .5rem .75rem;
+.image-button {
     display: inline-flex;
-    font-size: 1.5rem;
     transition: all .15s ease-in-out;
-    background-color: var(--control-color);
+    background-color: var(--image-button-primary-color);
     color: var(--text-color-secondary);
     cursor: pointer;
     white-space: nowrap;
@@ -14,57 +12,13 @@
     border: 1px solid transparent;
     outline: none;
     position: relative;
-    font-weight: 500;
+    font-size: 14px;
+    padding: 0 .5rem 0 0;
     align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    text-decoration: none;
+    height: 36px;
+    font-weight: 400;
     opacity: .8;
-
-    .button-icon {
-        width: 42px;
-        height: 42px;
-        line-height: 1.2;
-        font-size: 32px;
-        color: inherit;
-        order: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .caption {
-        margin-left: 8px;
-        text-align: left;
-        color: inherit;
-        order: 2;
-        font-weight: 400;
-        line-height: 1.2;
-
-        small {
-            display: block;
-            font-size: 12px;
-        }
-    }
-
-    &.icon-right {
-        .button-icon {
-            order: 2;
-        }
-
-        .caption {
-            order: 1;
-            margin-left: 0;
-            margin-right: .5rem;
-            text-align: right;
-        }
-    }
-
-    &.outline {
-        background: transparent none;
-        border-width: 1px;
-        border-color: var(--control-color);
-    }
+    overflow: hidden;
 
     &:hover {
         opacity: 1;
@@ -72,6 +26,56 @@
 
     &:active {
         opacity: .9;
+    }
+
+    .button-icon {
+        width: 36px;
+        height: 36px;
+        line-height: 34px;
+        font-size: 1rem;
+        background-color: var(--image-button-secondary-color);
+        color: var(--image-button-icon-color);
+        order: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .caption {
+        margin-left: .5rem;
+        text-align: left;
+        color: inherit;
+        order: 2;
+        font-weight: 400;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        small {
+            display: block;
+            font-size: .8rem;
+        }
+    }
+
+    &.icon-right {
+        padding: 0 0 0 .5rem;
+
+        .button-icon {
+            order: 2;
+        }
+        .caption {
+            order: 1;
+            margin-left: 0;
+            margin-right: .5rem;
+        }
+    }
+
+    &:focus, &:hover, &.focus {
+        text-decoration: none;
+    }
+
+    &:active {
         box-shadow: none;
         outline: 0;
     }
@@ -81,32 +85,62 @@
     }
 }
 
-.command-button.shadowed:not(.disabled) {
+.image-button.shadowed:not(.disabled) {
     .default-shadow();
     &:active {
         box-shadow: none;
     }
 }
 
-.command-button {
+.image-button {
+    &.rounded {
+        border-radius: 20px;
+    }
+    &.left-rounded {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    &.right-rounded {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+}
+
+.image-button {
     &.primary {
         background-color: var(--color-cyan);
         color: #ffffff;
+        .button-icon {
+            background-color: var(--color-dark-cyan);
+        }
     }
     &.secondary {
         background-color: var(--color-blue);
         color: #ffffff;
+        .button-icon {
+            background-color: var(--color-dark-blue);
+        }
     }
     &.alert {
         background-color: var(--color-red);
         color: #ffffff;
+        .button-icon {
+            background-color: var(--color-dark-red);
+        }
     }
     &.warning {
         background-color: var(--color-orange);
         color: #ffffff;
+        .button-icon {
+            background-color: var(--color-dark-orange);
+        }
     }
     &.success {
         background-color: var(--color-green);
         color: #ffffff;
+        .button-icon {
+            background-color: var(--color-dark-green);
+        }
     }
 }

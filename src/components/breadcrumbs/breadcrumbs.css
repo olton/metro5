@@ -59,7 +59,7 @@
   background-color: transparent;
 }
 .breadcrumbs .crumb-link:hover {
-  color: var(--link-color);
+  color: var(--breadcrumbs-color-hover);
 }
 .breadcrumbs .crumb:last-child {
   font-weight: bold;

@@ -12,333 +12,396 @@
     <title>Document</title>
 </head>
 <body class="cloak" style="padding-top: 52px">
-    <div data-role="appbar" data-expand-point="lg" data-theme="light">
-        <a href="#" class="appbar-brand no-hover">Metro 5</a>
+<div data-role="appbar" data-expand-point="lg" data-theme="light">
+    <a href="#" class="appbar-brand no-hover">Metro 5</a>
 
-        <ul class="appbar-menu">
-            <li><a href="#">Home</a></li>
-            <li>
-                <a href="#" class="dropdown-toggle marker-on">Products</a>
-                <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">Windows 10</a></li>
-                    <li><a href="#">Office 365</a></li>
-                    <li class="divider bg-lightGray"></li>
-                    <li><a href="#">Skype</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacts</a></li>
-        </ul>
-    </div>
+    <ul class="appbar-menu">
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle marker-on">Products</a>
+            <ul class="dropdown-menu" data-role="dropdown">
+                <li><a href="#">Windows 10</a></li>
+                <li><a href="#">Office 365</a></li>
+                <li class="divider bg-lightGray"></li>
+                <li><a href="#">Skype</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacts</a></li>
+    </ul>
+</div>
 
-    <div data-role="adblock-hunter" data-on-bite="console.log('Adblock detected!')" data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
+<div data-role="adblock-hunter" data-on-bite="console.log('Adblock detected!')"
+     data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
 
-    <h1 class="text-center">HelloWorld Metro5!</h1>
+<h1 class="text-center">HelloWorld Metro5!</h1>
 
-    <div class="mt-10 clear-float d-flex flex-justify-center">
-        <ul class="dropdown-menu" style="position: relative; display: block">
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li>
-                <a href="#" class="dropdown-toggle marker-on">Item 3</a>
-                <ul data-role="dropdown" class="dropdown-menu">
-                    <li><a href="#">Sub Item 1</a></li>
-                    <li><a href="#">Sub Item 2</a></li>
-                    <li><a href="#">Sub Item 3</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li><a href="#"><span class="mif-home icon"></span> Item 4</a></li>
-            <li><a href="#"><span class="mif-checkmark icon"></span>Item 5</a></li>
-            <li><a href="#">Item 6</a></li>
-        </ul>
-    </div>
-
-    <div class="mt-10 text-center">
-        <button class="button" data-role="audio-button" data-src="//metroui.org.ua/data/modem.mp3">Play</button>
-        <button class="button" onclick="Metro5.playSound('//metroui.org.ua/data/modem.mp3')">Play</button>
-    </div>
-
-    <div class="mt-10">
-        <ul class="breadcrumbs flex-justify-center">
-            <li class="crumb"><a href="#" class="crumb-link">Home</a></li>
-            <li class="crumb"><a href="#" class="crumb-link">Products</a></li>
-            <li class="crumb"><a href="#" class="crumb-link">Download</a></li>
-            <li class="crumb"><a href="#" class="crumb-link">Windows 11</a></li>
-        </ul>
-    </div>
-
-    <div class="mt-10">
-        <div data-role="button-group" class="flex-justify-center" data-active-class="bg-cyan fg-white">
-            <button class="button">Button 1</button>
-            <button class="button">Button 2</button>
-            <button class="button">Button 3</button>
-        </div>
-
-        <div data-role="button-group" class="flex-justify-center" data-active-class="bg-cyan fg-white" data-single-button="false">
-            <button class="button">Button 1</button>
-            <button class="button">Button 2</button>
-            <button class="button">Button 3</button>
-        </div>
-    </div>
-
-    <div class="mt-10 d-flex flex-justify-center">
-        <ul class="vertical-menu" style="width: 200px;">
-            <li class="menu-title">General</li>
-            <li><a href="#"><span class="mif-home icon"></span> Home</a></li>
-            <li class="menu-title">Products</li>
-            <li><a href="#"><span class="mif-windows icon"></span> Windows</a></li>
-            <li><a href="#"><span class="mif-library icon"></span> Office 365</a></li>
-            <li><a href="#"><span class="mif-skype icon"></span> Skype</a></li>
-            <li class="menu-title">Support</li>
-            <li>
-                <a href="#" data-hotkey="Alt+F1" class="dropdown-toggle">Community</a>
-                <ul class="vertical-menu" data-role="dropdown">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Github</a></li>
-                    <li><a href="#">Forum</a></li>
-                </ul>
-            </li>
-            <li class="menu-title">Shop</li>
-            <li><a href="#"><span class="mif-cart icon"></span> Cart</a></li>
-        </ul>
-    </div>
-
-    <div class="row mt-10">
-        <div class="cell-md-4">
-            <button class="button dropdown-toggle">Dropdown</button>
-            <div id="dropdown1" data-role="dropdown" style="background: #0b98dc;">
-                <div style="height: 300px">Test block</div>
-            </div>
-        </div>
-        <div class="cell-md-4">
-            <a class="button dropdown-toggle marker-on">Dropdown</a>
-            <div id="dropdown2" data-role="dropdown" style="background: #0b98dc;">
-                <div style="height: 300px">Test block</div>
-            </div>
-        </div>
-        <div class="cell-md-4">
-            <a class="button dropdown-toggle marker-on">Dropdown</a>
-            <div id="dropdown3" data-role="dropdown" style="background: #0b98dc;">
-                <div style="height: 300px">Test block</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mt-10 text-center">
-        <button class="hamburger chevron-down">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+<div class="mt-10 text-center">
+    <div>
+        <button class="image-button">
+            <span class="button-icon"><span class="mif-rocket"></span></span>
+            <span class="caption">Rocket</span>
         </button>
-        <button class="hamburger chevron-up">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
-        <button class="hamburger arrow-left">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
-        <button class="hamburger arrow-right">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+        <button class="image-button icon-right">
+            <span class="button-icon"><span class="mif-rocket"></span></span>
+            <span class="caption">Rocket</span>
         </button>
     </div>
 
-    <div class="text-center mt-10">
-        <h4>Push Buttons</h4>
-        <button class="button">Button</button>
-        <button class="button primary">Button</button>
-        <button class="button secondary">Button</button>
-        <button class="button success">Button</button>
-        <button class="button warning">Button</button>
-        <button class="button alert">Button</button>
+    <div class="button-container">
+        <button class="image-button"><span class="button-icon"><span class="mif-share "></span></span><span class="caption"><span class="">Share It</span></span></button>
+        <button class="image-button primary"><span class="button-icon"><span class="mif-share "></span></span><span class="caption"><span class="">Share It</span></span></button>
+        <button class="image-button secondary"><span class="button-icon"><span class="mif-share "></span></span><span class="caption"><span class="">Share It</span></span></button>
+        <button class="image-button success"><span class="button-icon"><span class="mif-share "></span></span><span class="caption"><span class="">Share It</span></span></button>
+        <button class="image-button warning"><span class="button-icon"><span class="mif-share "></span></span><span class="caption"><span class="">Share It</span></span></button>
+        <button class="image-button alert"><span class="button-icon"><span class="mif-share "></span></span><span class="caption"><span class="">Share It</span></span></button>
     </div>
-    <div class="text-center mt-10">
-        <button class="button mini">Button</button>
-        <button class="button small">Button</button>
-        <button class="button medium">Button</button>
-        <button class="button large">Button</button>
+</div>
+
+<div class="mt-10 text-center">
+    <div class="button-container">
+        <div class="info-button">
+            <button class="info-button-primary">Stars</button>
+            <a href="#" class="info-button-secondary">7.123</a>
+        </div>
+        <div class="info-button">
+            <button class="info-button-primary"><span class="mif-star-full "></span> Stars</button>
+            <a href="#" class="info-button-secondary">7.123</a></div>
     </div>
-    <div class="text-center mt-10">
-        <button class="button outline">Button</button>
-        <button class="button primary outline">Button</button>
-        <button class="button secondary outline">Button</button>
-        <button class="button success outline">Button</button>
-        <button class="button warning outline">Button</button>
-        <button class="button alert outline">Button</button>
+    <div class="button-container">
+        <div class="info-button primary">
+            <button class="info-button-primary">Stars</button>
+            <a href="#" class="info-button-secondary">7.123</a>
+        </div>
+        <div class="info-button secondary">
+            <button class="info-button-primary">Stars</button>
+            <a href="#" class="info-button-secondary">7.123</a>
+        </div>
+        <div class="info-button success">
+            <button class="info-button-primary">Stars</button>
+            <a href="#" class="info-button-secondary">7.123</a>
+        </div>
+        <div class="info-button warning">
+            <button class="info-button-primary">Stars</button>
+            <a href="#" class="info-button-secondary">7.123</a>
+        </div>
+        <div class="info-button alert">
+            <button class="info-button-primary">Stars</button>
+            <a href="#" class="info-button-secondary">7.123</a>
+        </div>
+    </div>
+</div>
+
+<div class="mt-10 clear-float d-flex flex-justify-center">
+    <ul class="dropdown-menu" style="position: relative; display: block">
+        <li><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle marker-on">Item 3</a>
+            <ul data-role="dropdown" class="dropdown-menu">
+                <li><a href="#">Sub Item 1</a></li>
+                <li><a href="#">Sub Item 2</a></li>
+                <li><a href="#">Sub Item 3</a></li>
+            </ul>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#"><span class="mif-home icon"></span> Item 4</a></li>
+        <li><a href="#"><span class="mif-checkmark icon"></span>Item 5</a></li>
+        <li><a href="#">Item 6</a></li>
+    </ul>
+</div>
+
+<div class="mt-10 text-center">
+    <button class="button" data-role="audio-button" data-src="//metroui.org.ua/data/modem.mp3">Play</button>
+    <button class="button" onclick="Metro5.playSound('//metroui.org.ua/data/modem.mp3')">Play</button>
+</div>
+
+<div class="mt-10">
+    <ul class="breadcrumbs flex-justify-center">
+        <li class="crumb"><a href="#" class="crumb-link">Home</a></li>
+        <li class="crumb"><a href="#" class="crumb-link">Products</a></li>
+        <li class="crumb"><a href="#" class="crumb-link">Download</a></li>
+        <li class="crumb"><a href="#" class="crumb-link">Windows 11</a></li>
+    </ul>
+</div>
+
+<div class="mt-10">
+    <div data-role="button-group" class="flex-justify-center" data-active-class="bg-cyan fg-white">
+        <button class="button">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
     </div>
 
-    <div class="m-10 d-flex flex-justify-center">
-        <img data-role="gravatar" data-email="serhii@pimenov.com.ua" data-size="124">
+    <div data-role="button-group" class="flex-justify-center" data-active-class="bg-cyan fg-white"
+         data-single-button="false">
+        <button class="button">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
     </div>
+</div>
 
-    <div class="m-10">
-        <div data-role="accordion" data-on-create="console.log('Hello from accordion!')">
-            <div title="Frame 1" class="active p-10">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam amet blanditiis cumque doloremque enim illum in ipsam itaque maxime nulla perferendis placeat porro praesentium, quod repellendus sed, totam veritatis.
-            </div>
-            <div class="p-10">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, animi at deleniti explicabo fugit in incidunt itaque iusto labore minus molestiae nobis odit repellat sunt tenetur veniam veritatis voluptate voluptatibus?
-            </div>
-            <div class="p-10">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt fugit natus nisi officia officiis quaerat vel! Assumenda, at consequuntur est, fugit itaque iure laborum minus molestiae nulla ut veritatis.
-            </div>
-        </div>
-    </div>
+<div class="mt-10 d-flex flex-justify-center">
+    <ul class="vertical-menu" style="width: 200px;">
+        <li class="menu-title">General</li>
+        <li><a href="#"><span class="mif-home icon"></span> Home</a></li>
+        <li class="menu-title">Products</li>
+        <li><a href="#"><span class="mif-windows icon"></span> Windows</a></li>
+        <li><a href="#"><span class="mif-library icon"></span> Office 365</a></li>
+        <li><a href="#"><span class="mif-skype icon"></span> Skype</a></li>
+        <li class="menu-title">Support</li>
+        <li>
+            <a href="#" data-hotkey="Alt+F1" class="dropdown-toggle">Community</a>
+            <ul class="vertical-menu" data-role="dropdown">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Github</a></li>
+                <li><a href="#">Forum</a></li>
+            </ul>
+        </li>
+        <li class="menu-title">Shop</li>
+        <li><a href="#"><span class="mif-cart icon"></span> Cart</a></li>
+    </ul>
+</div>
 
-    <div class="mt-10">
-        <h2 class="text-center">Activities</h2>
-        <div class="row">
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-type="simple"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="dark" data-type="simple"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="light" data-type="simple"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="color" data-type="simple"></div>
-                </div>
+<div class="row mt-10">
+    <div class="cell-md-4">
+        <button class="button dropdown-toggle">Dropdown</button>
+        <div id="dropdown1" data-role="dropdown" style="background: #0b98dc;">
+            <div style="height: 300px">Test block</div>
+        </div>
+    </div>
+    <div class="cell-md-4">
+        <a class="button dropdown-toggle marker-on">Dropdown</a>
+        <div id="dropdown2" data-role="dropdown" style="background: #0b98dc;">
+            <div style="height: 300px">Test block</div>
+        </div>
+    </div>
+    <div class="cell-md-4">
+        <a class="button dropdown-toggle marker-on">Dropdown</a>
+        <div id="dropdown3" data-role="dropdown" style="background: #0b98dc;">
+            <div style="height: 300px">Test block</div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-10 text-center">
+    <button class="hamburger chevron-down">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+    <button class="hamburger chevron-up">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+    <button class="hamburger arrow-left">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+    <button class="hamburger arrow-right">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+</div>
+
+<div class="text-center mt-10">
+    <h4>Push Buttons</h4>
+    <button class="button">Button</button>
+    <button class="button primary">Button</button>
+    <button class="button secondary">Button</button>
+    <button class="button success">Button</button>
+    <button class="button warning">Button</button>
+    <button class="button alert">Button</button>
+</div>
+<div class="text-center mt-10">
+    <button class="button mini">Button</button>
+    <button class="button small">Button</button>
+    <button class="button medium">Button</button>
+    <button class="button large">Button</button>
+</div>
+<div class="text-center mt-10">
+    <button class="button outline">Button</button>
+    <button class="button primary outline">Button</button>
+    <button class="button secondary outline">Button</button>
+    <button class="button success outline">Button</button>
+    <button class="button warning outline">Button</button>
+    <button class="button alert outline">Button</button>
+</div>
+
+<div class="m-10 d-flex flex-justify-center">
+    <img data-role="gravatar" data-email="serhii@pimenov.com.ua" data-size="124">
+</div>
+
+<div class="m-10">
+    <div data-role="accordion" data-on-create="console.log('Hello from accordion!')">
+        <div title="Frame 1" class="active p-10">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam amet blanditiis cumque
+            doloremque enim illum in ipsam itaque maxime nulla perferendis placeat porro praesentium, quod repellendus
+            sed, totam veritatis.
+        </div>
+        <div class="p-10">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, animi at deleniti explicabo fugit in incidunt
+            itaque iusto labore minus molestiae nobis odit repellat sunt tenetur veniam veritatis voluptate
+            voluptatibus?
+        </div>
+        <div class="p-10">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt fugit natus nisi officia officiis
+            quaerat vel! Assumenda, at consequuntur est, fugit itaque iure laborum minus molestiae nulla ut veritatis.
+        </div>
+    </div>
+</div>
+
+<div class="mt-10">
+    <h2 class="text-center">Activities</h2>
+    <div class="row">
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-type="simple"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="cell-sm-3 bg-dark">
-                <div data-role="activity" data-type="metro"></div>
-            </div>
-            <div class="cell-sm-3">
-                <div data-role="activity" data-style="dark" data-type="metro"></div>
-            </div>
-            <div class="cell-sm-3 bg-dark">
-                <div data-role="activity" data-style="light" data-type="metro"></div>
-            </div>
-            <div class="cell-sm-3">
-                <div data-role="activity" data-style="color" data-type="metro"></div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="dark" data-type="simple"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-type="square"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="dark" data-type="square"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="light" data-type="square"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="color" data-type="square"></div>
-                </div>
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="light" data-type="simple"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-type="cycle"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="dark" data-type="cycle"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="light" data-type="cycle"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="color" data-type="cycle"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-type="ring"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="dark" data-type="ring"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="light" data-type="ring"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="color" data-type="ring"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-type="atom"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="dark" data-type="atom"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="light" data-type="atom"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="color" data-type="atom"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-type="bars"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="dark" data-type="bars"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3 bg-dark">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="light" data-type="bars"></div>
-                </div>
-            </div>
-            <div class="cell-sm-3">
-                <div class="d-flex flex-justify-center">
-                    <div data-role="activity" data-style="color" data-type="bars"></div>
-                </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="color" data-type="simple"></div>
             </div>
         </div>
     </div>
-    <script src="index.js" type="module"></script>
+    <div class="row">
+        <div class="cell-sm-3 bg-dark">
+            <div data-role="activity" data-type="metro"></div>
+        </div>
+        <div class="cell-sm-3">
+            <div data-role="activity" data-style="dark" data-type="metro"></div>
+        </div>
+        <div class="cell-sm-3 bg-dark">
+            <div data-role="activity" data-style="light" data-type="metro"></div>
+        </div>
+        <div class="cell-sm-3">
+            <div data-role="activity" data-style="color" data-type="metro"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-type="square"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="dark" data-type="square"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="light" data-type="square"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="color" data-type="square"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-type="cycle"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="dark" data-type="cycle"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="light" data-type="cycle"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="color" data-type="cycle"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-type="ring"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="dark" data-type="ring"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="light" data-type="ring"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="color" data-type="ring"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-type="atom"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="dark" data-type="atom"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="light" data-type="atom"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="color" data-type="atom"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-type="bars"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="dark" data-type="bars"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3 bg-dark">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="light" data-type="bars"></div>
+            </div>
+        </div>
+        <div class="cell-sm-3">
+            <div class="d-flex flex-justify-center">
+                <div data-role="activity" data-style="color" data-type="bars"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="index.js" type="module"></script>
 </body>
 </html>
