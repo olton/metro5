@@ -35,6 +35,8 @@
   --info-button-background-primary: #777777;
   --info-button-text-color: #000000;
   --info-button-text-color-primary: #ffffff;
+  --toolbar-before-color: #777777;
+  --toolbar-background: #ffffff;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -70,6 +72,8 @@
   --info-button-background-primary: #1e2228;
   --info-button-text-color: #ffffff;
   --info-button-text-color-primary: #adbaa9;
+  --toolbar-before-color: #1e2228;
+  --toolbar-background: #2b2d30;
 }
 body {
   background-color: var(--body-background);

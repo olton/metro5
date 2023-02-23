@@ -1,0 +1,94 @@
+@import "../../include/mixins";
+
+.toolbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 0 0 10px;
+    flex-flow: row nowrap;
+    margin-left: 4px;
+    height: 32px;
+    background-color: var(--toolbar-background);
+
+    &.no-before {
+        &::before {
+            display: none;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 4px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--toolbar-before-color);
+        cursor: move;
+    }
+
+    &.vertical {
+        flex-flow: column nowrap;
+        padding: .5725rem 0 0 0;
+        width: 32px;
+        margin-left: 0;
+        margin-top: 4px;
+
+        &::before {
+            width: 32px;
+            height: .325rem;
+        }
+
+        .tool-button {
+            margin: 2px 0;
+        }
+    }
+}
+
+.tool-button {
+    height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--control-color);
+    color: var(--text-color-secondary);
+    opacity: .8;
+    user-select: none;
+    border: 1px solid transparent;
+    transition: all .15s ease-in-out;
+    padding: 0 4px;
+    cursor: pointer;
+    outline: none;
+    margin: 0 2px;
+    position: relative;
+    font-size: 14px;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        opacity: .9;
+    }
+
+    .caption, .button-icon {
+        margin: 0 4px;
+    }
+}
+
+.tool-button.shadowed:not(.disabled) {
+    .default-shadow();
+
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.tool-button {
+    &.disabled {
+        pointer-events: none;
+        color: var(--textInvertColor) !important;
+    }
+}
