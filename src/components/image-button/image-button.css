@@ -115,7 +115,7 @@
   background-color: var(--color-dark-red);
 }
 .image-button.warning {
-  background-color: var(--color-orange);
+  background-color: var(--color-amber);
   color: #ffffff;
 }
 .image-button.warning .button-icon {

@@ -40,24 +40,24 @@
 
 .button {
     &.primary {
-        background-color: @cyan;
-        color: @white;
+        background-color: var(--color-cyan);
+        color: #ffffff;
     }
     &.secondary {
-        background-color: @blue;
-        color: @white;
+        background-color: var(--color-blue);
+        color: #ffffff;
     }
     &.success {
-        background-color: @green;
-        color: @white;
+        background-color: var(--color-green);
+        color: #ffffff;
     }
     &.warning {
-        background-color: @orange;
-        color: @white;
+        background-color: var(--color-amber);
+        color: #ffffff;
     }
     &.alert {
-        background-color: @red;
-        color: @white;
+        background-color: var(--color-red);
+        color: #ffffff;
     }
 }
 
@@ -206,49 +206,49 @@
 }
 
 .outline {
-    border-color: var(--defaultColor);
+    border-color: var(--control-color);
     color: var(--text-color);
     &:hover {
-        background-color: var(--defaultColor)!important;
+        background-color: var(--control-color)!important;
     }
 
     &.primary {
-        border-color: @cyan;
-        color: @cyan;
+        border-color: var(--color-cyan);
+        color: var(--color-cyan);
         &:hover {
-            background-color: @cyan!important;
+            background-color: var(--color-cyan)!important;
             color: #ffffff!important;
         }
     }
     &.secondary {
-        border-color: @blue;
-        color: @blue;
+        border-color: var(--color-blue);
+        color: var(--color-blue);
         &:hover {
-            background-color: @blue!important;
+            background-color: var(--color-blue)!important;
             color: #ffffff!important;
         }
     }
     &.success {
-        border-color: @green;
-        color: @green;
+        border-color: var(--color-green);
+        color: var(--color-green);
         &:hover {
-            background-color: @green!important;
+            background-color: var(--color-green)!important;
             color: #ffffff!important;
         }
     }
     &.warning {
-        border-color: @orange;
-        color: @orange;
+        border-color: var(--color-amber);
+        color: var(--color-amber);
         &:hover {
-            background-color: @orange!important;
+            background-color: var(--color-amber)!important;
             color: #ffffff!important;
         }
     }
     &.alert {
-        border-color: @red;
-        color: @red;
+        border-color: var(--color-red);
+        color: var(--color-red);
         &:hover {
-            background-color: @red!important;
+            background-color: var(--color-red)!important;
             color: #ffffff!important;
         }
     }

@@ -108,10 +108,10 @@
   color: #ffffff;
 }
 .info-button.warning {
-  border-color: var(--color-orange);
+  border-color: var(--color-amber);
 }
 .info-button.warning .info-button-primary {
-  background-color: var(--color-orange);
+  background-color: var(--color-amber);
   color: #ffffff;
 }
 .info-button.success {

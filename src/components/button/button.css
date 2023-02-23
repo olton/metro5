@@ -37,23 +37,23 @@
   box-shadow: none;
 }
 .button.primary {
-  background-color: #26b2f6;
+  background-color: var(--color-cyan);
   color: #ffffff;
 }
 .button.secondary {
-  background-color: #468cff;
+  background-color: var(--color-blue);
   color: #ffffff;
 }
 .button.success {
-  background-color: #60a917;
+  background-color: var(--color-green);
   color: #ffffff;
 }
 .button.warning {
-  background-color: #fa6800;
+  background-color: var(--color-amber);
   color: #ffffff;
 }
 .button.alert {
-  background-color: #CE352C;
+  background-color: var(--color-red);
   color: #ffffff;
 }
 .button.mini,
@@ -250,50 +250,50 @@
   background-color: transparent!important;
 }
 .outline {
-  border-color: var(--defaultColor);
+  border-color: var(--control-color);
   color: var(--text-color);
 }
 .outline:hover {
-  background-color: var(--defaultColor) !important;
+  background-color: var(--control-color) !important;
 }
 .outline.primary {
-  border-color: #26b2f6;
-  color: #26b2f6;
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
 }
 .outline.primary:hover {
-  background-color: #26b2f6 !important;
+  background-color: var(--color-cyan) !important;
   color: #ffffff !important;
 }
 .outline.secondary {
-  border-color: #468cff;
-  color: #468cff;
+  border-color: var(--color-blue);
+  color: var(--color-blue);
 }
 .outline.secondary:hover {
-  background-color: #468cff !important;
+  background-color: var(--color-blue) !important;
   color: #ffffff !important;
 }
 .outline.success {
-  border-color: #60a917;
-  color: #60a917;
+  border-color: var(--color-green);
+  color: var(--color-green);
 }
 .outline.success:hover {
-  background-color: #60a917 !important;
+  background-color: var(--color-green) !important;
   color: #ffffff !important;
 }
 .outline.warning {
-  border-color: #fa6800;
-  color: #fa6800;
+  border-color: var(--color-amber);
+  color: var(--color-amber);
 }
 .outline.warning:hover {
-  background-color: #fa6800 !important;
+  background-color: var(--color-amber) !important;
   color: #ffffff !important;
 }
 .outline.alert {
-  border-color: #CE352C;
-  color: #CE352C;
+  border-color: var(--color-red);
+  color: var(--color-red);
 }
 .outline.alert:hover {
-  background-color: #CE352C !important;
+  background-color: var(--color-red) !important;
   color: #ffffff !important;
 }
 .square,

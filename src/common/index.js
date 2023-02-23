@@ -14,6 +14,7 @@ import {ThemeCss} from "./theme"
 import {BorderCss} from "./border"
 import {PositionCss} from "./position"
 import {SizingCss} from "./sizing"
+import {AnimationCss} from "./animation"
 
 export {
     ResetCss,
@@ -32,5 +33,6 @@ export {
     ThemeCss,
     BorderCss,
     PositionCss,
-    SizingCss
+    SizingCss,
+    AnimationCss,
 }

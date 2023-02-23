@@ -95,7 +95,7 @@
   color: #ffffff;
 }
 .shortcut.warning {
-  background-color: var(--color-orange);
+  background-color: var(--color-amber);
   color: #ffffff;
 }
 .shortcut.success {
@@ -137,12 +137,12 @@
   color: var(--color-red) !important;
 }
 .shortcut.outline.warning:hover {
-  background-color: var(--color-orange) !important;
+  background-color: var(--color-amber) !important;
   color: #ffffff !important;
 }
 .shortcut.outline.warning {
-  border-color: var(--color-orange) !important;
-  color: var(--color-orange) !important;
+  border-color: var(--color-amber) !important;
+  color: var(--color-amber) !important;
 }
 .shortcut.outline.success:hover {
   background-color: var(--color-green) !important;

@@ -87,7 +87,7 @@
   color: #ffffff;
 }
 .command-button.warning {
-  background-color: var(--color-orange);
+  background-color: var(--color-amber);
   color: #ffffff;
 }
 .command-button.success {
