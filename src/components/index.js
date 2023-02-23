@@ -20,6 +20,7 @@ import {ButtonGroup} from "./button-group"
 import {VerticalMenu} from "./vertical-menu"
 import {ImageButton} from "./image-button"
 import {InfoButton} from "./info-button"
+import {Shortcut} from "./shortcut"
 
 export {
     Accordion,
@@ -44,4 +45,5 @@ export {
     VerticalMenu,
     ImageButton,
     InfoButton,
+    Shortcut,
 }

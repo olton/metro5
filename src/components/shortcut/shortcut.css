@@ -1,0 +1,155 @@
+.shortcut {
+  width: 84px;
+  height: 84px;
+  padding: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  transition: all 0.15s ease-in-out;
+  background-color: var(--control-color);
+  color: var(--text-color);
+  cursor: pointer;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.shortcut .button-icon,
+.shortcut .caption {
+  display: block;
+  line-height: 1;
+}
+.shortcut .button-icon {
+  display: block;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  margin-top: 8px;
+  order: 1;
+}
+.shortcut .caption {
+  color: inherit;
+  height: 20px;
+  order: 2;
+}
+.shortcut .button-icon ~ .caption {
+  margin-top: 4px;
+}
+.shortcut .badge {
+  position: absolute;
+  font-size: 11px;
+  top: 0.25rem;
+  right: 0.25rem;
+  color: inherit;
+  transform: none;
+  background-color: inherit;
+}
+.shortcut.no-caption .button-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  margin-top: 16px;
+}
+.shortcut:hover {
+  opacity: 1;
+}
+.shortcut:active {
+  opacity: 0.9;
+  box-shadow: none;
+}
+.shortcut.outline {
+  background: transparent none;
+  border-width: 1px;
+  border-color: var(--control-color);
+}
+.shortcut.disabled,
+.shortcut:disabled {
+  opacity: 0.65;
+}
+.shortcut.shadowed:not(.disabled) {
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.shortcut.shadowed:not(.disabled):active {
+  box-shadow: none;
+}
+.shortcut.rounded {
+  border-radius: 10px;
+}
+.shortcut.primary {
+  background-color: var(--color-cyan);
+  color: #ffffff;
+}
+.shortcut.secondary {
+  background-color: var(--color-blue);
+  color: #ffffff;
+}
+.shortcut.alert {
+  background-color: var(--color-red);
+  color: #ffffff;
+}
+.shortcut.warning {
+  background-color: var(--color-orange);
+  color: #ffffff;
+}
+.shortcut.success {
+  background-color: var(--color-green);
+  color: #ffffff;
+}
+.shortcut.outline {
+  background-color: transparent!important;
+  color: var(--text-color) !important;
+  height: auto;
+  border-color: var(--control-color) !important;
+}
+.shortcut.outline:hover {
+  background-color: var(--control-color) !important;
+  color: var(--text-color) !important;
+}
+.shortcut.outline.primary:hover {
+  background-color: var(--color-cyan) !important;
+  color: #ffffff !important;
+}
+.shortcut.outline.primary {
+  border-color: var(--color-cyan) !important;
+  color: var(--color-cyan) !important;
+}
+.shortcut.outline.secondary:hover {
+  background-color: var(--color-blue) !important;
+  color: #ffffff !important;
+}
+.shortcut.outline.secondary {
+  border-color: var(--color-blue) !important;
+  color: var(--color-blue) !important;
+}
+.shortcut.outline.alert:hover {
+  background-color: var(--color-red) !important;
+  color: #ffffff !important;
+}
+.shortcut.outline.alert {
+  border-color: var(--color-red) !important;
+  color: var(--color-red) !important;
+}
+.shortcut.outline.warning:hover {
+  background-color: var(--color-orange) !important;
+  color: #ffffff !important;
+}
+.shortcut.outline.warning {
+  border-color: var(--color-orange) !important;
+  color: var(--color-orange) !important;
+}
+.shortcut.outline.success:hover {
+  background-color: var(--color-green) !important;
+  color: #ffffff !important;
+}
+.shortcut.outline.success {
+  border-color: var(--color-green) !important;
+  color: var(--color-green) !important;
+}
+/*# sourceMappingURL=shortcut.css.map */
