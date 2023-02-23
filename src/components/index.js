@@ -22,6 +22,7 @@ import {ImageButton} from "./image-button"
 import {InfoButton} from "./info-button"
 import {Shortcut} from "./shortcut"
 import {Toolbar} from "./toolbar"
+import {Container} from "./container"
 
 export {
     Accordion,
@@ -48,4 +49,5 @@ export {
     InfoButton,
     Shortcut,
     Toolbar,
+    Container,
 }
