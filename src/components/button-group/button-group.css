@@ -1,0 +1,9 @@
+.button-group {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.button-group > * {
+  margin: 1px;
+}
+/*# sourceMappingURL=button-group.css.map */

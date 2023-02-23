@@ -15,6 +15,8 @@ import {Embed} from "./embed"
 import {Overlay} from "./overlay"
 import {Badge} from "./badge"
 import {Breadcrumbs} from "./breadcrumbs"
+import {CommandButton} from "./command-button"
+import {ButtonGroup} from "./button-group"
 
 export {
     Accordion,
@@ -34,4 +36,6 @@ export {
     Overlay,
     Badge,
     Breadcrumbs,
+    CommandButton,
+    ButtonGroup,
 }

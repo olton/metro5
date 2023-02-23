@@ -1,0 +1,150 @@
+.command-button {
+  padding: 0.5rem 0.75rem;
+  display: inline-flex;
+  font-size: 1.5rem;
+  transition: all 0.15s ease-in-out;
+  background-color: var(--control-color);
+  color: var(--text-color-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  outline: none;
+  position: relative;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.command-button .button-icon {
+  width: 42px;
+  height: 42px;
+  line-height: 1.2;
+  font-size: 32px;
+  color: inherit;
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.command-button .caption {
+  margin-left: 8px;
+  text-align: left;
+  color: inherit;
+  order: 2;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.command-button .caption small {
+  display: block;
+  font-size: 12px;
+}
+.command-button.icon-right .button-icon {
+  order: 2;
+}
+.command-button.icon-right .caption {
+  order: 1;
+  margin-left: 0;
+  margin-right: 0.5rem;
+  text-align: right;
+}
+.command-button.outline {
+  background: transparent none;
+  border-width: 1px;
+  border-color: var(--control-color);
+}
+.command-button:hover {
+  opacity: 1;
+}
+.command-button:active {
+  opacity: 0.9;
+  box-shadow: none;
+  outline: 0;
+}
+.command-button.disabled,
+.command-button:disabled {
+  opacity: 0.65;
+}
+.command-button.shadowed:not(.disabled) {
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.command-button.shadowed:not(.disabled):active {
+  box-shadow: none;
+}
+.command-button.primary {
+  background-color: var(--color-cyan);
+  color: #ffffff;
+}
+.command-button.secondary {
+  background-color: var(--color-blue);
+  color: #ffffff;
+}
+.command-button.alert {
+  background-color: var(--color-red);
+  color: #ffffff;
+}
+.command-button.warning {
+  background-color: var(--color-orange);
+  color: #ffffff;
+}
+.command-button.success {
+  background-color: var(--color-green);
+  color: #ffffff;
+}
+.command-button.outline-button {
+  background-color: transparent!important;
+  color: var(--textColor) !important;
+  height: auto;
+}
+.command-button.outline-button.default:hover {
+  background-color: var(--control-color) !important;
+  color: #000000 !important;
+}
+.command-button.outline-button.default {
+  border-color: var(--defaultColor) !important;
+  color: var(--textColor) !important;
+}
+.command-button.outline-button.primary:hover {
+  background-color: var(--color-cyan) !important;
+  color: #ffffff !important;
+}
+.command-button.outline-button.primary {
+  border-color: var(--color-cyan) !important;
+  color: var(--color-cyan) !important;
+}
+.command-button.outline-button.secondary:hover {
+  background-color: var(--color-blue) !important;
+  color: #ffffff !important;
+}
+.command-button.outline-button.secondary {
+  border-color: var(--color-blue) !important;
+  color: var(--color-blue) !important;
+}
+.command-button.outline-button.alert:hover {
+  background-color: var(--color-red) !important;
+  color: #ffffff !important;
+}
+.command-button.outline-button.alert {
+  border-color: var(--color-red) !important;
+  color: var(--color-red) !important;
+}
+.command-button.outline-button.warning:hover {
+  background-color: var(--color-orange) !important;
+  color: #ffffff !important;
+}
+.command-button.outline-button.warning {
+  border-color: var(--color-orange) !important;
+  color: var(--color-orange) !important;
+}
+.command-button.outline-button.success:hover {
+  background-color: var(--color-green) !important;
+  color: #ffffff !important;
+}
+.command-button.outline-button.success {
+  border-color: var(--color-green) !important;
+  color: var(--color-green) !important;
+}
+/*# sourceMappingURL=command-button.css.map */

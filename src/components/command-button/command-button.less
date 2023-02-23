@@ -1,0 +1,151 @@
+@import "../../include/mixins";
+
+.command-button {
+    padding: .5rem .75rem;
+    display: inline-flex;
+    font-size: 1.5rem;
+    transition: all .15s ease-in-out;
+    background-color: var(--control-color);
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    outline: none;
+    position: relative;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    opacity: .8;
+
+    .button-icon {
+        width: 42px;
+        height: 42px;
+        line-height: 1.2;
+        font-size: 32px;
+        color: inherit;
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .caption {
+        margin-left: 8px;
+        text-align: left;
+        color: inherit;
+        order: 2;
+        font-weight: 400;
+        line-height: 1.2;
+
+        small {
+            display: block;
+            font-size: 12px;
+        }
+    }
+
+    &.icon-right {
+        .button-icon {
+            order: 2;
+        }
+
+        .caption {
+            order: 1;
+            margin-left: 0;
+            margin-right: .5rem;
+            text-align: right;
+        }
+    }
+
+    &.outline {
+        background: transparent none;
+        border-width: 1px;
+        border-color: var(--control-color);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        opacity: .9;
+        box-shadow: none;
+        outline: 0;
+    }
+
+    &.disabled, &:disabled {
+        opacity: .65;
+    }
+}
+
+.command-button.shadowed:not(.disabled) {
+    .default-shadow();
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.command-button {
+    &.primary {
+        background-color: var(--color-cyan);
+        color: #ffffff;
+    }
+    &.secondary {
+        background-color: var(--color-blue);
+        color: #ffffff;
+    }
+    &.alert {
+        background-color: var(--color-red);
+        color: #ffffff;
+    }
+    &.warning {
+        background-color: var(--color-orange);
+        color: #ffffff;
+    }
+    &.success {
+        background-color: var(--color-green);
+        color: #ffffff;
+    }
+}
+
+.command-button {
+    &.outline-button {
+        background-color: transparent!important;
+        color: var(--textColor) !important;
+        height: auto;
+
+        &.default:hover {background-color: var(--control-color) !important; color: #000000 !important;}
+        &.default {
+            border-color: var(--defaultColor) !important;
+            color: var(--textColor) !important;
+        }
+        &.primary:hover {background-color: var(--color-cyan) !important; color: #ffffff !important;}
+        &.primary {
+            border-color: var(--color-cyan) !important;
+            color: var(--color-cyan) !important;
+        }
+        &.secondary:hover {background-color: var(--color-blue) !important; color: #ffffff !important;}
+        &.secondary {
+            border-color: var(--color-blue) !important;
+            color: var(--color-blue) !important;
+        }
+        &.alert:hover {background-color: var(--color-red) !important; color: #ffffff !important;}
+        &.alert {
+            border-color: var(--color-red) !important;
+            color: var(--color-red) !important;
+        }
+        &.warning:hover {background-color: var(--color-orange) !important; color: #ffffff !important;}
+        &.warning {
+            border-color: var(--color-orange) !important;
+            color: var(--color-orange) !important;
+        }
+        &.success:hover {background-color: var(--color-green) !important; color: #ffffff !important;}
+        &.success {
+            border-color: var(--color-green) !important;
+            color: var(--color-green) !important;
+        }
+    }
+}
