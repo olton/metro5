@@ -24718,6 +24718,8 @@ body {
   --info-button-background-primary: #777777;
   --info-button-text-color: #000000;
   --info-button-text-color-primary: #ffffff;
+  --toolbar-before-color: #777777;
+  --toolbar-background: #ffffff;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -24753,6 +24755,8 @@ body {
   --info-button-background-primary: #1e2228;
   --info-button-text-color: #ffffff;
   --info-button-text-color-primary: #adbaa9;
+  --toolbar-before-color: #1e2228;
+  --toolbar-background: #2b2d30;
 }
 body {
   background-color: var(--body-background);
@@ -30623,10 +30627,10 @@ body {
 }
 .info-button .info-button-primary {
   font-weight: 400;
+  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   display: table-cell;
-  text-align: center;
   user-select: none;
   border: 1px solid transparent;
   padding: 0 12px;
@@ -30640,14 +30644,14 @@ body {
 }
 .info-button .info-button-primary,
 .info-button .info-button-secondary {
-  display: block;
+  display: flex;
+  align-items: center;
   float: left;
   border-right: none;
   height: 100%;
   position: relative;
   opacity: 0.8;
   text-decoration: none;
-  line-height: 36px;
 }
 .info-button .info-button-primary:active,
 .info-button .info-button-secondary:active,
@@ -30898,3 +30902,81 @@ body {
   color: var(--color-green) !important;
 }
 /*# sourceMappingURL=shortcut.css.map */
+.toolbar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 0 0 10px;
+  flex-flow: row nowrap;
+  margin-left: 4px;
+  height: 32px;
+  background-color: var(--toolbar-background);
+}
+.toolbar.no-before::before {
+  display: none;
+}
+.toolbar::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--toolbar-before-color);
+  cursor: move;
+}
+.toolbar.vertical {
+  flex-flow: column nowrap;
+  padding: 0.5725rem 0 0 0;
+  width: 32px;
+  margin-left: 0;
+  margin-top: 4px;
+}
+.toolbar.vertical::before {
+  width: 32px;
+  height: 0.325rem;
+}
+.toolbar.vertical .tool-button {
+  margin: 2px 0;
+}
+.tool-button {
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--control-color);
+  color: var(--text-color-secondary);
+  opacity: 0.8;
+  user-select: none;
+  border: 1px solid transparent;
+  transition: all 0.15s ease-in-out;
+  padding: 0 4px;
+  cursor: pointer;
+  outline: none;
+  margin: 0 2px;
+  position: relative;
+  font-size: 14px;
+}
+.tool-button:hover {
+  opacity: 1;
+}
+.tool-button:active {
+  opacity: 0.9;
+}
+.tool-button .caption,
+.tool-button .button-icon {
+  margin: 0 4px;
+}
+.tool-button.shadowed:not(.disabled) {
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.tool-button.shadowed:not(.disabled):active {
+  box-shadow: none;
+}
+.tool-button.disabled {
+  pointer-events: none;
+  color: var(--textInvertColor) !important;
+}
+/*# sourceMappingURL=toolbar.css.map */
