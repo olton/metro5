@@ -18,8 +18,10 @@
   --shadow-color: rgba(0, 0, 0, 0.4);
   --menu-background: #ebebeb;
   --menu-text-color: #000000;
-  --menu-background-active: #468CFFFF;
+  --menu-background-active: rgba(0, 0, 0, 0.1);
   --menu-text-color-active: #ffffff;
+  --menu-title-background: #b6b6b6;
+  --menu-title-text-color: #ffffff;
   --appbar-background: #ebebeb;
   --appbar-text-color: #000000;
   --appbar-background-hover: rgba(30, 34, 40, 0.1);
@@ -41,10 +43,12 @@
   --control-color: #2b2d30;
   --disable-color: #ececec;
   --shadow-color: rgba(0, 0, 0, 0.4);
-  --menu-background: #2b2d30;
+  --menu-background: #3c3f41;
   --menu-text-color: #adbaa9;
-  --menu-background-active: #468CFFFF;
+  --menu-background-active: rgba(255, 255, 255, 0.1);
   --menu-text-color-active: #ffffff;
+  --menu-title-background: #1d2121;
+  --menu-title-text-color: #ffffff;
   --appbar-background: #2b2d30;
   --appbar-text-color: #adbaa9;
   --appbar-background-hover: rgba(0, 0, 0, 0.1);

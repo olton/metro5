@@ -11,6 +11,7 @@ let AppbarDefaultOptions = {
     expandPoint: "",
     duration: 100,
     themeToggle: true,
+    theme: "auto",
     onMenuOpen: noop,
     onMenuClose: noop,
     onResize: noop,
@@ -52,7 +53,7 @@ export class Appbar extends Component {
         if (o.themeToggle) {
             this.themeToggle = $(`
                 <div class="appbar-item theme-toggle-wrapper">
-                    <div data-role="theme-toggle"></div>
+                    <div data-role="theme-toggle" data-theme="${o.theme}"></div>
                 </div>
             `)
             element.append(this.themeToggle)

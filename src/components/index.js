@@ -17,6 +17,7 @@ import {Badge} from "./badge"
 import {Breadcrumbs} from "./breadcrumbs"
 import {CommandButton} from "./command-button"
 import {ButtonGroup} from "./button-group"
+import {VerticalMenu} from "./vertical-menu"
 
 export {
     Accordion,
@@ -38,4 +39,5 @@ export {
     Breadcrumbs,
     CommandButton,
     ButtonGroup,
+    VerticalMenu
 }

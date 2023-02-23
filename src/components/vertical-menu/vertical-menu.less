@@ -1,0 +1,163 @@
+@import "../../include/mixins";
+
+.vertical-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none inside none;
+    background-color: var(--menu-background);
+    color: var(--menu-text-color);
+    display: block;
+    position: relative;
+    width: 100%;
+    float: none;
+}
+
+.vertical-menu {
+    li, a {
+        display: block;
+        float: none;
+        position: relative;
+        cursor: pointer;
+        color: inherit;
+        background-color: inherit;
+        height: auto;
+    }
+
+    li {
+        a {
+            font-size: .875rem;
+            padding: 0 2rem 0 2.5rem;
+            line-height: 45px;
+            height: 45px;
+            text-decoration: none;
+            vertical-align: middle;
+            white-space: nowrap;
+            border: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            img, .icon {
+                display: block;
+                position: absolute;
+                vertical-align: middle;
+                text-align: center;
+                text-decoration: none;
+                font-size: 1.2rem;
+                left: .5rem;
+                top: 50%;
+                margin-top: -.6rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                color: inherit;
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    line-height: 1.2rem;
+                }
+            }
+        }
+
+        &:hover {
+            text-decoration: none;
+            background-color: var(--menu-background-active);
+            color: var(--menu-text-color-active);
+
+            & > a, .icon {
+                color: inherit;
+            }
+        }
+
+        a[data-hotkey] {
+            padding-right: 4rem;
+            &::after {
+                content: attr(data-hotkey);
+                position: absolute;
+                right: 1.2rem;
+                width: auto;
+                font-size: .8em;
+            }
+        }
+
+        a {
+            &.dropdown-toggle {
+                &::before {
+                    transform: rotate(-135deg);
+                }
+
+                &.active-toggle {
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .divider {
+        padding: 0;
+        height: 1px;
+        margin: 0 1px;
+        overflow: hidden;
+        background-color: var(--border-color);
+        cursor: default;
+        pointer-events: none;
+        &:hover {
+            background-color: var(--border-color);
+        }
+    }
+
+    &.disabled {
+        cursor: default;
+        pointer-events: none;
+        a {
+            color: var(--disable-color);
+        }
+    }
+}
+
+.vertical-menu {
+    .default-shadow();
+}
+
+.vertical-menu {
+    .vertical-menu {
+        height: 0;
+        min-width: 0;
+        position: relative!important;
+        width: 100%!important;
+        //left: 0 ;
+        //right: 0 ;
+        //top: 100%;
+        box-shadow: none;
+        float: none;
+    }
+
+    .menu-title {
+        background-color: var(--menu-title-background);
+        color: var(--menu-title-text-color);
+        font-size: 12px;
+        line-height: 22px;
+        height: 22px;
+        padding: 0 8px;
+        border: 0;
+        font-weight: bold;
+        pointer-events: none;
+
+        &:first-child {
+            margin: 0;
+            border-top-width: 0;
+            &:hover {
+                border-top-width: 0;
+            }
+        }
+        &:hover {
+            background-color: #f6f7f8;
+            cursor: default;
+            border: 0;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.vertical-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none inside none;
+  background-color: var(--menu-background);
+  color: var(--menu-text-color);
+  display: block;
+  position: relative;
+  width: 100%;
+  float: none;
+}
+.vertical-menu li,
+.vertical-menu a {
+  display: block;
+  float: none;
+  position: relative;
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+  height: auto;
+}
+.vertical-menu li a {
+  font-size: 0.875rem;
+  padding: 0 2rem 0 2.5rem;
+  line-height: 45px;
+  height: 45px;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: none;
+}
+.vertical-menu li a:hover {
+  text-decoration: none;
+}
+.vertical-menu li a img,
+.vertical-menu li a .icon {
+  display: block;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  left: 0.5rem;
+  top: 50%;
+  margin-top: -0.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  color: inherit;
+}
+.vertical-menu li a img::before,
+.vertical-menu li a .icon::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 1.2rem;
+}
+.vertical-menu li:hover {
+  text-decoration: none;
+  background-color: var(--menu-background-active);
+  color: var(--menu-text-color-active);
+}
+.vertical-menu li:hover > a,
+.vertical-menu li:hover .icon {
+  color: inherit;
+}
+.vertical-menu li a[data-hotkey] {
+  padding-right: 4rem;
+}
+.vertical-menu li a[data-hotkey]::after {
+  content: attr(data-hotkey);
+  position: absolute;
+  right: 1.2rem;
+  width: auto;
+  font-size: 0.8em;
+}
+.vertical-menu li a.dropdown-toggle::before {
+  transform: rotate(-135deg);
+}
+.vertical-menu li a.dropdown-toggle.active-toggle::before {
+  transform: rotate(45deg);
+}
+.vertical-menu .divider {
+  padding: 0;
+  height: 1px;
+  margin: 0 1px;
+  overflow: hidden;
+  background-color: var(--border-color);
+  cursor: default;
+  pointer-events: none;
+}
+.vertical-menu .divider:hover {
+  background-color: var(--border-color);
+}
+.vertical-menu.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.vertical-menu.disabled a {
+  color: var(--disable-color);
+}
+.vertical-menu {
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.vertical-menu .vertical-menu {
+  height: 0;
+  min-width: 0;
+  position: relative!important;
+  width: 100%!important;
+  box-shadow: none;
+  float: none;
+}
+.vertical-menu .menu-title {
+  background-color: var(--menu-title-background);
+  color: var(--menu-title-text-color);
+  font-size: 12px;
+  line-height: 22px;
+  height: 22px;
+  padding: 0 8px;
+  border: 0;
+  font-weight: bold;
+  pointer-events: none;
+}
+.vertical-menu .menu-title:first-child {
+  margin: 0;
+  border-top-width: 0;
+}
+.vertical-menu .menu-title:first-child:hover {
+  border-top-width: 0;
+}
+.vertical-menu .menu-title:hover {
+  background-color: #f6f7f8;
+  cursor: default;
+  border: 0;
+}
+/*# sourceMappingURL=vertical-menu.css.map */
