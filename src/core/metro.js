@@ -7,6 +7,8 @@ import {clearName} from "../routines/clear-name.js";
 import {media, media_mode, medias} from "../routines/media.js";
 import {to_array} from "../routines/to-array.js";
 import {exec} from "../routines/exec.js";
+import {registerLocales} from "./locales.js";
+import {upgradeDatetime} from "./upgrade.js";
 
 const MetroOptions = {
     removeCloakTimeout: 100
@@ -17,6 +19,7 @@ export class Metro5 {
     status = "pre-alpha"
     plugins = {}
     options = {}
+    locales = {}
 
     constructor(options = {}) {
         this.options = merge({}, MetroOptions, options)
@@ -37,6 +40,8 @@ export class Metro5 {
 
     init(){
         globalize()
+        registerLocales(this.locales)
+        upgradeDatetime(this.locales)
 
         const plugins = $("[data-role]")
 
@@ -178,6 +183,12 @@ export class Metro5 {
 
     dumpRegistry(){
         return Registry.dump()
+    }
+
+    getLocale(locale, part){
+        if (!this.locales[locale]) locale = 'en-US'
+        const loc = this.locales[locale]
+        return part ? loc[part] : loc
     }
 
     static playSound (src, volume = 0.5, cb){

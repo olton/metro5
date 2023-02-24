@@ -23,6 +23,8 @@ import {InfoButton} from "./info-button"
 import {Shortcut} from "./shortcut"
 import {Toolbar} from "./toolbar"
 import {Container} from "./container"
+import {Calendar} from "./calendar"
+import {Clock} from "./clock"
 
 export {
     Accordion,
@@ -50,4 +52,6 @@ export {
     Shortcut,
     Toolbar,
     Container,
+    Calendar,
+    Clock,
 }
