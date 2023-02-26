@@ -37,8 +37,8 @@
 <h1 class="text-center">HelloWorld Metro5!</h1>
 
 <div class="mt-10 d-flex flex-justify-center flex-align-start">
-    <div data-role="calendar" data-multi-select="true"></div>
-    <div data-role="calendar" data-wide="true" class="ml-1"></div>
+    <div data-role="calendar" data-multi-select="true" data-min-date="2023-01-01" data-special="2023-02-13" data-excluded="2023-02-15"></div>
+    <div data-role="calendar" data-wide="true" class="ml-1" data-on-draw-day="calendarDrawDayTest"></div>
 </div>
 
 <div class="mt-10 d-flex flex-justify-center flex-align-start">
@@ -467,5 +467,12 @@
     </div>
 </div>
 <script src="index.js" type="module"></script>
+<script>
+    function calendarDrawDayTest (date, cell) {
+        if (date.day() % 2 === 0) {
+            //cell.addClass("bg-red fg-white")
+        }
+    }
+</script>
 </body>
 </html>

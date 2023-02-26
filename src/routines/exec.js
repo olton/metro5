@@ -24,7 +24,7 @@ export const exec = (f, args, context) => {
     }
 
     try {
-        result = func.apply(context, args);
+        result = func.apply(context, args ? Object.values(args) : []);
         return result;
     } catch (err) {
         throw err;

@@ -137,6 +137,12 @@
   color: var(--calendar-outside-text-color);
   font-size: 11px;
 }
+.calendar-content .special {
+  color: var(--calendar-special-text-color);
+}
+.calendar-content .weekend {
+  color: var(--calendar-weekend-text-color);
+}
 .calendar-content .today {
   font-weight: bold;
 }
@@ -211,6 +217,9 @@
 }
 .calendar.compact .header-day {
   font-size: 14px!important;
+}
+.calendar.compact .header-time {
+  font-size: 12px;
 }
 .calendar.compact .calendar-content {
   width: 100%;

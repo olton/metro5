@@ -4,6 +4,8 @@ import {Registry} from "../../core/registry.js";
 import {merge} from "../../routines/merge.js";
 import {to_array} from "../../routines/to-array.js";
 import {between} from "../../routines/between.js";
+import {isArrayLike} from "@olton/query/src/helpers/is-array-like.js";
+import {noop} from "../../routines/noop.js";
 
 let CalendarDefaultOptions = {
     deferred: 0,
@@ -13,6 +15,7 @@ let CalendarDefaultOptions = {
     showHeader: true,
     showFooter: true,
     locale: "en-US",
+    inputFormat: "",
     buttons: "cancel, today, clear, done",
     minYear: 0,
     maxYear: 0,
@@ -25,10 +28,20 @@ let CalendarDefaultOptions = {
     outsideClickSwitchMonth: false,
     selected: "",
     special: "",
+    excluded: "",
     minDate: "",
     maxDate: "",
-    inputFormat: "",
     compact: false,
+    animateCell: true,
+
+    onDayClick: noop,
+    onDrawDay: noop,
+    onDrawMonth: noop,
+    onDrawYear: noop,
+    onNextMonth: noop,
+    onPrevMonth: noop,
+    onNextYear: noop,
+    onPrevYear: noop,
 }
 
 export class Calendar extends Component {
@@ -50,6 +63,23 @@ export class Calendar extends Component {
         }, this.options.deferred)
     }
 
+    dates2array(str){
+        const o = this.options
+        if (!str) return []
+        const dates = typeof str === "string" ? to_array(str, ",") : isArrayLike(str) ? Array.from(str) : []
+        const result = []
+        $.each(dates, function(){
+            let _d, date = this
+            try {
+                _d = (o.inputFormat ? Datetime.from(date, o.inputFormat) : datetime(date)).align('day').format('YYYY-MM-DD')
+            } catch (e) {
+                return
+            }
+            result.push(_d)
+        })
+        return result
+    }
+
     createStruct(){
         const element = this.element, o = this.options
         const now = datetime().align("day")
@@ -68,8 +98,16 @@ export class Calendar extends Component {
         this.current = now.clone()
 
         if (o.minDate) {
-            this.minDate = datetime(o.minDate)
+            this.minDate = (o.inputFormat ? Datetime.from(o.minDate, o.inputFormat) : datetime(o.minDate)).align('day').format('YYYY-MM-DD')
         }
+
+        if (o.maxDate) {
+            this.maxDate = (o.inputFormat ? Datetime.from(o.maxDate, o.inputFormat) : datetime(o.maxDate)).align('day').format('YYYY-MM-DD')
+        }
+
+        this.selected = this.dates2array(o.selected)
+        this.special = this.dates2array(o.special)
+        this.excluded = this.dates2array(o.excluded)
 
         this.drawCalendar()
     }
@@ -80,8 +118,14 @@ export class Calendar extends Component {
             const el = $(this)
             if (el.hasClass("next-month")) {
                 that.current.addMonth(1)
+                that.fireEvent("nextMonth", {
+                    date: that.current
+                })
             } else {
                 that.current.addMonth(-1)
+                that.fireEvent("prevYear", {
+                    date: that.current
+                })
             }
             that.drawCalendar()
         })
@@ -90,8 +134,14 @@ export class Calendar extends Component {
             const el = $(this)
             if (el.hasClass("next-year")) {
                 that.current.addYear(1)
+                that.fireEvent("nextYear", {
+                    date: that.current
+                })
             } else {
                 that.current.addYear(-1)
+                that.fireEvent("prevYear", {
+                    date: that.current
+                })
             }
             that.drawCalendar()
         })
@@ -154,11 +204,20 @@ export class Calendar extends Component {
             const date = day.data("day")
             const selectedIndex = that.selected.indexOf(date)
 
+            that.fireEvent("dayClick", {
+                date,
+                cell: day
+            })
+
             if (day.hasClass("disabled")) return
 
             if (o.outsideClickSwitchMonth && day.hasClass("outside")) {
                 that.current = datetime(date)
                 that.drawCalendar()
+                return
+            }
+
+            if (day.hasClass("excluded")) {
                 return
             }
 
@@ -276,6 +335,8 @@ export class Calendar extends Component {
 
         const calendarDays = $("<div>").addClass("days").appendTo(content);
 
+        console.log(calendar)
+
         $.each(calendar['days'], (i, day) => {
             const date = datetime(day).align('day');
             const outsideDate = date.month() !== this.current.month();
@@ -286,13 +347,23 @@ export class Calendar extends Component {
 
             const cell = $("<span>").addClass("day").html(date.day()).appendTo(calendarDays);
 
-            cell.data('day', day).addClass("to-animate");
+            cell.data('day', day)
+
+            if (o.animateCell) cell.addClass("to-animate");
 
             if (outsideDate) {
                 cell.addClass("outside");
                 if (!o.showOutsideDays) {
                     cell.empty();
                 }
+            }
+
+            if (calendar.weekends.includes(day)) {
+                cell.addClass("weekend")
+            }
+
+            if (calendar.week.includes(day)) {
+                cell.addClass("weekday")
             }
 
             if (day === calendar['today']) {
@@ -305,6 +376,22 @@ export class Calendar extends Component {
 
             if (this.selected.includes(day)) {
                 cell.addClass("selected")
+            }
+
+            if (this.special.includes(day)) {
+                cell.addClass("special")
+            }
+
+            if (this.excluded.includes(day)) {
+                cell.addClass("excluded")
+            }
+
+            if (this.minDate && datetime(day).compare(this.minDate, 'day', "<")) {
+                cell.addClass("excluded")
+            }
+
+            if (this.maxDate && datetime(day).compare(this.maxDate, 'day', ">")) {
+                cell.addClass("excluded")
             }
 
             this.fireEvent("drawDay", {
@@ -349,7 +436,7 @@ export class Calendar extends Component {
 
             months.append( month );
 
-            month.addClass("to-animate");
+            if (o.animateCell) month.addClass("to-animate");
 
             this.fireEvent("drawMonth", {
                 month: i - 12,
@@ -389,7 +476,7 @@ export class Calendar extends Component {
 
             years.append( year );
 
-            year.addClass("to-animate");
+            if (o.animateCell) year.addClass("to-animate");
 
             if (o.minYear && i < o.minYear ) {
                 year.addClass("disabled");
@@ -407,8 +494,6 @@ export class Calendar extends Component {
 
         this.animateContent(".years .year");
     }
-
-    drawTime(){}
 
     drawHeader(){
         const element = this.element, o = this.options
@@ -455,7 +540,6 @@ export class Calendar extends Component {
             case "years": this.drawYears(); break;
             default: this.drawDays();
         }
-        this.drawTime()
         this.drawFooter()
     }
 
