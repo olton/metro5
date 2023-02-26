@@ -69,7 +69,7 @@
     "@olton/color": "^0.1.0",
     "@olton/datetime": "^3.0.1",
     "@olton/html": "^0.4.1",
-    "@olton/query": "^0.4.6",
+    "@olton/query": "^0.4.7",
     "@olton/string": "^0.4.1"
   }
 }

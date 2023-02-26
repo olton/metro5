@@ -44,7 +44,6 @@
 }
 
 .calendar-content {
-    padding: 1px;
     width: 278px;
 
     .calendar-toolbar, .days-wrapper {
@@ -151,9 +150,33 @@
     }
 
     .today {
-        background-color: rgba(red(@green), green(@green), blue(@green), .5);
-        color: @white;
         font-weight: bold;
+        .today-day {
+            background-color: var(--calendar-today-color);
+            color: var(--calendar-today-text-color);
+            padding: 4px;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            line-height: 1.2;
+        }
+    }
+
+    .current-month, .current-year {
+        //box-shadow: inset 0 0 12px rgba(red(@gray), green(@gray), blue(@gray), .4);
+        .current-month-today, .current-year-today {
+            background-color: var(--calendar-today-color);
+            color: var(--calendar-today-text-color);
+            padding: 4px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
     }
 
     .coincidental {
@@ -192,7 +215,28 @@
 
 .calendar {
     &.compact {
-        width: 220px;
+        width: 210px;
+
+        .curr-month {
+            font-size: 12px!important;
+        }
+
+        .today {
+            .today-day {
+                background-color: var(--calendar-today-color);
+                color: var(--calendar-today-text-color);
+                padding: 2px;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                line-height: 1.2;
+                font-size: 11px;
+                text-align: center;
+            }
+        }
+        .header-day {
+            font-size: 14px!important;
+        }
 
         .calendar-content {
             width: 100%;
@@ -221,69 +265,12 @@
                 padding: 0 .25rem;
             }
         }
-        .day, .week-number {
-            height: 30px;
-            line-height: 30px;
-            width: 30px;
+        .day, .week-number, .week-day {
+            height: 26px;
+            line-height: 26px;
+            width: 26px;
             margin: 0;
             font-size: 12px;
-        }
-    }
-}
-
-.calendar {
-    .calendar-time {
-        display: block;
-        padding: 5px 10px 10px;
-        border-top: 1px solid var(--border-color);
-        background: var(--calendar-time-background);
-        color: var(--calendar-time-text-color);
-
-        .calendar-time__inner {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .calendar-time__inner {
-            .button {
-                &.spinner-button-minus {
-                    border-left: 1px solid var(--border-color);
-                    border-right: 1px solid var(--border-color);
-                }
-            }
-
-            input {
-                text-align: center;
-            }
-
-            .minutes {
-                margin-left: 2px
-            }
-        }
-
-        .calendar-time__inner-row {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .calendar-time__inner-cell {
-            display: block;
-            width: 50%;
-        }
-    }
-
-    &.compact {
-        .calendar-time__inner-cell {
-            display: block;
-            width: 50%;
-
-            span {
-                font-size: 12px;
-            }
         }
     }
 }
@@ -311,7 +298,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    border-color: var(--border-color);
+                    //border-color: var(--border-color);
                 }
             }
         }
@@ -378,6 +365,7 @@
 
     .calendar-content {
         margin: 0 96px 0 180px;
+        border-left: 1px solid var(--border-color)
     }
 
     .header-time {
@@ -387,7 +375,7 @@
     }
 
     &.compact {
-        width: 454px!important;
+        width: 430px!important;
 
         &.calendar-picker {
             width: 354px!important;
@@ -398,7 +386,7 @@
         }
         .calendar-content {
             margin: 0 96px 0 120px;
-            width: 234px;
+            width: 210px;
         }
     }
 }

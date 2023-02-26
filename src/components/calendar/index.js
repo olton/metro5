@@ -3,6 +3,7 @@ import {Component} from "../../core/component.js";
 import {Registry} from "../../core/registry.js";
 import {merge} from "../../routines/merge.js";
 import {to_array} from "../../routines/to-array.js";
+import {between} from "../../routines/between.js";
 
 let CalendarDefaultOptions = {
     deferred: 0,
@@ -20,12 +21,23 @@ let CalendarDefaultOptions = {
     showOutsideDays: true,
     showGhost: true,
     wide: false,
+    multiSelect: false,
+    outsideClickSwitchMonth: false,
+    selected: "",
+    special: "",
+    minDate: "",
+    maxDate: "",
+    inputFormat: "",
+    compact: false,
 }
 
 export class Calendar extends Component {
     draw = null
     current = null
     today = null
+    selected = []
+    minDate = null
+    maxDate = null
 
     constructor(elem, options) {
         if (typeof globalThis["metroCalendarSetup"] !== "undefined") {
@@ -47,9 +59,17 @@ export class Calendar extends Component {
             element.addClass("calendar-wide")
         }
 
+        if (o.compact) {
+            element.addClass("compact")
+        }
+
         this.draw = o.startFrom
         this.today = now.clone()
         this.current = now.clone()
+
+        if (o.minDate) {
+            this.minDate = datetime(o.minDate)
+        }
 
         this.drawCalendar()
     }
@@ -91,6 +111,22 @@ export class Calendar extends Component {
             that.drawCalendar()
         })
 
+        element.on("click", ".button.clear", function(){
+            that.selected = []
+            that.current = datetime()
+            that.drawCalendar()
+        })
+
+        element.on("click", ".button.cancel", function(){
+            that.current = datetime()
+            that.drawCalendar()
+        })
+
+        element.on("click", ".button.done", function(){
+            that.current = datetime()
+            that.drawCalendar()
+        })
+
         element.on("click", ".next-year-group, .prev-year-group", function(){
             const el = $(this)
             if (el.hasClass("next-year-group")) {
@@ -111,6 +147,95 @@ export class Calendar extends Component {
             that.current.month($(this).attr("data-month"))
             that.draw = "days"
             that.drawCalendar()
+        })
+
+        element.on("click", ".days .day", function(){
+            const day = $(this)
+            const date = day.data("day")
+            const selectedIndex = that.selected.indexOf(date)
+
+            if (day.hasClass("disabled")) return
+
+            if (o.outsideClickSwitchMonth && day.hasClass("outside")) {
+                that.current = datetime(date)
+                that.drawCalendar()
+                return
+            }
+
+            if (o.multiSelect === true) {
+                if (selectedIndex !== -1) {
+                    delete that.selected[selectedIndex]
+                    day.removeClass("selected")
+                } else {
+                    that.selected.push(date)
+                    day.addClass("selected")
+                }
+            } else {
+                that.selected = [date]
+                element.find(".day.selected").removeClass("selected")
+                day.addClass("selected")
+            }
+        })
+
+        element.on("click", ".week-days .week-day", function(){
+            if (o.multiSelect !== true) return
+
+            const day = $(this)
+            const ii = []
+
+            let index = day.index();
+
+            for (let i = 0; i < 7; i++) {
+                ii.push(index);
+                index += o.showWeekNumber ? 8 : 7;
+            }
+
+            const days = element.find(".days .day").filter((el)=>{
+                const $el = $(el);
+                return ii.includes($el.index()) && !$el.hasClass("outside disabled excluded");
+            })
+
+            $.each(days, (_, el) => {
+                const $el = $(el);
+                const day = $el.data('day');
+
+                if (!that.selected.includes(day)) {
+                    that.selected.push(day);
+                    $el.addClass("selected")
+                } else {
+                    $el.removeClass("selected")
+                    delete that.selected[that.selected.indexOf(day)]
+                }
+            });
+        })
+
+        element.on("click", ".week-number", function(){
+            if (o.multiSelect !== true) return
+
+            const day = $(this)
+            const weekNum = day.text()
+            const dayIndex = day.index()
+
+            if (weekNum === "#") return
+
+            const days = element.find(".day").filter((el)=>{
+                const $el = $(el);
+                const elIndex = $el.index();
+                return between(elIndex, dayIndex, dayIndex + 8, false) && !$el.hasClass("outside disabled excluded");
+            })
+
+            $.each(days, function () {
+                const $el = $(this);
+                const day = $el.data('day');
+
+                if (that.selected.indexOf(day) === -1) {
+                    that.selected.push(day);
+                    $el.addClass("selected");
+                } else {
+                    $el.removeClass("selected");
+                    delete that.selected[that.selected.indexOf(day)]
+                }
+            });
         })
     }
 
@@ -171,12 +296,21 @@ export class Calendar extends Component {
             }
 
             if (day === calendar['today']) {
-                cell.addClass("today")
+                cell.html(`<span class="today-day">${cell.text()}</span>`).addClass("today")
             }
 
             if (o.showGhost && date.day() === now.day()) {
                 cell.addClass("coincidental");
             }
+
+            if (this.selected.includes(day)) {
+                cell.addClass("selected")
+            }
+
+            this.fireEvent("drawDay", {
+                date,
+                cell
+            })
         })
 
         this.animateContent(".day");
@@ -210,8 +344,8 @@ export class Calendar extends Component {
             const month = $("<div>")
                 .attr("data-month", `${i - 12}`)
                 .addClass("month")
-                .addClass(i - 12 === this.today.month() && this.current.year() === this.today.year() ? "today" : "")
-                .html(locale[i])
+                .addClass(i - 12 === this.today.month() ? "current-month" : "")
+                .html(`<span class="current-month-today">${locale[i]}</span>`)
 
             months.append( month );
 
@@ -219,7 +353,6 @@ export class Calendar extends Component {
 
             this.fireEvent("drawMonth", {
                 month: i - 12,
-                current: this.current,
                 cell: month[0]
             });
         }
@@ -251,8 +384,8 @@ export class Calendar extends Component {
             const year = $("<div>")
                 .attr("data-year", i)
                 .addClass("year")
-                .addClass(i === this.current.year ? "today" : "")
-                .html(i)
+                .addClass(i === this.today.year() ? "current-year" : "")
+                .html(`<span class="current-year-today">${i}</span>`)
 
             years.append( year );
 
@@ -268,7 +401,6 @@ export class Calendar extends Component {
 
             this.fireEvent("drawYear", {
                 year: i,
-                current: this.current,
                 cell: year[0]
             });
         }

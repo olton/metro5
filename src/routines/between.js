@@ -1,0 +1,1 @@
+export const between = (val, bottom, top, equals) => equals === true ? val >= bottom && val <= top : val > bottom && val < top
