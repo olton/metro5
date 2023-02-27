@@ -110,7 +110,7 @@
 .calendar-content .day,
 .calendar-content .week-day,
 .calendar-content .week-number {
-  height: 39px;
+  height: 34px;
   cursor: pointer;
   font-size: 14px;
   position: relative;
@@ -136,12 +136,6 @@
 .calendar-content .outside {
   color: var(--calendar-outside-text-color);
   font-size: 11px;
-}
-.calendar-content .special {
-  color: var(--calendar-special-text-color);
-}
-.calendar-content .weekend {
-  color: var(--calendar-weekend-text-color);
 }
 .calendar-content .today {
   font-weight: bold;

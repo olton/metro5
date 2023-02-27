@@ -16,7 +16,7 @@ let CalendarDefaultOptions = {
     showFooter: true,
     locale: "en-US",
     inputFormat: "",
-    buttons: "cancel, today, clear, done",
+    buttons: "today, clear",
     minYear: 0,
     maxYear: 0,
     weekStart: 1,
@@ -335,8 +335,6 @@ export class Calendar extends Component {
 
         const calendarDays = $("<div>").addClass("days").appendTo(content);
 
-        console.log(calendar)
-
         $.each(calendar['days'], (i, day) => {
             const date = datetime(day).align('day');
             const outsideDate = date.month() !== this.current.month();
@@ -557,6 +555,21 @@ export class Calendar extends Component {
         });
     }
 
+    getSelectedDays(){
+        return this.selected
+    }
+
+    getSpecialDays(){
+        return this.special
+    }
+
+    getExcludedDays(){
+        return this.excluded
+    }
+
+    getCalendar(){
+        return datetime(this.current.year(), this.current.month(), this.current.day()).useLocale(o.locale).calendar(o.weekStart);
+    }
 }
 
 Registry.register("calendar", Calendar)
