@@ -171,6 +171,7 @@
             width: 24px;
             height: 24px;
             line-height: 1.2;
+            text-align: center;
         }
     }
 
@@ -197,6 +198,7 @@
 
     .excluded {
         background-color: var(--calendar-exclude);
+        cursor: default;
     }
 
     .day {
@@ -279,6 +281,7 @@
                 height: 24px;
                 line-height: 24px;
                 padding: 0 .25rem;
+                font-size: 11px;
             }
         }
         .day, .week-number, .week-day {
@@ -339,7 +342,7 @@
 
 .calendar-wide {
     flex-flow: row nowrap;
-    width: 560px;
+    width: 460px;
     .clear();
 
     &.calendar-picker {
@@ -358,7 +361,14 @@
     }
 
     .calendar-footer {
-        right: 0;
+        //right: 0;
+        width: 180px!important;
+        top: auto;
+        left: 0;
+        bottom: 0;
+        height: auto;
+        min-height: auto;
+        border: none!important;
     }
 
     .calendar-header {
@@ -391,7 +401,7 @@
     }
 
     &.compact {
-        width: 430px!important;
+        width: 330px!important;
 
         &.calendar-picker {
             width: 354px!important;
@@ -403,6 +413,9 @@
         .calendar-content {
             margin: 0 96px 0 120px;
             width: 210px;
+        }
+        .calendar-footer {
+            width: 120px!important;
         }
     }
 }

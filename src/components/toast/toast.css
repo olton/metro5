@@ -1,0 +1,51 @@
+:root {
+  --z-index-selected-check: 100;
+  --z-index-absolute: 500;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  --z-index-top: 1080;
+  --z-index-notify: 1085;
+  --z-index-charms: 1090;
+  --z-index-overlay: 2000;
+  --z-index-overlay-global-dialog: 2001;
+  --z-index-fullscreen: 2147483647;
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  width: auto;
+  max-width: 35.5rem;
+  padding: 0.5rem 1.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: normal;
+  background-color: var(--toast-background);
+  color: var(--toast-text-color);
+  border-radius: 4px;
+  z-index: 1080;
+}
+.toast.show-top {
+  bottom: auto;
+  top: 20px;
+}
+.toast .close-btn {
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: inherit;
+  color: inherit;
+  z-index: 100;
+}
+.toast .close-btn::before {
+  display: block;
+  content: "\00d7";
+  font-size: 24px;
+  margin-top: -4px;
+}
+/*# sourceMappingURL=toast.css.map */

@@ -148,6 +148,7 @@
   width: 24px;
   height: 24px;
   line-height: 1.2;
+  text-align: center;
 }
 .calendar-content .current-month .current-month-today,
 .calendar-content .current-year .current-month-today,
@@ -170,6 +171,7 @@
 }
 .calendar-content .excluded {
   background-color: var(--calendar-exclude);
+  cursor: default;
 }
 .calendar-content .day {
   border: 1px solid transparent;
@@ -236,6 +238,7 @@
   height: 24px;
   line-height: 24px;
   padding: 0 0.25rem;
+  font-size: 11px;
 }
 .calendar.compact .day,
 .calendar.compact .week-number,
@@ -279,7 +282,7 @@
 }
 .calendar-wide {
   flex-flow: row nowrap;
-  width: 560px;
+  width: 460px;
 }
 .calendar-wide::after {
   display: block;
@@ -300,7 +303,13 @@
   left: 0;
 }
 .calendar-wide .calendar-footer {
-  right: 0;
+  width: 180px!important;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  min-height: auto;
+  border: none!important;
 }
 .calendar-wide .calendar-header {
   width: 180px;
@@ -327,7 +336,7 @@
   margin-bottom: 10px;
 }
 .calendar-wide.compact {
-  width: 430px!important;
+  width: 330px!important;
 }
 .calendar-wide.compact.calendar-picker {
   width: 354px!important;
@@ -338,6 +347,9 @@
 .calendar-wide.compact .calendar-content {
   margin: 0 96px 0 120px;
   width: 210px;
+}
+.calendar-wide.compact .calendar-footer {
+  width: 120px!important;
 }
 .calendar .day,
 .calendar .month,

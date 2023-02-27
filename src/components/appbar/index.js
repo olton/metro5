@@ -14,7 +14,7 @@ let AppbarDefaultOptions = {
     theme: "auto",
     onMenuOpen: noop,
     onMenuClose: noop,
-    onResize: noop,
+    onResizeBar: noop,
     onCreate: noop
 }
 
@@ -82,10 +82,9 @@ export class Appbar extends Component {
                 this.menu.css({height: "auto"})
             }
         }
+        this.resize()
     }
     createEvents(){
-        const o = this.options
-
         this.element.on("click", ".hamburger", () => {
             if (this.menu.length === 0) return;
             if (this.menu.hasClass("collapsed")) {
@@ -96,32 +95,39 @@ export class Appbar extends Component {
         });
 
         $(window).on("resize", () => {
-            this.fireEvent("resize")
-
-            if (o.expand !== true) {
-                if (o.expandPoint && mediaExist(o.expandPoint)) {
-                    this.element.addClass("appbar-expand");
-                } else {
-                    this.element.removeClass("appbar-expand");
-                }
-            }
-
-            if (this.menu.length === 0) return;
-
-            if (this.hamburger.css('display') !== 'block') {
-                this.hamburger.addClass("hidden");
-                this.menu.css({
-                    overflow: "visible",
-                    height: "auto"
-                })
-            } else {
-                this.hamburger.removeClass("hidden");
-                this.menu.css({
-                    overflow: "hidden",
-                    height: 0
-                })
-            }
+            this.resize()
+            this.fireEvent("resizeBar", {
+                width: this.element.outerWidth()
+            })
         }, {ns: this.element.id()});
+    }
+
+    resize(){
+        const o = this.options
+
+        if (o.expand !== true) {
+            if (o.expandPoint && mediaExist(o.expandPoint)) {
+                this.element.addClass("appbar-expand");
+            } else {
+                this.element.removeClass("appbar-expand");
+            }
+        }
+
+        if (this.menu.length === 0) return;
+
+        if (this.hamburger.css('display') !== 'block') {
+            this.hamburger.addClass("hidden");
+            this.menu.css({
+                overflow: "visible",
+                height: "auto"
+            })
+        } else {
+            this.hamburger.removeClass("hidden");
+            this.menu.css({
+                overflow: "hidden",
+                height: 0
+            })
+        }
     }
 
     openMenu(){

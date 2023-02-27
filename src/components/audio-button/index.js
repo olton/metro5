@@ -85,3 +85,18 @@ export class AudioButton extends Component {
 }
 
 Registry.register("audiobutton", AudioButton)
+
+Metro5.playSound = (src, volume = 0.5, cb) => {
+    const audio = new Audio(src)
+    audio.volume = volume
+
+    audio.addEventListener('loadeddata', function(){
+        audio.pause();
+        audio.currentTime = 0;
+        audio.play();
+    });
+
+    audio.addEventListener('ended', function(){
+        exec(cb, [src, audio])
+    });
+}

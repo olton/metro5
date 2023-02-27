@@ -35,8 +35,7 @@
     "src"
   ],
   "scripts": {
-    "start": "parcel ./demo/index.html",
-    "build:demo": "vite build --config vite.demo.js",
+    "start": "parcel ./demo/index.html ./demo/*.html",
     "clear": "shx rm -rf lib/*",
     "build": "npm run clear && rollup --config && npm run minifycss",
     "minifycss": "css-minify -f lib/metro5.css -o lib"

@@ -25,6 +25,9 @@ import {Toolbar} from "./toolbar"
 import {Container} from "./container"
 import {Calendar} from "./calendar"
 import {Clock} from "./clock"
+import {Toast} from "./toast"
+import {Tokenizer} from "./tokenizer"
+import {HtmlContainer} from "./html-container"
 
 export {
     Accordion,
@@ -54,4 +57,7 @@ export {
     Container,
     Calendar,
     Clock,
+    Toast,
+    Tokenizer,
+    HtmlContainer
 }
