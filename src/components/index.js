@@ -28,6 +28,7 @@ import {Clock} from "./clock"
 import {Toast} from "./toast"
 import {Tokenizer} from "./tokenizer"
 import {HtmlContainer} from "./html-container"
+import {Cookies, CookieDisclaimer} from "./cookies/index.js"
 
 export {
     Accordion,
@@ -59,5 +60,7 @@ export {
     Clock,
     Toast,
     Tokenizer,
-    HtmlContainer
+    HtmlContainer,
+    Cookies,
+    CookieDisclaimer,
 }

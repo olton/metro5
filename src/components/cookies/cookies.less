@@ -1,0 +1,24 @@
+@import "../../include/z-index";
+
+.cookie-disclaimer-block {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    z-index: @zindex-fixed;
+    background-color: var(--cookie-disclaimer-background);
+    color: var(--cookie-disclaimer-text-color);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.cookie-disclaimer-actions {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

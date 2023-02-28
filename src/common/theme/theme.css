@@ -53,6 +53,8 @@
   --calendar-weekend-text-color: #e30f0f;
   --toast-background: #777777;
   --toast-text-color: #ffffff;
+  --cookie-disclaimer-background: #ffffff;
+  --cookie-disclaimer-text-color: #000000;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -104,6 +106,8 @@
   --calendar-today-text-color: #000000;
   --toast-background: #323232;
   --toast-text-color: #ffffff;
+  --cookie-disclaimer-background: #ffffff;
+  --cookie-disclaimer-text-color: #000000;
 }
 body {
   background-color: var(--body-background);

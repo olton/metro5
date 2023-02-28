@@ -1,1 +1,1 @@
-export const to_array = (str, sep = ",") => str.split(",").map( v => v.trim() )
+export const to_array = (str, sep = ",") => str.split(sep).map( v => v.trim() )

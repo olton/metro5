@@ -14,7 +14,6 @@ let AppbarDefaultOptions = {
     theme: "auto",
     onMenuOpen: noop,
     onMenuClose: noop,
-    onResizeBar: noop,
     onCreate: noop
 }
 
@@ -96,9 +95,6 @@ export class Appbar extends Component {
 
         $(window).on("resize", () => {
             this.resize()
-            this.fireEvent("resizeBar", {
-                width: this.element.outerWidth()
-            })
         }, {ns: this.element.id()});
     }
 
