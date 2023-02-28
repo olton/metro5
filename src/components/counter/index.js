@@ -12,7 +12,8 @@ let CounterDefaultOptions = {
 
 export class Counter extends Component {
     started = false
-    target = null
+    from = null
+    to = null
     constructor(elem, options) {
         if (typeof globalThis["metroCounterSetup"] !== "undefined") {
             CounterDefaultOptions = merge({}, CounterDefaultOptions, globalThis["metroCounterSetup"])
@@ -24,7 +25,9 @@ export class Counter extends Component {
 
     createStruct(){
         const element = this.element
-        this.target = parseFloat(element.text())
+        const [a, b] = element.text().split(",")
+        this.from = b ? a : 0
+        this.to = b ? b : a
         element.clear()
     }
 
@@ -38,7 +41,7 @@ export class Counter extends Component {
         Animation.animate({
             el: this.elem,
             draw: {
-                innerHTML: [0, this.target],
+                innerHTML: [this.from, this.to],
                 opacity: [0, 1]
             },
             dur: o.duration,
