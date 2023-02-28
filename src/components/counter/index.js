@@ -8,6 +8,7 @@ let CounterDefaultOptions = {
     prefix: "",
     suffix: "",
     duration: 3000,
+    startOnViewport: true,
 }
 
 export class Counter extends Component {
@@ -20,6 +21,7 @@ export class Counter extends Component {
         }
         super(elem, "counter", merge({}, CounterDefaultOptions, options));
         this.createStruct()
+        this.createEvents()
         this.run()
     }
 
@@ -29,6 +31,16 @@ export class Counter extends Component {
         this.from = b ? a : 0
         this.to = b ? b : a
         element.clear()
+    }
+
+    createEvents(){
+        const element = this.element, o = this.options
+
+        $(window).on("scroll", () => {
+            if (o.startOnViewport === true && inViewport(element[0]) && !this.started) {
+                this.run();
+            }
+        }, {ns: this.id})
     }
 
     run(){
