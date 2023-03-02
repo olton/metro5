@@ -30,6 +30,7 @@ import {Tokenizer} from "./tokenizer"
 import {HtmlContainer} from "./html-container"
 import {Cookies, CookieDisclaimer} from "./cookies/index.js"
 import {Counter} from "./counter/index.js"
+import {Form, Validator} from "./form/index.js";
 
 export {
     Accordion,
@@ -64,5 +65,7 @@ export {
     HtmlContainer,
     Cookies,
     CookieDisclaimer,
-    Counter
+    Counter,
+    Form,
+    Validator,
 }

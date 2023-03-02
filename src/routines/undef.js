@@ -1,0 +1,1 @@
+export const undef = val => typeof val === "undefined" || val === null

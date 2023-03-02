@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "@olton/animation": "^0.1.0",
-    "@olton/color": "^0.1.0",
+    "@olton/color": "^0.1.1",
     "@olton/datetime": "^3.0.1",
     "@olton/html": "^0.4.1",
     "@olton/query": "^0.4.7",
