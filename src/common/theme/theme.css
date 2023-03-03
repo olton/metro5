@@ -55,6 +55,13 @@
   --toast-text-color: #ffffff;
   --cookie-disclaimer-background: #ffffff;
   --cookie-disclaimer-text-color: #000000;
+  --analog-clock-background: #ffffff;
+  --analog-clock-dot: #000000;
+  --analog-clock-hour: #000000;
+  --analog-clock-minute: #000000;
+  --analog-clock-second: #e30f0f;
+  --analog-clock-tick-major: #000000;
+  --analog-clock-tick-minor: #b6b6b6;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -108,6 +115,13 @@
   --toast-text-color: #ffffff;
   --cookie-disclaimer-background: #ffffff;
   --cookie-disclaimer-text-color: #000000;
+  --analog-clock-background: #2b2d30;
+  --analog-clock-dot: #ffffff;
+  --analog-clock-hour: #ffffff;
+  --analog-clock-minute: #ffffff;
+  --analog-clock-second: #e30f0f;
+  --analog-clock-tick-major: #ffffff;
+  --analog-clock-tick-minor: #b6b6b6;
 }
 body {
   background-color: var(--body-background);

@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: var(--analog-clock-background);
 }
 
 .analog-clock__dot {
@@ -24,11 +24,10 @@
     left: 50%;
     margin-left: -3px;
     margin-top: -3px;
-    background-color: #1e2228;
+    background-color: var(--analog-clock-dot);
     border-radius: 50%;
 }
 .analog-clock__inner {
-    //border: 1px solid var(--border-color);
     border-radius: 50%;
     height: 85%;
     width: 85%;
@@ -39,13 +38,18 @@
 .analog-clock__minute,
 .analog-clock__second {
     position: absolute;
-    background: black;
     border-radius: 10px;
     transform-origin: bottom;
 }
 
+.analog-clock__hour {
+    background: var(--analog-clock-hour);
+}
+.analog-clock__minute {
+    background: var(--analog-clock-minute);
+}
 .analog-clock__second {
-    background: red;
+    background: var(--analog-clock-second);
 }
 
 .analog-clock__hour {
@@ -86,7 +90,7 @@
     position: absolute;
     left: 50%;
     margin-left: -1px;
-    background-color: #1e2228;
+    background-color: var(--analog-clock-tick-major);
     transform-origin: center center;
 }
 
@@ -115,5 +119,5 @@
 .analog-clock__m4-10,
 .analog-clock__m5-11
 {
-    background-color: #ababab;
+    background-color: var(--analog-clock-tick-minor);
 }
