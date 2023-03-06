@@ -27611,7 +27611,10 @@ a {
   border-radius: 4px;
 }
 .appbar .hamburger:not(.hidden) ~ .ml-auto {
-  margin-right: 48px;
+  margin-right: 52px;
+}
+.appbar .theme-toggle-wrapper ~ .ml-auto {
+  margin-right: 52px;
 }
 .appbar-expand {
   flex-wrap: nowrap;
