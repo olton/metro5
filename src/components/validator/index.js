@@ -148,7 +148,28 @@ export const Validator = {
     },
 
     validateElement(el, functions){
-        return this.validate($(el).val(), functions)
+        const $el = $(el)
+
+        if (!functions) {
+            functions = $el.attr("data-validate")
+        }
+
+        if ($el.attr("type").toLowerCase() === 'checkbox' && functions.includes("required")) {
+            return {
+                "required": $el.is(":checked")
+            }
+        }
+
+        else if ($el.attr("type").toLowerCase() === "radio"  && functions.includes("required")) {
+            const name = $el.attr("name")
+            const checks = $("input[name=" + name.replace("[", "\\\[").replace("]", "\\\]") + "]:checked");
+            return {
+                "required": checks.length
+            }
+        }
+
+        else
+        return this.validate($el.val(), functions)
     },
 
     checkResult(result){

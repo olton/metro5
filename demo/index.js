@@ -10,7 +10,7 @@ globalThis.Metro = new Metro5({
         $(".hamburgers .hamburger").on("click", function() {
             $(this).toggleClass("active")
         })
-        console.log(Validator.validate("123", "length=5 integer"))
+        // console.log(Validator.validate("123", "length=5 integer"))
     }
 })
 
