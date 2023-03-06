@@ -37,6 +37,15 @@ export class Appbar extends Component {
         const element = this.element, o = this.options
         element.addClass("appbar")
 
+        if (o.themeToggle) {
+            this.themeToggle = $(`
+                <div class="appbar-item theme-toggle-wrapper">
+                    <div data-role="theme-toggle" data-theme="${o.theme}"></div>
+                </div>
+            `)
+            element.prepend(this.themeToggle)
+        }
+
         this.hamburger = element.find(".hamburger")
         if (!this.hamburger.length) {
             this.hamburger = $(`
@@ -46,16 +55,7 @@ export class Appbar extends Component {
                     <span class="line"></span>                
                 </button>
             `)
-            element.append(this.hamburger)
-        }
-
-        if (o.themeToggle) {
-            this.themeToggle = $(`
-                <div class="appbar-item theme-toggle-wrapper">
-                    <div data-role="theme-toggle" data-theme="${o.theme}"></div>
-                </div>
-            `)
-            element.append(this.themeToggle)
+            element.prepend(this.hamburger)
         }
 
         this.menu = element.find(".appbar-menu");
