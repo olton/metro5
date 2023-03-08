@@ -7,9 +7,6 @@ import {Validator} from "../src/components";
 globalThis.Metro = new Metro5({
     removeCloakTimeout: 1000,
     onInit: ()=>{
-        $(".hamburgers .hamburger").on("click", function() {
-            $(this).toggleClass("active")
-        })
         // console.log(Validator.validate("123", "length=5 integer"))
     }
 })

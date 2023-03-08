@@ -1,9 +1,7 @@
 .analog-clock {
   position: relative;
   margin: auto;
-  height: 100px;
   /*to make the height and width responsive*/
-  width: 100px;
   /*setting our background image*/
   background-size: 100%;
   border: 1px solid var(--border-color);
@@ -48,27 +46,27 @@
   background: var(--analog-clock-second);
 }
 .analog-clock__hour {
-  width: 2px;
+  width: 4px;
   height: 22%;
   top: 27%;
   left: 50%;
-  margin-left: -1px;
-  opacity: 0.8;
+  margin-left: -2px;
+  aspect-ratio: 0.5;
 }
 .analog-clock__minute {
-  width: 2px;
+  width: 4px;
   height: 34%;
   top: 15%;
   left: 50%;
-  margin-left: -1px;
+  margin-left: -2px;
   opacity: 0.8;
 }
 .analog-clock__second {
   width: 2px;
   height: 40%;
-  top: 9%;
-  left: 49.25%;
-  opacity: 0.8;
+  top: 10%;
+  left: 50%;
+  margin-left: -1px;
 }
 .analog-clock__m12-6,
 .analog-clock__m3-9,

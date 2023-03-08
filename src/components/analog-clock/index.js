@@ -4,7 +4,8 @@ import {merge} from "../../routines/merge.js";
 import {Registry} from "../../core/registry.js";
 
 let AnalogClockDefaultOptions = {
-    deferred: 0
+    deferred: 0,
+    size: 100
 }
 
 export class AnalogClock extends Component {
@@ -22,7 +23,10 @@ export class AnalogClock extends Component {
 
     createStruct(){
         const element = this.element, o = this.options
-        element.addClass("analog-clock")
+        element.addClass("analog-clock").css({
+            width: o.size,
+            height: o.size
+        })
         element.html(`
             <div class="analog-clock__m12-6"></div>
             <div class="analog-clock__m3-9"></div>
