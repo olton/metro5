@@ -3,6 +3,7 @@ import {merge} from "../../routines/merge.js";
 import {inViewport} from "../../routines/in-viewport.js";
 import {Registry} from "../../core/registry.js";
 import {numberFormat} from "../../routines/number-format.js";
+import {undef} from "../../routines/undef.js";
 
 let CounterDefaultOptions = {
     prefix: "",
@@ -28,8 +29,8 @@ export class Counter extends Component {
     createStruct(){
         const element = this.element
         const [a, b] = element.text().split(",")
-        this.from = b ? a : 0
-        this.to = b ? b : a
+        this.from = undef(b) ? 0 : +a
+        this.to = undef(b) ? +a : +b
         element.clear()
     }
 
@@ -37,7 +38,7 @@ export class Counter extends Component {
         const element = this.element, o = this.options
 
         $(window).on("scroll", () => {
-            if (o.startOnViewport === true && inViewport(element[0]) && !this.started) {
+            if (!this.started && o.startOnViewport === true && inViewport(element[0])) {
                 this.run();
             }
         }, {ns: this.id})
@@ -46,7 +47,8 @@ export class Counter extends Component {
     run(){
         const elem = this.elem, o = this.options
 
-        if (!inViewport(this.elem) || this.started) return
+        if (this.started) return
+        if (!inViewport(this.elem)) return
 
         this.started = true
 

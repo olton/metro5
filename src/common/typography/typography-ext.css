@@ -840,4 +840,30 @@
     font-size: 4em;
   }
 }
+.remark {
+  display: block;
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--border-color);
+  background-color: rgba(192, 192, 192, 0.2);
+  padding: 1rem;
+  font-size: 14px;
+  margin: 1rem 0;
+}
+.remark.alert {
+  border-color: #CE352C !important;
+  background-color: rgba(206, 53, 44, 0.2);
+}
+.remark.info {
+  border-color: #26b2f6 !important;
+  background-color: rgba(38, 178, 246, 0.2);
+}
+.remark.success {
+  border-color: #60a917 !important;
+  background-color: rgba(96, 169, 23, 0.2);
+}
+.remark.warning {
+  border-color: #f0a30a !important;
+  background-color: rgba(240, 163, 10, 0.2);
+}
 /*# sourceMappingURL=typography-ext.css.map */

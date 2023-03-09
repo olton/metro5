@@ -136,3 +136,30 @@ each(@media-rules, {
     .enlarge-4x-@{key} {font-size: 4em;}
   }
 })
+
+.remark {
+  display: block;
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--border-color);
+  background-color: rgba(red(#C0C0C0), green(#C0C0C0), blue(#C0C0C0), .2);
+  padding: 1rem;
+  font-size: 14px;
+  margin: 1rem 0;
+  &.alert {
+    border-color: @red!important;
+    background-color: rgba(red(@red), green(@red), blue(@red), .2);
+  }
+  &.info {
+    border-color: @cyan!important;
+    background-color: rgba(red(@cyan), green(@cyan), blue(@cyan), .2);
+  }
+  &.success {
+    border-color: @green!important;
+    background-color: rgba(red(@green), green(@green), blue(@green), .2);
+  }
+  &.warning {
+    border-color: @amber!important;
+    background-color: rgba(red(@amber), green(@amber), blue(@amber), .2);
+  }
+}

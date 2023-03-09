@@ -47,7 +47,7 @@
 }
 .analog-clock__hour {
   width: 4px;
-  height: 22%;
+  height: 23%;
   top: 27%;
   left: 50%;
   margin-left: -2px;
@@ -55,7 +55,7 @@
 }
 .analog-clock__minute {
   width: 4px;
-  height: 34%;
+  height: 35%;
   top: 15%;
   left: 50%;
   margin-left: -2px;

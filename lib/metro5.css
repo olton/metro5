@@ -11447,6 +11447,32 @@ pre code {
     font-size: 4em;
   }
 }
+.remark {
+  display: block;
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--border-color);
+  background-color: rgba(192, 192, 192, 0.2);
+  padding: 1rem;
+  font-size: 14px;
+  margin: 1rem 0;
+}
+.remark.alert {
+  border-color: #CE352C !important;
+  background-color: rgba(206, 53, 44, 0.2);
+}
+.remark.info {
+  border-color: #26b2f6 !important;
+  background-color: rgba(38, 178, 246, 0.2);
+}
+.remark.success {
+  border-color: #60a917 !important;
+  background-color: rgba(96, 169, 23, 0.2);
+}
+.remark.warning {
+  border-color: #f0a30a !important;
+  background-color: rgba(240, 163, 10, 0.2);
+}
 /*# sourceMappingURL=typography-ext.css.map */
 :root {
   --base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
@@ -24745,6 +24771,12 @@ body {
   --analog-clock-second: #e30f0f;
   --analog-clock-tick-major: #000000;
   --analog-clock-tick-minor: #b6b6b6;
+  --progress-background: #eeeeee;
+  --progress-bar-color: #60a917;
+  --progress-buffer-color: #CE352C;
+  --progress-line-color: #26b2f6;
+  --progress-line-background: #b3d4fc;
+  --hamburger-color: #000000;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -24805,6 +24837,12 @@ body {
   --analog-clock-second: #e30f0f;
   --analog-clock-tick-major: #ffffff;
   --analog-clock-tick-minor: #b6b6b6;
+  --progress-background: #2b2d30;
+  --progress-bar-color: #60a917;
+  --progress-buffer-color: #CE352C;
+  --progress-line-color: #26b2f6;
+  --progress-line-background: #b3d4fc;
+  --hamburger-color: #adbaa9;
 }
 body {
   background-color: var(--body-background);
@@ -30032,7 +30070,7 @@ body {
 }
 .hamburger .line {
   width: 30px;
-  background-color: var(--text-color-secondary);
+  background-color: var(--hamburger-color);
   display: block;
   transition: all 0.3s ease-in-out;
   height: 3px;
@@ -31654,7 +31692,7 @@ fieldset.disabled,
 }
 .analog-clock__hour {
   width: 4px;
-  height: 22%;
+  height: 23%;
   top: 27%;
   left: 50%;
   margin-left: -2px;
@@ -31662,7 +31700,7 @@ fieldset.disabled,
 }
 .analog-clock__minute {
   width: 4px;
-  height: 34%;
+  height: 35%;
   top: 15%;
   left: 50%;
   margin-left: -2px;
@@ -31711,3 +31749,98 @@ fieldset.disabled,
   background-color: var(--analog-clock-tick-minor);
 }
 /*# sourceMappingURL=analog-clock.css.map */
+.progress {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background-color: var(--progress-background);
+  overflow: hidden;
+}
+.progress.with-load {
+  background: transparent;
+}
+.progress .bar,
+.progress .buffer,
+.progress .load {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.progress .load {
+  width: 100%;
+  animation: progress-loading 3s infinite linear;
+  background: radial-gradient(#a9c0e9 0%, #a9c0e9 16%, transparent 42%);
+  background-size: 12px 12px;
+  z-index: 1;
+  margin-top: -1px;
+}
+.progress .buffer {
+  z-index: 2;
+  background-color: var(--progress-buffer-color);
+}
+.progress .bar {
+  z-index: 3;
+  background: var(--progress-bar-color);
+}
+.progress.line {
+  background-color: var(--progress-line-background);
+  display: flex;
+}
+.progress.line::before {
+  height: 100%;
+  width: 100%;
+  background-color: var(--progress-line-color);
+  content: '';
+  animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.progress .value {
+  display: block;
+  float: left;
+  position: absolute;
+  z-index: 5;
+  font-size: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 4px;
+}
+.progress .value.centered {
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.progress.small {
+  height: 6px;
+}
+.progress.small .load {
+  background-size: 6px 6px;
+}
+@keyframes progress-loading {
+  0% {
+    opacity: 1;
+    background-position: 0px -23px;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    background-position: -200px -23px;
+  }
+}
+@keyframes running-progress {
+  0% {
+    margin-left: 0;
+    margin-right: 100%;
+  }
+  50% {
+    margin-left: 25%;
+    margin-right: 0;
+  }
+  100% {
+    margin-left: 100%;
+    margin-right: 0;
+  }
+}
+/*# sourceMappingURL=progress.css.map */

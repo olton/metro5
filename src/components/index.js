@@ -33,6 +33,8 @@ import {Counter} from "./counter/index.js"
 import {Form} from "./form/index.js"
 import {AnalogClock} from "./analog-clock/index.js"
 import {Validator} from "./validator"
+import {Progress} from "./progress"
+import {InputMask} from "./input-mask"
 
 export {
     Accordion,
@@ -71,4 +73,6 @@ export {
     Form,
     Validator,
     AnalogClock,
+    Progress,
+    InputMask,
 }

@@ -1,3 +1,5 @@
+@import "../../include/colors";
+
 // Light color scheme
 :root {
     --body-background: #fff;
@@ -73,6 +75,14 @@
     --analog-clock-second: #e30f0f;
     --analog-clock-tick-major: #000000;
     --analog-clock-tick-minor: #b6b6b6;
+
+    --progress-background: #eeeeee;
+    --progress-bar-color: @green;
+    --progress-buffer-color: @red;
+    --progress-line-color: @cyan;
+    --progress-line-background: #b3d4fc;
+
+    --hamburger-color: #000000;
 }
 
 // Dark colorscheme
@@ -146,6 +156,14 @@
     --analog-clock-second: #e30f0f;
     --analog-clock-tick-major: #ffffff;
     --analog-clock-tick-minor: #b6b6b6;
+
+    --progress-background: #2b2d30;
+    --progress-bar-color: @green;
+    --progress-buffer-color: @red;
+    --progress-line-color: @cyan;
+    --progress-line-background: #b3d4fc;
+
+    --hamburger-color: #adbaa9;
 }
 
 body {
