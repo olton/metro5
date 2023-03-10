@@ -84,6 +84,9 @@
   --switch-dot-disabled-background: #acacac;
   --switch-unchecked-border: #333333;
   --switch-unchecked-check-background: #333333;
+  --tools-menu-item-background: #ffffff;
+  --tools-menu-item-text-color: #000000;
+  --tools-menu-item-hover: rgba(30, 34, 40, 0.1);
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -166,6 +169,9 @@
   --switch-dot-disabled-background: #acacac;
   --switch-unchecked-border: #464646;
   --switch-unchecked-check-background: #464646;
+  --tools-menu-item-background: #ffffff;
+  --tools-menu-item-text-color: #000000;
+  --tools-menu-item-hover: rgba(30, 34, 40, 0.1);
 }
 body {
   background-color: var(--body-background);

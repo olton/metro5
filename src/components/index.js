@@ -39,6 +39,7 @@ import {InputCommonCss} from "./input-common"
 import {Switch} from "./switch"
 import {MetroStorage} from "./storage/index.js";
 import {TemplateEngine, Template} from "./template/index.js";
+import {ToolsMenu} from "./tools-menu"
 
 export {
     Accordion,
@@ -84,4 +85,5 @@ export {
     MetroStorage,
     TemplateEngine,
     Template,
+    ToolsMenu,
 }
