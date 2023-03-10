@@ -34,6 +34,19 @@
 
 <h1 class="text-center">HelloWorld Metro5!</h1>
 
+<div class="mt-10 text-center" id="skills" data-role="template" data-template-data="templateData">
+    <h3>My skills</h3>
+    <% if(this.showSkills) { %>
+    <ul>
+        <% for(var i = 0; i < this.skills.length; i++) { %>
+        <li><% this.skills[i] %></li>
+        <% } %>
+    </ul>
+    <% } else { %>
+    <span>Nothing to show</span>
+    <% } %>
+</div>
+
 <div class="mt-10 text-center">
     <span class="mif-checkmark"></span>
 </div>

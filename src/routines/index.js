@@ -6,7 +6,7 @@ import {encURI} from "./encode-uri.js";
 import {exec, isFunc} from "./exec.js";
 import {getStyle, getStyleOne, getInlineStyles} from "./get-style.js";
 import {inViewport} from "./in-viewport.js";
-import {isObject} from "./is-object.js";
+import {isObject, isObjectType} from "./is-object.js";
 import {md5} from "./md5.js";
 import {medias, media_mode, media, mediaExist, mediaModes, inMedia} from "./media.js";
 import {merge} from "./merge.js";
@@ -19,6 +19,10 @@ import {shuffleArray} from "./shuffle-array.js";
 import {to_array} from "./to-array.js";
 import {undef} from "./undef.js";
 import {uniqueId} from "./unique-id.js";
+import {nvl} from "./nvl.js";
+import {isTag} from "./is-tag.js";
+import {isType} from "./is-type.js";
+import {isUrl} from "./is-url.js";
 
 export {
     between,
@@ -33,6 +37,7 @@ export {
     getInlineStyles,
     inViewport,
     isObject,
+    isObjectType,
     md5,
     media,
     medias,
@@ -51,5 +56,9 @@ export {
     shuffleArray,
     to_array,
     undef,
-    uniqueId
+    uniqueId,
+    nvl,
+    isTag,
+    isType,
+    isUrl,
 }

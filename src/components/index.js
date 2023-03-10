@@ -37,6 +37,8 @@ import {Progress} from "./progress"
 import {InputMask} from "./input-mask"
 import {InputCommonCss} from "./input-common"
 import {Switch} from "./switch"
+import {MetroStorage} from "./storage/index.js";
+import {TemplateEngine, Template} from "./template/index.js";
 
 export {
     Accordion,
@@ -79,4 +81,7 @@ export {
     InputMask,
     InputCommonCss,
     Switch,
+    MetroStorage,
+    TemplateEngine,
+    Template,
 }
