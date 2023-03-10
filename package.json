@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.0.10",
   "type": "module",
   "funding": [
     {
@@ -35,6 +35,7 @@
     "src"
   ],
   "scripts": {
+    "dev": "vite",
     "start": "parcel ./demo/index.html ./demo/*.html",
     "clear": "shx rm -rf lib/*",
     "build": "npm run clear && rollup --config && npm run minifycss",
@@ -69,6 +70,7 @@
     "@olton/datetime": "^3.0.1",
     "@olton/html": "^0.4.1",
     "@olton/query": "^0.4.11",
-    "@olton/string": "^0.4.1"
+    "@olton/string": "^0.4.1",
+    "vite": "^4.1.4"
   }
 }

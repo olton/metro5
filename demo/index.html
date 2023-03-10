@@ -34,6 +34,16 @@
 
 <h1 class="text-center">HelloWorld Metro5!</h1>
 
+<div class="mt-10 text-center">
+    <input data-role="switch" />
+    <input data-role="switch" checked />
+    <input data-role="switch" disabled />
+</div>
+
+<div class="mt-10 text-center">
+    <input class="metro-input" style="width: 60%"/>
+</div>
+
 <div class="mt-10">
     <div class="example">
         <input type="text"
@@ -570,19 +580,7 @@
         </div>
     </div>
 </div>
-<script>
-    function calendarDrawDayTest (date, cell) {
-        if (date.day() % 2 === 0) {
-            cell.addClass("bg-red fg-white")
-        }
-    }
-</script>
 <!--<script src="../lib/metro5.min.js"></script>-->
 <script src="index.js" type="module"></script>
-<script>
-    function createToastTest(o){
-        Metro5.toast.create("Toast Message!", o)
-    }
-</script>
 </body>
 </html>

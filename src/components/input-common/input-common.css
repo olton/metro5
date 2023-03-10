@@ -1,0 +1,612 @@
+.metro-input,
+.file,
+.input,
+.textarea,
+.select,
+.tag-input,
+.spinner,
+.color-picker {
+  position: relative;
+  border: 1px var(--input-border) solid;
+  color: var(--input-text-color);
+  width: 100%;
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+  background: var(--input-background) none;
+  background-clip: padding-box;
+  min-width: 0;
+}
+.metro-input input,
+.file input,
+.input input,
+.textarea input,
+.select input,
+.tag-input input,
+.spinner input,
+.color-picker input {
+  appearance: none;
+  display: block;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+}
+.metro-input input::-ms-clear,
+.file input::-ms-clear,
+.input input::-ms-clear,
+.textarea input::-ms-clear,
+.select input::-ms-clear,
+.tag-input input::-ms-clear,
+.spinner input::-ms-clear,
+.color-picker input::-ms-clear {
+  display: none;
+}
+.metro-input input::-ms-reveal,
+.file input::-ms-reveal,
+.input input::-ms-reveal,
+.textarea input::-ms-reveal,
+.select input::-ms-reveal,
+.tag-input input::-ms-reveal,
+.spinner input::-ms-reveal,
+.color-picker input::-ms-reveal {
+  display: none;
+}
+.metro-input input::-webkit-clear-button,
+.file input::-webkit-clear-button,
+.input input::-webkit-clear-button,
+.textarea input::-webkit-clear-button,
+.select input::-webkit-clear-button,
+.tag-input input::-webkit-clear-button,
+.spinner input::-webkit-clear-button,
+.color-picker input::-webkit-clear-button {
+  display: none;
+}
+.metro-input input::-webkit-inner-spin-button,
+.file input::-webkit-inner-spin-button,
+.input input::-webkit-inner-spin-button,
+.textarea input::-webkit-inner-spin-button,
+.select input::-webkit-inner-spin-button,
+.tag-input input::-webkit-inner-spin-button,
+.spinner input::-webkit-inner-spin-button,
+.color-picker input::-webkit-inner-spin-button {
+  height: 100%;
+}
+.metro-input:focus,
+.file:focus,
+.input:focus,
+.textarea:focus,
+.select:focus,
+.tag-input:focus,
+.spinner:focus,
+.color-picker:focus {
+  outline: none;
+}
+.metro-input:hover,
+.file:hover,
+.input:hover,
+.textarea:hover,
+.select:hover,
+.tag-input:hover,
+.spinner:hover,
+.color-picker:hover {
+  border-color: var(--input-border-hover);
+}
+.metro-input .input-clear-button,
+.file .input-clear-button,
+.input .input-clear-button,
+.textarea .input-clear-button,
+.select .input-clear-button,
+.tag-input .input-clear-button,
+.spinner .input-clear-button,
+.color-picker .input-clear-button,
+.metro-input .input-reveal-button,
+.file .input-reveal-button,
+.input .input-reveal-button,
+.textarea .input-reveal-button,
+.select .input-reveal-button,
+.tag-input .input-reveal-button,
+.spinner .input-reveal-button,
+.color-picker .input-reveal-button {
+  transform: scale(0);
+  opacity: 0;
+}
+.metro-input .input-clear-button:active,
+.file .input-clear-button:active,
+.input .input-clear-button:active,
+.textarea .input-clear-button:active,
+.select .input-clear-button:active,
+.tag-input .input-clear-button:active,
+.spinner .input-clear-button:active,
+.color-picker .input-clear-button:active,
+.metro-input .input-reveal-button:active,
+.file .input-reveal-button:active,
+.input .input-reveal-button:active,
+.textarea .input-reveal-button:active,
+.select .input-reveal-button:active,
+.tag-input .input-reveal-button:active,
+.spinner .input-reveal-button:active,
+.color-picker .input-reveal-button:active,
+.metro-input .input-clear-button:focus,
+.file .input-clear-button:focus,
+.input .input-clear-button:focus,
+.textarea .input-clear-button:focus,
+.select .input-clear-button:focus,
+.tag-input .input-clear-button:focus,
+.spinner .input-clear-button:focus,
+.color-picker .input-clear-button:focus,
+.metro-input .input-reveal-button:focus,
+.file .input-reveal-button:focus,
+.input .input-reveal-button:focus,
+.textarea .input-reveal-button:focus,
+.select .input-reveal-button:focus,
+.tag-input .input-reveal-button:focus,
+.spinner .input-reveal-button:focus,
+.color-picker .input-reveal-button:focus,
+.metro-input .input-clear-button:hover,
+.file .input-clear-button:hover,
+.input .input-clear-button:hover,
+.textarea .input-clear-button:hover,
+.select .input-clear-button:hover,
+.tag-input .input-clear-button:hover,
+.spinner .input-clear-button:hover,
+.color-picker .input-clear-button:hover,
+.metro-input .input-reveal-button:hover,
+.file .input-reveal-button:hover,
+.input .input-reveal-button:hover,
+.textarea .input-reveal-button:hover,
+.select .input-reveal-button:hover,
+.tag-input .input-reveal-button:hover,
+.spinner .input-reveal-button:hover,
+.color-picker .input-reveal-button:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+.metro-input:focus .input-clear-button,
+.file:focus .input-clear-button,
+.input:focus .input-clear-button,
+.textarea:focus .input-clear-button,
+.select:focus .input-clear-button,
+.tag-input:focus .input-clear-button,
+.spinner:focus .input-clear-button,
+.color-picker:focus .input-clear-button,
+.metro-input.focused .input-clear-button,
+.file.focused .input-clear-button,
+.input.focused .input-clear-button,
+.textarea.focused .input-clear-button,
+.select.focused .input-clear-button,
+.tag-input.focused .input-clear-button,
+.spinner.focused .input-clear-button,
+.color-picker.focused .input-clear-button,
+.metro-input:hover .input-clear-button,
+.file:hover .input-clear-button,
+.input:hover .input-clear-button,
+.textarea:hover .input-clear-button,
+.select:hover .input-clear-button,
+.tag-input:hover .input-clear-button,
+.spinner:hover .input-clear-button,
+.color-picker:hover .input-clear-button,
+.metro-input:focus .input-reveal-button,
+.file:focus .input-reveal-button,
+.input:focus .input-reveal-button,
+.textarea:focus .input-reveal-button,
+.select:focus .input-reveal-button,
+.tag-input:focus .input-reveal-button,
+.spinner:focus .input-reveal-button,
+.color-picker:focus .input-reveal-button,
+.metro-input.focused .input-reveal-button,
+.file.focused .input-reveal-button,
+.input.focused .input-reveal-button,
+.textarea.focused .input-reveal-button,
+.select.focused .input-reveal-button,
+.tag-input.focused .input-reveal-button,
+.spinner.focused .input-reveal-button,
+.color-picker.focused .input-reveal-button,
+.metro-input:hover .input-reveal-button,
+.file:hover .input-reveal-button,
+.input:hover .input-reveal-button,
+.textarea:hover .input-reveal-button,
+.select:hover .input-reveal-button,
+.tag-input:hover .input-reveal-button,
+.spinner:hover .input-reveal-button,
+.color-picker:hover .input-reveal-button {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+.metro-input:focus,
+.file:focus,
+.input:focus,
+.textarea:focus,
+.select:focus,
+.tag-input:focus,
+.spinner:focus,
+.color-picker:focus,
+.metro-input.focused,
+.file.focused,
+.input.focused,
+.textarea.focused,
+.select.focused,
+.tag-input.focused,
+.spinner.focused,
+.color-picker.focused {
+  box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.45);
+}
+.metro-input:disabled,
+.file:disabled,
+.input:disabled,
+.textarea:disabled,
+.select:disabled,
+.tag-input:disabled,
+.spinner:disabled,
+.color-picker:disabled,
+.metro-input.disabled,
+.file.disabled,
+.input.disabled,
+.textarea.disabled,
+.select.disabled,
+.tag-input.disabled,
+.spinner.disabled,
+.color-picker.disabled {
+  pointer-events: none;
+  background-color: var(--input-disabled-background);
+}
+.metro-input.hide-cursor input,
+.file.hide-cursor input,
+.input.hide-cursor input,
+.textarea.hide-cursor input,
+.select.hide-cursor input,
+.tag-input.hide-cursor input,
+.spinner.hide-cursor input,
+.color-picker.hide-cursor input {
+  color: transparent;
+  text-shadow: 0 0 0 #1e2228;
+}
+.metro-input.required,
+.file.required,
+.input.required,
+.textarea.required,
+.select.required,
+.tag-input.required,
+.spinner.required,
+.color-picker.required {
+  border: 1px #26b2f6 dashed !important;
+}
+.metro-input.required:focus,
+.file.required:focus,
+.input.required:focus,
+.textarea.required:focus,
+.select.required:focus,
+.tag-input.required:focus,
+.spinner.required:focus,
+.color-picker.required:focus,
+.metro-input.required.focused,
+.file.required.focused,
+.input.required.focused,
+.textarea.required.focused,
+.select.required.focused,
+.tag-input.required.focused,
+.spinner.required.focused,
+.color-picker.required.focused {
+  box-shadow: 0 0 0 3px rgba(38, 178, 246, 0.45) !important;
+}
+.metro-input.invalid,
+.file.invalid,
+.input.invalid,
+.textarea.invalid,
+.select.invalid,
+.tag-input.invalid,
+.spinner.invalid,
+.color-picker.invalid {
+  border: 1px #CE352C solid !important;
+}
+.metro-input.invalid:focus,
+.file.invalid:focus,
+.input.invalid:focus,
+.textarea.invalid:focus,
+.select.invalid:focus,
+.tag-input.invalid:focus,
+.spinner.invalid:focus,
+.color-picker.invalid:focus,
+.metro-input.invalid.focused,
+.file.invalid.focused,
+.input.invalid.focused,
+.textarea.invalid.focused,
+.select.invalid.focused,
+.tag-input.invalid.focused,
+.spinner.invalid.focused,
+.color-picker.invalid.focused {
+  box-shadow: 0 0 0 3px rgba(206, 53, 44, 0.45) !important;
+}
+.metro-input.invalid::after,
+.file.invalid::after,
+.input.invalid::after,
+.textarea.invalid::after,
+.select.invalid::after,
+.tag-input.invalid::after,
+.spinner.invalid::after,
+.color-picker.invalid::after {
+  position: absolute;
+  content: attr(data-exclaim);
+  color: #CE352C;
+  left: -16px;
+  top: 0;
+  font-size: 1.625rem;
+  font-weight: bold;
+}
+.metro-input.valid,
+.file.valid,
+.input.valid,
+.textarea.valid,
+.select.valid,
+.tag-input.valid,
+.spinner.valid,
+.color-picker.valid {
+  border: 1px #60a917 solid !important;
+}
+.metro-input.valid:focus,
+.file.valid:focus,
+.input.valid:focus,
+.textarea.valid:focus,
+.select.valid:focus,
+.tag-input.valid:focus,
+.spinner.valid:focus,
+.color-picker.valid:focus,
+.metro-input.valid.focused,
+.file.valid.focused,
+.input.valid.focused,
+.textarea.valid.focused,
+.select.valid.focused,
+.tag-input.valid.focused,
+.spinner.valid.focused,
+.color-picker.valid.focused {
+  box-shadow: 0 0 0 3px rgba(96, 169, 23, 0.45) !important;
+}
+input {
+  padding: 0 8px;
+}
+textarea.metro-input {
+  height: auto;
+  padding: 0 0.75rem;
+}
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  width: auto;
+}
+.file .prepend,
+.input .prepend,
+.select .prepend,
+.textarea .prepend,
+.tag-input .prepend,
+.spinner .prepend,
+.color-picker .prepend,
+.file .append,
+.input .append,
+.select .append,
+.textarea .append,
+.tag-input .append,
+.spinner .append,
+.color-picker .append {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--input-append-background);
+  color: var(--input-append-text-color);
+  line-height: 1.25rem;
+  white-space: nowrap;
+}
+.hidden-input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.file:disabled input,
+.input:disabled input,
+.textarea:disabled input,
+.select:disabled input,
+.tag-input:disabled input,
+.spinner:disabled input,
+.tag-input:disabled input,
+.rating:disabled input,
+.color-picker:disabled input,
+.file.disabled input,
+.input.disabled input,
+.textarea.disabled input,
+.select.disabled input,
+.tag-input.disabled input,
+.spinner.disabled input,
+.tag-input.disabled input,
+.rating.disabled input,
+.color-picker.disabled input,
+.file:disabled textarea,
+.input:disabled textarea,
+.textarea:disabled textarea,
+.select:disabled textarea,
+.tag-input:disabled textarea,
+.spinner:disabled textarea,
+.tag-input:disabled textarea,
+.rating:disabled textarea,
+.color-picker:disabled textarea,
+.file.disabled textarea,
+.input.disabled textarea,
+.textarea.disabled textarea,
+.select.disabled textarea,
+.tag-input.disabled textarea,
+.spinner.disabled textarea,
+.tag-input.disabled textarea,
+.rating.disabled textarea,
+.color-picker.disabled textarea,
+.file:disabled select,
+.input:disabled select,
+.textarea:disabled select,
+.select:disabled select,
+.tag-input:disabled select,
+.spinner:disabled select,
+.tag-input:disabled select,
+.rating:disabled select,
+.color-picker:disabled select,
+.file.disabled select,
+.input.disabled select,
+.textarea.disabled select,
+.select.disabled select,
+.tag-input.disabled select,
+.spinner.disabled select,
+.tag-input.disabled select,
+.rating.disabled select,
+.color-picker.disabled select,
+.file:disabled .select-input,
+.input:disabled .select-input,
+.textarea:disabled .select-input,
+.select:disabled .select-input,
+.tag-input:disabled .select-input,
+.spinner:disabled .select-input,
+.tag-input:disabled .select-input,
+.rating:disabled .select-input,
+.color-picker:disabled .select-input,
+.file.disabled .select-input,
+.input.disabled .select-input,
+.textarea.disabled .select-input,
+.select.disabled .select-input,
+.tag-input.disabled .select-input,
+.spinner.disabled .select-input,
+.tag-input.disabled .select-input,
+.rating.disabled .select-input,
+.color-picker.disabled .select-input,
+.file:disabled .caption,
+.input:disabled .caption,
+.textarea:disabled .caption,
+.select:disabled .caption,
+.tag-input:disabled .caption,
+.spinner:disabled .caption,
+.tag-input:disabled .caption,
+.rating:disabled .caption,
+.color-picker:disabled .caption,
+.file.disabled .caption,
+.input.disabled .caption,
+.textarea.disabled .caption,
+.select.disabled .caption,
+.tag-input.disabled .caption,
+.spinner.disabled .caption,
+.tag-input.disabled .caption,
+.rating.disabled .caption,
+.color-picker.disabled .caption,
+.file:disabled .stars li,
+.input:disabled .stars li,
+.textarea:disabled .stars li,
+.select:disabled .stars li,
+.tag-input:disabled .stars li,
+.spinner:disabled .stars li,
+.tag-input:disabled .stars li,
+.rating:disabled .stars li,
+.color-picker:disabled .stars li,
+.file.disabled .stars li,
+.input.disabled .stars li,
+.textarea.disabled .stars li,
+.select.disabled .stars li,
+.tag-input.disabled .stars li,
+.spinner.disabled .stars li,
+.tag-input.disabled .stars li,
+.rating.disabled .stars li,
+.color-picker.disabled .stars li {
+  background: transparent;
+  color: var(--input-disabled-background);
+}
+.file:disabled .button-group,
+.input:disabled .button-group,
+.textarea:disabled .button-group,
+.select:disabled .button-group,
+.tag-input:disabled .button-group,
+.spinner:disabled .button-group,
+.tag-input:disabled .button-group,
+.rating:disabled .button-group,
+.color-picker:disabled .button-group,
+.file.disabled .button-group,
+.input.disabled .button-group,
+.textarea.disabled .button-group,
+.select.disabled .button-group,
+.tag-input.disabled .button-group,
+.spinner.disabled .button-group,
+.tag-input.disabled .button-group,
+.rating.disabled .button-group,
+.color-picker.disabled .button-group {
+  display: none;
+}
+.invalid_feedback {
+  font-size: 0.9em;
+  color: #CE352C;
+}
+.custom-validation input[required]:valid,
+.custom-validation select[required]:valid,
+.custom-validation textarea[required]:valid {
+  border-color: #60a917;
+}
+.custom-validation input[required]:valid + .invalid_feedback,
+.custom-validation select[required]:valid + .invalid_feedback,
+.custom-validation textarea[required]:valid + .invalid_feedback {
+  display: none;
+}
+.custom-validation input[required]:invalid,
+.custom-validation select[required]:invalid,
+.custom-validation textarea[required]:invalid {
+  border-color: #CE352C;
+}
+.custom-validation input[required]:invalid + .invalid_feedback,
+.custom-validation select[required]:invalid + .invalid_feedback,
+.custom-validation textarea[required]:invalid + .invalid_feedback {
+  display: block;
+}
+.invalid_feedback {
+  display: none;
+}
+.invalid + .invalid_feedback,
+.invalid > .invalid_feedback {
+  display: block !important;
+}
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+::-webkit-search-results-button {
+  -webkit-appearance: none;
+}
+input[type=search] {
+  -webkit-appearance: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  background-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+::-webkit-input-placeholder {
+  font-size: 14px;
+}
+::-moz-placeholder {
+  font-size: 14px;
+}
+:-moz-placeholder {
+  font-size: 14px;
+}
+input.rtl,
+input[dir=rtl] {
+  direction: rtl;
+}
+.label-for-input {
+  display: block;
+  position: relative;
+}
+.label-for-input.rtl {
+  text-align: right;
+}
+input[placeholder] {
+  text-overflow: ellipsis;
+}
+input::-moz-placeholder {
+  text-overflow: ellipsis;
+}
+input:-moz-placeholder {
+  text-overflow: ellipsis;
+}
+/*# sourceMappingURL=input-common.css.map */

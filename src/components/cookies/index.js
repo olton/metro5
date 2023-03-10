@@ -114,8 +114,6 @@ export class CookieDisclaimer extends Component {
             return ;
         }
 
-        console.log(Cookies.getCookie(o.name))
-
         let buttons = element.find(`${o.acceptButton}, ${o.cancelButton}`)
         if (!buttons.length) {
             const buttons_block = $("<div>")

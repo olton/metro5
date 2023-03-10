@@ -1,3 +1,10 @@
+globalThis.calendarDrawDayTest = (date, cell) => {
+    if (date.day() % 2 === 0) {
+        cell.addClass("bg-red fg-white")
+    }
+}
+
+
 import {Metro5} from "../src/core/metro"
 import "../icons/mif.css"
 import * as CommonCss from "../src/common"
@@ -11,3 +18,6 @@ globalThis.Metro = new Metro5({
     }
 })
 
+globalThis.createToastTest = (o) => {
+    Metro5.toast.create("Toast Message!", o)
+}

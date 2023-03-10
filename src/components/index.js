@@ -35,6 +35,8 @@ import {AnalogClock} from "./analog-clock/index.js"
 import {Validator} from "./validator"
 import {Progress} from "./progress"
 import {InputMask} from "./input-mask"
+import {InputCommonCss} from "./input-common"
+import {Switch} from "./switch"
 
 export {
     Accordion,
@@ -75,4 +77,6 @@ export {
     AnalogClock,
     Progress,
     InputMask,
+    InputCommonCss,
+    Switch,
 }

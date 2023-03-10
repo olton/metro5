@@ -1,0 +1,148 @@
+@import "../../include/mixins";
+
+.switch {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    user-select: none;
+    cursor: pointer;
+    height: 36px;
+
+    //.hide-element(input);
+    input {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .check, .caption {
+        display: block;
+        line-height: 38px;
+        font-size: 14px;
+        margin: 0 4px;
+        position: relative;
+    }
+
+    .check {
+        position: relative;
+        height: 20px;
+        width: 48px;
+        border: 2px var(--switch-border) solid;
+        cursor: pointer;
+        background: transparent;
+        z-index: 1;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 1.125rem / 2;
+        flex-shrink: 0;
+        border-radius: 10px;
+    }
+
+    .check::after {
+        position: absolute;
+        left: 3px;
+        display: block;
+        content: "";
+        height: .75rem;
+        width: .75rem;
+        top: 50%;
+        .translateY(-50%);
+        border: 2px var(--switch-unchecked-border) solid;
+        cursor: pointer;
+        background: var(--switch-unchecked-check-background);
+        z-index: 2;
+        border-radius: 50%;
+    }
+
+    input[type="checkbox"]:checked ~ .check {
+        background: var(--switch-check-background);
+        border-color: var(--switch-border);
+        color: var(--switch-text-color);
+
+        &::after {
+            background-color: var(--switch-check-after);
+            border-color: var(--switch-check-after);
+            left: auto;
+            .translateX(30px);
+            .translateY(-50%);
+        }
+    }
+
+    input[type="checkbox"]:disabled ~ .check {
+        background-color: var(--switch-disabled-background);
+        border-color: var(--switch-disabled-background);
+        &::after {
+            background-color: var(--switch-dot-disabled-background);
+            border-color: var(--switch-dot-disabled-background);
+        }
+    }
+
+    .check {order: 1;}
+    .caption {order: 2;}
+
+    &.caption-left {
+        flex-flow: row-reverse nowrap;
+    }
+
+    &.required, &.invalid, &.valid {
+        border: none!important;
+    }
+
+    &.invalid {
+        &::after {
+            display: none;
+        }
+    }
+
+    &.transition-on {
+        .check {
+            transition: all .3s linear;
+            &::after {
+                transition: all .3s linear;
+            }
+        }
+        input[type="checkbox"]:checked ~ .check {
+            &::after {
+                transition: all .3s linear;
+            }
+        }
+    }
+}
+
+.switch {
+    .check {
+        &::before {
+            content: attr(data-off);
+            display: block;
+            position: absolute;
+            color: inherit;
+            left: 16px;
+            width: 26px;
+            top: -2px;
+            line-height: 20px;
+            font-size: 10px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    input[type="checkbox"]:checked ~ .check {
+        &::before {
+            content: attr(data-on);
+            color: var(--switch-check-checked-before);
+            left: 1px;
+        }
+    }
+
+    input[type="checkbox"]:disabled ~ .check {
+        &::before {
+            display: none;
+        }
+    }
+}
