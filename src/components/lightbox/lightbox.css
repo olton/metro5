@@ -44,12 +44,12 @@
   height: 32px;
   background: var(--lightbox-closer-background);
   color: var(--lightbox-closer-text-color);
+  z-index: 1;
 }
-.lightbox__closer * {
-  line-height: 32px;
-  font-size: 20px;
-  height: 20px;
-  width: 20px;
+.lightbox__closer::before {
+  position: absolute;
+  content: "\2715";
+  z-index: 2;
 }
 .lightbox__prev,
 .lightbox__next {
@@ -65,13 +65,19 @@
   top: 50%;
   margin-top: -24px;
   left: 20px;
+  font-size: 48px;
 }
-.lightbox__prev *,
-.lightbox__next * {
-  line-height: 48px;
-  font-size: 40px;
-  height: 40px;
-  width: 40px;
+.lightbox__prev::before,
+.lightbox__next::before {
+  position: absolute;
+  content: "\2039";
+  z-index: 2;
+  top: -18px;
+}
+.lightbox__next::before {
+  position: absolute;
+  content: "\203A";
+  z-index: 2;
 }
 .lightbox__next {
   left: auto;

@@ -31,12 +31,12 @@
     height: 32px;
     background: var(--lightbox-closer-background);
     color: var(--lightbox-closer-text-color);
+    z-index: 1;
 
-    * {
-        line-height: 32px;
-        font-size: 20px;
-        height: 20px;
-        width: 20px;
+    &::before {
+        position: absolute;
+        content: "\2715";
+        z-index: 2;
     }
 }
 
@@ -53,12 +53,21 @@
     top: 50%;
     margin-top: -24px;
     left: 20px;
+    font-size: 48px;
 
-    * {
-        line-height: 48px;
-        font-size: 40px;
-        height: 40px;
-        width: 40px;
+    &::before {
+        position: absolute;
+        content: "\2039";
+        z-index: 2;
+        top: -18px;
+    }
+}
+
+.lightbox__next {
+    &::before {
+        position: absolute;
+        content: "\203A";
+        z-index: 2;
     }
 }
 

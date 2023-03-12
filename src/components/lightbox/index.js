@@ -1,10 +1,12 @@
 import "./lightbox.css"
 import {Component} from "../../core/component.js";
-import {merge, undef} from "../../routines/index.js";
+import {merge, noop, undef} from "../../routines/index.js";
 import {Registry} from "../../core/registry.js";
 
 let LightboxDefaultOptions = {
-    sourceTag: "img"
+    sourceTag: "img",
+    loop: true,
+    onDrawImage: noop,
 }
 
 export class Lightbox extends Component {
@@ -86,7 +88,7 @@ export class Lightbox extends Component {
 
         activity = $("<div>").appendTo(imageWrapper);
 
-        Metro.makePlugin(activity, "activity", {
+        Metro.makePlugin(activity[0], "activity", {
             type: "cycle",
             style: "color"
         });
