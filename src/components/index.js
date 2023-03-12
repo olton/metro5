@@ -40,6 +40,7 @@ import {Switch} from "./switch"
 import {MetroStorage} from "./storage/index.js";
 import {TemplateEngine, Template} from "./template/index.js";
 import {ToolsMenu} from "./tools-menu"
+import {Lightbox} from "./lightbox/index.js";
 
 export {
     Accordion,
@@ -86,4 +87,5 @@ export {
     TemplateEngine,
     Template,
     ToolsMenu,
+    Lightbox,
 }
