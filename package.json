@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "funding": [
     {
@@ -32,14 +32,15 @@
   },
   "homepage": "https://github.com/olton/metro5#readme",
   "files": [
-    "src"
+    "src",
+    "icons"
   ],
   "scripts": {
     "dev": "vite",
     "start": "parcel ./demo/index.html ./demo/*.html",
     "clear": "shx rm -rf lib/*",
     "build": "npm run clear && rollup --config && npm run minifycss",
-    "minifycss": "css-minify -f lib/metro5.css -o lib"
+    "minifycss": "css-minify -f lib/metro-ui.css -o lib"
   },
   "browserslist": [
     "last 1 Chrome versions",
@@ -69,7 +70,7 @@
     "@olton/color": "^0.1.1",
     "@olton/datetime": "^3.0.1",
     "@olton/html": "^0.4.1",
-    "@olton/query": "^0.4.11",
+    "@olton/query": "^0.4.12",
     "@olton/string": "^0.4.1",
     "vite": "^4.1.4"
   }
