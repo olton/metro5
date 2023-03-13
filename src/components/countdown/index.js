@@ -373,7 +373,7 @@ export class Countdown extends Component {
 
         len = value.length;
 
-        digits = element.find("."+part+" .digit:not(-old-digit)");
+        digits = element.find("."+part+" .digit:not(.-old-digit)");
         digits_length = digits.length;
 
         for(let i = 0; i < len; i++){
