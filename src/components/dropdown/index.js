@@ -5,9 +5,9 @@ import {Registry} from "../../core/registry.js";
 import {panic} from "../../routines/panic.js";
 
 let DropdownDefaultOptions = {
-    deferred: 0,
     toggle: "",
     duration: 100,
+    dropFilter: ""
 }
 
 export class Dropdown extends Component {
@@ -15,10 +15,8 @@ export class Dropdown extends Component {
     closed = false
     constructor(elem, options) {
         super(elem, "dropdown", merge({}, DropdownDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-            this.createEvents()
-        }, this.options.deferred)
+        this.createStruct()
+        this.createEvents()
     }
 
     createStruct(){
@@ -39,13 +37,13 @@ export class Dropdown extends Component {
         this.closed = true
     }
     createEvents(){
-        const that = this
+        const that = this, element = this.element, o = this.options
 
-        this.toggle.on("click", function(e){
-            if (that.closed) {
-                that.open()
+        this.toggle.on("click", (e) => {
+            if (!this.closed) {
+                this.close()
             } else {
-                that.close()
+                this.open()
             }
             e.preventDefault()
             e.stopPropagation()
@@ -64,46 +62,73 @@ export class Dropdown extends Component {
         })
     }
 
-    open(){
-        const o = this.options
-        const height = this.elem.scrollHeight
-
-        if (!this.closed || this.element.hasClass("keep-closed")) return
-
+    open(el){
+        if (!el) { el = this.elem }
+        const dropdown = Metro.getPlugin(el, "dropdown")
+        if (!dropdown) return;
+        let height = dropdown.elem.scrollHeight
+        if (!dropdown.closed || dropdown.element.hasClass("keep-closed")) return
+        const parents = dropdown.element.parents('[data-role*=dropdown]')
         $('[data-role*=dropdown]').each((i, el) => {
-            if ($(el).is(this.elem)) return
+            const $el = $(el)
+            if ($el.in(parents) || $el.is(dropdown.element)) {
+                console.log("stay")
+                return
+            }
             const pl = Metro.getPlugin(el, "dropdown")
             pl.close()
         })
 
+        if (dropdown.element.hasClass('horizontal')) {
+            let children_width = 0;
+            let children_height = 0;
+            $.each(dropdown.element.children('li'), function(i){
+                const el = $(this)
+                children_width += el.outerWidth(true);
+                if (i===0) children_height = el[0].scrollHeight
+                else {
+                    if (children_height > el[0].scrollHeight) {
+                        children_height = el[0].scrollHeight
+                    }
+                }
+            });
+            height = children_height
+            dropdown.element.css('width', children_width);
+        }
+
         Animation.animate({
-            el: this.elem,
+            el: dropdown.elem,
             draw: {
                 height: [0, height]
             },
-            dur: o.duration,
-            onDone: () => {}
+            dur: dropdown.options.duration,
+            onDone: () => {
+                dropdown.element.parent().addClass("dropped-container")
+                dropdown.element.addClass("dropped")
+                dropdown.toggle.addClass("dropped-toggle")
+                dropdown.closed = false
+            }
         })
-
-        this.closed = false
-        this.toggle.addClass("dropped-toggle")
     }
 
-    close(){
-        const that = this, o = this.options
-
-        if (this.closed || this.element.hasClass("keep-open")) return
-
+    close(el){
+        if (!el) { el = this.elem }
+        const dropdown = Metro.getPlugin(el, "dropdown")
+        if (!dropdown) return
+        if (dropdown.closed || dropdown.element.hasClass("keep-open")) return
         Animation.animate({
-            el: this.elem,
+            el: dropdown.elem,
             draw: {
                 height: [0]
             },
-            dur: o.duration,
-            onDone: () => {}
+            dur: dropdown.options.duration,
+            onDone: () => {
+                dropdown.element.parent().removeClass("dropped-container")
+                dropdown.element.removeClass("dropped")
+                dropdown.toggle.removeClass("dropped-toggle")
+                dropdown.closed = true
+            }
         })
-        that.closed = true
-        this.toggle.removeClass("dropped-toggle")
     }
 }
 

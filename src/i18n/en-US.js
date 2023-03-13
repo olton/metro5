@@ -10,13 +10,15 @@ export const en_US = {
             "Sun", "Mon", "Tus", "Wen", "Thu", "Fri", "Sat"
         ],
         "time": {
-            "days": "DAYS",
             "hours": "HOURS",
             "minutes": "MINS",
             "seconds": "SECS",
             "month": "MON",
             "day": "DAY",
-            "year": "YEAR"
+            "year": "YEAR",
+            "months": "MONS",
+            "days": "DAYS",
+            "years": "YEARS"
         },
         "weekStart": 0
     },

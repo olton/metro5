@@ -41,6 +41,7 @@ import {MetroStorage} from "./storage/index.js";
 import {TemplateEngine, Template} from "./template/index.js";
 import {ToolsMenu} from "./tools-menu"
 import {Lightbox} from "./lightbox/index.js";
+import {Countdown} from "./countdown/index.js";
 
 export {
     Accordion,
@@ -88,4 +89,5 @@ export {
     Template,
     ToolsMenu,
     Lightbox,
+    Countdown,
 }

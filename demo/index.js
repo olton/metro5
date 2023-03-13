@@ -17,26 +17,6 @@ import * as Components from "../src/components"
 globalThis.Metro = new Metro5({
     removeCloakTimeout: 1000,
     onInit: ()=>{
-        // console.log(Validator.validate("123", "length=5 integer"))
-        // const storage = new Components.MetroStorage({key: "Metro5"})
-        // storage.setItem("key", "val")
-        // $("#skills").html(Components.TemplateEngine.compile(`
-        //     My skills:
-        //     <hr>
-        //     <%if(this.showSkills) {%>
-        //     <ul>
-        //     <%for(var i = 0; i < this.skills.length; i++) {%>
-        //         <li><%this.skills[i]%></li>
-        //     <%}%>
-        //     </ul>
-        //     <br/><strong>Total: </strong><%this.skills.length%> main skills
-        //     <%} else {%>
-        //         <p>none</p>
-        //     <%}%>
-        // `, {
-        //     skills: ["javascript", "html", "css", "php", "oracle", "mysql", "java", "pascal", "c/c++", "kotlin"],
-        //     showSkills: true
-        // }))
     }
 })
 

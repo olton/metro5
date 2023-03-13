@@ -1,0 +1,78 @@
+.countdown {
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.countdown .part {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 0.5rem 0.5rem 0.5em;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.countdown .digit {
+  display: block;
+  position: relative;
+  padding: 0;
+  line-height: 1;
+  overflow: hidden;
+}
+.countdown .digit .digit-placeholder {
+  visibility: hidden;
+}
+.countdown .digit .digit-value {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font: inherit;
+}
+.countdown .part + .part::before {
+  top: 10px;
+  left: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  height: calc(100% - 8px);
+  width: 1px;
+  background: radial-gradient(at left, var(--border-color), transparent);
+}
+.countdown .part.d-none + .part::before {
+  display: none;
+}
+.countdown .part.no-divider::before {
+  display: none;
+}
+.countdown .part.days::after,
+.countdown .part.hours::after,
+.countdown .part.minutes::after,
+.countdown .part.seconds::after {
+  position: absolute;
+  content: attr(data-label);
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.3em;
+  color: inherit;
+  background-color: inherit;
+  z-index: 1;
+}
+.countdown .days {
+  order: 1;
+}
+.countdown .hours {
+  order: 2;
+}
+.countdown .minutes {
+  order: 3;
+}
+.countdown .seconds {
+  order: 4;
+}
+/*# sourceMappingURL=countdown.css.map */

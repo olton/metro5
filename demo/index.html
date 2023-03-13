@@ -13,12 +13,19 @@
 <div data-role="appbar" data-expand-point="lg" data-theme="light">
     <a href="#" class="appbar-brand no-hover">Metro 5 :: Components library</a>
 
-    <ul class="appbar-menu ml-auto">
+    <ul class="appbar-menu">
         <li><a href="#">Home</a></li>
         <li>
             <a href="#" class="dropdown-toggle marker-on">Products</a>
             <ul class="dropdown-menu" data-role="dropdown">
-                <li><a href="#">Windows 10</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle marker-on">Windows</a>
+                    <ul class="dropdown-menu" data-role="dropdown">
+                        <li><a href="#">Windows 10</a></li>
+                        <li><a href="#">Windows 11</a></li>
+                        <li><a href="#">Windows 12</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Office 365</a></li>
                 <li class="divider bg-lightGray"></li>
                 <li><a href="#">Skype</a></li>
@@ -33,6 +40,12 @@
      data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
 
 <h1 class="text-center">HelloWorld Metro5!</h1>
+
+<div class="mt-10 mb-10 d-flex flex-row flex-justify-center">
+    <div data-role="countdown" data-date="05-01-2023"></div>
+    <div data-role="countdown" data-date="05-01-2023" data-animate="slide"></div>
+    <div data-role="countdown" data-date="05-01-2023" data-animate="fade"></div>
+</div>
 
 <div class="container-fluid" id="screenshots">
     <div class="container">
@@ -69,7 +82,8 @@
 <div class="mt-10">
     <ul class="tools-menu open">
         <li><a href="#"><span class="icon mif-home"></span></a></li>
-        <li><a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
+        <li>
+            <a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
             <ul class="tools-menu horizontal" data-role="dropdown">
                 <li><a href="#"><span class="icon mif-home"></span></a></li>
                 <li><a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
