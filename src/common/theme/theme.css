@@ -91,6 +91,12 @@
   --lightbox-closer-text-color: #ffffff;
   --lightbox-control-background: #a6a6a6;
   --lightbox-control-text-color: #000000;
+  --card-background: #ffffff;
+  --card-text-color: #000000;
+  --card-text-color-secondary: #eee;
+  --checkbox-check-checked: #000000;
+  --checkbox-check-disabled: #a6a6a6;
+  --checkbox-marker-color: #ffffff;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -180,6 +186,12 @@
   --lightbox-closer-text-color: #ffffff;
   --lightbox-control-background: #a6a6a6;
   --lightbox-control-text-color: #000000;
+  --card-background: #2b2d30;
+  --card-text-color: #ffffff;
+  --card-text-color-secondary: #a2a2a2;
+  --checkbox-check-checked: #2b2d30;
+  --checkbox-check-disabled: #a6a6a6;
+  --checkbox-marker-color: #ffffff;
 }
 body {
   background-color: var(--body-background);

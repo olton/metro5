@@ -43,6 +43,7 @@ import {ToolsMenu} from "./tools-menu"
 import {Lightbox} from "./lightbox/index.js";
 import {Countdown} from "./countdown/index.js";
 import {Card} from "./cards"
+import {Checkbox} from "./checkbox/index.js";
 
 export {
     Accordion,
@@ -92,4 +93,5 @@ export {
     Lightbox,
     Countdown,
     Card,
+    Checkbox,
 }

@@ -1,0 +1,108 @@
+@import "../../include/mixins";
+
+.checkbox {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    user-select: none;
+    cursor: pointer;
+    height: 36px;
+
+    .hide-element(input);
+
+    .check, .caption {
+        display: block;
+        line-height: 1;
+        font-size: 14px;
+        margin: 0 4px;
+        position: relative;
+    }
+
+    .check {
+        border: 2px var(--border-color) solid;
+        height: 20px;
+        width: 20px;
+        flex-shrink: 0;
+        line-height: 36px;
+
+        &::before {
+            position: absolute;
+            vertical-align: middle;
+            font-size: 0;
+            content: "";
+            height: 5px;
+            width: 10px;
+            background-color: transparent;
+            color: transparent;
+            border-left: 2px solid;
+            border-bottom: 2px solid;
+            border-color: #ffffff;
+            left: 50%;
+            top: 50%;
+            margin-left: -5px;
+            margin-top: -4px;
+            display: none;
+            transform: rotate(-45deg);
+        }
+    }
+
+    input[type=checkbox]:checked ~ .check {
+        border-color: var(--checkbox-check-checked);
+        background-color: var(--checkbox-check-checked);
+
+        &::before {
+            display: block;
+        }
+    }
+
+    input[type=checkbox]:disabled ~ .check {
+        border-color: var(--checkbox-check-disabled);
+        background-color: var(--checkbox-check-disabled);
+    }
+
+    input[data-indeterminate=true] ~ .check {
+        border-color: var(--checkbox-check-checked);
+        background-color: var(--checkbox-check-checked);
+
+        &::before {
+            display: block!important;
+            height: 6px;
+            width: 6px;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            left: 50%;
+            top: 50%;
+            margin-left: -3px;
+            margin-top: -3px;
+            .rotate(0);
+        }
+    }
+
+    .check {order: 1;}
+    .caption {order: 2;}
+
+    &.caption-left {
+        flex-flow: row-reverse nowrap;
+    }
+
+    &.required, &.invalid, &.valid {
+        border: none!important;
+    }
+
+    &.invalid {
+        &::after {
+            display: none;
+        }
+    }
+
+    &:focus, &:active {
+        input[type=checkbox]:not(:disabled) {
+            & ~ .check {
+                //.halo();
+            }
+        }
+    }
+}
