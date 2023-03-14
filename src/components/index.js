@@ -42,6 +42,7 @@ import {TemplateEngine, Template} from "./template/index.js";
 import {ToolsMenu} from "./tools-menu"
 import {Lightbox} from "./lightbox/index.js";
 import {Countdown} from "./countdown/index.js";
+import {Card} from "./cards"
 
 export {
     Accordion,
@@ -90,4 +91,5 @@ export {
     ToolsMenu,
     Lightbox,
     Countdown,
+    Card,
 }

@@ -14,67 +14,67 @@
 .border-bottom-none {border-bottom: none!important ;}
 .border-visible-none {border-color: transparent!important ;}
 
-.border {border: 1px solid var(--border-color)!important;}
-.border-left {border-left: 1px solid transparent!important;}
-.border-right {border-right: 1px solid transparent!important;}
-.border-top {border-top: 1px solid transparent!important;}
-.border-bottom {border-bottom: 1px solid transparent!important;}
+.border {border: 1px solid var(--border-color);}
+.border-left {border-left: 1px solid transparent;}
+.border-right {border-right: 1px solid transparent;}
+.border-top {border-top: 1px solid transparent;}
+.border-bottom {border-bottom: 1px solid transparent;}
 
 .border-top-left, .border-left-top {
-    border-top: 1px solid transparent!important;
-    border-left: 1px solid transparent!important;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
 }
 .border-top-right, .border-right-top {
-    border-top: 1px solid transparent!important;
-    border-right: 1px solid transparent!important;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
 }
 .border-bottom-right, .border-right-bottom {
-    border-bottom: 1px solid transparent!important;
-    border-right: 1px solid transparent!important;
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid transparent;
 }
 .border-bottom-left, .border-left-bottom {
-    border-bottom: 1px solid transparent!important;
-    border-left: 1px solid transparent!important;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
 }
 .border-top-bottom, .border-bottom-top {
-    border-bottom: 1px solid transparent!important;
-    border-top: 1px solid transparent!important;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
 }
 .border-right-left, .border-left-right {
-    border-right: 1px solid transparent!important;
-    border-left: 1px solid transparent!important;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
 }
 
 .border-top-right-bottom {
-    border-top: 1px solid transparent!important;
-    border-right: 1px solid transparent!important;
-    border-bottom: 1px solid transparent!important;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 .border-right-bottom-left {
-    border-left: 1px solid transparent!important;
-    border-right: 1px solid transparent!important;
-    border-bottom: 1px solid transparent!important;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 .border-bottom-left-top {
-    border-left: 1px solid transparent!important;
-    border-top: 1px solid transparent!important;
-    border-bottom: 1px solid transparent!important;
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 .border-left-top-right {
-    border-left: 1px solid transparent!important;
-    border-top: 1px solid transparent!important;
-    border-bottom: 1px solid transparent!important;
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
-.border-radius {border-radius: @border-radius!important;}
-.border-radius-half {border-radius: 50%!important;}
+.border-radius {border-radius: @border-radius;}
+.border-radius-half {border-radius: 50%;}
 
 .generate-border-width(20);
 .generate-border-width(@i) when (@i > 0) {
 
-    .border-@{i} {border-width: unit(@i, px)!important;}
-    .border-size-@{i} {border-width: unit(@i, px)!important;}
-    .border-radius-@{i} {border-radius: unit(@i, px)!important;}
+    .border-@{i} {border-width: unit(@i, px);}
+    .border-size-@{i} {border-width: unit(@i, px);}
+    .border-radius-@{i} {border-radius: unit(@i, px);}
 
     .generate-border-width(@i - 1);
 }
