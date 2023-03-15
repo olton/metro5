@@ -1,6 +1,6 @@
 import "./checkbox.css"
 import {Component} from "../../core/component.js";
-import {merge, undef} from "../../routines/index.js";
+import {merge, noop, undef} from "../../routines/index.js";
 import {Registry} from "../../core/registry.js";
 
 const CHECKBOX_STATES = {
@@ -20,6 +20,7 @@ let CheckboxDefaultOptions = {
     captionPosition: "right",
     initialState: CHECKBOX_STATES.UNCHECKED,
     readOnly: false,
+    onChangeState: noop
 }
 
 export class Checkbox extends Component {
@@ -75,6 +76,9 @@ export class Checkbox extends Component {
                     }
                 }
                 this.drawState()
+                this.fireEvent("ChangeState", {
+                    state: this.state
+                })
             })
         }
     }
@@ -103,6 +107,15 @@ export class Checkbox extends Component {
                 elem.checked = true
             }
         }
+    }
+
+    getState(){
+        return this.state
+    }
+
+    setState(state){
+        this.state = state
+        this.drawState()
     }
 }
 
