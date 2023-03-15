@@ -141,8 +141,6 @@ export class Textarea extends Component {
         this.fake[0].style.cssText = 'height:auto;';
         this.fake[0].style.cssText = 'height:' + this.fake[0].scrollHeight + 'px';
 
-        console.log(this.fake[0].value)
-
         element[0].style.cssText = 'height:' + this.fake[0].scrollHeight + 'px';
     }
 
