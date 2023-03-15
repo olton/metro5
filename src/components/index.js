@@ -35,7 +35,7 @@ import {AnalogClock} from "./analog-clock"
 import {Validator} from "./validator"
 import {Progress} from "./progress"
 import {InputMask} from "./input-mask"
-import {InputCommonCss} from "./input-common"
+import {InputCommon} from "./input-common"
 import {Switch} from "./switch"
 import {MetroStorage} from "./storage";
 import {TemplateEngine, Template} from "./template";
@@ -46,6 +46,7 @@ import {Card} from "./cards"
 import {Checkbox} from "./checkbox";
 import {Radio} from "./radio";
 import {Textarea} from "./textarea";
+import {Input} from "./input";
 
 export {
     Accordion,
@@ -86,7 +87,7 @@ export {
     AnalogClock,
     Progress,
     InputMask,
-    InputCommonCss,
+    InputCommon,
     Switch,
     MetroStorage,
     TemplateEngine,
@@ -98,4 +99,5 @@ export {
     Checkbox,
     Radio,
     Textarea,
+    Input,
 }

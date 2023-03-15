@@ -1,3 +1,3 @@
-import * as InputCommonCss from "./input-common.css"
+import * as InputCommon from "./input-common.css"
 
-export {InputCommonCss}
+export {InputCommon}
