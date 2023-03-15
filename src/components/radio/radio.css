@@ -1,0 +1,91 @@
+.radio {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  user-select: none;
+  cursor: pointer;
+  height: 36px;
+}
+.radio input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.radio .check,
+.radio .caption {
+  display: block;
+  line-height: 1;
+  font-size: 14px;
+  margin: 0 4px;
+  position: relative;
+}
+.radio .check {
+  border: 2px var(--border-color) solid;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  line-height: 36px;
+}
+.radio .check::before {
+  position: absolute;
+  vertical-align: middle;
+  font-size: 0;
+  content: "";
+  width: 6px;
+  height: 6px;
+  color: transparent;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  margin-left: -3px;
+  margin-top: -3px;
+  display: none;
+  transform: rotate(-45deg);
+}
+.radio input[type=radio]:checked ~ .check {
+  border-color: var(--checkbox-check-checked);
+  background-color: var(--checkbox-check-checked);
+}
+.radio input[type=radio]:checked ~ .check::before {
+  display: block;
+}
+.radio input[type=radio]:disabled ~ .check {
+  border-color: var(--checkbox-check-disabled);
+  background-color: var(--checkbox-check-disabled);
+}
+.radio .check {
+  order: 1;
+}
+.radio .caption {
+  order: 2;
+}
+.radio.caption-left {
+  flex-flow: row-reverse nowrap;
+}
+.radio.required,
+.radio.invalid,
+.radio.valid {
+  border: none!important;
+}
+.radio.invalid::after {
+  display: none;
+}
+.radio.transition-on .check {
+  transition: all 0.3s ease-in-out;
+}
+.radio.transition-on input[type=radio]:checked ~ .check {
+  transition: all 0.3s ease-in-out;
+}
+.radio .check.focused {
+  box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.45);
+}
+/*# sourceMappingURL=radio.css.map */

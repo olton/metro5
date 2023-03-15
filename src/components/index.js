@@ -44,6 +44,7 @@ import {Lightbox} from "./lightbox/index.js";
 import {Countdown} from "./countdown/index.js";
 import {Card} from "./cards"
 import {Checkbox} from "./checkbox/index.js";
+import {Radio} from "./radio/index.js";
 
 export {
     Accordion,
@@ -94,4 +95,5 @@ export {
     Countdown,
     Card,
     Checkbox,
+    Radio,
 }

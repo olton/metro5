@@ -95,4 +95,16 @@
 .checkbox.invalid::after {
   display: none;
 }
+.checkbox.transition-on .check {
+  transition: all 0.3s ease-in-out;
+}
+.checkbox.transition-on input[type=checkbox]:checked ~ .check {
+  transition: all 0.3s ease-in-out;
+}
+.checkbox.transition-on input[data-indeterminate=true] ~ .check {
+  transition: all 0.3s ease-in-oute;
+}
+.checkbox .check.focused {
+  box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.45);
+}
 /*# sourceMappingURL=checkbox.css.map */

@@ -1,7 +1,7 @@
 @import "../../include/mixins";
 @import "../../include/colors";
 
-.checkbox {
+.radio {
     display: inline-flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -24,8 +24,9 @@
 
     .check {
         border: 2px var(--border-color) solid;
-        height: 20px;
         width: 20px;
+        height: 20px;
+        border-radius: 50%;
         flex-shrink: 0;
         line-height: 36px;
 
@@ -34,23 +35,22 @@
             vertical-align: middle;
             font-size: 0;
             content: "";
-            height: 5px;
-            width: 10px;
-            background-color: transparent;
+            width: 6px;
+            height: 6px;
             color: transparent;
-            border-left: 2px solid;
-            border-bottom: 2px solid;
-            border-color: #ffffff;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
             left: 50%;
             top: 50%;
-            margin-left: -5px;
-            margin-top: -4px;
+            margin-left: -3px;
+            margin-top: -3px;
             display: none;
             transform: rotate(-45deg);
         }
     }
 
-    input[type=checkbox]:checked ~ .check {
+    input[type=radio]:checked ~ .check {
         border-color: var(--checkbox-check-checked);
         background-color: var(--checkbox-check-checked);
 
@@ -59,27 +59,9 @@
         }
     }
 
-    input[type=checkbox]:disabled ~ .check {
+    input[type=radio]:disabled ~ .check {
         border-color: var(--checkbox-check-disabled);
         background-color: var(--checkbox-check-disabled);
-    }
-
-    input[data-indeterminate=true] ~ .check {
-        border-color: var(--checkbox-check-checked);
-        background-color: var(--checkbox-check-checked);
-
-        &::before {
-            display: block!important;
-            height: 6px;
-            width: 6px;
-            background-color: #ffffff;
-            border: 2px solid #ffffff;
-            left: 50%;
-            top: 50%;
-            margin-left: -3px;
-            margin-top: -3px;
-            .rotate(0);
-        }
     }
 
     .check {order: 1;}
@@ -100,7 +82,7 @@
     }
 
     &:focus, &:active {
-        input[type=checkbox]:not(:disabled) {
+        input[type=radio]:not(:disabled) {
             & ~ .check {
                 //.halo();
             }
@@ -112,17 +94,12 @@
             transition: all .3s ease-in-out;
         }
 
-        input[type=checkbox]:checked ~ .check {
+        input[type=radio]:checked ~ .check {
             transition: all .3s ease-in-out;
-        }
-
-        input[data-indeterminate=true] ~ .check {
-            transition: all .3s ease-in-oute;
         }
     }
 
     .check.focused {
         box-shadow: 0 0 0 3px rgba(red(@lightGray), green(@lightGray), blue(@lightGray), 0.45);
     }
-
 }
