@@ -80,6 +80,10 @@ export class Checkbox extends Component {
                     state: this.state
                 })
             })
+
+            element.on("change", ()=>{
+                // TODO
+            })
         }
     }
 
