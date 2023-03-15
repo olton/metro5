@@ -28,23 +28,24 @@ import {Clock} from "./clock"
 import {Toast} from "./toast"
 import {Tokenizer} from "./tokenizer"
 import {HtmlContainer} from "./html-container"
-import {Cookies, CookieDisclaimer} from "./cookies/index.js"
-import {Counter} from "./counter/index.js"
-import {Form} from "./form/index.js"
-import {AnalogClock} from "./analog-clock/index.js"
+import {Cookies, CookieDisclaimer} from "./cookies"
+import {Counter} from "./counter"
+import {Form} from "./form"
+import {AnalogClock} from "./analog-clock"
 import {Validator} from "./validator"
 import {Progress} from "./progress"
 import {InputMask} from "./input-mask"
 import {InputCommonCss} from "./input-common"
 import {Switch} from "./switch"
-import {MetroStorage} from "./storage/index.js";
-import {TemplateEngine, Template} from "./template/index.js";
+import {MetroStorage} from "./storage";
+import {TemplateEngine, Template} from "./template";
 import {ToolsMenu} from "./tools-menu"
-import {Lightbox} from "./lightbox/index.js";
-import {Countdown} from "./countdown/index.js";
+import {Lightbox} from "./lightbox";
+import {Countdown} from "./countdown";
 import {Card} from "./cards"
-import {Checkbox} from "./checkbox/index.js";
-import {Radio} from "./radio/index.js";
+import {Checkbox} from "./checkbox";
+import {Radio} from "./radio";
+import {Textarea} from "./textarea";
 
 export {
     Accordion,
@@ -96,4 +97,5 @@ export {
     Card,
     Checkbox,
     Radio,
+    Textarea,
 }

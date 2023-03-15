@@ -1,0 +1,99 @@
+.textarea,
+textarea {
+  height: auto;
+}
+textarea {
+  line-height: 1.2;
+}
+.textarea {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: auto;
+  padding: 0;
+}
+.textarea .fake-textarea {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.textarea textarea {
+  appearance: none;
+  display: block;
+  outline: none;
+  padding: 0.75rem;
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+  border: none!important;
+  transition: height 0.1s linear;
+}
+.textarea textarea:focus {
+  box-shadow: none;
+}
+.textarea.no-scroll-vertical textarea {
+  overflow-y: hidden!important;
+}
+.textarea .input-clear-button {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  z-index: 2;
+  background-color: transparent;
+}
+.textarea .input-clear-button:hover {
+  text-shadow: rgba(0, 0, 0, 0.25) 0.1em 0.1em 0.2em;
+}
+.textarea .input-clear-button::before {
+  position: absolute;
+  content: "\2715";
+  z-index: 2;
+}
+.textarea:not(.no-scroll-vertical) .input-clear-button {
+  right: 18px;
+}
+.textarea.disabled .clear-button {
+  display: none;
+}
+.textarea .prepend {
+  order: 1;
+}
+.textarea .append {
+  order: 3;
+}
+.textarea textarea {
+  order: 2;
+}
+.textarea .input-clear-button ~ textarea {
+  padding-right: 48px;
+}
+.textarea[dir=rtl],
+.textarea.rtl {
+  flex-direction: row-reverse;
+}
+.textarea[dir=rtl] .prepend,
+.textarea.rtl .prepend {
+  order: 3;
+}
+.textarea[dir=rtl] .append,
+.textarea.rtl .append {
+  order: 1;
+}
+.textarea[dir=rtl] textarea,
+.textarea.rtl textarea {
+  order: 2;
+}
+.textarea[dir=rtl] .input-clear-button,
+.textarea.rtl .input-clear-button {
+  right: auto;
+  left: 0.25rem;
+}
+.textarea[dir=rtl] .input-clear-button ~ textarea,
+.textarea.rtl .input-clear-button ~ textarea {
+  padding-left: 48px;
+  padding-right: 0.75rem;
+}
+/*# sourceMappingURL=textarea.css.map */
