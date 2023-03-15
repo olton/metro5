@@ -80,6 +80,7 @@ export class Countdown extends Component {
             if (document.hidden) {
                 this.pause();
             } else {
+                this.element.find(".-old-digit").remove()
                 this.resume();
             }
         }, {ns: this.element.id});

@@ -86,6 +86,10 @@ export class Input extends Component {
             element.attr("type", "text");
         }
 
+        if (element.attr('type') === 'password') {
+            element.attr("autocomplete", "on")
+        }
+
         if (o.historyPreset) {
             $.each(to_array(o.historyPreset, "|"), (_, el) => {
                 this.history.push(el);
