@@ -33391,6 +33391,8 @@ textarea {
   flex-basis: 0;
   height: 34px;
   padding: 0 0.75rem;
+  background-color: transparent;
+  color: inherit;
 }
 .input input:focus {
   box-shadow: none;
@@ -33401,9 +33403,9 @@ textarea {
 }
 .input .button {
   background-color: transparent;
-  color: #1e2228;
+  color: inherit;
   height: 34px;
-  min-width: 34px;
+  width: 34px;
 }
 .input .button:focus,
 .input .button:active {
