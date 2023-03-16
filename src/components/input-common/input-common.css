@@ -31,26 +31,6 @@
   width: 100%;
   min-width: 0;
 }
-.metro-input input::-ms-clear,
-.file input::-ms-clear,
-.input input::-ms-clear,
-.textarea input::-ms-clear,
-.select input::-ms-clear,
-.tag-input input::-ms-clear,
-.spinner input::-ms-clear,
-.color-picker input::-ms-clear {
-  display: none;
-}
-.metro-input input::-ms-reveal,
-.file input::-ms-reveal,
-.input input::-ms-reveal,
-.textarea input::-ms-reveal,
-.select input::-ms-reveal,
-.tag-input input::-ms-reveal,
-.spinner input::-ms-reveal,
-.color-picker input::-ms-reveal {
-  display: none;
-}
 .metro-input input::-webkit-clear-button,
 .file input::-webkit-clear-button,
 .input input::-webkit-clear-button,
@@ -387,11 +367,14 @@ input[type=reset] {
 .tag-input .append,
 .spinner .append,
 .color-picker .append {
-  padding: 0.5rem 0.75rem;
+  padding: 0 12px;
   background-color: var(--input-append-background);
   color: var(--input-append-text-color);
   line-height: 1.25rem;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hidden-input {
   width: 1px;
@@ -583,12 +566,6 @@ input:-webkit-autofill:active {
 ::-webkit-input-placeholder {
   font-size: 14px;
 }
-::-moz-placeholder {
-  font-size: 14px;
-}
-:-moz-placeholder {
-  font-size: 14px;
-}
 input.rtl,
 input[dir=rtl] {
   direction: rtl;
@@ -601,12 +578,6 @@ input[dir=rtl] {
   text-align: right;
 }
 input[placeholder] {
-  text-overflow: ellipsis;
-}
-input::-moz-placeholder {
-  text-overflow: ellipsis;
-}
-input:-moz-placeholder {
   text-overflow: ellipsis;
 }
 /*# sourceMappingURL=input-common.css.map */

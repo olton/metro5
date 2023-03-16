@@ -3,6 +3,7 @@ import {Component} from "../../core/component.js";
 import {merge} from "../../routines/merge.js";
 import {Registry} from "../../core/registry.js";
 import {panic} from "../../routines/panic.js";
+import {GlobalEvents} from "../../core/global-events.js";
 
 let DropdownDefaultOptions = {
     toggle: "",
@@ -54,12 +55,12 @@ export class Dropdown extends Component {
             e.stopPropagation()
         })
 
-        $(window).on("click", function(e){
-            $('[data-role*=dropdown]').each((i, el) => {
-                const pl = Metro.getPlugin(el, "dropdown")
-                pl.close()
-            })
-        })
+        // $(window).on("click", function(e){
+        //     $('[data-role*=dropdown]').each((i, el) => {
+        //         const pl = Metro.getPlugin(el, "dropdown")
+        //         pl.close()
+        //     })
+        // })
     }
 
     open(el){
@@ -133,3 +134,11 @@ export class Dropdown extends Component {
 }
 
 Registry.register("dropdown", Dropdown)
+GlobalEvents.setEvent(()=>{
+    $(window).on("click", function(e){
+        $('[data-role*=dropdown]').each((i, el) => {
+            const pl = Metro.getPlugin(el, "dropdown")
+            pl.close()
+        })
+    })
+})

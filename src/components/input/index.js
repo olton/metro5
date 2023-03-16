@@ -2,6 +2,7 @@ import "./input.css"
 import {Component} from "../../core/component.js";
 import {exec, isObjectType, merge, noop, objectLength, to_array, undef} from "../../routines/index.js";
 import {Registry} from "../../core/registry.js";
+import {GlobalEvents} from "../../core/global-events.js";
 
 export const KEY_CONTROL_CODES = {
     BACKSPACE: 8,
@@ -43,7 +44,6 @@ let InputDefaultOptions = {
     padding: "",
     prepend: "",
     append: "",
-    copyInlineStyles: false,
     searchButton: false,
     clearButton: true,
     revealButton: true,
@@ -110,7 +110,7 @@ export class Input extends Component {
             $("<button>").addClass("button input-reveal-button").attr("tabindex", -1).attr("type", "button").html("&#x1F441;").appendTo(buttonsGroup)
         }
         if (o.searchButton === true) {
-            $("<button>").addClass("button input-search-button").attr("tabindex", -1).attr("type", o.searchButtonClick === 'submit' ? "submit" : "button").html("&#x1F50D;").appendTo(buttonsGroup);
+            $("<button>").addClass("button input-search-button").attr("tabindex", -1).attr("type", o.searchButtonClick === 'submit' ? "submit" : "button").html("<span class='icon-search'>").appendTo(buttonsGroup);
         }
 
         if (o.prepend) {
@@ -329,6 +329,9 @@ export class Input extends Component {
                     val: element.val()
                 });
             }
+            if (e.ctrlKey && e.keyCode === 32) {
+                that.drawAutocompleteList(this.elem.value.toLowerCase());
+            }
         });
 
         element.on("blur", () => {
@@ -435,3 +438,8 @@ export class Input extends Component {
 }
 
 Registry.register("input", Input)
+GlobalEvents.setEvent(()=>{
+    $(document).on("click", function(){
+        $('.input .autocomplete-list').hide(); // ???
+    });
+})

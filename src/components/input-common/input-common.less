@@ -29,12 +29,6 @@
     }
 
     input {
-        &::-ms-clear {
-            display: none;
-        }
-        &::-ms-reveal {
-            display: none;
-        }
         &::-webkit-clear-button {
             display: none;
         }
@@ -132,11 +126,14 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .file, .input, .select, .textarea, .tag-input, .spinner, .color-picker {
     .prepend, .append {
-        padding: .5rem .75rem;
+        padding: 0 12px;
         background-color: var(--input-append-background);
         color: var(--input-append-text-color);
         line-height: 1.25rem;
         white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -220,8 +217,6 @@ input:-webkit-autofill:active {
 }
 
 ::-webkit-input-placeholder {font-size: 14px}
-::-moz-placeholder          {font-size: 14px}
-:-moz-placeholder           {font-size: 14px}
 
 input.rtl, input[dir=rtl] {
     direction: rtl;
@@ -237,5 +232,3 @@ input.rtl, input[dir=rtl] {
 }
 
 input[placeholder]          {text-overflow:ellipsis;}
-input::-moz-placeholder     {text-overflow:ellipsis;}
-input:-moz-placeholder      {text-overflow:ellipsis;}

@@ -2,13 +2,13 @@ import {Registry} from "./registry.js";
 import {merge} from "../routines/merge.js";
 import {globalize} from "./globalize.js";
 import {md5} from "../routines/md5.js";
-import {uniqueId} from "../routines/unique-id"
-import {clearName} from "../routines/clear-name.js";
+import {uniqueId} from "../routines"
+import {clearName} from "../routines";
 import {media, media_mode, medias} from "../routines/media.js";
 import {to_array} from "../routines/to-array.js";
-import {exec} from "../routines/exec.js";
 import {registerLocales} from "./locales.js";
 import {upgradeDatetime} from "./upgrade.js";
+import {GlobalEvents} from "./global-events.js";
 
 const MetroOptions = {
     removeCloakTimeout: 100
@@ -65,6 +65,11 @@ export class Metro5 {
                     body.removeClass('cloak remove-cloak')
                 },this.options.removeCloakTimeout)
             }
+        })
+
+        $.each(GlobalEvents.getGlobalEvents(), (_, fn) => {
+            if (typeof fn !== "function") {return}
+            fn.apply(null, [])
         })
 
         $(window).on("resize", function(){

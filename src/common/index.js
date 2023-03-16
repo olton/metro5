@@ -15,6 +15,8 @@ import {BorderCss} from "./border"
 import {PositionCss} from "./position"
 import {SizingCss} from "./sizing"
 import {AnimationCss} from "./animation"
+import {DefaultIconsCss} from "./icons-common"
+import {MediaIconsCss} from "./icons-media"
 
 export {
     ResetCss,
@@ -35,4 +37,6 @@ export {
     PositionCss,
     SizingCss,
     AnimationCss,
+    DefaultIconsCss,
+    MediaIconsCss,
 }

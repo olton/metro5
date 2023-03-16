@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.49.2",
+  "version": "0.49.3",
   "type": "module",
   "funding": [
     {
@@ -70,8 +70,8 @@
     "@olton/color": "^0.1.1",
     "@olton/datetime": "^3.0.1",
     "@olton/html": "^0.4.1",
-    "@olton/query": "^0.4.14",
+    "@olton/query": "^0.4.15",
     "@olton/string": "^0.4.1",
-    "vite": "^4.1.4"
+    "vite": "^4.2.0"
   }
 }
