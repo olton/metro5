@@ -47,6 +47,7 @@ import {Checkbox} from "./checkbox";
 import {Radio} from "./radio";
 import {Textarea} from "./textarea";
 import {Input} from "./input";
+import {ScrollbarCss} from "./scrollbar"
 
 export {
     Accordion,
@@ -100,4 +101,5 @@ export {
     Radio,
     Textarea,
     Input,
+    ScrollbarCss,
 }

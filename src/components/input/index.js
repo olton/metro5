@@ -110,7 +110,7 @@ export class Input extends Component {
             $("<button>").addClass("button input-reveal-button").attr("tabindex", -1).attr("type", "button").html("&#x1F441;").appendTo(buttonsGroup)
         }
         if (o.searchButton === true) {
-            $("<button>").addClass("button input-search-button").attr("tabindex", -1).attr("type", o.searchButtonClick === 'submit' ? "submit" : "button").html("<span class='icon-search'>").appendTo(buttonsGroup);
+            $("<button>").addClass("button input-search-button").attr("tabindex", -1).attr("type", o.searchButtonClick === 'submit' ? "submit" : "button").html("").appendTo(buttonsGroup);
         }
 
         if (o.prepend) {

@@ -73,12 +73,13 @@ export class Dropdown extends Component {
         $('[data-role*=dropdown]').each((i, el) => {
             const $el = $(el)
             if ($el.in(parents) || $el.is(dropdown.element)) {
-                console.log("stay")
                 return
             }
             const pl = Metro.getPlugin(el, "dropdown")
             pl.close()
         })
+
+        let draw
 
         if (dropdown.element.hasClass('horizontal')) {
             let children_width = 0;
@@ -86,22 +87,31 @@ export class Dropdown extends Component {
             $.each(dropdown.element.children('li'), function(i){
                 const el = $(this)
                 children_width += el.outerWidth(true);
-                if (i===0) children_height = el[0].scrollHeight
-                else {
-                    if (children_height > el[0].scrollHeight) {
-                        children_height = el[0].scrollHeight
+                if (dropdown.element.hasClass("tools-menu")) {
+                    children_height = dropdown.element.hasClass("compact") ? 40 : 60
+                } else {
+                    if (i === 0) children_height = el[0].scrollHeight
+                    else {
+                        if (children_height > el[0].scrollHeight) {
+                            children_height = el[0].scrollHeight
+                        }
                     }
                 }
             });
             height = children_height
-            dropdown.element.css('width', children_width);
+            dropdown.element.css('height', children_height);
+            draw = {
+                width: [0, children_width]
+            }
+        } else {
+            draw = {
+                height: [0, height]
+            }
         }
 
         Animation.animate({
             el: dropdown.elem,
-            draw: {
-                height: [0, height]
-            },
+            draw,
             dur: dropdown.options.duration,
             onDone: () => {
                 dropdown.element.parent().addClass("dropped-container")

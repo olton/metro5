@@ -16,13 +16,13 @@
   --control-color: #ebebeb;
   --disable-color: #ececec;
   --shadow-color: rgba(0, 0, 0, 0.4);
-  --menu-background: #ebebeb;
+  --menu-background: #f8f8f8;
   --menu-text-color: #000000;
   --menu-background-active: rgba(0, 0, 0, 0.1);
   --menu-text-color-active: #ffffff;
   --menu-title-background: #9f9f9f;
   --menu-title-text-color: #ffffff;
-  --appbar-background: #ebebeb;
+  --appbar-background: #f8f8f8;
   --appbar-text-color: #000000;
   --appbar-background-hover: rgba(30, 34, 40, 0.1);
   --appbar-text-color-hover: #000000;
@@ -99,6 +99,8 @@
   --checkbox-marker-color: #ffffff;
   --textarea-background: #ffffff;
   --textarea-text-color: #000000;
+  --scrollbar-track-color: #e8e8e8;
+  --scrollbar-thumb-color: rgba(101, 95, 95, 0.71);
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -170,8 +172,8 @@
   --input-border: #1e2228;
   --input-border-hover: #a6a6a6;
   --input-disabled-background: #acacac;
-  --input-append-background: #acacac;
-  --input-append-text-color: #000000;
+  --input-append-background: #323232;
+  --input-append-text-color: #adbaa9;
   --switch-border: #565656;
   --switch-check-background: #2b2d30;
   --switch-text-color: #2b2d30;
@@ -181,8 +183,9 @@
   --switch-dot-disabled-background: #acacac;
   --switch-unchecked-border: #464646;
   --switch-unchecked-check-background: #464646;
-  --tools-menu-item-background: #ffffff;
-  --tools-menu-item-text-color: #000000;
+  --tools-menu-item-background: #3c3f41;
+  --tools-menu-item-text-color: #ffffff;
+  --tools-dropdown-toggle: #ffffff;
   --tools-menu-item-hover: rgba(30, 34, 40, 0.1);
   --lightbox-closer-background: #CE352C;
   --lightbox-closer-text-color: #ffffff;
@@ -196,6 +199,8 @@
   --checkbox-marker-color: #ffffff;
   --textarea-background: #2b2d30;
   --textarea-text-color: #ffffff;
+  --scrollbar-track-color: #e8e8e8;
+  --scrollbar-thumb-color: rgba(101, 95, 95, 0.71);
 }
 body {
   background-color: var(--body-background);

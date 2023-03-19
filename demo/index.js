@@ -9,7 +9,7 @@ globalThis.templateData = {
     showSkills: true
 };
 
-import {Metro5} from "../src/core/metro"
+import {Metro5} from "../src/index.js"
 import "../icons/mif.css"
 import * as CommonCss from "../src/common"
 import * as Components from "../src/components"

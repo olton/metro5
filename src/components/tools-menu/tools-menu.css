@@ -93,7 +93,7 @@
   height: 0;
   border-style: solid;
   border-width: 0 0 8px 8px;
-  border-color: transparent transparent var(--tools-menu-item-hover) transparent;
+  border-color: transparent transparent var(--border-color) transparent;
   transform: rotate(0);
 }
 .tools-menu .dropdown-toggle:before {

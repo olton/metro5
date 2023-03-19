@@ -1,4 +1,5 @@
 @import "../../include/colors";
+@import "../../include/icons";
 
 @input-lx: 50px;
 @input-sx: 28px;
@@ -235,5 +236,19 @@ input.input-small[placeholder]          {font-size: .8rem;}
         }
 
         flex-flow: row-reverse nowrap;
+    }
+}
+
+.input-search-button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(@searchIcon);
+    background-size: 16px;
+}
+
+.dark-mode {
+    .input-search-button {
+        background-image: url(@searchIconLight);
     }
 }
