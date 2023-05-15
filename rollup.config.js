@@ -14,7 +14,7 @@ export default [
         watch: { clearScreen: false },
         plugins: [
             css({
-                output: 'metro-ui.css',
+                output: 'metro5.css',
                 minify: false
             }),
             resolve({
@@ -30,17 +30,17 @@ export default [
             })
         ],
         output: {
-            file: './lib/metro-ua.js',
+            file: './lib/metro5.js',
             format: 'iife',
         }
     },
     {
-        input: './lib/metro-ua.js',
+        input: './lib/metro5.js',
         plugins: [
             terser()
         ],
         output: {
-            file: './lib/metro-ui.min.js',
+            file: './lib/metro5.min.js',
             format: 'iife',
             sourcemap
         }

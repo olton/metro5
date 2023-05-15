@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.50.0",
+  "version": "0.51.0",
   "type": "module",
   "funding": [
     {
@@ -40,7 +40,7 @@
     "start": "parcel ./demo/index.html ./demo/*.html",
     "clear": "shx rm -rf lib/*",
     "build": "npm run clear && rollup --config && npm run minifycss",
-    "minifycss": "css-minify -f lib/metro-ui.css -o lib"
+    "minifycss": "css-minify -f lib/metro5.css -o lib"
   },
   "browserslist": [
     "last 1 Chrome versions",
