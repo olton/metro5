@@ -1,20 +1,3 @@
-:root {
-  --z-index-selected-check: 100;
-  --z-index-absolute: 500;
-  --z-index-dropdown: 1000;
-  --z-index-sticky: 1020;
-  --z-index-fixed: 1030;
-  --z-index-modal-backdrop: 1040;
-  --z-index-modal: 1050;
-  --z-index-popover: 1060;
-  --z-index-tooltip: 1070;
-  --z-index-top: 1080;
-  --z-index-notify: 1085;
-  --z-index-charms: 1090;
-  --z-index-overlay: 2000;
-  --z-index-overlay-global-dialog: 2001;
-  --z-index-fullscreen: 2147483647;
-}
 .tools-menu {
   list-style: none inside;
   margin: 0;

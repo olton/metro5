@@ -101,6 +101,8 @@
   --textarea-text-color: #000000;
   --scrollbar-track-color: #e8e8e8;
   --scrollbar-thumb-color: rgba(101, 95, 95, 0.71);
+  --tab-background: #ffffff;
+  --tab-closer-hover-background: rgba(30, 34, 40, 0.1);
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -201,6 +203,8 @@
   --textarea-text-color: #ffffff;
   --scrollbar-track-color: #e8e8e8;
   --scrollbar-thumb-color: rgba(101, 95, 95, 0.71);
+  --tab-background: #1e2228;
+  --tab-closer-hover-background: rgba(101, 95, 95, 0.71);
 }
 body {
   background-color: var(--body-background);

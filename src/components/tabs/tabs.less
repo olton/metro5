@@ -1,0 +1,143 @@
+.tabs {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style: none inside;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+.tabs__item {
+    display: block;
+    position: relative;
+    padding: 4px 28px 4px 26px;
+    border: 1px solid transparent;
+    cursor: default;
+    z-index: 1;
+
+    &.active {
+        border: 1px solid var(--border-color);
+        border-bottom-color: var(--tab-background);
+        left: -2px;
+    }
+
+    &::after {
+        content: "";
+        border-right: 1px solid var(--border-color);
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        right: 0;
+    }
+
+    &.active {
+        &::after {
+            display: none;
+        }
+    }
+
+    &.no-icon {
+        padding-left: 8px;
+    }
+
+    &.no-closer {
+        padding-right: 8px;
+    }
+}
+
+.tabs__item__icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    margin-top: -8px;
+    border: 1px solid transparent;
+    background: transparent;
+
+    * {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+}
+
+.tabs__item__caption {
+    font-size: 14px;
+}
+
+.tabs__item__closer {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 4px;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background: var(--tab-closer-hover-background);
+    }
+}
+
+.tabs__item.active, .tabs__item:hover {
+    .tabs__item__closer {
+        display: flex;
+    }
+}
+
+.tabs {
+    &.wrap-items {
+        flex-wrap: wrap;
+    }
+}
+
+.tabs__item__add-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    margin-left: 8px;
+
+    * {
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        line-height: 1;
+    }
+
+    &:hover {
+        * {
+            background: var(--tab-closer-hover-background);
+        }
+    }
+}
+
+.tabs {
+    &.tabs-position- {
+        &left {justify-content: start}
+        &center {justify-content: center}
+        &right {justify-content: end}
+    }
+}

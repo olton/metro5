@@ -10,7 +10,7 @@ import {isObject, isObjectType} from "./is-object.js";
 import {md5} from "./md5.js";
 import {medias, media_mode, media, mediaExist, mediaModes, inMedia} from "./media.js";
 import {merge} from "./merge.js";
-import {noop, noop_false, noop_true} from "./noop.js";
+import {noop, noop_false, noop_true, noop_arg} from "./noop.js";
 import {numberFormat} from "./number-format.js";
 import {objectLength} from "./object-length.js";
 import {panic} from "./panic.js";
@@ -49,6 +49,7 @@ export {
     noop,
     noop_false,
     noop_true,
+    noop_arg,
     numberFormat,
     objectLength,
     panic,

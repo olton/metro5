@@ -48,6 +48,7 @@ import {Radio} from "./radio";
 import {Textarea} from "./textarea";
 import {Input} from "./input";
 import {ScrollbarCss} from "./scrollbar"
+import {Tabs} from "./tabs"
 
 export {
     Accordion,
@@ -102,4 +103,5 @@ export {
     Textarea,
     Input,
     ScrollbarCss,
+    Tabs,
 }

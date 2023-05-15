@@ -32,7 +32,7 @@
 }
 .scrollbar-type-4 ::-webkit-scrollbar {
   width: 12px;
-  heigth: 12px;
+  height: 12px;
 }
 .scrollbar-type-4 ::-webkit-scrollbar-track {
   border-radius: 10px;

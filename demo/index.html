@@ -41,6 +41,36 @@
 
 <h1 class="text-center">HelloWorld Metro5!</h1>
 
+<div class="mt-10">
+    <div class="">
+        <button class="button" onclick="console.log(Metro.getPlugin('#tabs1', 'tabs').getActiveTabIndex())">Get Active Tab Index</button>
+        <button class="button" onclick="console.log(Metro.getPlugin('#tabs1', 'tabs').getActiveTab())">Log Active Tab</button>
+    </div>
+    <ul data-role="tabs" id="tabs1" class="mt-10" data-on-tab-append="console.log(arguments[0])">
+        <li data-icon="mif-file-code">tabs/index1.js</li>
+        <li data-icon="mif-file-code" class="active">tabs/index2.js</li>
+        <li data-icon="mif-file-code">tabs/index3.js</li>
+        <li data-close="false"><a href="#">Go to Home</a></li>
+        <li data-icon="mif-file-code">tabs/index4.js</li>
+    </ul>
+
+    <ul data-role="tabs" class="mt-10" data-tabs-position="center">
+        <li data-icon="mif-file-code">tabs/index.js</li>
+        <li data-icon="mif-file-code" class="active">tabs/index.js</li>
+        <li data-icon="mif-file-code">tabs/index.js</li>
+        <li data-close="false"><a href="#">Go to Home</a></li>
+        <li data-icon="mif-file-code">tabs/index.js</li>
+    </ul>
+
+    <ul data-role="tabs" class="mt-10" data-tabs-position="right">
+        <li data-icon="mif-file-code">tabs/index.js</li>
+        <li data-icon="mif-file-code" class="active">tabs/index.js</li>
+        <li data-icon="mif-file-code">tabs/index.js</li>
+        <li data-close="false"><a href="#">Go to Home</a></li>
+        <li data-icon="mif-file-code">tabs/index.js</li>
+    </ul>
+</div>
+
 <div class="mt-10 text-center">
     <div class="icon-check"></div>
     <div class="icon-cross"></div>
@@ -106,9 +136,9 @@
 </div>
 
 <div class="mt-10 mb-10 d-flex flex-row flex-justify-center">
-    <div data-role="countdown" data-date="05-01-2023"></div>
-    <div data-role="countdown" data-date="05-01-2023" data-animate="slide"></div>
-    <div data-role="countdown" data-date="05-01-2023" data-animate="fade"></div>
+    <div data-role="countdown" data-date="05-01-2024"></div>
+    <div data-role="countdown" data-date="05-01-2024" data-animate="slide"></div>
+    <div data-role="countdown" data-date="05-01-2024" data-animate="fade"></div>
 </div>
 
 <div class="container-fluid" id="screenshots">
