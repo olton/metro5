@@ -19,7 +19,6 @@ let CountdownDefaultOptions = {
 export class Countdown extends Component {
     breakpoint = null
     leftTime = null
-    current = null
     blinkInterval = null
     tickInterval = null
     current = {
@@ -42,7 +41,7 @@ export class Countdown extends Component {
         const parts = ["days", "hours", "minutes", "seconds"];
         const dm = 24*60*60*1000;
         const now = datetime().time();
-        const locale = Metro.getLocale(o.locale, "calendar")
+        const locale = Metro5.getLocale(o.locale, "calendar")
         let delta_days, digit;
 
         this.setBreakpoint()
@@ -187,7 +186,7 @@ export class Countdown extends Component {
         this.reset()
     }
     tick(){
-        const element = this.element, o = this.options;
+        const element = this.element
         const dm = 24*60*60, hm = 60*60, mm = 60, sm = 1;
         const now = datetime().time();
         let left, d, h, m, s;
@@ -330,42 +329,6 @@ export class Countdown extends Component {
             });
         };
 
-        const fadeDigit = (digit, value) => {
-            let digit_copy;
-            digit.siblings(".-old-digit").remove();
-            digit_copy = digit.clone().appendTo(digit.parent());
-            digit_copy.css({
-                opacity: 0
-            });
-
-            digit
-                .addClass("-old-digit")
-
-            Animation.animate({
-                el: digit[0],
-                draw: {
-                    opacity: 0
-                },
-                dur: duration / 2,
-                ease: o.ease,
-                onDone: function(){
-                    $(this).remove();
-                }
-            });
-
-            digit_copy
-                .html(value)
-
-            Animation.animate({
-                el: digit_copy[0],
-                draw: {
-                    opacity: 1
-                },
-                dur: duration / 2,
-                ease: o.ease
-            });
-        };
-
         value = ""+value;
 
         if (value.length === 1) {
@@ -414,7 +377,7 @@ export class Countdown extends Component {
     i18n(loc){
         const element = this.element, o = this.options;
         const parts = ["days", "hours", "minutes", "seconds"];
-        const locale = Metro.getLocale(loc)
+        const locale = Metro5.getLocale(loc)
         if (!loc) return
         o.locale = loc
         $.each(parts, function(){

@@ -88,7 +88,7 @@ export class Lightbox extends Component {
 
         activity = $("<div>").appendTo(imageWrapper);
 
-        Metro.makePlugin(activity[0], "activity", {
+        Metro5.makePlugin(activity[0], "activity", {
             type: "cycle",
             style: "color"
         });

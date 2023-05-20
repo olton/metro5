@@ -1,4 +1,5 @@
 import {debug} from "../routines/debug.js";
+import {panic} from "../routines/index.js";
 
 globalThis.METRO5_COMPONENTS_REGISTRY = {}
 
@@ -27,7 +28,20 @@ export const Registry = {
         return METRO5_COMPONENTS_REGISTRY
     },
 
+    components(){
+        return Object.keys(METRO5_COMPONENTS_REGISTRY)
+    },
+
     dump(){
-        debug(METRO5_COMPONENTS_REGISTRY)
+        debug(Registry.components())
+    },
+
+    required(...names){
+        const keys = Registry.components()
+        for (let name of names) {
+            if (!keys.includes(name)) {
+                panic(`Component ${name} required!`)
+            }
+        }
     }
 }

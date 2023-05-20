@@ -102,6 +102,7 @@
   --scrollbar-track-color: #e8e8e8;
   --scrollbar-thumb-color: rgba(101, 95, 95, 0.71);
   --tab-background: #ffffff;
+  --tab-background-hover: rgba(192, 192, 192, 0.1);
   --tab-closer-hover-background: rgba(30, 34, 40, 0.1);
 }
 .dark-mode {

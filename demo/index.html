@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body class="cloak" style="padding-top: 52px">
+
 <div data-role="appbar" data-expand-point="lg" data-theme="light">
     <a href="#" class="appbar-brand no-hover">Metro 5 :: Components library</a>
 
@@ -35,41 +36,24 @@
         <li><a href="#">Contacts</a></li>
     </ul>
 </div>
-
+<!--
 <div data-role="adblock-hunter" data-on-bite="console.log('Adblock detected!')"
      data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
-
-<h1 class="text-center">HelloWorld Metro5!</h1>
+-->
+<h1 class="text-center">Metro5 Tabs Control</h1>
 
 <div class="mt-10">
-    <div class="">
-        <button class="button" onclick="console.log(Metro.getPlugin('#tabs1', 'tabs').getActiveTabIndex())">Get Active Tab Index</button>
-        <button class="button" onclick="console.log(Metro.getPlugin('#tabs1', 'tabs').getActiveTab())">Log Active Tab</button>
-    </div>
     <ul data-role="tabs" id="tabs1" class="mt-10" data-on-tab-append="console.log(arguments[0])">
         <li data-icon="mif-file-code">tabs/index1.js</li>
         <li data-icon="mif-file-code" class="active">tabs/index2.js</li>
         <li data-icon="mif-file-code">tabs/index3.js</li>
-        <li data-close="false"><a href="#">Go to Home</a></li>
         <li data-icon="mif-file-code">tabs/index4.js</li>
-    </ul>
-
-    <ul data-role="tabs" class="mt-10" data-tabs-position="center">
-        <li data-icon="mif-file-code">tabs/index.js</li>
-        <li data-icon="mif-file-code" class="active">tabs/index.js</li>
-        <li data-icon="mif-file-code">tabs/index.js</li>
-        <li data-close="false"><a href="#">Go to Home</a></li>
-        <li data-icon="mif-file-code">tabs/index.js</li>
-    </ul>
-
-    <ul data-role="tabs" class="mt-10" data-tabs-position="right">
-        <li data-icon="mif-file-code">tabs/index.js</li>
-        <li data-icon="mif-file-code" class="active">tabs/index.js</li>
-        <li data-icon="mif-file-code">tabs/index.js</li>
-        <li data-close="false"><a href="#">Go to Home</a></li>
-        <li data-icon="mif-file-code">tabs/index.js</li>
+        <li data-icon="mif-file-code">tabs/index5.js</li>
+        <li data-icon="mif-file-code">tabs/index6.js</li>
     </ul>
 </div>
+
+<!--
 
 <div class="mt-10 text-center">
     <div class="icon-check"></div>
@@ -86,6 +70,8 @@
     <div class="icon-pencil"></div>
     <div class="icon-chevron-left"></div>
     <div class="icon-chevron-right"></div>
+    <div class="icon-chevron-down"></div>
+    <div class="icon-chevron-up"></div>
     <div class="icon-share"></div>
     <div class="icon-equalizer"></div>
     <div class="icon-random"></div>
@@ -138,7 +124,6 @@
 <div class="mt-10 mb-10 d-flex flex-row flex-justify-center">
     <div data-role="countdown" data-date="05-01-2024"></div>
     <div data-role="countdown" data-date="05-01-2024" data-animate="slide"></div>
-    <div data-role="countdown" data-date="05-01-2024" data-animate="fade"></div>
 </div>
 
 <div class="container-fluid" id="screenshots">
@@ -368,7 +353,7 @@
 </div>
 
 <div class="mt-10 d-flex flex-justify-center flex-align-start">
-    <div data-role="calendar" data-multi-select="true" data-show-week-number="false"></div>
+    <div data-role="calendar" data-multi-select="true" data-show-week-number="false" data-locale="ua-UK"></div>
     <div data-role="calendar" data-wide="true" class="ml-1" data-on-draw-day="calendarDrawDayTest"></div>
 </div>
 
@@ -781,6 +766,7 @@
         </div>
     </div>
 </div>
+-->
 <!--<script src="../lib/metro5.min.js"></script>-->
 <script src="index.js" type="module"></script>
 </body>

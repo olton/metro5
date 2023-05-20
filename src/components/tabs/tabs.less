@@ -4,6 +4,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     list-style: none inside;
+    overflow: hidden;
 
     &::after {
         content: "";
@@ -17,17 +18,17 @@
 }
 
 .tabs__item {
-    display: block;
+    display: flex;
     position: relative;
-    padding: 4px 28px 4px 26px;
+    padding: 4px 8px 4px 8px;
     border: 1px solid transparent;
     cursor: default;
     z-index: 1;
+    align-items: center;
 
     &.active {
         border: 1px solid var(--border-color);
         border-bottom-color: var(--tab-background);
-        left: -2px;
     }
 
     &::after {
@@ -36,7 +37,7 @@
         position: absolute;
         width: 1px;
         height: 20px;
-        right: 0;
+        right: -2px;
     }
 
     &.active {
@@ -45,12 +46,8 @@
         }
     }
 
-    &.no-icon {
-        padding-left: 8px;
-    }
-
-    &.no-closer {
-        padding-right: 8px;
+    &:not(.active):hover {
+        background: var(--tab-background-hover);
     }
 }
 
@@ -60,12 +57,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left: 6px;
-    top: 50%;
-    margin-top: -8px;
+    position: relative;
     border: 1px solid transparent;
     background: transparent;
+    margin-right: 4px;
 
     * {
         width: 100%;
@@ -75,15 +70,14 @@
 }
 
 .tabs__item__caption {
-    font-size: 14px;
+    font-size: 12px;
+    white-space: nowrap;
 }
 
 .tabs__item__closer {
-    display: none;
-    position: absolute;
-    top: 50%;
-    margin-top: -8px;
-    right: 4px;
+    display: inline-flex;
+    position: relative;
+    margin-left: 8px;
     font-size: 10px;
     width: 18px;
     height: 18px;
@@ -91,6 +85,7 @@
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
 
     &:hover {
         background: var(--tab-closer-hover-background);
@@ -99,7 +94,7 @@
 
 .tabs__item.active, .tabs__item:hover {
     .tabs__item__closer {
-        display: flex;
+        visibility: visible;
     }
 }
 
@@ -109,35 +104,78 @@
     }
 }
 
-.tabs__item__add-tab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: default;
-    margin-left: 8px;
-
-    * {
-        width: 18px;
-        height: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid transparent;
-        border-radius: 50%;
-        line-height: 1;
-    }
-
-    &:hover {
-        * {
-            background: var(--tab-closer-hover-background);
-        }
-    }
-}
-
 .tabs {
     &.tabs-position- {
         &left {justify-content: start}
         &center {justify-content: center}
         &right {justify-content: end}
+    }
+}
+
+.tabs__service {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    background: var(--tab-background);
+    padding-top: 4px;
+}
+
+.tabs__service-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0 4px;
+    line-height: 1.2;
+    height: 24px;
+    transition: all .15s ease-in-out;
+    cursor: default;
+    outline: none;
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+    background: transparent;
+    color: var(--text-color);
+
+    &:hover {
+        background: var(--tab-closer-hover-background);
+    }
+}
+
+.tabs__service-button {
+    & > .dropdown-menu {
+        position: fixed;
+    }
+}
+
+.tabs__append-button {
+    width: 24px;
+    margin: 4px;
+    border-radius: 50%;
+}
+
+.tabs__invisible_tab_holder {
+    overflow: hidden;
+    background: var(--tab-background);
+
+    .tabs__item {
+        display: flex;
+        cursor: default;
+        &::after {
+            display: none;
+        }
+        &.active {
+            border: none;
+            background: var(--border-color);
+        }
     }
 }

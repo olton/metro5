@@ -2,8 +2,7 @@ import {merge} from "../routines/merge.js";
 import {Str, str} from "@olton/string"
 import {exec} from "../routines/exec.js";
 import {panic} from "../routines/panic.js";
-import {objectLength} from "../routines/object-length.js";
-import {isObject} from "../routines/is-object.js";
+import {objectLength, isObject, uniqueId} from "../routines";
 
 export const defaultComponentOptions = {
 
@@ -63,9 +62,7 @@ export class Component {
         return objectLength(events)
     }
 
-    updateAttr(attr, newVal, oldVal){
-
-    }
+    updateAttr(attr, newVal, oldVal){}
     destroy(){
         this.element.remove()
     }

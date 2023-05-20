@@ -301,9 +301,11 @@ export class Calendar extends Component {
     drawDays(){
         const element = this.element, o = this.options
         let content = element.find(".calendar-content")
-        const calendar = datetime(this.current.year(), this.current.month(), this.current.day()).useLocale(o.locale).calendar(o.weekStart);
-        const locale = Metro.getLocale(o.locale, "calendar")
+        const calendar = datetime(this.current.year(), this.current.month(), this.current.day()).useLocale(o.locale, true).calendar(o.weekStart);
+        const locale = Metro5.getLocale(o.locale, "calendar")
         const now = datetime()
+
+        console.log(o.locale)
 
         if (!content.length) {
             content = $("<div>").addClass("calendar-content").appendTo(element)
@@ -329,6 +331,7 @@ export class Calendar extends Component {
         if (o.showWeekNumber) {
             $("<span>").addClass("week-number").html("#").appendTo(weekDays);
         }
+
         $.each(calendar['weekdays'], (_, wd) => {
             $("<span>").addClass("week-day").html(wd).appendTo(weekDays);
         });
@@ -404,7 +407,7 @@ export class Calendar extends Component {
     drawMonths(){
         const element = this.element, o = this.options
         let content = element.find(".calendar-content")
-        const locale = Metro.getLocale(o.locale, "calendar")["months"]
+        const locale = Metro5.getLocale(o.locale, "calendar")["months"]
 
         if (!content.length) {
             content = $("<div>").addClass("calendar-content").appendTo(element)
@@ -510,7 +513,7 @@ export class Calendar extends Component {
 
     drawFooter(){
         const element = this.element, o = this.options
-        const locale = Metro.getLocale(o.locale, "buttons")
+        const locale = Metro5.getLocale(o.locale, "buttons")
         let footer = element.find(".calendar-footer")
         if (!o.buttons.trim()) {
             footer.hide()

@@ -49,8 +49,8 @@
     "last 1 Edge versions"
   ],
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
     "assert": "^2.0.0",
     "css-minify": "^2.0.0",
     "events": "^3.3.0",
@@ -68,10 +68,10 @@
   "dependencies": {
     "@olton/animation": "^0.1.0",
     "@olton/color": "^0.1.1",
-    "@olton/datetime": "^3.0.1",
+    "@olton/datetime": "^3.0.2",
     "@olton/html": "^0.4.1",
     "@olton/query": "^0.4.15",
     "@olton/string": "^0.4.1",
-    "vite": "^4.2.0"
+    "vite": "^4.3.8"
   }
 }

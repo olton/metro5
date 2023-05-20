@@ -15,6 +15,7 @@
   position: absolute;
   right: 0;
   top: 0;
+  bottom: 0;
   width: 32px;
   height: 32px;
   font-size: 1em;
@@ -128,6 +129,10 @@
   top: 0;
   left: 0;
   line-height: 1.2rem;
+}
+.dropdown-menu li a::before {
+  height: 38px!important;
+  line-height: 38px!important;
 }
 .dropdown-menu li.active {
   border-left: 2px solid;

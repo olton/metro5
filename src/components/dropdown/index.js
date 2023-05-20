@@ -1,14 +1,15 @@
 import "./dropdown.css"
 import {Component} from "../../core/component.js";
-import {merge} from "../../routines/merge.js";
+import {exec, merge, noop, panic} from "../../routines";
 import {Registry} from "../../core/registry.js";
-import {panic} from "../../routines/panic.js";
 import {GlobalEvents} from "../../core/global-events.js";
 
 let DropdownDefaultOptions = {
     toggle: "",
     duration: 100,
-    dropFilter: ""
+    dropFilter: "",
+    onDropdown: noop,
+    onDropup: noop,
 }
 
 export class Dropdown extends Component {
@@ -38,8 +39,6 @@ export class Dropdown extends Component {
         this.closed = true
     }
     createEvents(){
-        const that = this, element = this.element, o = this.options
-
         this.toggle.on("click", (e) => {
             if (!this.closed) {
                 this.close()
@@ -54,18 +53,11 @@ export class Dropdown extends Component {
             e.preventDefault()
             e.stopPropagation()
         })
-
-        // $(window).on("click", function(e){
-        //     $('[data-role*=dropdown]').each((i, el) => {
-        //         const pl = Metro.getPlugin(el, "dropdown")
-        //         pl.close()
-        //     })
-        // })
     }
 
     open(el){
         if (!el) { el = this.elem }
-        const dropdown = Metro.getPlugin(el, "dropdown")
+        const dropdown = Metro5.getPlugin(el, "dropdown")
         if (!dropdown) return;
         let height = dropdown.elem.scrollHeight
         if (!dropdown.closed || dropdown.element.hasClass("keep-closed")) return
@@ -75,7 +67,7 @@ export class Dropdown extends Component {
             if ($el.in(parents) || $el.is(dropdown.element)) {
                 return
             }
-            const pl = Metro.getPlugin(el, "dropdown")
+            const pl = Metro5.getPlugin(el, "dropdown")
             pl.close()
         })
 
@@ -98,7 +90,6 @@ export class Dropdown extends Component {
                     }
                 }
             });
-            height = children_height
             dropdown.element.css('height', children_height);
             draw = {
                 width: [0, children_width]
@@ -109,6 +100,8 @@ export class Dropdown extends Component {
             }
         }
 
+        exec(dropdown.options.onDropdown, [dropdown.elem])
+
         Animation.animate({
             el: dropdown.elem,
             draw,
@@ -116,6 +109,7 @@ export class Dropdown extends Component {
             onDone: () => {
                 dropdown.element.parent().addClass("dropped-container")
                 dropdown.element.addClass("dropped")
+                dropdown.element.css("height", "auto")
                 dropdown.toggle.addClass("dropped-toggle")
                 dropdown.closed = false
             }
@@ -124,9 +118,15 @@ export class Dropdown extends Component {
 
     close(el){
         if (!el) { el = this.elem }
-        const dropdown = Metro.getPlugin(el, "dropdown")
+        const dropdown = Metro5.getPlugin(el, "dropdown")
         if (!dropdown) return
         if (dropdown.closed || dropdown.element.hasClass("keep-open")) return
+
+        dropdown.element.css({
+            height: dropdown.element.height()
+        })
+        exec(dropdown.options.onDropup, [dropdown.elem])
+
         Animation.animate({
             el: dropdown.elem,
             draw: {
@@ -146,9 +146,9 @@ export class Dropdown extends Component {
 Registry.register("dropdown", Dropdown)
 GlobalEvents.setEvent(()=>{
     $(window).on("click", function(e){
-        $('[data-role*=dropdown]').each((i, el) => {
-            const pl = Metro.getPlugin(el, "dropdown")
-            pl.close()
+        $('[data-role-dropdown]').each((i, el) => {
+            const pl = Metro5.getPlugin(el, "dropdown")
+            if (pl) pl.close()
         })
     })
 })

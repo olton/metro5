@@ -1,11 +1,6 @@
 import {Registry} from "./registry.js";
-import {merge} from "../routines/merge.js";
+import {merge, md5, uniqueId, clearName, to_array, media, media_mode, medias} from "../routines";
 import {globalize} from "./globalize.js";
-import {md5} from "../routines/md5.js";
-import {uniqueId} from "../routines"
-import {clearName} from "../routines";
-import {media, media_mode, medias} from "../routines/media.js";
-import {to_array} from "../routines/to-array.js";
 import {registerLocales} from "./locales.js";
 import {upgradeDatetime} from "./upgrade.js";
 import {GlobalEvents} from "./global-events.js";
@@ -17,9 +12,10 @@ const MetroOptions = {
 export class Metro5 {
     version = "5.0.0"
     status = "pre-alpha"
-    plugins = {}
+    // plugins = {}
     options = {}
-    locales = {}
+    static locales = {}
+    static plugins = {};
 
     constructor(options = {}) {
         this.options = merge({}, MetroOptions, options)
@@ -40,20 +36,15 @@ export class Metro5 {
 
     init(){
         globalize()
-        registerLocales(this.locales)
-        upgradeDatetime(this.locales)
+        registerLocales(Metro5.locales)
+        upgradeDatetime(Metro5.locales)
 
         const plugins = $("[data-role]")
 
         plugins.each((_, elem)=>{
-            const roles = elem
-                .getAttribute("data-role")
-                .replace(",", " ")
-                .split(" ")
-                .map(r => r.trim())
-                .filter(v => !!v)
+            const roles = to_array($(elem).attr("data-role"))
             for(let role of roles) {
-                this.makePlugin(elem, role, {})
+                Metro5.makePlugin(elem, role, {})
             }
         })
 
@@ -104,7 +95,7 @@ export class Metro5 {
                         if (roleName) {
                             for(let role of roleName.split(" ")) {
                                 if ($elem.hasAttr(`data-role-${name}`) && $elem.attr(`data-role-${name}`) === true) {
-                                    that.getPlugin(elem, role).updateAttr(attr, newValue, oldValue)
+                                    Metro5.getPlugin(elem, role).updateAttr(attr, newValue, oldValue)
                                 }
                             }
                         }
@@ -118,14 +109,16 @@ export class Metro5 {
                                 const $node = $(node)
                                 if ($node.attr("data-role")) {
                                     const roles = to_array($node.attr("data-role"), ",")
+                                    //console.log("Node", roles)
                                     $.each(roles, (i, r) => {
-                                        that.makePlugin(node, r)
+                                        Metro5.makePlugin(node, r)
                                     })
                                 } else {
                                     $.each($node.find("[data-role"), (i, el) => {
                                         const roles = to_array($(el).attr("data-role"), ",")
+                                        //console.log("Nodes", roles)
                                         $.each(roles, (i, r) => {
-                                            that.makePlugin(el, r)
+                                            Metro5.makePlugin(el, r)
                                         })
                                     })
                                 }
@@ -139,12 +132,12 @@ export class Metro5 {
         observer.observe($("html")[0], observerConfig);
     }
 
-    getPlugin(elem, name){
+    static getPlugin(elem, name){
         const pluginId = md5(`${clearName(name)}::${$(elem).id()}`)
-        return this.plugins[pluginId]
+        return Metro5.plugins[pluginId]
     }
 
-    makePlugin(elem, name, options){
+    static makePlugin(elem, name, options){
         let elemId = $(elem).id()
         name = clearName(name)
         if (!elemId) {
@@ -153,46 +146,46 @@ export class Metro5 {
         }
         const pluginId = md5(`${name}::${$(elem).id()}`)
         if ($(elem).hasAttr(`data-role-${name}`) && $(elem).attr(`data-role-${name}`) === true) {
-            return this.plugins[pluginId]
+            return Metro5.plugins[pluginId]
         }
         const _class = Registry.getClass(name)
         if (!_class) {
-            throw new Error(`Can't create component ${name}`)
+            throw new Error(`Can't create component ${name}. Class not exists!`)
         }
         const plugin = new _class(elem, options)
-        this.plugins[pluginId] = plugin
+        Metro5.plugins[pluginId] = plugin
         elem.setAttribute(`data-role-${name}`, true)
         return plugin
     }
 
-    destroyPlugin(elem, name){
+    static destroyPlugin(elem, name){
         const pluginId = md5(`${clearName(name)}::${$(elem).id()}`)
         const plugin = this.plugins[pluginId]
         if (!plugin) return
         plugin.destroy()
         plugin.component.remove()
-        delete this.plugins[pluginId]
+        delete Metro5.plugins[pluginId]
     }
 
-    registerPlugin(name, _class){
+    static registerPlugin(name, _class){
         return Registry.register(name, _class)
     }
 
-    unregisterPlugin(name, _class){
+    static unregisterPlugin(name, _class){
         return Registry.unregister(name, _class)
     }
 
-    getRegistry(){
+    static getRegistry(){
         return Registry.getRegistry()
     }
 
-    dumpRegistry(){
-        return Registry.dump()
+    static dumpRegistry(){
+        Registry.dump()
     }
 
-    getLocale(locale, part){
-        if (!this.locales[locale]) locale = 'en-US'
-        const loc = this.locales[locale]
+    static getLocale(locale, part){
+        if (!Metro5.locales[locale]) locale = 'en-US'
+        const loc = Metro5.locales[locale]
         return part ? loc[part] : loc
     }
 }
