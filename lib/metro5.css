@@ -28057,6 +28057,7 @@ a {
   position: absolute;
   right: 0;
   top: 0;
+  bottom: 0;
   width: 32px;
   height: 32px;
   font-size: 1em;
@@ -28170,6 +28171,10 @@ a {
   top: 0;
   left: 0;
   line-height: 1.2rem;
+}
+.dropdown-menu li a::before {
+  height: 38px!important;
+  line-height: 38px!important;
 }
 .dropdown-menu li.active {
   border-left: 2px solid;
@@ -34203,6 +34208,7 @@ input.input-small[placeholder] {
   flex-direction: row;
   flex-wrap: nowrap;
   list-style: none inside;
+  overflow: hidden;
 }
 .tabs::after {
   content: "";
@@ -34257,7 +34263,7 @@ input.input-small[placeholder] {
   font-size: 16px;
 }
 .tabs__item__caption {
-  font-size: 14px;
+  font-size: 12px;
   white-space: nowrap;
 }
 .tabs__item__closer {
@@ -34301,6 +34307,7 @@ input.input-small[placeholder] {
   right: 0;
   z-index: 3;
   background: var(--tab-background);
+  padding-top: 4px;
 }
 .tabs__service-button {
   display: inline-flex;
@@ -34328,12 +34335,26 @@ input.input-small[placeholder] {
   background: var(--tab-closer-hover-background);
 }
 .tabs__service-button > .dropdown-menu {
-  top: 100%;
-  right: 0;
+  position: fixed;
 }
 .tabs__append-button {
   width: 24px;
   margin: 4px;
   border-radius: 50%;
+}
+.tabs__invisible_tab_holder {
+  overflow: hidden;
+  background: var(--tab-background);
+}
+.tabs__invisible_tab_holder .tabs__item {
+  display: flex;
+  cursor: default;
+}
+.tabs__invisible_tab_holder .tabs__item::after {
+  display: none;
+}
+.tabs__invisible_tab_holder .tabs__item.active {
+  border: none;
+  background: var(--border-color);
 }
 /*# sourceMappingURL=tabs.css.map */
