@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scrollbar-type-1 sb-amber">
+<html lang="en" class="scrollbar-type-1 sb-amber" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -43,6 +43,9 @@
 <h1 class="text-center">Metro5 Tabs Control</h1>
 
 <div class="mt-10">
+    <div>
+        <button class="button" onclick="console.log(Metro5.getPlugin('#tabs1', 'tabs').getActiveTabIndex())">Get Index</button>
+    </div>
     <ul data-role="tabs" id="tabs1" class="mt-10" data-on-tab-append="console.log(arguments[0])">
         <li data-icon="mif-file-code">tabs/index1.js</li>
         <li data-icon="mif-file-code" class="active">tabs/index2.js</li>

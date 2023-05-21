@@ -26,7 +26,6 @@ export class Tabs extends Component {
         this.invisibleTabsHolderPlugin = null
         this.createStruct()
         this.createEvents()
-        this.#organizeTabs()
     }
 
     #drawCloser(){
@@ -36,7 +35,9 @@ export class Tabs extends Component {
     createStruct(){
         const element = this.element, o = this.options
 
-        element.addClass("tabs")
+        this.component = $("<div>").addClass("tabs__container").insertBefore(element)
+
+        element.addClass("tabs").appendTo(this.component)
         element.addClass("tabs-position-" + o.tabsPosition)
 
         const items = element.children("li:not(.tabs__custom)")
@@ -44,19 +45,15 @@ export class Tabs extends Component {
         items.each((index, el) => {
             const $el = $(el), html = $el.html(), active = $el.hasClass("active")
 
-            const tab = this.#createTab({
-                caption: html,
-                icon: $el.attr("data-icon"),
-                image: $el.attr("data-image"),
-                canClose: $el.attr("data-close") !== "false"
-            })
+            const tab = this.#createTab(html, $el.attr("data-icon"), $el.attr("data-image"), $el.attr("data-close") !== "false", $el.attr('data-data'))
 
             if (active) {
                 tab.addClass("active")
-                exec(o.onTabActivate(tab[0]))
+                exec(o.onTabActivate, [tab[0]])
             }
 
             element.append(tab)
+            exec(o.onTabAppend, [tab[0]])
 
             $el.remove()
 
@@ -85,12 +82,14 @@ export class Tabs extends Component {
             }
         })
         this.invisibleTabsHolderToggle.hide()
+
+        this.#organizeTabs()
     }
 
     createEvents(){
         const that = this, element = this.element, o = this.options
 
-        $(".tabs__item__closer").on("click", (e) => {
+        this.component.find(".tabs__item__closer").on("click", (e) => {
             const tab = $(e.target).closest(".tabs__item")
             const parent = tab.closest("ul")
 
@@ -122,7 +121,7 @@ export class Tabs extends Component {
             }
         })
 
-        $(".tabs__item").on("click", (e) => {
+        this.component.find(".tabs__item").on("click", (e) => {
             const tab = $(e.target).closest(".tabs__item")
 
             e.preventDefault()
@@ -190,8 +189,10 @@ export class Tabs extends Component {
     }
 
     #closeTab(tab){
-        this.options.onTabClose(tab)
+        exec(this.options.onTabClose, [$(tab)])
         $(tab).remove()
+
+        this.#organizeTabs()
 
         return this
     }
@@ -208,12 +209,12 @@ export class Tabs extends Component {
         })
 
         $(tab).addClass("active")
-        o.onTabActivate(tab)
+        exec(o.onTabActivate, [$(tab)[0]])
 
-        return tab
+        return this
     }
 
-    #createTab({caption, icon, image, canClose}){
+    #createTab(caption, icon, image, canClose, data){
         const item = $("<li>").addClass("tabs__item")
 
         if (icon || image) {
@@ -230,13 +231,17 @@ export class Tabs extends Component {
             item.append( this.#drawCloser() )
         }
 
-        return this.options.onTabCreate(item)
+        item.data(data)
+
+        exec(this.options.onTabCreate, [$(item)[0]])
+
+        return item
     }
 
-    addTab(caption, icon, image, canClose = true){
+    addTab(caption, icon, image, canClose = true, data){
         const element = this.element, o = this.options
         const appendButton = element.children(".tabs__item__add-tab")
-        const tab = this.#createTab({caption, icon, image, canClose})
+        const tab = this.#createTab(caption, icon, image, canClose, data)
 
         if (appendButton.length) {
             tab.insertBefore(appendButton)
@@ -244,21 +249,23 @@ export class Tabs extends Component {
             element.append(tab)
         }
 
-        o.onTabAppend(tab[0])
+        this.#organizeTabs()
+
+        exec(o.onTabAppend, [tab[0]])
 
         return this
     }
 
     getActiveTab(){
-        return this.element.children(".active")[0]
+        return this.component.find(".tabs__item.active")[0]
     }
 
     getActiveTabIndex(){
-        return this.element.children(".active").index()
+        return this.component.find(".tabs__item").index(".active", false)
     }
 
     getTabByIndex(index){
-
+        return this.component.find(".tabs__item").get(index)
     }
 
     getTabByTitle(caption){
@@ -268,6 +275,10 @@ export class Tabs extends Component {
     setTitle(tab, title){}
     setIcon(tab, icon){}
     setImage(tab, image){}
+
+    destroy() {
+        this.component.remove()
+    }
 }
 
 Registry.register("tabs", Tabs)

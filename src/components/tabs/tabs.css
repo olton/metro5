@@ -1,3 +1,7 @@
+.tabs__container {
+  position: relative;
+  display: block;
+}
 .tabs {
   position: relative;
   display: flex;

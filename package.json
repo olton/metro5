@@ -70,7 +70,7 @@
     "@olton/color": "^0.1.1",
     "@olton/datetime": "^3.0.2",
     "@olton/html": "^0.4.1",
-    "@olton/query": "^0.4.15",
+    "@olton/query": "^0.4.16",
     "@olton/string": "^0.4.1",
     "vite": "^4.3.8"
   }
