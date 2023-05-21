@@ -269,7 +269,16 @@ export class Tabs extends Component {
     }
 
     getTabByTitle(caption){
-
+        if (!caption) {
+            return undefined
+        }
+        const tabs = this.component.find(".tabs__item")
+        for(let tab of tabs) {
+            if ($(tab).find(".caption").html() === caption) {
+                return tab
+            }
+        }
+        return undefined
     }
 
     setTitle(tab, title){}
