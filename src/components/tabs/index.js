@@ -196,7 +196,7 @@ export class Tabs extends Component {
     }
 
     #closeTab(tab){
-        exec(this.options.onTabClose, [$(tab)])
+        exec(this.options.onTabClose, [$(tab)[0]])
         $(tab).remove()
 
         this.#organizeTabs()
@@ -289,7 +289,7 @@ export class Tabs extends Component {
     }
 
     setTab(el, {caption, icon, image, data}){
-        const tab = $(el)
+        let tab = typeof el === "number" ? this.getTabByIndex(el) : $(el)
 
         if (caption) tab.find(".tabs__item__caption").html(caption)
         if (icon) tab.find(".tabs__item__icon > span").clearClasses().addClass(icon)
@@ -297,6 +297,25 @@ export class Tabs extends Component {
 
         tab.data(data)
 
+        return this
+    }
+
+    closeAllTabs(){
+        this.component.find(".tabs__item").each((index, tab) => {
+            this.#closeTab(tab)
+        })
+        return this
+    }
+
+    closeTab(el){
+        let tab = typeof el === "number" ? this.getTabByIndex(el) : $(el)
+        this.#closeTab(tab)
+        return this
+    }
+
+    activateTab(el){
+        let tab = typeof el === "number" ? this.getTabByIndex(el) : $(el)
+        this.#activateTab(tab)
         return this
     }
 
