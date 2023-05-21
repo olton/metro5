@@ -34202,6 +34202,10 @@ input.input-small[placeholder] {
   scrollbar-color: #455a64 var(--scrollbar-track-color) !important;
 }
 /*# sourceMappingURL=scrollbar.css.map */
+.tabs__container {
+  position: relative;
+  display: block;
+}
 .tabs {
   position: relative;
   display: flex;

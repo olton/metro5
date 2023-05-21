@@ -42,12 +42,15 @@ export class Tabs extends Component {
 
         const items = element.children("li:not(.tabs__custom)")
 
+        let activeTabExists = false
+
         items.each((index, el) => {
             const $el = $(el), html = $el.html(), active = $el.hasClass("active")
 
             const tab = this.#createTab(html, $el.attr("data-icon"), $el.attr("data-image"), $el.attr("data-close") !== "false", $el.attr('data-data'))
 
             if (active) {
+                activeTabExists = true
                 tab.addClass("active")
                 exec(o.onTabActivate, [tab[0]])
             }
@@ -56,9 +59,13 @@ export class Tabs extends Component {
             exec(o.onTabAppend, [tab[0]])
 
             $el.remove()
-
-            this.tabs.push(tab[0])
         })
+
+        if (!activeTabExists) {
+            const tab = this.element.children(".tabs__item").first()
+            tab.addClass("active")
+            exec(o.onTabActivate, [tab[0]])
+        }
 
         if (o.appendButton) {
             element.append( $("<li>").addClass("tabs__append").html(`<span class="tabs__service-button tabs__append-button">+</span>`) )
@@ -281,9 +288,17 @@ export class Tabs extends Component {
         return undefined
     }
 
-    setTitle(tab, title){}
-    setIcon(tab, icon){}
-    setImage(tab, image){}
+    setTab(el, {caption, icon, image, data}){
+        const tab = $(el)
+
+        if (caption) tab.find(".tabs__item__caption").html(caption)
+        if (icon) tab.find(".tabs__item__icon > span").clearClasses().addClass(icon)
+        if (image) tab.find(".tabs__item__icon > img").attr("src", image)
+
+        tab.data(data)
+
+        return this
+    }
 
     destroy() {
         this.component.remove()
