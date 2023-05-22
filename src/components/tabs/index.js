@@ -24,15 +24,11 @@ export class Tabs extends Component {
         this.tabs = []
         this.invisibleTabsHolderToggle = null
         this.invisibleTabsHolderPlugin = null
-        this.createStruct()
-        this.createEvents()
+        this.#createStruct()
+        this.#createEvents()
     }
 
-    #drawCloser(){
-        return $("<span>").addClass("tabs__item__closer").html(`<span>✕</span>`)
-    }
-
-    createStruct(){
+    #createStruct(){
         const element = this.element, o = this.options
 
         this.component = $("<div>").addClass("tabs__container").insertBefore(element)
@@ -93,7 +89,7 @@ export class Tabs extends Component {
         this.#organizeTabs()
     }
 
-    createEvents(){
+    #createEvents(){
         const that = this, element = this.element, o = this.options
 
         this.component.find(".tabs__item__closer").on("click", (e) => {
@@ -235,7 +231,7 @@ export class Tabs extends Component {
         item.append( $("<span>").addClass("tabs__item__caption").html(caption) )
 
         if (canClose)  {
-            item.append( this.#drawCloser() )
+            item.append( $("<span>").addClass("tabs__item__closer").html(`<span>✕</span>`) )
         }
 
         item.data(data)
@@ -245,7 +241,7 @@ export class Tabs extends Component {
         return item
     }
 
-    addTab(caption, icon, image, canClose = true, data){
+    addTab({caption, icon, image, canClose = true, data}){
         const element = this.element, o = this.options
         const appendButton = element.children(".tabs__item__add-tab")
         const tab = this.#createTab(caption, icon, image, canClose, data)
