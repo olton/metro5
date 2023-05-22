@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.51.0",
+  "version": "0.51.1",
   "type": "module",
   "funding": [
     {
@@ -32,8 +32,7 @@
   },
   "homepage": "https://github.com/olton/metro5#readme",
   "files": [
-    "src",
-    "icons"
+    "src"
   ],
   "scripts": {
     "dev": "vite",
