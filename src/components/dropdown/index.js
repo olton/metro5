@@ -10,6 +10,10 @@ let DropdownDefaultOptions = {
     dropFilter: "",
     onDropdown: noop,
     onDropup: noop,
+    onClick: e => {
+        e.preventDefault()
+        e.stopPropagation()
+    },
 }
 
 export class Dropdown extends Component {
@@ -49,10 +53,7 @@ export class Dropdown extends Component {
             e.stopPropagation()
         })
 
-        this.element.on("click", function(e){
-            e.preventDefault()
-            e.stopPropagation()
-        })
+        this.element.on("click", this.options.onClick)
     }
 
     open(el){

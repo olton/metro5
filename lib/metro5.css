@@ -34353,6 +34353,14 @@ input.input-small[placeholder] {
 .tabs__invisible_tab_holder .tabs__item {
   display: flex;
   cursor: default;
+  border: none;
+  padding-right: 4px;
+}
+.tabs__invisible_tab_holder .tabs__item .tabs__item__closer {
+  margin-left: auto;
+}
+.tabs__invisible_tab_holder .tabs__item .tabs__item__caption {
+  margin-right: 4px;
 }
 .tabs__invisible_tab_holder .tabs__item::after {
   display: none;
@@ -34360,6 +34368,9 @@ input.input-small[placeholder] {
 .tabs__invisible_tab_holder .tabs__item.active {
   border: none;
   background: var(--border-color);
+}
+.tabs__item {
+  user-select: none;
 }
 /*# sourceMappingURL=tabs.css.map */
 @font-face {

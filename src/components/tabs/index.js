@@ -9,6 +9,7 @@ let TabsDefaultOptions = {
     appendButton: true,
     tabsPosition: "left",
     customButtons: null,
+    activateNewTab: true,
     onAppendButtonClick: noop,
     onTabCreate: noop_arg,
     onTabAppend: noop,
@@ -70,9 +71,9 @@ export class Tabs extends Component {
         const serviceContainer = $("<li>").addClass("tabs__service").appendTo(element)
         serviceContainer.append(
             $("<div>").addClass("tabs__service-button").html(`
-                        <span class="icon-chevron-down dropdown-toggle"></span>
-                        <ul class="dropdown-menu tabs__invisible_tab_holder"></ul>
-                    `)
+                <span class="icon-chevron-down dropdown-toggle"></span>
+                <ul class="dropdown-menu tabs__invisible_tab_holder"></ul>
+            `)
         )
         this.invisibleTabsHolderToggle = serviceContainer.find(".tabs__service-button")
         this.invisibleTabsHolderPlugin = Metro5.makePlugin(serviceContainer.find(".tabs__invisible_tab_holder")[0], "dropdown", {
@@ -82,6 +83,16 @@ export class Tabs extends Component {
                     top: toggleRect.y + toggleRect.height + 10,
                     left: toggleRect.x - $(el).width() + toggleRect.width + 4
                 })
+            },
+            onClick: e => {
+                const parent = $(e.target.parentNode)
+                if (parent.hasClass("tabs__item__closer")) {
+                    this.#closeButtonClick(e)
+                } else {
+                    this.#activateTab(parent[0])
+                }
+                e.preventDefault()
+                e.stopPropagation()
             }
         })
         this.invisibleTabsHolderToggle.hide()
@@ -89,46 +100,47 @@ export class Tabs extends Component {
         this.#organizeTabs()
     }
 
+    #closeButtonClick(e){
+        const that = this, element = this.element, o = this.options
+
+        const tab = $(e.target).closest(".tabs__item")
+        const parent = tab.closest("ul")
+
+        if (!o.onTabBeforeClose(tab[0])) {
+            return
+        }
+
+        if (tab.hasClass("active")) {
+            const prev = tab.prev(".tabs__item"), next = tab.next(".tabs__item")
+            if (prev.length) {
+                that.#activateTab(prev[0])
+            } else if (next.length) {
+                that.#activateTab(next[0])
+            } else if (parent.hasClass("tabs__invisible_tab_holder") && parent.children(".tabs__item").length === 1) {
+                if (element.children(".tabs__item").length) {
+                    that.#activateTab(element.children(".tabs__item").last()[0])
+                }
+            }
+        }
+
+        that.#closeTab(tab[0])
+
+        if (parent.hasClass("tabs__invisible_tab_holder") && parent.children(".tabs__item").length === 0) {
+            this.invisibleTabsHolderPlugin.close()
+            this.invisibleTabsHolderToggle.hide()
+        }
+
+        e.preventDefault()
+        e.stopPropagation()
+    }
+
     #createEvents(){
         const that = this, element = this.element, o = this.options
 
-        this.component.find(".tabs__item__closer").on("click", (e) => {
+        element.on("click", ".tabs__item__closer", this.#closeButtonClick.bind(this))
+
+        element.on("click", ".tabs__item", (e) => {
             const tab = $(e.target).closest(".tabs__item")
-            const parent = tab.closest("ul")
-
-            e.preventDefault()
-            e.stopPropagation()
-
-            if (!o.onTabBeforeClose(tab[0])) {
-                return
-            }
-
-            if (tab.hasClass("active")) {
-                const prev = tab.prev(".tabs__item"), next = tab.next(".tabs__item")
-                if (prev.length) {
-                    that.#activateTab(prev[0])
-                } else if (next.length) {
-                    that.#activateTab(next[0])
-                } else if (parent.hasClass("tabs__invisible_tab_holder") && parent.children(".tabs__item").length === 1) {
-                    if (element.children(".tabs__item").length) {
-                        that.#activateTab(element.children(".tabs__item").last()[0])
-                    }
-                }
-            }
-
-            that.#closeTab(tab[0])
-
-            if (parent.hasClass("tabs__invisible_tab_holder") && parent.children(".tabs__item").length === 0) {
-                this.invisibleTabsHolderPlugin.close()
-                this.invisibleTabsHolderToggle.hide()
-            }
-        })
-
-        this.component.find(".tabs__item").on("click", (e) => {
-            const tab = $(e.target).closest(".tabs__item")
-
-            e.preventDefault()
-            e.stopPropagation()
 
             if (tab.hasClass("active")) {
                 return
@@ -137,11 +149,11 @@ export class Tabs extends Component {
             that.#activateTab(tab[0])
         })
 
-        element.on("click", ".tabs__item__add-tab", (e)=>{
+        element.on("click", ".tabs__append-button", (e)=>{
             e.preventDefault()
             e.stopPropagation()
 
-            exec(o.onTabAppend, [element[0]])
+            exec(o.onAppendButtonClick, [element[0]])
         })
 
         $(window).on("resize", (e)=>{
@@ -187,8 +199,6 @@ export class Tabs extends Component {
         } else {
             this.invisibleTabsHolderToggle.hide()
         }
-
-        this.invisibleTabsHolderPlugin.close()
     }
 
     #closeTab(tab){
@@ -243,16 +253,18 @@ export class Tabs extends Component {
 
     addTab({caption, icon, image, canClose = true, data}){
         const element = this.element, o = this.options
-        const appendButton = element.children(".tabs__item__add-tab")
         const tab = this.#createTab(caption, icon, image, canClose, data)
 
-        if (appendButton.length) {
-            tab.insertBefore(appendButton)
-        } else {
-            element.append(tab)
-        }
+        this.invisibleTabsHolderPlugin.element.append(tab)
 
         this.#organizeTabs()
+        if (o.activateNewTab) this.#activateTab(tab[0])
+        else {
+            const items = element.children(".tabs__item")
+            if (items.length === 1) {
+                this.#activateTab(items[0])
+            }
+        }
 
         exec(o.onTabAppend, [tab[0]])
 

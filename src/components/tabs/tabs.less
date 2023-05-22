@@ -175,6 +175,17 @@
     .tabs__item {
         display: flex;
         cursor: default;
+        border: none;
+        padding-right: 4px;
+
+        .tabs__item__closer {
+            margin-left: auto;
+        }
+
+        .tabs__item__caption {
+            margin-right: 4px;
+        }
+
         &::after {
             display: none;
         }
@@ -183,4 +194,8 @@
             background: var(--border-color);
         }
     }
+}
+
+.tabs__item {
+    user-select: none;
 }
