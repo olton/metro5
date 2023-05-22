@@ -1,1 +1,3 @@
-import "./mif.css"
+import * as MifIcons from "./mif.css"
+
+export {MifIcons}
