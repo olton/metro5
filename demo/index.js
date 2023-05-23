@@ -45,9 +45,6 @@ const ds = new Components.Dataset(tableUrl)
 // console.log(ds)
 console.log(ds.filter(
     (row) => {
-        return row[1].includes("Aidan") || row[3] < 30
-    },
-    (row) => {
-        return row[3] === 20
+        return row[3] < 30
     }
-))
+).sortBy("salary", "desc").items())

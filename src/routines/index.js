@@ -23,6 +23,7 @@ import {nvl} from "./nvl.js";
 import {isTag} from "./is-tag.js";
 import {isType} from "./is-type.js";
 import {isUrl} from "./is-url.js";
+import {compare} from "./compare.js";
 
 export {
     between,
@@ -62,4 +63,5 @@ export {
     isTag,
     isType,
     isUrl,
+    compare,
 }
