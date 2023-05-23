@@ -8,7 +8,7 @@ let DatasetDefaultOptions = {
     locale: "en-US"
 }
 
-export class Dataset {
+export class MemoryDataset {
     #source = null
     #origin = []
     #items = []

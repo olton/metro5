@@ -40,7 +40,7 @@ window.addTab = function () {
     fileIndex++;
 };
 
-const ds = new Components.Dataset(tableUrl)
+const ds = new Components.MemoryDataset(tableUrl)
 // const ds = new Components.Dataset("https://metroui.org.ua/data/table.json")
 // console.log(ds)
 console.log(ds.filter(
