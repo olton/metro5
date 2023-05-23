@@ -15,6 +15,8 @@ import * as CommonCss from "../src/common"
 import * as Components from "../src/components"
 import * as Routines from "../src/routines"
 
+import tableUrl from './data/table.json?url'
+
 window.Metro = new Metro5({
     removeCloakTimeout: 1000,
     onInit: ()=>{
@@ -37,3 +39,15 @@ window.addTab = function () {
     });
     fileIndex++;
 };
+
+const ds = new Components.Dataset(tableUrl)
+// const ds = new Components.Dataset("https://metroui.org.ua/data/table.json")
+// console.log(ds)
+console.log(ds.filter(
+    (row) => {
+        return row[1].includes("Aidan") || row[3] < 30
+    },
+    (row) => {
+        return row[3] === 20
+    }
+))
