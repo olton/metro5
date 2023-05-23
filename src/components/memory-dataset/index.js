@@ -100,8 +100,7 @@ export class MemoryDataset {
         return this
     }
 
-    getField(name){
-        console.log(this.#header)
+    #getField(name){
         if (!this.#header) {
             panic(`Dataset->getField() :: Header data required!`)
         }
@@ -116,7 +115,7 @@ export class MemoryDataset {
     }
 
     sortBy(fieldName, dir = "asc", type = "default"){
-        const field = this.getField(fieldName)
+        const field = this.#getField(fieldName)
 
         if (!field) {
             panic(`Wrong field name [${fieldName}] in header!`)
@@ -152,5 +151,15 @@ export class MemoryDataset {
             return compare(curr, next, sortDir || dir)
         })
         return this
+    }
+
+    page(num, offset = 25){
+        const pageData = []
+
+        for(let i = (num - 1) * offset; i < num * offset; i++) {
+            if (this.#items[i]) pageData.push(this.#items[i])
+        }
+
+        return pageData
     }
 }

@@ -43,8 +43,8 @@ window.addTab = function () {
 const ds = new Components.MemoryDataset(tableUrl)
 // const ds = new Components.Dataset("https://metroui.org.ua/data/table.json")
 // console.log(ds)
-console.log(ds.filter(
+console.log(ds.init().filter(
     (row) => {
-        return row[3] < 30
+        return row[0] <= 20
     }
-).sortBy("salary", "desc").items())
+).sortBy("id").page(2, 10))
