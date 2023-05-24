@@ -1,7 +1,7 @@
 import {panic} from "./panic.js";
 
-export function required (val) {
+export function required (val, msg = "Value required!") {
    if (typeof val === 'undefined')
-       panic(`Value required!`)
+       panic(msg)
 }
 

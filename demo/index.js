@@ -41,10 +41,19 @@ window.addTab = function () {
 };
 
 const ds = new Components.MemoryDataset(tableUrl)
-// const ds = new Components.Dataset("https://metroui.org.ua/data/table.json")
-// console.log(ds)
-console.log(ds.init().filter(
-    (row) => {
-        return row[0] <= 20
-    }
-).sortBy("id").page(2, 10))
+ds.run().then(()=>{
+    console.log(ds.filter(
+        (row) => {
+            return row[0] <= 20
+        }
+    ).sortBy("id").page(2, 10))
+})
+
+const json = new Components.JsonDataset("https://jsonplaceholder.typicode.com/photos")
+json.run().then(()=>{
+    console.log(
+        json.filter( row => {
+            return row.albumId === 1
+        }).search("deserunt").items()
+    )
+})

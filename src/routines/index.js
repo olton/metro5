@@ -1,5 +1,5 @@
 import {between} from "./between.js";
-import {clearName} from "./clear-name.js";
+import {clearName, clearStr} from "./clear-name.js";
 import {copy2clipboard} from "./copy-to-clipboard.js";
 import {debug} from "./debug.js";
 import {encURI} from "./encode-uri.js";
@@ -24,10 +24,12 @@ import {isTag} from "./is-tag.js";
 import {isType} from "./is-type.js";
 import {isUrl} from "./is-url.js";
 import {compare} from "./compare.js";
+import {parse} from "./parse.js";
 
 export {
     between,
     clearName,
+    clearStr,
     copy2clipboard,
     debug,
     encURI,
@@ -64,4 +66,5 @@ export {
     isType,
     isUrl,
     compare,
+    parse,
 }
