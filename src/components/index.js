@@ -49,8 +49,7 @@ import {Textarea} from "./textarea";
 import {Input} from "./input";
 import {ScrollbarCss} from "./scrollbar"
 import {Tabs} from "./tabs"
-import {MemoryDataset} from "./dataset/index.js"
-import {JsonDataset} from "./dataset/index.js"
+import {MemoryDataset, JsonDataset, RemoteDataset} from "./dataset"
 
 export {
     Accordion,
@@ -108,4 +107,5 @@ export {
     Tabs,
     MemoryDataset,
     JsonDataset,
+    RemoteDataset,
 }

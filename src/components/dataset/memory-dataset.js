@@ -1,10 +1,11 @@
-import {panic, compare, parse, clearStr} from "../../routines/index.js";
+import {panic, compare, parse, clearStr, required} from "../../routines/index.js";
 import {Dataset} from "./dataset.js";
 
 export class MemoryDataset extends Dataset {
 
-    constructor(source, options) {
-        super(source, options)
+    constructor(options) {
+        required(options.source, `Source value required!`)
+        super(options)
     }
 
     search(query = ""){

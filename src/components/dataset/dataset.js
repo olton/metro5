@@ -2,7 +2,7 @@ import {clearStr, compare, exec, isObjectType, merge, noop_arg, panic, required}
 
 export let DatasetDefaultOptions = {
     method: "GET",
-    contentType: "application/json",
+    contentType: "application/json; charset=UTF-8",
     headers: {},
     body: null,
     locale: "en-US",
@@ -19,10 +19,9 @@ export class Dataset {
     _options = null
     _loaded = false
 
-    constructor(source, options) {
-        required(source, `Source value required!`)
+    constructor(options) {
         this._options = merge({}, DatasetDefaultOptions, options)
-        this._source = source
+        this._source = this._options.source
     }
 
     _distribute(){

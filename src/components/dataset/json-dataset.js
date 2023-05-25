@@ -1,9 +1,10 @@
 import {Dataset} from "./dataset.js";
-import {clearStr, compare, parse} from "../../routines/index.js";
+import {clearStr, compare, parse, required} from "../../routines/index.js";
 
 export class JsonDataset extends Dataset {
-    constructor(source, options) {
-        super(source, options)
+    constructor(options) {
+        required(options.source, `Source value required!`)
+        super(options)
     }
 
     _distribute() {

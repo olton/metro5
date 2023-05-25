@@ -40,20 +40,27 @@ window.addTab = function () {
     fileIndex++;
 };
 
-const ds = new Components.MemoryDataset(tableUrl)
-ds.run().then(()=>{
-    console.log(ds.filter(
-        (row) => {
-            return row[0] <= 20
-        }
-    ).sortBy("id").page(2, 10))
-})
+// const ds = new Components.MemoryDataset({source: tableUrl})
+// ds.run().then(()=>{
+//     console.log(ds.filter(
+//         (row) => {
+//             return row[0] <= 20
+//         }
+//     ).sortBy("id").page(2, 10))
+// })
+//
+// const json = new Components.JsonDataset({source: "https://jsonplaceholder.typicode.com/photos"})
+// json.run().then(()=>{
+//     console.log(
+//         json.filter( row => {
+//             return row.albumId === 1
+//         }).search("deserunt").items()
+//     )
+// })
 
-const json = new Components.JsonDataset("https://jsonplaceholder.typicode.com/photos")
-json.run().then(()=>{
-    console.log(
-        json.filter( row => {
-            return row.albumId === 1
-        }).search("deserunt").items()
-    )
+const rds = new Components.RemoteDataset({
+    source:"https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2"
+})
+rds.setPage([2, 5]).run().then(()=>{
+    console.log(rds.items())
 })

@@ -315,6 +315,21 @@ export class Tabs extends Component {
         return this
     }
 
+    closeInactiveTabs(){
+        this.component.find(".tabs__item").each((index, tab) => {
+            if (!$(tab).hasClass("active")) this.#closeTab(tab)
+        })
+        return this
+    }
+
+    closeOtherTabs(el){
+        let _tab = typeof el === "number" ? this.getTabByIndex(el) : $(el)
+        this.component.find(".tabs__item").each((index, tab) => {
+            if (_tab[0] !== tab) this.#closeTab(tab)
+        })
+        return this
+    }
+
     closeTab(el){
         let tab = typeof el === "number" ? this.getTabByIndex(el) : $(el)
         this.#closeTab(tab)
