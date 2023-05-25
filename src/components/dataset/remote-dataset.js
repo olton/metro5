@@ -72,23 +72,23 @@ export class RemoteDataset {
         return this
     }
 
-    setPage([page = 1, limit = 10]){
+    page([page = 1, limit = 10]){
         this._page = page
         this._limit = limit
         return this
     }
 
-    setBody(body){
+    body(body){
         this._body = body
         return this
     }
 
-    setMethod(method = "GET"){
+    method(method = "GET"){
         this._method = method
         return this
     }
 
-    setHeaders(headers = {}){
+    headers(headers = {}){
         this._headers = merge({}, this._headers, headers)
         return this
     }

@@ -43,6 +43,21 @@
 <h1 class="text-center">Metro5 Tabs Control</h1>
 
 <div class="mt-10">
+    <h3>Remote Dataset</h3>
+    <div>
+        <button class="button" onclick="rdsPrevPhotos()">Prev</button>
+        <button class="button" onclick="rdsNextPhotos()">Next</button>
+    </div>
+    <style>
+        #rds img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <div id="rds"></div>
+</div>
+
+<div class="mt-10">
     <div>
         <button class="button" onclick="console.log(Metro5.getPlugin('#tabs1', 'tabs').getActiveTabIndex())">Get Index</button>
     </div>

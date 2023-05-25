@@ -57,10 +57,37 @@ window.addTab = function () {
 //         }).search("deserunt").items()
 //     )
 // })
+//
 
+let photosPage = 1, photosLimit = 10
 const rds = new Components.RemoteDataset({
     source:"https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2"
 })
-rds.setPage([2, 5]).run().then(()=>{
+rds.page([photosPage, photosLimit]).run().then(()=>{
     console.log(rds.items())
+    drawPhotos(rds.items())
 })
+function drawPhotos(photos){
+    if (photos.length === 0) {
+        alert(`No more photos available!`)
+    } else {
+        $("#rds").clear()
+        for(let photo of photos) {
+            $("<img>").addClass("").attr("src", photo.url).appendTo("#rds")
+        }
+    }
+}
+
+window.rdsPrevPhotos = () => {
+    photosPage--
+    if (photosPage < 1) photosPage = 1
+    rds.page([photosPage, photosLimit]).run().then(()=>{
+        drawPhotos(rds.items())
+    })
+}
+window.rdsNextPhotos = () => {
+    photosPage++
+    rds.page([photosPage, photosLimit]).run().then(()=>{
+        drawPhotos(rds.items())
+    })
+}
