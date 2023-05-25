@@ -61,12 +61,14 @@ window.addTab = function () {
 
 let photosPage = 1, photosLimit = 10
 const rds = new Components.RemoteDataset({
-    source:"https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2"
+    source:"https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2",
+    onData: photos => {
+        drawPhotos(photos)
+    }
 })
-rds.page([photosPage, photosLimit]).run().then(()=>{
-    console.log(rds.items())
-    drawPhotos(rds.items())
-})
+
+rds.page([photosPage, photosLimit]).run().then(()=>{})
+
 function drawPhotos(photos){
     if (photos.length === 0) {
         alert(`No more photos available!`)
@@ -82,12 +84,12 @@ window.rdsPrevPhotos = () => {
     photosPage--
     if (photosPage < 1) photosPage = 1
     rds.page([photosPage, photosLimit]).run().then(()=>{
-        drawPhotos(rds.items())
+        if (rds.count === 0) photosPage++
     })
 }
 window.rdsNextPhotos = () => {
     photosPage++
-    rds.page([photosPage, photosLimit]).run().then(()=>{
-        drawPhotos(rds.items())
+    rds.run([photosPage, photosLimit]).then(()=>{
+        if (rds.count === 0) photosPage--
     })
 }
