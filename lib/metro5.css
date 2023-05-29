@@ -24708,11 +24708,11 @@ body {
 }
 /*# sourceMappingURL=spacing.css.map */
 :root {
-  --body-background: #fff;
+  --body-background: #f8f8f8;
   --text-color-secondary: #000;
   --text-color: #000;
   --body-color-invert: #fff;
-  --border-color: #C0C0C0FF;
+  --border-color: #e8e8e8;
   --link-color: #067bb6;
   --link-color-hover: #05496b;
   --secondary-color: #777;
@@ -24725,15 +24725,15 @@ body {
   --control-color: #ebebeb;
   --disable-color: #ececec;
   --shadow-color: rgba(0, 0, 0, 0.4);
-  --menu-background: #f8f8f8;
+  --menu-background: #fff;
   --menu-text-color: #000000;
-  --menu-background-active: rgba(0, 0, 0, 0.1);
-  --menu-text-color-active: #ffffff;
+  --menu-background-active: rgba(204, 204, 204, 0.1);
+  --menu-text-color-active: #000000;
   --menu-title-background: #9f9f9f;
   --menu-title-text-color: #ffffff;
-  --appbar-background: #f8f8f8;
+  --appbar-background: #fff;
   --appbar-text-color: #000000;
-  --appbar-background-hover: rgba(30, 34, 40, 0.1);
+  --appbar-background-hover: rgba(204, 204, 204, 0.1);
   --appbar-text-color-hover: #000000;
   --breadcrumbs-color-hover: #000000;
   --image-button-primary-color: #ebebeb;
@@ -27893,7 +27893,7 @@ body {
 .appbar-menu > li,
 .appbar-menu > li > a {
   display: block;
-  line-height: 52px;
+  line-height: 32px;
   background-color: inherit;
   color: inherit;
   flex-shrink: 0;
@@ -27951,7 +27951,7 @@ body {
 .appbar-container .dropdown-menu {
   position: absolute;
   width: auto;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .appbar-container > .dropdown-menu {
   top: 100%;
@@ -28003,12 +28003,7 @@ a {
 .appbar-expand .appbar-menu .dropdown-menu {
   position: absolute;
   width: auto;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
-}
-.appbar-expand .appbar-menu .dropdown-menu li,
-.appbar-expand .appbar-menu .dropdown-menu a {
-  height: 38px;
-  line-height: 38px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .appbar-expand .appbar-menu.collapsed {
   display: flex!important;
@@ -28027,9 +28022,6 @@ a {
 }
 .h-ab {
   height: calc(100% - 52px);
-}
-.appbar .appbar-menu > li > a.dropdown-toggle::before {
-  top: 10px;
 }
 .appbar .theme-toggle-wrapper {
   position: absolute;
@@ -28114,7 +28106,8 @@ a {
   list-style: none inside none;
   background-color: var(--menu-background);
   color: var(--menu-text-color);
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .dropdown-menu.open {
   display: block!important;
@@ -28125,6 +28118,12 @@ a {
 }
 .dropdown-menu {
   z-index: 1000;
+}
+.dropdown-menu li:first-child {
+  margin-top: 4px;
+}
+.dropdown-menu li:last-child {
+  margin-bottom: 4px;
 }
 .dropdown-menu li,
 .dropdown-menu a {
@@ -28138,7 +28137,7 @@ a {
 }
 .dropdown-menu li a {
   font-size: 14px;
-  padding: 0 2rem 0 2.5rem;
+  padding: 0 2rem 0 34px;
   height: 32px;
   display: flex;
   align-items: center;
@@ -28157,12 +28156,12 @@ a {
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 14px;
   left: 8px;
   top: 50%;
-  margin-top: -0.6rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  margin-top: -7px;
+  width: 14px;
+  height: 14px;
   color: inherit;
 }
 .dropdown-menu li a img::before,
@@ -28212,7 +28211,7 @@ a {
 .dropdown-menu .divider {
   padding: 0;
   height: 1px;
-  margin: 0 1px;
+  margin: 4px 8px;
   overflow: hidden;
   background-color: var(--border-color);
   cursor: default;
@@ -28227,17 +28226,6 @@ a {
 }
 .dropdown-menu.disabled a {
   color: var(--disabled-text);
-}
-.dropdown-menu.context li a {
-  height: 32px;
-  line-height: 32px;
-  font-size: 0.75rem;
-  padding: 0 2rem 0 2.5rem;
-}
-.dropdown-menu.context li a .icon {
-  width: 0.92rem;
-  height: 0.92rem;
-  font-size: 0.92rem;
 }
 .dropdown-menu .dropdown-menu {
   left: 100%;
@@ -30703,7 +30691,7 @@ body {
   opacity: 0.65;
 }
 .command-button.shadowed:not(.disabled) {
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .command-button.shadowed:not(.disabled):active {
   box-shadow: none;
@@ -30839,7 +30827,7 @@ body {
   color: var(--disable-color);
 }
 .vertical-menu {
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .vertical-menu .vertical-menu {
   height: 0;
@@ -30952,7 +30940,7 @@ body {
   opacity: 0.65;
 }
 .image-button.shadowed:not(.disabled) {
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .image-button.shadowed:not(.disabled):active {
   box-shadow: none;
@@ -31085,7 +31073,7 @@ body {
   color: var(--textInvertColor) !important;
 }
 .info-button.shadowed:not(.disabled) {
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid transparent;
 }
 .info-button.shadowed:not(.disabled):active {
@@ -31215,7 +31203,7 @@ body {
   opacity: 0.65;
 }
 .shortcut.shadowed:not(.disabled) {
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .shortcut.shadowed:not(.disabled):active {
   box-shadow: none;
@@ -31362,7 +31350,7 @@ body {
   margin: 0 4px;
 }
 .tool-button.shadowed:not(.disabled) {
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .tool-button.shadowed:not(.disabled):active {
   box-shadow: none;
@@ -32829,7 +32817,7 @@ input[placeholder] {
   background-color: var(--tools-menu-item-background);
   color: var(--tools-menu-item-text-color);
   border-collapse: separate;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .tools-menu > li {
   position: relative;

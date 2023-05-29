@@ -95,6 +95,7 @@
     list-style: none inside none;
     background-color: var(--menu-background);
     color: var(--menu-text-color);
+    border-radius: 4px;
     .default-shadow();
 
     &.open {
@@ -112,6 +113,13 @@
 }
 
 .dropdown-menu {
+    li:first-child {
+        margin-top: 4px;
+    }
+    li:last-child {
+        margin-bottom: 4px;
+    }
+
     li, a {
         display: block;
         float: none;
@@ -125,7 +133,7 @@
     li {
         a {
             font-size: 14px;
-            padding: 0 2rem 0 2.5rem;
+            padding: 0 2rem 0 34px;
             height: 32px;
             display: flex;
             align-items: center;
@@ -144,12 +152,12 @@
                 vertical-align: middle;
                 text-align: center;
                 text-decoration: none;
-                font-size: 1.2rem;
+                font-size: 14px;
                 left: 8px;
                 top: 50%;
-                margin-top: -.6rem;
-                width: 1.2rem;
-                height: 1.2rem;
+                margin-top: -7px;
+                width: 14px;
+                height: 14px;
                 color: inherit;
 
                 &::before {
@@ -215,7 +223,7 @@
     .divider {
         padding: 0;
         height: 1px;
-        margin: 0 1px;
+        margin: 4px 8px;
         overflow: hidden;
         background-color: var(--border-color);
         cursor: default;
@@ -233,25 +241,6 @@
         }
     }
 
-}
-
-.dropdown-menu {
-    &.context {
-        li {
-            a {
-                height: 32px;
-                line-height: 32px;
-                font-size: .75rem;
-                padding: 0 2rem 0 2.5rem;
-
-                .icon {
-                    width: .92rem;
-                    height: .92rem;
-                    font-size: .92rem;
-                }
-            }
-        }
-    }
 }
 
 .dropdown-menu {

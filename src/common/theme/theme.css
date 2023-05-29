@@ -1,9 +1,9 @@
 :root {
-  --body-background: #fff;
+  --body-background: #f8f8f8;
   --text-color-secondary: #000;
   --text-color: #000;
   --body-color-invert: #fff;
-  --border-color: #C0C0C0FF;
+  --border-color: #e8e8e8;
   --link-color: #067bb6;
   --link-color-hover: #05496b;
   --secondary-color: #777;
@@ -16,15 +16,15 @@
   --control-color: #ebebeb;
   --disable-color: #ececec;
   --shadow-color: rgba(0, 0, 0, 0.4);
-  --menu-background: #f8f8f8;
+  --menu-background: #fff;
   --menu-text-color: #000000;
-  --menu-background-active: rgba(0, 0, 0, 0.1);
-  --menu-text-color-active: #ffffff;
+  --menu-background-active: rgba(204, 204, 204, 0.1);
+  --menu-text-color-active: #000000;
   --menu-title-background: #9f9f9f;
   --menu-title-text-color: #ffffff;
-  --appbar-background: #f8f8f8;
+  --appbar-background: #fff;
   --appbar-text-color: #000000;
-  --appbar-background-hover: rgba(30, 34, 40, 0.1);
+  --appbar-background-hover: rgba(204, 204, 204, 0.1);
   --appbar-text-color-hover: #000000;
   --breadcrumbs-color-hover: #000000;
   --image-button-primary-color: #ebebeb;

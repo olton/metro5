@@ -64,7 +64,7 @@
 .appbar-menu > li,
 .appbar-menu > li > a {
   display: block;
-  line-height: 52px;
+  line-height: 32px;
   background-color: inherit;
   color: inherit;
   flex-shrink: 0;
@@ -122,7 +122,7 @@
 .appbar-container .dropdown-menu {
   position: absolute;
   width: auto;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .appbar-container > .dropdown-menu {
   top: 100%;
@@ -174,12 +174,7 @@ a {
 .appbar-expand .appbar-menu .dropdown-menu {
   position: absolute;
   width: auto;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
-}
-.appbar-expand .appbar-menu .dropdown-menu li,
-.appbar-expand .appbar-menu .dropdown-menu a {
-  height: 38px;
-  line-height: 38px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .appbar-expand .appbar-menu.collapsed {
   display: flex!important;
@@ -198,9 +193,6 @@ a {
 }
 .h-ab {
   height: calc(100% - 52px);
-}
-.appbar .appbar-menu > li > a.dropdown-toggle::before {
-  top: 10px;
 }
 .appbar .theme-toggle-wrapper {
   position: absolute;
