@@ -17,6 +17,7 @@ import {SizingCss} from "./sizing"
 import {AnimationCss} from "./animation"
 import {DefaultIconsCss} from "./icons-common"
 import {MediaIconsCss} from "./icons-media"
+import {ShadowCss} from "./shadow"
 
 export {
     ResetCss,
@@ -39,4 +40,5 @@ export {
     AnimationCss,
     DefaultIconsCss,
     MediaIconsCss,
+    ShadowCss
 }

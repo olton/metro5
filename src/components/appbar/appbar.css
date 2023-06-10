@@ -122,7 +122,7 @@
 .appbar-container .dropdown-menu {
   position: absolute;
   width: auto;
-  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
 }
 .appbar-container > .dropdown-menu {
   top: 100%;
@@ -174,7 +174,7 @@ a {
 .appbar-expand .appbar-menu .dropdown-menu {
   position: absolute;
   width: auto;
-  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
 }
 .appbar-expand .appbar-menu.collapsed {
   display: flex!important;

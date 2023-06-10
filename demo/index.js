@@ -1,3 +1,4 @@
+
 window.calendarDrawDayTest = (date, cell) => {
     if (date.day() % 2 === 0) {
         cell.addClass("bg-red fg-white")
@@ -16,6 +17,7 @@ import * as Components from "../src/components"
 import * as Routines from "../src/routines"
 
 import tableUrl from './data/table.json?url'
+import {log} from "util";
 
 window.Metro = new Metro5({
     removeCloakTimeout: 1000,
@@ -40,56 +42,15 @@ window.addTab = function () {
     fileIndex++;
 };
 
-// const ds = new Components.MemoryDataset({source: tableUrl})
-// ds.run().then(()=>{
-//     console.log(ds.filter(
-//         (row) => {
-//             return row[0] <= 20
-//         }
-//     ).sortBy("id").page(2, 10))
-// })
-//
-// const json = new Components.JsonDataset({source: "https://jsonplaceholder.typicode.com/photos"})
-// json.run().then(()=>{
-//     console.log(
-//         json.filter( row => {
-//             return row.albumId === 1
-//         }).search("deserunt").items()
-//     )
-// })
-//
-
-let photosPage = 1, photosLimit = 10
 const rds = new Components.RemoteDataset({
-    source:"https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2",
-    onData: photos => {
-        drawPhotos(photos)
-    }
+    url: "https://jsonplaceholder.typicode.com/photos"
 })
 
-rds.page([photosPage, photosLimit]).run().then(()=>{})
+rds
+    .url("https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2")
+    .filters(item => item.title.includes('qui'))
+    .get(2, 10)
+    .then(photos => {
+    console.log(photos)
+})
 
-function drawPhotos(photos){
-    if (photos.length === 0) {
-        alert(`No more photos available!`)
-    } else {
-        $("#rds").clear()
-        for(let photo of photos) {
-            $("<img>").addClass("").attr("src", photo.url).appendTo("#rds")
-        }
-    }
-}
-
-window.rdsPrevPhotos = () => {
-    photosPage--
-    if (photosPage < 1) photosPage = 1
-    rds.page([photosPage, photosLimit]).run().then(()=>{
-        if (rds.count === 0) photosPage++
-    })
-}
-window.rdsNextPhotos = () => {
-    photosPage++
-    rds.run([photosPage, photosLimit]).then(()=>{
-        if (rds.count === 0) photosPage--
-    })
-}

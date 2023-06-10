@@ -1,5 +1,4 @@
-import {MemoryDataset} from "./memory-dataset.js";
-import {JsonDataset} from "./json-dataset.js";
-import {RemoteDataset} from "./remote-dataset.js";
+import {Dataset} from "./dataset.js";
+import {RemoteDataset} from "./remote.js";
 
-export {MemoryDataset, JsonDataset, RemoteDataset}
+export {Dataset, RemoteDataset}

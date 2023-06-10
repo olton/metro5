@@ -13,6 +13,7 @@
 }
 
 .vertical-menu {
+
     li, a {
         display: block;
         float: none;
@@ -26,9 +27,9 @@
     li {
         a {
             font-size: .875rem;
-            padding: 0 2rem 0 2.5rem;
-            line-height: 45px;
-            height: 45px;
+            padding: 0 32px 0 34px;
+            line-height: 32px;
+            height: 32px;
             text-decoration: none;
             vertical-align: middle;
             white-space: nowrap;
@@ -44,12 +45,12 @@
                 vertical-align: middle;
                 text-align: center;
                 text-decoration: none;
-                font-size: 1.2rem;
-                left: .5rem;
+                font-size: 14px;
+                left: 8px;
                 top: 50%;
-                margin-top: -.6rem;
-                width: 1.2rem;
-                height: 1.2rem;
+                margin-top: -7px;
+                width: 14px;
+                height: 14px;
                 color: inherit;
 
                 &::before {
@@ -84,10 +85,6 @@
 
         a {
             &.dropdown-toggle {
-                &::before {
-                    transform: rotate(-135deg);
-                }
-
                 &.active-toggle {
                     &::before {
                         transform: rotate(45deg);
@@ -100,7 +97,7 @@
     .divider {
         padding: 0;
         height: 1px;
-        margin: 0 1px;
+        margin: 4px 8px;
         overflow: hidden;
         background-color: var(--border-color);
         cursor: default;
@@ -120,19 +117,11 @@
 }
 
 .vertical-menu {
-    .default-shadow();
-}
-
-.vertical-menu {
     .vertical-menu {
         height: 0;
         min-width: 0;
         position: relative!important;
         width: 100%!important;
-        //left: 0 ;
-        //right: 0 ;
-        //top: 100%;
-        box-shadow: none;
         float: none;
     }
 

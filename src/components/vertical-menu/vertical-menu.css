@@ -21,9 +21,9 @@
 }
 .vertical-menu li a {
   font-size: 0.875rem;
-  padding: 0 2rem 0 2.5rem;
-  line-height: 45px;
-  height: 45px;
+  padding: 0 32px 0 34px;
+  line-height: 32px;
+  height: 32px;
   text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
@@ -39,12 +39,12 @@
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
-  font-size: 1.2rem;
-  left: 0.5rem;
+  font-size: 14px;
+  left: 8px;
   top: 50%;
-  margin-top: -0.6rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  margin-top: -7px;
+  width: 14px;
+  height: 14px;
   color: inherit;
 }
 .vertical-menu li a img::before,
@@ -73,16 +73,13 @@
   width: auto;
   font-size: 0.8em;
 }
-.vertical-menu li a.dropdown-toggle::before {
-  transform: rotate(-135deg);
-}
 .vertical-menu li a.dropdown-toggle.active-toggle::before {
   transform: rotate(45deg);
 }
 .vertical-menu .divider {
   padding: 0;
   height: 1px;
-  margin: 0 1px;
+  margin: 4px 8px;
   overflow: hidden;
   background-color: var(--border-color);
   cursor: default;
@@ -98,15 +95,11 @@
 .vertical-menu.disabled a {
   color: var(--disable-color);
 }
-.vertical-menu {
-  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1), -0.5px 0 1px 0 rgba(0, 0, 0, 0.2);
-}
 .vertical-menu .vertical-menu {
   height: 0;
   min-width: 0;
   position: relative!important;
   width: 100%!important;
-  box-shadow: none;
   float: none;
 }
 .vertical-menu .menu-title {
