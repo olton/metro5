@@ -50,7 +50,7 @@ import {Input} from "./input";
 import {ScrollbarCss} from "./scrollbar"
 import {Tabs} from "./tabs"
 import {Fetcher} from "./fetcher";
-import {Dataset, RemoteDataset} from "./dataset"
+import {Dataset} from "./dataset"
 
 
 export {
@@ -109,5 +109,4 @@ export {
     Tabs,
     Fetcher,
     Dataset,
-    RemoteDataset,
 }

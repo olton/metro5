@@ -42,15 +42,16 @@ window.addTab = function () {
     fileIndex++;
 };
 
-const rds = new Components.RemoteDataset({
+const ds = new Components.Dataset({
     url: "https://jsonplaceholder.typicode.com/photos"
 })
 
-rds
+ds
     .url("https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2")
     .filters(item => item.title.includes('qui'))
+    .after(item => Object.values(item))
     .get(2, 10)
     .then(photos => {
-    console.log(photos)
-})
+        console.log(photos)
+    })
 
