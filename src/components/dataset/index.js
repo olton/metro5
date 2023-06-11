@@ -16,8 +16,8 @@ export class Dataset {
     _after = []
 
     constructor(options) {
-        if (typeof globalThis["metroRemoteDatasetSetup"] !== "undefined") {
-            DatasetDefaultOptions = merge({}, DatasetDefaultOptions, globalThis["metroRemoteDatasetSetup"])
+        if (typeof globalThis["metroDatasetSetup"] !== "undefined") {
+            DatasetDefaultOptions = merge({}, DatasetDefaultOptions, globalThis["metroDatasetSetup"])
         }
 
         this._options = merge({}, DatasetDefaultOptions, options)
