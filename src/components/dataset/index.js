@@ -1,8 +1,9 @@
-import {merge, undef} from "../../routines";
+import {isObjectType, merge, undef} from "../../routines";
 import {Fetcher} from "../fetcher";
 
 let DatasetDefaultOptions = {
     url: "",
+    source: null,
     options: null
 }
 
@@ -24,9 +25,9 @@ export class Dataset {
     }
 
     async get(...args){
-        const {url, options} = this._options
+        const {url, source, options} = this._options
 
-        this._items = await this._fetcher
+        this._items = source ? isObjectType(source) : await this._fetcher
             .url(url)
             .options(options)
             .args(...args)

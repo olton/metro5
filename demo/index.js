@@ -42,16 +42,35 @@ window.addTab = function () {
     fileIndex++;
 };
 
-const ds = new Components.Dataset({
-    url: "https://jsonplaceholder.typicode.com/photos"
-})
+const obj = [{
+        albumId: 1,
+        id: 1,
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        url: "https://via.placeholder.com/600/92c952",
+        thumbnailUrl: "https://via.placeholder.com/150/92c952"
+    },
+    {
+        albumId: 1,
+        id: 2,
+        title: "reprehenderit est deserunt velit ipsam",
+        url: "https://via.placeholder.com/600/771796",
+        thumbnailUrl: "https://via.placeholder.com/150/771796"
+    }]
 
-ds
-    .url("https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2")
-    .filters(item => item.title.includes('qui'))
-    .after(item => Object.values(item))
-    .get(2, 10)
-    .then(photos => {
-        console.log(photos)
-    })
+// const ds = new Components.Dataset({
+//     url: "https://jsonplaceholder.typicode.com/photos"
+// })
+//
+// ds
+//     .url("https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2")
+//     .filters(item => item.title.includes('qui'))
+//     .after(item => Object.values(item))
+//     .get(2, 10)
+//     .then(photos => {
+//         console.log(photos)
+//     })
+//
 
+const ds = new Components.Dataset({source: obj})
+
+ds.get().then(items => console.log(items))
