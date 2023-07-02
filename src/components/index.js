@@ -51,6 +51,7 @@ import {ScrollbarCss} from "./scrollbar"
 import {Tabs} from "./tabs"
 import {Fetcher} from "./fetcher";
 import {Dataset} from "./dataset"
+import {Table} from "./table"
 
 
 export {
@@ -109,4 +110,5 @@ export {
     Tabs,
     Fetcher,
     Dataset,
+    Table,
 }
