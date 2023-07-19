@@ -6657,16 +6657,19 @@
 }
 *.primary,
 * + *.primary {
+  background-color: var(--color-cyan) !important;
   border-color: var(--color-cyan) !important;
   color: #ffffff !important;
 }
 *.secondary,
 * + *.secondary {
+  background-color: var(--color-blue) !important;
   border-color: var(--color-blue) !important;
   color: #ffffff !important;
 }
 *.success,
 * + *.success {
+  background-color: var(--color-green) !important;
   border-color: var(--color-green) !important;
   color: #ffffff !important;
 }

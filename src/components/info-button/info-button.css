@@ -47,6 +47,8 @@
 }
 .info-button .info-button-secondary {
   line-height: 38px;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 .info-button .info-button-primary:hover {
   opacity: 1;

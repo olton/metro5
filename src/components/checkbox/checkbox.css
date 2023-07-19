@@ -31,6 +31,7 @@
   width: 20px;
   flex-shrink: 0;
   line-height: 36px;
+  background-color: #fff;
 }
 .checkbox .check::before {
   position: absolute;
@@ -53,25 +54,28 @@
 }
 .checkbox input[type=checkbox]:checked ~ .check {
   border-color: var(--checkbox-check-checked);
-  background-color: var(--checkbox-check-checked);
 }
 .checkbox input[type=checkbox]:checked ~ .check::before {
+  border-color: var(--checkbox-check-checked);
   display: block;
 }
 .checkbox input[type=checkbox]:disabled ~ .check {
   border-color: var(--checkbox-check-disabled);
   background-color: var(--checkbox-check-disabled);
+  cursor: default;
+}
+.checkbox input[type=checkbox]:disabled ~ .check::before {
+  border-color: #ffffff;
 }
 .checkbox input[data-indeterminate=true] ~ .check {
   border-color: var(--checkbox-check-checked);
-  background-color: var(--checkbox-check-checked);
 }
 .checkbox input[data-indeterminate=true] ~ .check::before {
   display: block!important;
   height: 6px;
   width: 6px;
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
+  background-color: var(--checkbox-check-checked);
+  border: 2px solid var(--checkbox-check-checked);
   left: 50%;
   top: 50%;
   margin-left: -3px;
@@ -102,7 +106,7 @@
   transition: all 0.3s ease-in-out;
 }
 .checkbox.transition-on input[data-indeterminate=true] ~ .check {
-  transition: all 0.3s ease-in-oute;
+  transition: all 0.3s ease-in-out;
 }
 .checkbox .check.focused {
   box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.45);

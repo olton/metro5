@@ -57,19 +57,19 @@ window.addTab = function () {
 //         thumbnailUrl: "https://via.placeholder.com/150/771796"
 //     }]
 
-// const ds = new Components.Dataset({
-//     url: "https://jsonplaceholder.typicode.com/photos"
-// })
-//
-// ds
-//     .url("https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2")
-//     .filters(item => item.title.includes('qui'))
-//     .after(item => Object.values(item))
-//     .get(2, 10)
-//     .then(photos => {
-//         console.log(photos)
-//     })
-//
+const ds = new Components.Dataset({
+    url: "https://jsonplaceholder.typicode.com/photos"
+})
+
+ds
+    .url("https://jsonplaceholder.typicode.com/photos?_page=$1&_limit=$2")
+    .filters(item => item.title.includes('qui'))
+    .after(item => Object.values(item))
+    .get(2, 10)
+    .then(photos => {
+        console.log(photos)
+    })
+
 
 // const ds = new Components.Dataset({source: obj})
 //

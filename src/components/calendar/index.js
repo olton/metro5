@@ -56,8 +56,11 @@ export class Calendar extends Component {
             CalendarDefaultOptions = merge({}, CalendarDefaultOptions, globalThis["metroCalendarSetup"])
         }
         super(elem, 'calendar', merge({}, CalendarDefaultOptions, options));
-        this.createStruct()
-        this.createEvents()
+        setTimeout(() => {
+            this.createStruct()
+            this.createEvents()
+        })
+
     }
 
     dates2array(str){

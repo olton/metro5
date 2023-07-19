@@ -2,8 +2,9 @@
   display: flex;
   flex-flow: column;
   border: 1px solid var(--border-color);
-  background-color: var(--body-background);
+  background-color: var(--accordion-background);
   color: var(--text-color);
+  border-radius: 6px;
 }
 .accordion__frame {
   display: block;
@@ -37,7 +38,11 @@
   transition: transform 0.3s;
   transform-origin: center center;
 }
+.accordion.marker-on .accordion__frame.active .accordion__frame__heading {
+  font-weight: bold;
+}
 .accordion.marker-on .accordion__frame.active .accordion__frame__heading::before {
+  font-weight: normal;
   transform: rotate(90deg);
   transition: transform 0.3s;
 }
@@ -47,8 +52,5 @@
 .accordion[dir=rtl] .accordion__frame__heading::before {
   right: auto;
   left: 0;
-}
-.dark-mode .accordion__frame__heading {
-  background-color: #1e2228;
 }
 /*# sourceMappingURL=accordion.css.map */

@@ -28,6 +28,8 @@
         width: 20px;
         flex-shrink: 0;
         line-height: 36px;
+        background-color: #fff;
+
 
         &::before {
             position: absolute;
@@ -52,9 +54,10 @@
 
     input[type=checkbox]:checked ~ .check {
         border-color: var(--checkbox-check-checked);
-        background-color: var(--checkbox-check-checked);
+        //background-color: var(--checkbox-check-checked);
 
         &::before {
+            border-color: var(--checkbox-check-checked);
             display: block;
         }
     }
@@ -62,18 +65,22 @@
     input[type=checkbox]:disabled ~ .check {
         border-color: var(--checkbox-check-disabled);
         background-color: var(--checkbox-check-disabled);
+        cursor: default;
+        &::before {
+            border-color: #ffffff;
+        }
     }
 
     input[data-indeterminate=true] ~ .check {
         border-color: var(--checkbox-check-checked);
-        background-color: var(--checkbox-check-checked);
+        //background-color: var(--checkbox-check-checked);
 
         &::before {
             display: block!important;
             height: 6px;
             width: 6px;
-            background-color: #ffffff;
-            border: 2px solid #ffffff;
+            background-color: var(--checkbox-check-checked);
+            border: 2px solid var(--checkbox-check-checked);
             left: 50%;
             top: 50%;
             margin-left: -3px;
@@ -117,12 +124,11 @@
         }
 
         input[data-indeterminate=true] ~ .check {
-            transition: all .3s ease-in-oute;
+            transition: all .3s ease-in-out;
         }
     }
 
     .check.focused {
         box-shadow: 0 0 0 3px rgba(red(@lightGray), green(@lightGray), blue(@lightGray), 0.45);
     }
-
 }

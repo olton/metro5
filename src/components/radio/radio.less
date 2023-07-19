@@ -29,6 +29,7 @@
         border-radius: 50%;
         flex-shrink: 0;
         line-height: 36px;
+        background-color: #fff;
 
         &::before {
             position: absolute;
@@ -52,9 +53,11 @@
 
     input[type=radio]:checked ~ .check {
         border-color: var(--checkbox-check-checked);
-        background-color: var(--checkbox-check-checked);
+        //background-color: var(--checkbox-check-checked);
 
         &::before {
+            border-color: var(--checkbox-check-checked);
+            background-color: var(--checkbox-check-checked);
             display: block;
         }
     }
@@ -62,6 +65,13 @@
     input[type=radio]:disabled ~ .check {
         border-color: var(--checkbox-check-disabled);
         background-color: var(--checkbox-check-disabled);
+        cursor: default;
+
+        &::before {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            display: block;
+        }
     }
 
     .check {order: 1;}

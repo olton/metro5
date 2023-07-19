@@ -5,8 +5,9 @@
     display: flex;
     flex-flow: column;
     border: 1px solid var(--border-color);
-    background-color: var(--body-background);
+    background-color: var(--accordion-background);
     color: var(--text-color);
+    border-radius: 6px;
 }
 
 .accordion__frame {
@@ -34,7 +35,6 @@
 .accordion {
     &.marker-on {
         .accordion__frame__heading {
-
             &::before {
                 display: table-cell;
                 vertical-align: middle;
@@ -56,7 +56,9 @@
         .accordion__frame {
             &.active {
                 .accordion__frame__heading {
+                    font-weight: bold;
                     &::before {
+                        font-weight: normal;
                         transform: rotate(90deg);
                         transition: transform @transition-speed;
                     }
@@ -76,11 +78,5 @@
                 left: 0;
             }
         }
-    }
-}
-
-.dark-mode {
-    .accordion__frame__heading {
-        background-color: #1e2228;
     }
 }

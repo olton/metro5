@@ -9,7 +9,8 @@
     overflow: hidden;
     user-select: none;
     background-color: var(--calendar-background);
-    color: var(--text-color-secondary)
+    color: var(--text-color-secondary);
+    border-radius: 6px;
 }
 
 .calendar-header, .calendar-content, .calendar-footer {
@@ -59,7 +60,7 @@
         width: 100%;
 
         .prev-month, .prev-year, .next-month, .next-year, .next-year-group, .prev-year-group {
-            padding: .5rem 0;
+            padding: 0 0 .2rem 0;
             cursor: pointer;
             text-align: center;
             width: 30px;
@@ -290,6 +291,10 @@
             width: 26px;
             margin: 0;
             font-size: 12px;
+        }
+        .prev-month, .prev-year, .next-month, .next-year, .next-year-group, .prev-year-group {
+            transform: scale(1.2);
+            padding: 0 0 .1rem 0;
         }
     }
 }

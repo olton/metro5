@@ -32,6 +32,7 @@
   border-radius: 50%;
   flex-shrink: 0;
   line-height: 36px;
+  background-color: #fff;
 }
 .radio .check::before {
   position: absolute;
@@ -53,14 +54,21 @@
 }
 .radio input[type=radio]:checked ~ .check {
   border-color: var(--checkbox-check-checked);
-  background-color: var(--checkbox-check-checked);
 }
 .radio input[type=radio]:checked ~ .check::before {
+  border-color: var(--checkbox-check-checked);
+  background-color: var(--checkbox-check-checked);
   display: block;
 }
 .radio input[type=radio]:disabled ~ .check {
   border-color: var(--checkbox-check-disabled);
   background-color: var(--checkbox-check-disabled);
+  cursor: default;
+}
+.radio input[type=radio]:disabled ~ .check::before {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  display: block;
 }
 .radio .check {
   order: 1;
