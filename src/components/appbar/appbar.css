@@ -114,6 +114,9 @@
   position: relative;
   width: 100%;
 }
+.appbar-menu .dropdown-menu .dropdown-menu {
+  top: 0;
+}
 .appbar-menu .divider,
 .appbar-container .divider {
   height: 1px!important;
