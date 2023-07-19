@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.55.1",
+  "version": "0.57.1",
   "type": "module",
   "funding": [
     {
