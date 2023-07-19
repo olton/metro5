@@ -12,15 +12,11 @@ let PanelDefaultOptions = {
     duration: 100,
     width: "auto",
     height: "auto",
-    draggable: false,
     closeable: false,
     customButtons: null,
 
     onCollapse: noop,
     onExpand: noop,
-    onDragStart: noop,
-    onDragStop: noop,
-    onDragMove: noop,
 }
 
 export class Panel extends Component {
