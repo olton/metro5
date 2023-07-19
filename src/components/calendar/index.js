@@ -8,7 +8,6 @@ import {isArrayLike} from "@olton/query/src/helpers/is-array-like.js";
 import {noop} from "../../routines/noop.js";
 
 let CalendarDefaultOptions = {
-    deferred: 0,
     startFrom: "days",
     headerFormat: "dddd, MMM DD",
     timeFormat: 24,
@@ -57,10 +56,8 @@ export class Calendar extends Component {
             CalendarDefaultOptions = merge({}, CalendarDefaultOptions, globalThis["metroCalendarSetup"])
         }
         super(elem, 'calendar', merge({}, CalendarDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-            this.createEvents()
-        }, this.options.deferred)
+        this.createStruct()
+        this.createEvents()
     }
 
     dates2array(str){

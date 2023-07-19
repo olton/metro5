@@ -25,6 +25,7 @@ import {isType} from "./is-type.js";
 import {isUrl} from "./is-url.js";
 import {compare} from "./compare.js";
 import {parse} from "./parse.js";
+import {clientXY, screenXY, pageXY} from "./coordinates.js";
 
 export {
     between,
@@ -67,4 +68,5 @@ export {
     isUrl,
     compare,
     parse,
+    clientXY, screenXY, pageXY,
 }

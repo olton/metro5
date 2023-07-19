@@ -1,7 +1,8 @@
 import "./panel.css"
 import {Component} from "../../core/component.js";
-import {exec, isObjectType, merge, noop} from "../../routines/index.js";
+import {isObjectType, merge, noop, panic, undef} from "../../routines/index.js";
 import {Registry} from "../../core/registry.js";
+import {MetroStorage} from "../storage/index.js";
 
 let PanelDefaultOptions = {
     id: "",
@@ -14,6 +15,7 @@ let PanelDefaultOptions = {
     height: "auto",
     closeable: false,
     customButtons: null,
+    saveState: false,
 
     onCollapse: noop,
     onExpand: noop,
@@ -21,6 +23,9 @@ let PanelDefaultOptions = {
 
 export class Panel extends Component {
     constructor(elem, options) {
+        if (!undef(globalThis["metroPanelSetup"])) {
+            PanelDefaultOptions = merge({}, PanelDefaultOptions, globalThis["metroPanelSetup"])
+        }
         super(elem, "panel", merge({}, PanelDefaultOptions, options));
         this.collapsed = false
         this.createStruct()
@@ -79,9 +84,37 @@ export class Panel extends Component {
 
         this.component = panel
 
+        if (o.saveState) {
+            const id = element.id()
+            if (!id || id.endsWith('--auto')) {
+                panic(`To use saveState please define the ID for the element!`)
+            } else {
+                const storage = new MetroStorage()
+                const collapsed = storage.getItem(`panel:${element.id()}:state`, false)
+                if (collapsed) {
+                    this.collapse()
+                } else {
+                    this.expand()
+                }
+            }
+        }
+
         if (o.collapsed) {
             this.collapse()
         }
+    }
+
+    #saveState(){
+        const element = this.element, o = this.options
+        const id = element.id()
+        if (!o.saveState) {
+            return this
+        }
+        if (!id || id.endsWith('--auto')) {
+            panic(`To use saveState please define the ID for the element!`)
+        }
+        const storage = new MetroStorage()
+        storage.setItem(`panel:${element.id()}:state`, this.collapsed)
     }
 
     #collapse(height){
@@ -93,6 +126,8 @@ export class Panel extends Component {
             dur: this.options.duration,
             onDone: () => {
                 this.collapsed = height === 0
+                this.component.addClass(this.collapsed ? "panel-collapsed" : "panel-expanded")
+                this.#saveState()
                 this.fireEvent(this.collapsed ? "collapse" : "expand", {
                     component: this.component
                 })

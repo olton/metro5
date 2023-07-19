@@ -6,7 +6,6 @@ import {noop} from "../../routines/noop.js";
 import {undef} from "../../routines/undef.js";
 
 let ProgressDefaultOptions = {
-    deferred: 0,
     value: 0,
     buffer: 0,
     useBuffer: false,
@@ -29,9 +28,7 @@ export class Progress extends Component {
         super(elem, "progress", merge({}, ProgressDefaultOptions, options));
         this.value = 0
         this.buffer = 0
-        setTimeout(()=>{
-            this.createStruct()
-        }, this.options.deferred)
+        this.createStruct()
     }
 
     createStruct(){

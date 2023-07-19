@@ -4,13 +4,13 @@ import {exec} from "../routines/exec.js";
 import {panic} from "../routines/panic.js";
 import {objectLength, isObject, uniqueId} from "../routines";
 
-export const defaultComponentOptions = {
+export const ComponentDefaultOptions = {
 
 }
 
 export class Component {
     constructor(elem, name, options) {
-        this.options = merge({}, defaultComponentOptions, options)
+        this.options = merge({}, ComponentDefaultOptions, options)
         this.elem = elem
         this.element = $(elem)
         this.component = this.element

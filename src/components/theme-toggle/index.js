@@ -17,7 +17,6 @@ export class ThemeToggle extends Component {
         super(elem, 'theme-toggle', merge({}, ThemeToggleDefaultOptions, options) );
         this.createStruct()
         this.createEvents()
-        this.showToggle()
     }
 
     createStruct(){
@@ -29,6 +28,7 @@ export class ThemeToggle extends Component {
         } else {
             this.theme = o.theme === "dark" ? "dark" : "light"
         }
+        this.showToggle()
     }
 
     showToggle(){

@@ -18,6 +18,7 @@ import {AnimationCss} from "./animation"
 import {DefaultIconsCss} from "./icons-common"
 import {MediaIconsCss} from "./icons-media"
 import {ShadowCss} from "./shadow"
+import {zIndexCss} from "./z-index"
 
 export {
     ResetCss,
@@ -40,5 +41,6 @@ export {
     AnimationCss,
     DefaultIconsCss,
     MediaIconsCss,
-    ShadowCss
+    ShadowCss,
+    zIndexCss,
 }

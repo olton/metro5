@@ -6,7 +6,6 @@ import {panic} from "../../routines/panic.js";
 import {Registry} from "../../core/registry.js";
 
 let GravatarDefaultOptions = {
-    deferred: 0,
     email: "",
     size: 64,
     default: "mp",
@@ -17,10 +16,8 @@ export class Gravatar extends Component {
     image = null
     constructor(elem, options) {
         super(elem, "gravatar", merge({}, GravatarDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-            this.getGravatar()
-        }, this.options.deferred)
+        this.createStruct()
+        this.getGravatar()
     }
 
     createStruct(){

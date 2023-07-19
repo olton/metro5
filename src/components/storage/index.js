@@ -1,12 +1,12 @@
-import {nvl} from "../../routines/index.js";
+import {nvl, undef} from "../../routines/index.js";
 import {Registry} from "../../core/registry.js";
 
 export class MetroStorage {
     key = ""
     storage = null
-    constructor(props) {
-        this.key = props.key ? props.key : "Metro5"
-        this.storage = props.storageType ? window[props.storageType] : window["localStorage"]
+    constructor(props = {}) {
+        this.key = !undef(props.key) ? props.key : "Metro5"
+        this.storage = !undef(props.storageType) ? window[props.storageType] : window["localStorage"]
     }
 
     set key(newKey){

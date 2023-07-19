@@ -4,7 +4,6 @@ import {merge} from "../../routines/merge.js";
 import {Registry} from "../../core/registry.js";
 
 let AnalogClockDefaultOptions = {
-    deferred: 0,
     size: 100
 }
 
@@ -15,10 +14,8 @@ export class AnalogClock extends Component {
             AnalogClockDefaultOptions = merge({}, AnalogClockDefaultOptions, globalThis["metroAnalogClockSetup"])
         }
         super(elem, "analogclock", merge({}, AnalogClockDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-            this.createEvents()
-        }, this.options.deferred)
+        this.createStruct()
+        this.createEvents()
     }
 
     createStruct(){

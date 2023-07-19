@@ -5,7 +5,6 @@ import {noop} from "../../routines/noop.js";
 import {Registry} from "../../core/registry.js";
 
 let TokenizerDefaultOptions = {
-    deferred: 0,
     splitter: "",
     tag: "span",
     space: "&nbsp;",
@@ -22,9 +21,7 @@ export class Tokenizer extends Component {
             TokenizerDefaultOptions = merge({}, TokenizerDefaultOptions, globalThis["metroTokenizerSetup"])
         }
         super(elem, "tokenizer", merge({}, TokenizerDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-        }, this.options.deferred)
+        this.createStruct()
     }
 
     createStruct(){

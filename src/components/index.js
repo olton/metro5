@@ -53,6 +53,8 @@ import {Fetcher} from "./fetcher";
 import {Dataset} from "./dataset"
 import {Table} from "./table"
 import {Panel} from "./panel"
+import {Collapse} from "./collapse"
+import {Drag} from "./drag"
 
 export {
     Accordion,
@@ -112,4 +114,6 @@ export {
     Dataset,
     Table,
     Panel,
+    Collapse,
+    Drag,
 }

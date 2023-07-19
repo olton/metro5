@@ -5,10 +5,8 @@ import {noop} from "../../routines/noop.js";
 import {Registry} from "../../core/registry.js";
 
 let ButtonGroupDefaultOptions = {
-    deferred: 0,
     singleButton: true,
     activeClass: "active",
-    onCreate: noop,
     onButtonClick: noop,
 }
 
@@ -18,11 +16,8 @@ export class ButtonGroup extends Component {
             ButtonGroupDefaultOptions = merge({}, ButtonGroupDefaultOptions, globalThis["metroButtonGroupSetup"])
         }
         super(elem, "button-group", merge({}, ButtonGroupDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-            this.createEvents()
-            this.fireEvent("create")
-        }, this.options.deferred)
+        this.createStruct()
+        this.createEvents()
     }
 
     createStruct(){

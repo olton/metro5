@@ -4,7 +4,6 @@ import {merge} from "../../routines/merge.js";
 import {Registry} from "../../core/registry.js";
 
 let AccordionDefaultOptions = {
-    deferred: 0,
     showMarker: true,
     markerPosition: "left",
     singleFrame: true,
@@ -24,11 +23,8 @@ export class Accordion extends Component {
             AccordionDefaultOptions = merge({}, AccordionDefaultOptions, globalThis["metroAccordionSetup"])
         }
         super(elem, "accordion", merge({}, AccordionDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-            this.createEvents()
-            this.fireEvent("create", {})
-        }, this.options.deferred)
+        this.createStruct()
+        this.createEvents()
     }
 
     createStruct(){

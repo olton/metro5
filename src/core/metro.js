@@ -141,7 +141,7 @@ export class Metro5 {
         let elemId = $(elem).id()
         name = clearName(name)
         if (!elemId) {
-            elemId = `${name}${uniqueId(16)}`
+            elemId = `${name}${uniqueId(16)}--auto`
             $(elem).id(elemId)
         }
         const pluginId = md5(`${name}::${$(elem).id()}`)
@@ -150,7 +150,7 @@ export class Metro5 {
         }
         const _class = Registry.getClass(name)
         if (!_class) {
-            throw new Error(`Can't create component ${name}. Class not exists!`)
+            throw new Error(`Can't create component ${name}. Component Class does not exist!`)
         }
         const plugin = new _class(elem, options)
         Metro5.plugins[pluginId] = plugin

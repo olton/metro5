@@ -4,7 +4,6 @@ import {noop} from "../../routines/noop.js";
 import {Registry} from "../../core/registry.js";
 
 let HtmlContainerDefaultOptions = {
-    deferred: 0,
     method: "get",
     cors: "",
     cache: "default",
@@ -20,9 +19,7 @@ export class HtmlContainer extends Component {
             HtmlContainerDefaultOptions = merge({}, HtmlContainerDefaultOptions, globalThis["metroHtmlContainerSetup"])
         }
         super(elem, "htmlcontainer", merge({}, HtmlContainerDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-        }, this.options.deferred)
+        this.createStruct()
     }
 
     createStruct(){

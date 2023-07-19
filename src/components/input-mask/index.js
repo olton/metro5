@@ -6,7 +6,6 @@ import {Registry} from "../../core/registry.js";
 import {exec} from "../../routines/exec.js";
 
 let InputMaskDefaultOptions = {
-    deferred: 0,
     pattern: ".",
     mask: "",
     placeholder: "_",
@@ -27,10 +26,8 @@ export class InputMask extends Component {
             InputMaskDefaultOptions = merge({}, InputMaskDefaultOptions, globalThis["metroInputMaskSetup"])
         }
         super(elem, "input-mask", merge({}, InputMaskDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-            this.createEvents()
-        }, this.options.deferred)
+        this.createStruct()
+        this.createEvents()
     }
 
     createStruct(){

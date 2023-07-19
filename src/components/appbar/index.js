@@ -6,7 +6,6 @@ import {mediaExist} from "../../routines/media.js";
 import {noop} from "../../routines/noop.js";
 
 let AppbarDefaultOptions = {
-    deferred: 0,
     expand: false,
     expandPoint: "",
     duration: 100,
@@ -14,7 +13,6 @@ let AppbarDefaultOptions = {
     theme: "auto",
     onMenuOpen: noop,
     onMenuClose: noop,
-    onCreate: noop
 }
 
 export class Appbar extends Component {
@@ -26,11 +24,10 @@ export class Appbar extends Component {
             AppbarDefaultOptions = merge({}, AppbarDefaultOptions, globalThis["metroAppbarSetup"])
         }
         super(elem, "appbar", merge({}, AppbarDefaultOptions, options));
-        setTimeout(()=>{
+        setTimeout(()=>{ // TODO Why theme toggle not create without this?
             this.createStruct()
             this.createEvents()
-            this.fireEvent("create")
-        }, this.options.deferred)
+        })
     }
 
     createStruct(){

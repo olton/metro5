@@ -7,7 +7,6 @@ import {exec} from "../../routines/exec.js";
 import {noop, noop_true} from "../../routines/noop.js";
 
 let FormDefaultOptions = {
-    deferred: 0,
     interactive: true,
     submitTimeout: 200,
     onBeforeReset: noop_true,
@@ -24,9 +23,7 @@ export class Form extends Component {
             FormDefaultOptions = merge({}, FormDefaultOptions, globalThis["metroFormSetup"])
         }
         super(elem, "form", merge({}, FormDefaultOptions, options));
-        setTimeout(()=>{
-            this.createStruct()
-        }, this.options.deferred)
+        this.createStruct()
     }
 
     createStruct(){

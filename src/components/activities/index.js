@@ -4,7 +4,6 @@ import {merge} from "../../routines/merge.js";
 import {Registry} from "../../core/registry.js";
 
 const ActivitiesDefaultOptions = {
-    deferred: 0,
     type: "simple",
     style: "default"
 }
@@ -12,10 +11,7 @@ const ActivitiesDefaultOptions = {
 export class Activity extends Component {
     constructor(elem, options = {}) {
         super(elem, "activity", merge({}, ActivitiesDefaultOptions, options));
-
-        setTimeout(()=>{
-            this.createStruct()
-        }, this.options.deferred)
+        this.createStruct()
     }
 
     createStruct(){
