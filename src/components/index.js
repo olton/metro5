@@ -52,7 +52,7 @@ import {Tabs} from "./tabs"
 import {Fetcher} from "./fetcher";
 import {Dataset} from "./dataset"
 import {Table} from "./table"
-
+import {Panel} from "./panel"
 
 export {
     Accordion,
@@ -111,4 +111,5 @@ export {
     Fetcher,
     Dataset,
     Table,
+    Panel,
 }

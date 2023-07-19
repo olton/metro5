@@ -36,26 +36,6 @@
 .button.shadowed:not(.disabled):active {
   box-shadow: none;
 }
-.button.primary {
-  background-color: var(--color-cyan);
-  color: #ffffff;
-}
-.button.secondary {
-  background-color: var(--color-blue);
-  color: #ffffff;
-}
-.button.success {
-  background-color: var(--color-green);
-  color: #ffffff;
-}
-.button.warning {
-  background-color: var(--color-amber);
-  color: #ffffff;
-}
-.button.alert {
-  background-color: var(--color-red);
-  color: #ffffff;
-}
 .button.mini,
 .outline-button.mini {
   font-size: 10px;

@@ -54,6 +54,39 @@
      data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
 -->
 
+<div class="mt-10">
+    <script>
+        var panelCustomButtons = [
+            {
+                caption: "<span class='mif-lock'>",
+                className: "fg-red",
+                onclick: function(){
+                    console.log(this)
+                    this.collapse()
+                }
+            },
+            {
+                caption: "<span class='mif-lock'>",
+                className: "alert",
+                onclick: () => alert("Custom button was clicked!")
+            },
+        ]
+    </script>
+    <div class="row ml-4 mr-4">
+        <div class="cell-md-6">
+            <div data-role="panel" data-icon="<span class='mif-rocket'>" data-custom-buttons="panelCustomButtons" data-closeable="true">
+                Panel Content
+            </div>
+        </div>
+        <div class="cell-md-6">
+            <div data-role="panel" data-icon="<img src='/images/pineapple.png'/>">
+                Panel Content
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
 <div class="mt-10 d-flex flex-justify-center">
     <div class="row">
         <div class="cell-md-6">
@@ -114,7 +147,7 @@
     </div>
 </div>
 
-<!--
+
 
 <h1 class="text-center">Metro5 Tabs Control</h1>
 
@@ -226,22 +259,22 @@
                 <div class="row">
                     <div class="cell-3 p-2">
                         <div class="img-wrap">
-                            <img src="./image/pandora.jpg" alt="">
+                            <img src="./images/pandora.jpg" alt="">
                         </div>
                     </div>
                     <div class="cell-3 p-2">
                         <div class="img-wrap">
-                            <img src="./image/mirohost.jpg" alt="">
+                            <img src="./images/mirohost.jpg" alt="">
                         </div>
                     </div>
                     <div class="cell-3 p-2">
                         <div class="img-wrap">
-                            <img src="./image/start.jpg" alt="">
+                            <img src="./images/start.jpg" alt="">
                         </div>
                     </div>
                     <div class="cell-3 p-2">
                         <div class="img-wrap">
-                            <img src="./image/aistant.jpg" alt="">
+                            <img src="./images/aistant.jpg" alt="">
                         </div>
                     </div>
                 </div>

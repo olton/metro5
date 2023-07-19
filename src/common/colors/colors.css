@@ -6655,6 +6655,33 @@
   background: #455a64 linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) !important;
   background-size: 20px 20px !important;
 }
+*.primary,
+* + *.primary {
+  border-color: var(--color-cyan) !important;
+  color: #ffffff !important;
+}
+*.secondary,
+* + *.secondary {
+  border-color: var(--color-blue) !important;
+  color: #ffffff !important;
+}
+*.success,
+* + *.success {
+  border-color: var(--color-green) !important;
+  color: #ffffff !important;
+}
+*.warning,
+* + *.warning {
+  background-color: var(--color-amber) !important;
+  border-color: var(--color-amber) !important;
+  color: #ffffff !important;
+}
+*.alert,
+* + *.alert {
+  background-color: var(--color-red) !important;
+  border-color: var(--color-red) !important;
+  color: #ffffff !important;
+}
 .inherit-colors {
   background-color: inherit;
   color: inherit;

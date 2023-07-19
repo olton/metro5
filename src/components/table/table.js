@@ -12,8 +12,10 @@ export class Table extends Component {
     _items = []
     _filters = []
     _search = null
-    _head = null
-    _foot = null
+    _sort = null
+    _head = []
+    _foot = []
+    _view = []
 
     constructor(elem, options) {
         if (typeof globalThis["metroTableSetup"] !== "undefined") {
@@ -22,11 +24,36 @@ export class Table extends Component {
         super(elem, "table", merge({}, TableDefaultOptions, options))
     }
 
-    head(head){
-        if (typeof head === "undefined") {
-            return this._head
-        }
-        this._head = head
+    parseHeader(){
+        const header = this.element.find("thead")
+        const headerCells = header.find("th")
+        $.each(headerCells, (i, cell) => {
+            this._head.push({
+                name: cell.attr("data-name") || cell.html() || `Field${i+1}`,
+                sortable: JSON.parse(cell.attr("data-sortable")),
+                sortDir: cell.attr("data-sort-dir") || "none",
+                format: cell.attr("data-format") || "none",
+                locale: cell.attr("data-locale") || "en-US",
+                size: cell.attr("data-size") || "default",
+                show: JSON.parse(cell.attr("data-show") || true),
+                template: cell.attr("data-template") || ""
+            })
+        })
+        return this
+    }
+
+    parseBody(){
+        const body = this.element.find("tbody")
+        $.each(body.find("tr"), (trIndex, tr) => {
+            const tdArray = []
+            $.each(tr.find("td"), (tdIndex, td) => {
+                tdArray.push({
+                    className: td[0].className,
+                    cellData: td.html()
+                })
+            })
+            this._origin.push(tdArray)
+        })
         return this
     }
 
@@ -48,8 +75,9 @@ export class Table extends Component {
         return this
     }
 
-    sort(){
-
+    sort(fn){
+        this._sort = fn
+        return this
     }
 
     draw(){

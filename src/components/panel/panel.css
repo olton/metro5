@@ -1,0 +1,102 @@
+.panel {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  background-color: var(--panel-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+.panel .panel-title,
+.panel .panel-content {
+  position: relative;
+}
+.panel .panel-title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  order: 1;
+  height: 42px;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 42px;
+  cursor: default;
+  flex-shrink: 0;
+}
+.panel .panel-title .icon {
+  order: 1;
+  height: 100%;
+  line-height: 42px;
+  width: 42px;
+  border-right: 1px solid var(--border-color);
+  flex-shrink: 0;
+  color: inherit;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panel .panel-title .icon * {
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+}
+.panel .panel-title .caption {
+  order: 2;
+  width: 100%;
+  padding: 0 12px;
+  color: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.panel .panel-title .dropdown-toggle {
+  order: 4;
+  height: 100%;
+  width: 42px;
+  flex-shrink: 0;
+}
+.panel .panel-title .custom-buttons,
+.panel .panel-title .service-buttons {
+  order: 3;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 8px;
+}
+.panel .panel-title .custom-buttons .btn-custom:hover,
+.panel .panel-title .service-buttons .btn-custom:hover {
+  border: 1px solid var(--border-color);
+}
+.panel .panel-title .service-buttons {
+  margin-left: 1px;
+}
+.panel .panel-title .btn-custom {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1px;
+  background: var(--panel-background);
+}
+.panel .panel-title .btn-custom > * {
+  line-height: 1;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+.panel .panel-title .btn-custom:focus,
+.panel .panel-title .btn-custom:active {
+  box-shadow: none !important;
+}
+.panel .panel-content {
+  display: block;
+  order: 2;
+  height: auto;
+  padding: 0!important;
+  overflow: hidden;
+}
+.panel .panel-content-inner {
+  padding: 10px;
+}
+/*# sourceMappingURL=panel.css.map */

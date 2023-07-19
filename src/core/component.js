@@ -63,7 +63,8 @@ export class Component {
     }
 
     updateAttr(attr, newVal, oldVal){}
+
     destroy(){
-        this.element.remove()
+        this.component.remove()
     }
 }
