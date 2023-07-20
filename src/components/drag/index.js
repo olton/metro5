@@ -83,8 +83,14 @@ export class Drag extends Component {
                     left: left,
                     top: top
                 });
-            };
 
+                element[0].dispatchEvent(new CustomEvent("reposition", {
+                    detail: {
+                        left,
+                        top,
+                    }
+                }))
+            };
 
             if (this.options.canDrag === false) {
                 return ;

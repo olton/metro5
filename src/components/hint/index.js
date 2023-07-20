@@ -51,6 +51,10 @@ export class Hint extends Component {
         $(window).on("scroll", () => {
             if (this.hint !== null) this.#setPosition(this.hint)
         }, {ns: element.id()})
+
+        element.on("reposition", (event) => {
+            if (this.hint !== null) this.#setPosition(this.hint)
+        })
     }
 
     #createHint(){
