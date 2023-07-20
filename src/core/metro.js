@@ -139,6 +139,14 @@ export class Metro5 {
                                         })
                                     })
                                 }
+
+                                if ($node.attr("data-hotkey")) {
+                                    that.hotkeyManager.register(node, $node.attr("data-hotkey"), $node.attr("data-hotkey-repeat") || false)
+                                } else {
+                                    $.each($node.find("[data-hotkey]"), (i, el) => {
+                                        that.hotkeyManager.register(el, $(el).attr("data-hotkey"), $(el).attr("data-hotkey-repeat") || false)
+                                    })
+                                }
                             }
                         }
                     }

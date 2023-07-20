@@ -55,7 +55,7 @@ export class HotkeyManager {
             this.hotkeys.push({
                 elem,
                 key,
-                repeat
+                repeat: JSON.parse(repeat)
             })
         }
         return this
@@ -64,7 +64,7 @@ export class HotkeyManager {
     #getModifier(e){
         const m = [];
         if (e.altKey) {m.push("alt");}
-        if (e.ctrlKey) {m.push("ctrl");}
+        if (e.ctrlKey || e.metaKey) {m.push("ctrl");}
         if (e.shiftKey) {m.push("shift");}
         return m;
     }
@@ -94,7 +94,7 @@ export class HotkeyManager {
 
             for(let el of elements) {
                 const node = this.#findKey(el, key)
-                if (event.repeat && node.repeat === 'false') return
+                if (event.repeat && node.repeat === false) return
                 el.click()
             }
         })
