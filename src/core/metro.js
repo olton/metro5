@@ -7,11 +7,12 @@ import {GlobalEvents} from "./global-events.js";
 import {HotkeyManager} from "./hotkey-manager.js";
 
 const MetroOptions = {
-    removeCloakTimeout: 100
+    removeCloakTimeout: 100,
+    replaceHint: true,
 }
 
 export class Metro5 {
-    version = "5.0.0"
+    version = "0.59.3"
     status = "pre-alpha"
     options = {}
     hotkeyManager = new HotkeyManager()
@@ -31,7 +32,7 @@ export class Metro5 {
     }
 
     info(){
-        console.info(`Metro UI - v${this.version}-${this.status}`);
+        console.info(`Metro 5 - v${this.version}-${this.status}`);
         console.info(`Includes: Query, Datetime, String, Html, Animation, Color.`);
     }
 
@@ -57,6 +58,13 @@ export class Metro5 {
                 $(elem).attr("data-hotkey-repeat") || false
             )
         })
+
+        if (this.options.replaceHint) {
+            const needHint = $("[title], [data-hint-text]")
+            needHint.each((_, el) => {
+                Metro5.makePlugin(el, "hint")
+            })
+        }
 
         $(()=>{
             const body = $("body")
@@ -126,27 +134,23 @@ export class Metro5 {
                                 const $node = $(node)
                                 if ($node.attr("data-role")) {
                                     const roles = to_array($node.attr("data-role"), ",")
-                                    //console.log("Node", roles)
                                     $.each(roles, (i, r) => {
                                         Metro5.makePlugin(node, r)
                                     })
-                                } else {
-                                    $.each($node.find("[data-role"), (i, el) => {
-                                        const roles = to_array($(el).attr("data-role"), ",")
-                                        //console.log("Nodes", roles)
-                                        $.each(roles, (i, r) => {
-                                            Metro5.makePlugin(el, r)
-                                        })
-                                    })
                                 }
+                                $.each($node.find("[data-role"), (i, el) => {
+                                    const roles = to_array($(el).attr("data-role"), ",")
+                                    $.each(roles, (i, r) => {
+                                        Metro5.makePlugin(el, r)
+                                    })
+                                })
 
                                 if ($node.attr("data-hotkey")) {
                                     that.hotkeyManager.register(node, $node.attr("data-hotkey"), $node.attr("data-hotkey-repeat") || false)
-                                } else {
-                                    $.each($node.find("[data-hotkey]"), (i, el) => {
-                                        that.hotkeyManager.register(el, $(el).attr("data-hotkey"), $(el).attr("data-hotkey-repeat") || false)
-                                    })
                                 }
+                                $.each($node.find("[data-hotkey]"), (i, el) => {
+                                    that.hotkeyManager.register(el, $(el).attr("data-hotkey"), $(el).attr("data-hotkey-repeat") || false)
+                                })
                             }
                         }
                     }

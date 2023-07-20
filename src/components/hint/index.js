@@ -19,6 +19,7 @@ export class Hint extends Component {
     over = false
     interval = null
     size = null
+    hintText = null
 
     constructor(elem, options) {
         if (typeof globalThis["metroHintSetup"] !== "undefined") {
@@ -26,7 +27,7 @@ export class Hint extends Component {
         }
 
         super(elem, "hint", merge({}, HintDefaultOptions, options));
-
+        this.hintText = this.options.hintText || this.element.attr("title")
         this.createEvents()
     }
 
@@ -54,7 +55,9 @@ export class Hint extends Component {
 
     #createHint(){
         const elem = this.elem, element = this.element, o = this.options
-        const hint = $("<div>").addClass("hint").html(o.hintText)
+        const hint = $("<div>").addClass("hint").html(this.hintText)
+
+        element.attr("title", null)
 
         if (o.hintSize) {
             hint.css({

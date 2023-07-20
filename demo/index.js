@@ -21,6 +21,7 @@ import {log} from "util";
 
 window.Metro = new Metro5({
     removeCloakTimeout: 1000,
+    replaceHint: true,
     onInit: ()=>{
         console.log("Metro5 Initialed.")
     }
