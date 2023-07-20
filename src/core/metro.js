@@ -4,6 +4,7 @@ import {globalize} from "./globalize.js";
 import {registerLocales} from "./locales.js";
 import {upgradeDatetime} from "./upgrade.js";
 import {GlobalEvents} from "./global-events.js";
+import {HotkeyManager} from "./hotkey-manager.js";
 
 const MetroOptions = {
     removeCloakTimeout: 100
@@ -12,8 +13,8 @@ const MetroOptions = {
 export class Metro5 {
     version = "5.0.0"
     status = "pre-alpha"
-    // plugins = {}
     options = {}
+    hotkeyManager = new HotkeyManager()
     static locales = {}
     static plugins = {};
 
@@ -40,12 +41,21 @@ export class Metro5 {
         upgradeDatetime(Metro5.locales)
 
         const plugins = $("[data-role]")
+        const hotkeys = $("[data-hotkey]")
 
         plugins.each((_, elem)=>{
             const roles = to_array($(elem).attr("data-role"))
             for(let role of roles) {
                 Metro5.makePlugin(elem, role, {})
             }
+        })
+
+        hotkeys.each((_, elem) => {
+            this.hotkeyManager.register(
+                elem,
+                $(elem).attr("data-hotkey"),
+                $(elem).attr("data-hotkey-repeat") || false
+            )
         })
 
         $(()=>{
@@ -99,6 +109,13 @@ export class Metro5 {
                                 }
                             }
                         }
+                    }
+
+                    if (mutation.attributeName === "data-hotkey") {
+                        that.hotkeyManager.register(
+                            elem,
+                            newValue,
+                            $elem.attr("data-hotkey-repeat") || false)
                     }
                 } else if (mutation.type === 'childList'){
                     if (mutation.addedNodes.length) {

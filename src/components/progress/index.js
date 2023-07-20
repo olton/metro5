@@ -24,10 +24,16 @@ let ProgressDefaultOptions = {
 }
 
 export class Progress extends Component {
+    value = 0
+    buffer = 0
+
     constructor(elem, options) {
+        if (!undef(globalThis["metroProgressSetup"])) {
+            ProgressDefaultOptions = merge({}, ProgressDefaultOptions, globalThis["metroProgressSetup"])
+        }
+
         super(elem, "progress", merge({}, ProgressDefaultOptions, options));
-        this.value = 0
-        this.buffer = 0
+
         this.createStruct()
     }
 

@@ -9,7 +9,6 @@ let AudioButtonDefaultOptions = {
     src: "",
     onAudioStart: noop,
     onAudioEnd: noop,
-    onCreate: noop
 }
 
 export class AudioButton extends Component {
@@ -22,7 +21,6 @@ export class AudioButton extends Component {
         super(elem, "audio-button", merge({}, AudioButtonDefaultOptions, options));
         this.createStruct()
         this.createEvents()
-        this.fireEvent("create")
     }
 
     createStruct(){

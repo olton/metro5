@@ -60,7 +60,6 @@ export class Calendar extends Component {
             this.createStruct()
             this.createEvents()
         })
-
     }
 
     dates2array(str){

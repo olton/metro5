@@ -20,11 +20,13 @@ let TabsDefaultOptions = {
 }
 
 export class Tabs extends Component {
+    tabs = []
+    invisibleTabsHolderToggle = null
+    invisibleTabsHolderPlugin = null
+
     constructor(elem, options) {
         super(elem, "tabs", merge({}, TabsDefaultOptions, options));
-        this.tabs = []
-        this.invisibleTabsHolderToggle = null
-        this.invisibleTabsHolderPlugin = null
+
         this.#createStruct()
         this.#createEvents()
     }

@@ -15,16 +15,17 @@ let HintDefaultOptions = {
 }
 
 export class Hint extends Component {
+    hint = null
+    over = false
+    interval = null
+    size = null
+
     constructor(elem, options) {
         if (typeof globalThis["metroHintSetup"] !== "undefined") {
             HintDefaultOptions = merge({}, HintDefaultOptions, globalThis["metroHintSetup"])
         }
-        super(elem, "hint", merge({}, HintDefaultOptions, options));
 
-        this.hint = null
-        this.over = false
-        this.interval = null
-        this.size = null
+        super(elem, "hint", merge({}, HintDefaultOptions, options));
 
         this.createEvents()
     }

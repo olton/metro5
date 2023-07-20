@@ -13,14 +13,14 @@ let DragDefaultOptions = {
 }
 
 export class Drag extends Component {
+    dragger = null
+
     constructor(elem, options) {
         if (typeof globalThis["metroDragSetup"] !== "undefined") {
             DragDefaultOptions = merge({}, DragDefaultOptions, globalThis["metroDragSetup"])
         }
 
         super(elem, "drag", merge({}, DragDefaultOptions, options))
-
-        this.dragger = null
 
         this.createStruct()
         this.createEvents()

@@ -22,12 +22,13 @@ let PanelDefaultOptions = {
 }
 
 export class Panel extends Component {
+    collapsed = false
+
     constructor(elem, options) {
         if (!undef(globalThis["metroPanelSetup"])) {
             PanelDefaultOptions = merge({}, PanelDefaultOptions, globalThis["metroPanelSetup"])
         }
         super(elem, "panel", merge({}, PanelDefaultOptions, options));
-        this.collapsed = false
         this.createStruct()
     }
 

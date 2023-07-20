@@ -13,6 +13,7 @@ const moon = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1s
 export class ThemeToggle extends Component {
     image = null
     theme = "light"
+
     constructor(elem, options) {
         super(elem, 'theme-toggle', merge({}, ThemeToggleDefaultOptions, options) );
         this.createStruct()
