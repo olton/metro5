@@ -26,6 +26,12 @@ import {isUrl} from "./is-url.js";
 import {compare} from "./compare.js";
 import {parse} from "./parse.js";
 import {clientXY, screenXY, pageXY} from "./coordinates.js";
+import {createStyleSheet, addCssRule} from "./css.js"
+import {not} from "./not.js";
+import {bool} from "./bool.js";
+import {encodeURI, getURIParameter, updateURIParameter} from "./uri.js";
+import {cleanPreCode} from "./clean-pre-code.js";
+import {github} from "./github.js";
 
 export {
     between,
@@ -69,4 +75,10 @@ export {
     compare,
     parse,
     clientXY, screenXY, pageXY,
+    createStyleSheet, addCssRule,
+    not,
+    bool,
+    encodeURI, updateURIParameter, getURIParameter,
+    cleanPreCode,
+    github,
 }

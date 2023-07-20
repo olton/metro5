@@ -43,6 +43,10 @@ window.addTab = function () {
     fileIndex++;
 };
 
+Routines.github('olton/Metro-UI-CSS').then((data) => {
+    console.log(data)
+})
+
 // const obj = [{
 //         albumId: 1,
 //         id: 1,
