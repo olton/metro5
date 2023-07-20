@@ -1,8 +1,5 @@
 import "./toast.css"
-import {merge} from "../../routines/merge.js";
-import {noop} from "../../routines/noop.js";
-import {required} from "../../routines/required.js";
-import {exec} from "../../routines/exec.js";
+import {merge, noop, required, exec} from "../../routines";
 
 let ToastDefaultOptions = {
     callback: noop,

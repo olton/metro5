@@ -1,0 +1,11 @@
+.hint {
+  display: block;
+  position: fixed;
+  z-index: 1070;
+  background-color: var(--hint-background);
+  color: var(--hint-text-color);
+  font-size: 14px;
+  max-width: 13.75rem;
+  padding: 10px;
+}
+/*# sourceMappingURL=hint.css.map */

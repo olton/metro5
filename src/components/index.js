@@ -55,6 +55,7 @@ import {Table} from "./table"
 import {Panel} from "./panel"
 import {Collapse} from "./collapse"
 import {Drag} from "./drag"
+import {Hint} from "./hint"
 
 export {
     Accordion,
@@ -116,4 +117,5 @@ export {
     Panel,
     Collapse,
     Drag,
+    Hint,
 }
