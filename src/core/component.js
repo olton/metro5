@@ -62,6 +62,10 @@ export class Component {
         return objectLength(events)
     }
 
+    dispatchEvent(name, detail = {}, options = {cancelable: true, bubbles: true}){
+        return this.elem.dispatchEvent(new CustomEvent(name, { ...options, detail }))
+    }
+
     updateAttr(attr, newVal, oldVal){}
 
     destroy(){

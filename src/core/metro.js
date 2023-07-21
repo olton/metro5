@@ -217,6 +217,10 @@ export class Metro5 {
         const loc = Metro5.locales[locale]
         return part ? loc[part] : loc
     }
+
+    static dispatchEvent(elem, eventName, detail = {}, options = {cancelable: true, bubbles: true}){
+        return elem.dispatchEvent(new CustomEvent(name, { ...options, detail }))
+    }
 }
 
 globalThis.Metro5 = Metro5
