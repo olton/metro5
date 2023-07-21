@@ -28,7 +28,7 @@ window.Metro = new Metro5({
 })
 
 window.createToastTest = (o) => {
-    Metro5.toast.create("Toast Message!", o)
+    Toast.create("Toast Message!", o)
 }
 
 let fileIndex = 0;
@@ -79,3 +79,4 @@ ds
 // const ds = new Components.Dataset({source: obj})
 //
 // ds.get().then(items => console.log(items))
+

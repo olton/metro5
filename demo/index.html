@@ -53,6 +53,14 @@
      data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
 -->
 
+<div class="mt-10 d-flex flex-justify-center">
+    <button class="button" onclick="Notify.create({message: 'Test Message', title: 'Notify'})">Notify1</button>
+    &nbsp;
+    <button class="button" onclick="Notify.create({message: 'Test Message'})">Notify2</button>
+    &nbsp;
+    <button class="button" onclick="Notify.create({message: 'Keep Open', keepOpen: true})">Notify2</button>
+</div>
+
 <div class="mt-10 pl-4 pr-4">
     <table data-role="table" class="border">
         <thead>

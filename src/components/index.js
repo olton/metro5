@@ -56,6 +56,7 @@ import {Panel} from "./panel"
 import {Collapse} from "./collapse"
 import {Drag} from "./drag"
 import {Hint} from "./hint"
+import {Notify} from "./notify"
 
 export {
     Accordion,
@@ -118,4 +119,5 @@ export {
     Collapse,
     Drag,
     Hint,
+    Notify,
 }

@@ -65,14 +65,14 @@
     "rollup-plugin-terser": "^7.0.2",
     "shx": "^0.3.4",
     "util": "^0.12.5",
-    "vite": "^4.4.4"
+    "vite": "^4.4.6"
   },
   "dependencies": {
     "@olton/animation": "^0.1.0",
     "@olton/color": "^0.1.1",
     "@olton/datetime": "^3.0.2",
     "@olton/html": "^0.4.1",
-    "@olton/query": "^0.4.18",
+    "@olton/query": "^0.4.19",
     "@olton/string": "^0.4.1"
   },
   "staticFiles": {

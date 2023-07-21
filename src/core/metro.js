@@ -1,5 +1,5 @@
 import {Registry} from "./registry.js";
-import {merge, md5, uniqueId, clearName, to_array, media, media_mode, medias} from "../routines";
+import {clearName, md5, media, media_mode, medias, merge, to_array, uniqueId} from "../routines";
 import {globalize} from "./globalize.js";
 import {registerLocales} from "./locales.js";
 import {upgradeDatetime} from "./upgrade.js";
@@ -89,6 +89,11 @@ export class Metro5 {
                 }
             });
         });
+
+        globalThis.Toast = Registry.getClass("toast")
+
+        const notifyClass = Registry.getClass("notify")
+        globalThis.Notify = new notifyClass()
     }
 
     observe(){

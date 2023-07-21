@@ -108,6 +108,8 @@
   --panel-background: #ffffff;
   --hint-background: #fff9c3;
   --hint-text-color: #000000;
+  --notify-background: #ffffff;
+  --notify-text-color: #000000;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -214,6 +216,8 @@
   --panel-background: #2b2d30;
   --hint-background: #fff9c3;
   --hint-text-color: #000000;
+  --notify-background: #2b2d30;
+  --notify-text-color: #ffffff;
 }
 body {
   background-color: var(--body-background);

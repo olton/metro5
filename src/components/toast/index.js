@@ -1,14 +1,16 @@
 import "./toast.css"
 import {merge, noop, required, exec} from "../../routines";
+import {Registry} from "../../core/registry.js";
 
 let ToastDefaultOptions = {
     callback: noop,
     timeout: 3000,
     distance: 20,
-    showTop: false
+    showTop: false,
+    className: ""
 };
 
-const Toast = {
+export const Toast = {
     options: {},
 
     create(message, options = {}){
@@ -29,6 +31,10 @@ const Toast = {
             toast.css({
                 bottom: this.options.distance
             })
+        }
+
+        if (this.options.className) {
+            toast.addClass(this.options.className)
         }
 
         toast.css({
@@ -69,6 +75,4 @@ const Toast = {
     }
 }
 
-Metro5.toast = Toast
-
-export {Toast}
+Registry.register("toast", Toast)
