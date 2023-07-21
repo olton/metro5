@@ -8,7 +8,7 @@ import {HotkeyManager} from "./hotkey-manager.js";
 
 const MetroOptions = {
     removeCloakTimeout: 100,
-    replaceHint: true,
+    replaceHint: false,
 }
 
 export class Metro5 {
