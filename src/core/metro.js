@@ -12,7 +12,7 @@ const MetroOptions = {
 }
 
 export class Metro5 {
-    version = "0.59.3"
+    version = "0.59.7"
     status = "pre-alpha"
     options = {}
     hotkeyManager = new HotkeyManager()
@@ -192,7 +192,6 @@ export class Metro5 {
         const plugin = this.plugins[pluginId]
         if (!plugin) return
         plugin.destroy()
-        plugin.component.remove()
         delete Metro5.plugins[pluginId]
     }
 
