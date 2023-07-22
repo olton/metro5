@@ -1,0 +1,79 @@
+.transform-button {
+  width: 36px;
+  height: 36px;
+  background-size: 1rem 1rem;
+  background: center center no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  float: left;
+  outline: none;
+}
+.transform-button span {
+  position: absolute;
+  left: 0.5rem;
+  width: 1.2rem;
+  height: 2px;
+  margin: 0 0 0;
+  background: var(--transform-button-color);
+  transform: rotate(0);
+  transition: all 0.3s linear;
+}
+.transform-button span:before,
+.transform-button span:after {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+  width: 1.2rem;
+  height: 2px;
+  background: var(--transform-button-color);
+  transform: rotate(0);
+  transition: all 0.3s linear;
+}
+.transform-button span:after {
+  top: 0.5rem;
+}
+.transform-button.transform span {
+  transform: rotate(180deg);
+}
+.transform-button.transform span:before,
+.transform-button.transform span:after {
+  content: '';
+  top: -5px;
+  right: 0;
+  width: 0.75rem;
+  transform: rotate(45deg);
+}
+.transform-button.transform span:after {
+  top: 5px;
+  transform: rotate(-45deg);
+}
+.transform-button.transform.right {
+  transform: rotate(-180deg);
+}
+.transform-button.transform.right span {
+  margin-top: -2px;
+}
+.transform-button.transform.up {
+  transform: rotate(90deg);
+}
+.transform-button.transform.down {
+  transform: rotate(-90deg);
+}
+.transform-button.transform.top-left {
+  transform: rotate(45deg);
+}
+.transform-button.transform.top-right {
+  transform: rotate(135deg);
+}
+.transform-button.transform.bottom-left {
+  transform: rotate(-45deg);
+}
+.transform-button.transform.bottom-right {
+  transform: rotate(-135deg);
+}
+/*# sourceMappingURL=transform-button.css.map */

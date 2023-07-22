@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.60.1",
+  "version": "0.61.0",
   "type": "module",
   "funding": [
     {
@@ -21,7 +21,7 @@
   "license": "MIT",
   "author": "Serhii Pimenov <serhii@pimenov.com.ua> (https://pimenov.com.ua)",
   "keywords": [
-    "metroui",
+    "met   roui",
     "js",
     "less",
     "css",

@@ -110,6 +110,7 @@
   --hint-text-color: #000000;
   --notify-background: #ffffff;
   --notify-text-color: #000000;
+  --transform-button-color: #000000;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -218,6 +219,7 @@
   --hint-text-color: #000000;
   --notify-background: #2b2d30;
   --notify-text-color: #ffffff;
+  --transform-button-color: #adbaa9;
 }
 body {
   background-color: var(--body-background);

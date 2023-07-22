@@ -57,6 +57,7 @@ import {Collapse} from "./collapse"
 import {Drag} from "./drag"
 import {Hint} from "./hint"
 import {Notify} from "./notify"
+import {TransformButton} from "./transform-button"
 
 export {
     Accordion,
@@ -120,4 +121,5 @@ export {
     Drag,
     Hint,
     Notify,
+    TransformButton,
 }
