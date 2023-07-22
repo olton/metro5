@@ -89,11 +89,6 @@ export class Metro5 {
                 }
             });
         });
-
-        globalThis.Toast = Registry.getClass("toast")
-
-        const notifyClass = Registry.getClass("notify")
-        globalThis.Notify = new notifyClass()
     }
 
     observe(){

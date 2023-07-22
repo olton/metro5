@@ -43,12 +43,14 @@
   width: 18px;
   height: 18px;
   display: flex;
-  align-items: center;
   justify-content: center;
   cursor: pointer;
   user-select: none;
+  line-height: 1;
+  font-size: 12px;
+  border: 1px solid transparent;
 }
 .notify__closer:hover {
-  border: 1px solid var(--border-color);
+  font-weight: bold;
 }
 /*# sourceMappingURL=notify.css.map */

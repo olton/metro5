@@ -24,12 +24,10 @@ window.Metro = new Metro5({
     replaceHint: true,
     onInit: ()=>{
         console.log("Metro5 Initialed.")
+        globalThis.Notify = new Components.Notify()
+        globalThis.Toast = new Components.Toast()
     }
 })
-
-window.createToastTest = (o) => {
-    Toast.create("Toast Message!", o)
-}
 
 let fileIndex = 0;
 

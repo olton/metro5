@@ -7,3 +7,6 @@ globalThis.Metro5.Routines = Routines
 import * as CommonCss from "./common"
 import * as Components from "./components"
 import * as MifIcons from "./icons"
+
+globalThis.Notify = new Components.Notify()
+globalThis.Toast = new Components.Toast()

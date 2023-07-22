@@ -5,7 +5,7 @@ import {Registry} from "../../core/registry.js";
 let NotifyDefaultOptions = {
     width: 220,
     timeout: 5000,
-    duration: 100,
+    duration: 200,
     distance: "max",
     ease: "linear",
     canClose: true,
@@ -37,12 +37,16 @@ export class Notify {
         this.container = $("<div>").addClass("notify-container").addClass(`position-${this.options.position}`).appendTo("body")
     }
 
-    create({message, title = "", keepOpen = false} = {}){
+    create({message, title = "", keepOpen = false, className = ""} = {}){
         required(message, `Empty message for notify!`)
 
         const o = this.options
 
         const notify = $("<div>").addClass("notify").css({ width: o.width })
+
+        if (className) {
+            notify.addClass(className)
+        }
 
         if (title) {
             $("<div>").addClass("notify__title").html(title).appendTo(notify)
@@ -51,13 +55,12 @@ export class Notify {
         $("<div>").addClass("notify__message").html(message).appendTo(notify)
 
         if (o.canClose) {
-            $("<span>").addClass("notify__closer").html("&times;").appendTo(notify)
+            $("<span>").addClass("notify__closer").html("╳").appendTo(notify)
         }
 
         this.container.append(notify)
 
         const distance = o.distance === "max" || isNaN(o.distance) ? $(window).height() : o.distance
-
 
         Animation.animate({
             el: notify[0],

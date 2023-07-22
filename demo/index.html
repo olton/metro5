@@ -54,9 +54,15 @@
 -->
 
 <div class="mt-10 d-flex flex-justify-center">
+    <button class="button" onclick="Toast.create('Toast Message')">Toast1</button>
+    &nbsp;
+    <button class="button" onclick="Toast.create('Toast Message', {className: 'alert'})">Toast2</button>
+    &nbsp;
+    <button class="button" onclick="Toast.create('Toast Message', {position: 'top'})">Toast3</button>
+    &nbsp;
     <button class="button" onclick="Notify.create({message: 'Test Message', title: 'Notify'})">Notify1</button>
     &nbsp;
-    <button class="button" onclick="Notify.create({message: 'Test Message'})">Notify2</button>
+    <button class="button" onclick="Notify.create({message: 'Test Message', className: 'alert', keepOpen: true})">Notify2</button>
     &nbsp;
     <button class="button" onclick="Notify.create({message: 'Keep Open', keepOpen: true})">Notify2</button>
 </div>
@@ -517,11 +523,6 @@
         }
     </style>
     <div data-role="tokenizer">Tokenized text</div>
-</div>
-
-<div class="mt-10 text-center">
-    <button class="button" onclick="createToastTest()">Create Default Toast</button>
-    <button class="button" onclick="createToastTest({showTop: true})">Create Toast on Top</button>
 </div>
 
 <div class="mt-10 d-flex flex-justify-center flex-align-start">
