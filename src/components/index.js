@@ -58,6 +58,8 @@ import {Drag} from "./drag"
 import {Hint} from "./hint"
 import {Notify} from "./notify"
 import {TransformButton} from "./transform-button"
+import {BoxSocial} from "./box-social"
+import {BoxSkill} from "./box-skill"
 
 export {
     Accordion,
@@ -122,4 +124,6 @@ export {
     Hint,
     Notify,
     TransformButton,
+    BoxSocial,
+    BoxSkill,
 }

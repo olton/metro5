@@ -1,0 +1,62 @@
+.social-box {
+  display: block;
+  position: relative;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: var(--box-social-background);
+  color: var(--box-social-text-color);
+}
+.social-box .header {
+  display: block;
+  position: relative;
+  padding: 20px 20px 40px 20px;
+}
+.social-box .header .avatar {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  top: 100%;
+  left: 50%;
+  margin-top: -45px;
+  margin-left: -45px;
+  z-index: 2;
+  border: 2px solid var(--box-social-avatar-border);
+  background-color: var(--box-social-avatar-background);
+}
+.social-box .header .title {
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 300;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+.social-box .header .subtitle {
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0;
+  z-index: 1;
+}
+.social-box .skills {
+  margin: 0;
+  padding: 40px 0 0 0;
+  list-style: none inside;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.social-box .skills li {
+  padding: 8px 16px;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  font-size: 12px;
+}
+.social-box .skills li a {
+  text-decoration: none;
+  color: inherit;
+}
+.social-box .skills li + li {
+  border-left: 1px solid var(--border-color);
+}
+/*# sourceMappingURL=box-social.css.map */

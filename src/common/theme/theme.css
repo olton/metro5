@@ -111,6 +111,14 @@
   --notify-background: #ffffff;
   --notify-text-color: #000000;
   --transform-button-color: #000000;
+  --box-social-background: #ffffff;
+  --box-social-text-color: #000000;
+  --box-social-avatar-background: #ffffff;
+  --box-social-avatar-border: #ffffff;
+  --box-skill-background: #ffffff;
+  --box-skill-text-color: #000000;
+  --box-skill-avatar-background: #ffffff;
+  --box-skill-avatar-border: #ffffff;
 }
 .dark-mode {
   --body-background: #1e2228;
@@ -220,6 +228,14 @@
   --notify-background: #2b2d30;
   --notify-text-color: #ffffff;
   --transform-button-color: #adbaa9;
+  --box-social-background: #ffffff;
+  --box-social-text-color: #000000;
+  --box-social-avatar-background: #ffffff;
+  --box-social-avatar-border: #ffffff;
+  --box-skill-background: #ffffff;
+  --box-skill-text-color: #000000;
+  --box-skill-avatar-background: #ffffff;
+  --box-skill-avatar-border: #ffffff;
 }
 body {
   background-color: var(--body-background);

@@ -1,0 +1,63 @@
+.skill-box {
+  display: block;
+  position: relative;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: var(--box-skill-background);
+  color: var(--box-skill-text-color);
+}
+.skill-box .header {
+  display: block;
+  position: relative;
+  padding: 20px;
+}
+.skill-box .header::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.skill-box .header .avatar {
+  float: left;
+  width: 64px;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--box-skill-avatar-border);
+  background-color: var(--box-skill-avatar-background);
+}
+.skill-box .header .title {
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 300;
+  margin: 5px 5px 5px 75px;
+}
+.skill-box .header .subtitle {
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0 5px 5px 75px;
+}
+.skill-box .skills {
+  margin: 0;
+  padding: 0;
+  list-style: none inside;
+}
+.skill-box .skills li {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.skill-box .skills li a {
+  text-decoration: none;
+  color: inherit;
+}
+.skill-box .skills li + li {
+  border-top: 1px solid var(--border-color);
+}
+.skill-box .skills .badge {
+  position: relative;
+  display: inline-block;
+  right: auto;
+  top: 4px;
+  transform: translateY(0) translateX(0);
+  float: right;
+}
+/*# sourceMappingURL=box-skill.css.map */
