@@ -24,6 +24,9 @@
   margin-left: 2px;
   text-transform: capitalize;
 }
+.master__actions [class*=master__btn]:disabled {
+  opacity: 0.2;
+}
 .master__actions .master__btn-help {
   margin-right: auto;
   margin-left: 0;
