@@ -866,4 +866,13 @@
   border-color: #f0a30a !important;
   background-color: rgba(240, 163, 10, 0.2);
 }
+.lh-1 {
+  line-height: 1;
+}
+.lh-1_2 {
+  line-height: 1.2;
+}
+.lh-1_4 {
+  line-height: 1.4;
+}
 /*# sourceMappingURL=typography-ext.css.map */

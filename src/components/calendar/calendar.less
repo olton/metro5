@@ -10,7 +10,7 @@
     user-select: none;
     background-color: var(--calendar-background);
     color: var(--text-color-secondary);
-    border-radius: 6px;
+    border-radius: var(--window-border-radius);
 }
 
 .calendar-header, .calendar-content, .calendar-footer {
@@ -231,6 +231,7 @@
 .calendar {
     &.compact {
         width: 210px;
+        border-radius: var(--element-border-radius);
 
         .curr-month {
             font-size: 12px!important;

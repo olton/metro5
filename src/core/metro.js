@@ -2,7 +2,7 @@ import {Registry} from "./registry.js";
 import {clearName, md5, media, media_mode, medias, merge, to_array, uniqueId} from "../routines";
 import {globalize} from "./globalize.js";
 import {registerLocales} from "./locales.js";
-import {upgradeDatetime} from "./upgrade.js";
+import {upgradeDatetime, upgradeQuery} from "./upgrade.js";
 import {GlobalEvents} from "./global-events.js";
 import {HotkeyManager} from "./hotkey-manager.js";
 
@@ -40,6 +40,7 @@ export class Metro5 {
         globalize()
         registerLocales(Metro5.locales)
         upgradeDatetime(Metro5.locales)
+        upgradeQuery()
 
         const plugins = $("[data-role]")
         const hotkeys = $("[data-hotkey]")

@@ -60,6 +60,7 @@ import {Notify} from "./notify"
 import {TransformButton} from "./transform-button"
 import {BoxSocial} from "./box-social"
 import {BoxSkill} from "./box-skill"
+import {Master} from "./master"
 
 export {
     Accordion,
@@ -126,4 +127,5 @@ export {
     TransformButton,
     BoxSocial,
     BoxSkill,
+    Master,
 }

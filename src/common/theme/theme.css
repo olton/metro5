@@ -1,4 +1,8 @@
 :root {
+  --window-border-radius: 6px;
+  --element-border-radius: 4px;
+}
+:root {
   --body-background: #f8f8f8;
   --text-color-secondary: #000;
   --text-color: #000;

@@ -17,6 +17,10 @@ let ProgressDefaultOptions = {
     showLabel: false,
     labelPosition: "before", // before, after
     labelTemplate: "",
+    barColor: "",
+    backColor: "",
+    bufferColor: "",
+    loadColor: "",
     onValueChange: noop,
     onBufferChange: noop,
     onComplete: noop,
@@ -72,6 +76,19 @@ export class Progress extends Component {
             } else {
                 label.insertAfter(element);
             }
+        }
+
+        if (o.barColor) {
+            element.find('.bar').css("background", o.barColor)
+        }
+        if (o.backColor) {
+            element.css("background", o.backColor)
+        }
+        if (o.bufferColor) {
+            element.find(".buffer").css("background", o.backColor)
+        }
+        if (o.loadColor) {
+            element.find(".load").css("background", o.backColor)
         }
 
         this.val(o.value)

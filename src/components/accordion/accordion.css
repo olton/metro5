@@ -4,7 +4,7 @@
   border: 1px solid var(--border-color);
   background-color: var(--accordion-background);
   color: var(--text-color);
-  border-radius: 6px;
+  border-radius: var(--window-border-radius);
 }
 .accordion__frame {
   display: block;

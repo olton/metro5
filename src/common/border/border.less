@@ -66,7 +66,7 @@
     border-bottom: 1px solid transparent;
 }
 
-.border-radius {border-radius: @border-radius;}
+.border-radius {border-radius: var(--window-border-radius);}
 .border-radius-half {border-radius: 50%;}
 
 .generate-border-width(20);
@@ -80,7 +80,7 @@
 }
 
 .rounded {
-    border-radius: @border-radius!important;
+    border-radius: var(--window-border-radius)!important;
 }
 .border-50 {
     border-radius: 50%!important;

@@ -149,7 +149,7 @@ a {
   height: 30px;
   font-size: 0.875rem;
   border: none!important;
-  border-radius: 4px;
+  border-radius: var(--element-border-radius);
 }
 .appbar .hamburger:not(.hidden) ~ .ml-auto {
   margin-right: 52px;

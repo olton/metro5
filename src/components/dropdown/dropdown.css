@@ -36,7 +36,7 @@
   list-style: none inside none;
   background-color: var(--menu-background);
   color: var(--menu-text-color);
-  border-radius: 6px;
+  border-radius: var(--window-border-radius);
   box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
 }
 .dropdown-menu.place-right {

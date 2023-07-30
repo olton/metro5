@@ -34,6 +34,9 @@ export const en_US = {
         "no": "No",
         "random": "Random",
         "save": "Save",
-        "reset": "Reset"
+        "reset": "Reset",
+        "prev": "Prev",
+        "next": "Next",
+        "finish": "Finish",
     },
 }

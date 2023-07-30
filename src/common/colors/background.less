@@ -1,5 +1,9 @@
 @import "../../include/colors";
 
+.bg-transparent {
+  background-color: transparent!important;
+}
+
 each( @color-list, {
   .bg-@{value} {background-color: @@value!important;}
   .bg-@{value}-active {&:active {background-color: @@value!important;}}

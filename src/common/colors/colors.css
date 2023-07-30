@@ -909,6 +909,9 @@
 .fg-grayMouse-focus:focus {
   color: #455a64 !important;
 }
+.bg-transparent {
+  background-color: transparent!important;
+}
 .bg-lime {
   background-color: #a4c400 !important;
 }

@@ -1,24 +1,28 @@
+@import "../../include/transition";
+
 .card {
-    display: block;
+    display: flex;
+    flex-flow: column;
     position: relative;
     font-size: .875rem;
     width: ~"calc(100% - 1rem)";
     margin: 8px auto;
-    border-radius: 2px;
+    border-radius: var(--window-border-radius);
     border: 1px solid var(--border-color);
     background-color: var(--card-background);
     color: var(--card-text-color);
 }
 
-.card-header {
+.card__header {
     border-bottom: 1px var(--border-color) solid;
     padding: 1rem;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     border-radius: 2px 2px 0 0;
     display: block;
 }
 
-.card-header {
+.card__header {
     .avatar {
         float: left;
         width: 44px;
@@ -41,11 +45,11 @@
     }
 }
 
-.card-content {
+.card__content {
     display: block;
 }
 
-.card-footer {
+.card__footer {
     border-top: 1px var(--border-color) solid;
     padding: 1rem;
     border-radius: 0 0 2px 2px;
@@ -53,11 +57,12 @@
     justify-content: space-between;
     align-items: center;
     min-height: 3rem;
+    margin-top: auto;
 }
 
 .card {
     &.image-header {
-        .card-header {
+        .card__header {
             height: 9rem;
             vertical-align: bottom;
             background-size: cover;
@@ -76,22 +81,109 @@
 }
 
 * + .card {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
-.card {
-    &.flex-card {
+.icon-card {
+    height: 90px;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: var(--icon-card-background);
+    color: var(--icon-card-text-color);
+    position: relative;
+    border-radius: var(--window-border-radius);
+    overflow: hidden;
+
+    .icon {
+        position: relative;
+    }
+
+    .icon {
+        height: 90px;
+        width: 90px;
+        flex-shrink: 0;
+        text-align: center;
         display: flex;
-        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0,0,0,0.1);
 
-        .card-header, .card-footer {
-            height: 57px;
-            flex-shrink: 0;
-            flex-grow: 0;
+        & > * {
+            font-size: 45px;
+            width: 45px;
+            height: 45px;
+            line-height: 1;
         }
+    }
 
-        .card-footer {
-            margin-top: auto;
+    .content {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.icon-card-more {
+    height: 128px;
+    display: flex;
+    flex-flow: row wrap;
+
+    .icon, .content {
+        position: relative;
+    }
+
+    .icon {
+        height: 64px;
+        width: 64px;
+        flex-shrink: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2;
+        margin-left: auto;
+        margin-right: 16px;
+        margin-top: 16px;
+        transition: @transition-transform;
+
+        & > * {
+            font-size: 64px;
+            width: 64px;
+            height: 64px;
+            line-height: 1;
+            color: rgba(0,0,0,0.15);
         }
+    }
+
+    .content {
+        line-height: 1.2;
+        display: block;
+        order: 1;
+        padding: 8px;
+        max-width: ~"calc(100% - 106px)";
+    }
+
+    .more {
+        width: 100%;
+        flex-shrink: 0;
+        text-align: right;
+        background: rgba(0,0,0,0.1);
+        text-decoration: none;
+        position: relative;
+        display: block;
+        padding: 8px 8px 0;
+        margin: 0;
+        order: 3;
+        color: rgba(255,255,255,0.8);
+        font-size: 12px;
+
+        &:hover {
+            color: #fff;
+            background: rgba(0,0,0,0.15);
+        }
+    }
+
+    &:hover .icon {
+        transform: scale(1.2);
+        transition: @transition-transform;
     }
 }

@@ -1,0 +1,36 @@
+.master {
+    display: flex;
+    flex-flow: column;
+}
+
+.master__title {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.master__pages {
+    display: block;
+}
+
+.master__page {
+    position: relative;
+    display: block;
+}
+
+.master__actions {
+    margin-top: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+
+    [class*=master__btn] {
+        margin-left: 2px;
+        text-transform: capitalize;
+    }
+
+    .master__btn-help {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
