@@ -61,6 +61,7 @@ import {TransformButton} from "./transform-button"
 import {BoxSocial} from "./box-social"
 import {BoxSkill} from "./box-skill"
 import {Master} from "./master"
+import {Sorter} from "./sorter"
 
 export {
     Accordion,
@@ -128,4 +129,5 @@ export {
     BoxSocial,
     BoxSkill,
     Master,
+    Sorter,
 }

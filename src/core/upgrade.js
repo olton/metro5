@@ -1,5 +1,5 @@
 import {Query} from "@olton/query";
-import {exec} from "../routines/index.js";
+import {exec, panic} from "../routines/index.js";
 
 export const upgradeDatetime = (locales) => {
     Datetime.getLocale = function(locale = "en-US"){
@@ -23,6 +23,13 @@ export const upgradeDatetime = (locales) => {
 }
 
 export const upgradeQuery = () => {
+    Query.prototype.plugin = function(name){
+        if (!name) {
+            panic(`Plugin name required!`)
+        }
+        return Metro5.getPlugin(this[0], name)
+    }
+
     Query.prototype.animate = function ({draw = {}, dur = 100, ease = "linear"} = {}, cb){
         return this.each((_, el)=>{
             Animation.animate({

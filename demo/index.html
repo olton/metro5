@@ -53,6 +53,34 @@
      data-on-fishing-start="console.log('Fishing started!')" data-on-fishing-done="console.log('Fishing done!')"></div>
 -->
 
+<div class="mt-10">
+    <div>
+        <button class="button" onclick="$('#sorter1').plugin('sorter').sort({sort: 'asc'})">Asc</button>
+        <button class="button" onclick="$('#sorter1').plugin('sorter').sort({sort: 'desc'})">Desc</button>
+    </div>
+    <ul data-role="sorter" data-sort="desc" id="sorter1">
+        <li>1</li>
+        <li>4</li>
+        <li>3</li>
+        <li>2</li>
+    </ul>
+</div>
+
+<div class="mt-10 pl-4 pr-4">
+    <table data-role="table" class="border">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th data-sortable="true" data-sort-dir="asc">Name</th>
+            <th data-sortable="true">Birthday</th>
+            <th>Salary</th>
+            <th></th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<!--
 <div class="mt-10 pl-10 pr-10">
     <div class="row">
         <div class="cell-md-4"></div>
@@ -60,8 +88,6 @@
             <div data-role="master"
                  data-title="Metro5 Master"
                  data-locale="ua-UK"
-                 data-title-prev-button="Попередня"
-                 data-title-next-button="Наступна"
             >
                 <div class="master__page">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nostrum officia reprehenderit? Cumque delectus facere fugiat hic iusto molestiae neque totam! A corporis culpa ea maiores, pariatur quam sequi! Sint.
@@ -356,19 +382,7 @@
     <button class="button" onclick="Notify.create({message: 'Keep Open', keepOpen: true})">Notify2</button>
 </div>
 
-<div class="mt-10 pl-4 pr-4">
-    <table data-role="table" class="border">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Birthday</th>
-            <th>Salary</th>
-            <th></th>
-        </tr>
-        </thead>
-    </table>
-</div>
+
 
 <div class="mt-10 p-10 d-flex flex-justify-around flex-align-center">
     <div data-hint-position="top" class="bg-red" style="width: 30px; height: 30px;" title="Hint Text"></div>
