@@ -14,6 +14,7 @@ let SorterDefaultOptions = {
 
 
 export class Sorter extends Component {
+    origin = []
     items = []
 
     constructor(elem, options) {
@@ -21,6 +22,7 @@ export class Sorter extends Component {
             SorterDefaultOptions = merge({}, SorterDefaultOptions, globalThis['metroSorterSetup'])
         }
         super(elem, "sorter", merge({}, SorterDefaultOptions, options))
+        this.origin = this.element.children()
         this.sort()
     }
 
@@ -33,6 +35,10 @@ export class Sorter extends Component {
             return compare(_a, _b, this.options.sort)
         })
         this.element.clear().append(...this.items)
+    }
+
+    reset(){
+        this.element.clear().append(...this.origin)
     }
 
     updateAttr(attr, newVal, oldVal) {
