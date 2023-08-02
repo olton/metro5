@@ -79,7 +79,7 @@ ds
 // ds.get().then(items => console.log(items))
 
 globalThis.downloadCsv = function(array){
-    const csv = new Components.Csv({header: true})
+    const csv = new Routines.Csv({header: true})
 
     if (array) {
         const data = [
@@ -87,7 +87,7 @@ globalThis.downloadCsv = function(array){
             [4, 5, 6]
         ]
 
-        csv.set(data).array2csv().download('array.csv')
+        csv.data(data).array2csv().download('array.csv')
     } else {
         const data = [
             {

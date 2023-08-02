@@ -1,5 +1,4 @@
-import {merge} from "../../routines/index.js";
-import {Registry} from "../../core/registry.js";
+import {merge} from "./index.js";
 
 let CsvDefaultOptions = {
     delimiter: "\t",
@@ -16,7 +15,7 @@ export class Csv {
         this.#options = merge({}, CsvDefaultOptions, options)
     }
 
-    set(data){
+    data(data){
         if (data) {
             this.#data = data
         }
@@ -59,4 +58,4 @@ export class Csv {
     }
 }
 
-Registry.register("csv", Csv)
+export const csv = (options) => new Csv(options)

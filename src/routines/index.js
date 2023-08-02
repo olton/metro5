@@ -32,6 +32,7 @@ import {bool} from "./bool.js";
 import {encodeURI, getURIParameter, updateURIParameter} from "./uri.js";
 import {cleanPreCode} from "./clean-pre-code.js";
 import {github} from "./github.js";
+import {Csv, csv} from "./csv.js";
 
 export {
     between,
@@ -81,4 +82,5 @@ export {
     encodeURI, updateURIParameter, getURIParameter,
     cleanPreCode,
     github,
+    Csv, csv
 }
