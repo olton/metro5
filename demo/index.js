@@ -78,3 +78,31 @@ ds
 //
 // ds.get().then(items => console.log(items))
 
+globalThis.downloadCsv = function(array){
+    const csv = new Components.Csv({header: true})
+
+    if (array) {
+        const data = [
+            [1, 2, 3],
+            [4, 5, 6]
+        ]
+
+        csv.set(data).array2csv().download('array.csv')
+    } else {
+        const data = [
+            {
+                firstName: 'Idorenyin',
+                lastName: 'Udoh'
+            },
+            {
+                firstName: 'Loyle',
+                lastName: 'Carner'
+            },
+            {
+                firstName: 'Tamunotekena',
+                lastName: 'Dagogo'
+            }
+        ]
+        csv.json2csv(data).download('json.csv')
+    }
+}

@@ -54,6 +54,11 @@
 -->
 
 <div class="mt-10">
+    <button class="button" onclick="downloadCsv(true)">Array 2 csv</button>
+    <button class="button" onclick="downloadCsv(false)">Json 2 csv</button>
+</div>
+
+<div class="mt-10">
     <div>
         <button class="button" onclick="$('#sorter1').plugin('sorter').sort({sort: 'asc'})">Asc</button>
         <button class="button" onclick="$('#sorter1').plugin('sorter').sort({sort: 'desc'})">Desc</button>
