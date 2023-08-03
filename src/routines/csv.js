@@ -57,5 +57,3 @@ export class Csv {
         return this.#content
     }
 }
-
-export const csv = (options) => new Csv(options)
