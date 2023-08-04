@@ -106,3 +106,7 @@ globalThis.downloadCsv = function(array){
         csv.json2csv(data).download('json.csv')
     }
 }
+
+globalThis.showInfobox = () => {
+    new Components.Infobox({overlayColor: "#f00", message: "lorem Ipsum", title: "Infobox", clsInfobox: "alert"})
+}

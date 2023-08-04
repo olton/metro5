@@ -1,0 +1,36 @@
+.info-box {
+  position: fixed;
+  background-color: var(--infobox-background);
+  color: var(--infobox-text-color);
+  border: 1px solid var(--border-color);
+  display: block;
+  z-index: 1050;
+  max-width: calc(100vw - 100px);
+  max-height: calc(100vh - 100px);
+  overflow: hidden;
+}
+.info-box .info-box__closer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 4px;
+  background-color: inherit;
+  color: inherit;
+  z-index: 100;
+  cursor: pointer;
+}
+.info-box .info-box__closer::before {
+  display: block;
+  content: "\00d7";
+  font-size: 24px;
+  margin-top: -4px;
+}
+.info-box .info-box__content {
+  padding: 10px 20px 10px 10px;
+  z-index: 0;
+}
+.info-box .info-box__title {
+  font-size: 20px;
+  font-weight: 100;
+}
+/*# sourceMappingURL=infobox.css.map */

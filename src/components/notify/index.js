@@ -98,5 +98,4 @@ export class Notify {
     }
 }
 
-// Metro5.Notify = new Notify()
 Registry.register("notify", Notify)

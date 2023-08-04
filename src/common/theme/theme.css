@@ -123,6 +123,8 @@
   --box-skill-text-color: #000000;
   --box-skill-avatar-background: #ffffff;
   --box-skill-avatar-border: #ffffff;
+  --infobox-background: #ffffff;
+  --infobox-text-color: #000000;
 }
 .dark-mode {
   --body-background: #1e2228;
