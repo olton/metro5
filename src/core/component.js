@@ -15,7 +15,6 @@ export class Component {
         this.element = $(elem)
         this.component = this.element
         this.name = name || `component`
-
         this.setOptionsFromAttributes()
     }
 

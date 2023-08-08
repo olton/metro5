@@ -1,3 +1,14 @@
+:root {
+  --tools-menu-item-background: #ffffff;
+  --tools-menu-item-text-color: #000000;
+  --tools-menu-item-hover: rgba(30, 34, 40, 0.1);
+}
+.dark-mode {
+  --tools-menu-item-background: #3c3f41;
+  --tools-menu-item-text-color: #ffffff;
+  --tools-dropdown-toggle: #ffffff;
+  --tools-menu-item-hover: rgba(30, 34, 40, 0.1);
+}
 .tools-menu {
   list-style: none inside;
   margin: 0;

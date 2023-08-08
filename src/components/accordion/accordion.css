@@ -1,3 +1,9 @@
+:root {
+  --accordion-background: #ffffff;
+}
+.dark-mode {
+  --accordion-background: #2b2d30;
+}
 .accordion {
   display: flex;
   flex-flow: column;

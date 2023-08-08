@@ -1,6 +1,18 @@
 @import "../../include/mixins";
 @import "../../include/colors";
 
+:root {
+    --checkbox-check-checked: #000000;
+    --checkbox-check-disabled: #a6a6a6;
+    --checkbox-marker-color: #ffffff;
+}
+
+.dark-mode {
+    --checkbox-check-checked: #2b2d30;
+    --checkbox-check-disabled: #a6a6a6;
+    --checkbox-marker-color: #ffffff;
+}
+
 .checkbox {
     display: inline-flex;
     flex-flow: row nowrap;

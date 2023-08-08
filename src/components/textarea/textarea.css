@@ -1,3 +1,11 @@
+:root {
+  --textarea-background: #ffffff;
+  --textarea-text-color: #000000;
+}
+.dark-mode {
+  --textarea-background: #2b2d30;
+  --textarea-text-color: #ffffff;
+}
 .textarea,
 textarea {
   height: auto;

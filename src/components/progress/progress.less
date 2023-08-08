@@ -1,4 +1,22 @@
+@import "../../include/colors";
+
 @barHeight: 12px;
+
+:root {
+    --progress-background: #eeeeee;
+    --progress-bar-color: @green;
+    --progress-buffer-color: @red;
+    --progress-line-color: @cyan;
+    --progress-line-background: #b3d4fc;
+}
+
+.dark-mode {
+    --progress-background: #2b2d30;
+    --progress-bar-color: @green;
+    --progress-buffer-color: @red;
+    --progress-line-color: @cyan;
+    --progress-line-background: #b3d4fc;
+}
 
 .progress {
     display: block;

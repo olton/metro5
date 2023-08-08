@@ -82,4 +82,6 @@ export class Toast {
     }
 }
 
+globalThis.toast = options => new Toast(options)
+
 Registry.register("toast", Toast)

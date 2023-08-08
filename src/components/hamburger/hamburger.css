@@ -1,3 +1,9 @@
+:root {
+  --hamburger-color: #000000;
+}
+.dark-mode {
+  --hamburger-color: #adbaa9;
+}
 .hamburger {
   display: inline-block;
   font-weight: 400;

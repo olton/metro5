@@ -1,3 +1,11 @@
+:root {
+  --toast-background: #777777;
+  --toast-text-color: #ffffff;
+}
+.dark-mode {
+  --toast-background: #323232;
+  --toast-text-color: #ffffff;
+}
 .toast {
   position: fixed;
   bottom: 20px;

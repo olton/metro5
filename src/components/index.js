@@ -63,6 +63,7 @@ import {BoxSkill} from "./box-skill"
 import {Master} from "./master"
 import {Sorter} from "./sorter"
 import {Infobox} from "./infobox"
+import {Select} from "./select"
 
 export {
     Accordion,
@@ -132,4 +133,5 @@ export {
     Master,
     Sorter,
     Infobox,
+    Select,
 }

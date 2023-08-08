@@ -1,3 +1,9 @@
+:root {
+  --transform-button-color: #000000;
+}
+.dark-mode {
+  --transform-button-color: #adbaa9;
+}
 .transform-button {
   width: 36px;
   height: 36px;

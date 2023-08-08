@@ -1,3 +1,15 @@
+:root {
+  --lightbox-closer-background: #CE352C;
+  --lightbox-closer-text-color: #ffffff;
+  --lightbox-control-background: #a6a6a6;
+  --lightbox-control-text-color: #000000;
+}
+.dark-mode {
+  --lightbox-closer-background: #CE352C;
+  --lightbox-closer-text-color: #ffffff;
+  --lightbox-control-background: #a6a6a6;
+  --lightbox-control-text-color: #000000;
+}
 .lightbox-overlay {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;

@@ -1,3 +1,19 @@
+:root {
+  --menu-background: #fff;
+  --menu-text-color: #000000;
+  --menu-background-active: rgba(204, 204, 204, 0.1);
+  --menu-text-color-active: #000000;
+  --menu-title-background: #9f9f9f;
+  --menu-title-text-color: #ffffff;
+}
+.dark-mode {
+  --menu-background: #3c3f41;
+  --menu-text-color: #adbaa9;
+  --menu-background-active: rgba(255, 255, 255, 0.1);
+  --menu-text-color-active: #ffffff;
+  --menu-title-background: #1d2121;
+  --menu-title-text-color: #ffffff;
+}
 .dropdown {
   overflow: hidden;
 }

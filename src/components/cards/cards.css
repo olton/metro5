@@ -1,3 +1,13 @@
+:root {
+  --card-background: #ffffff;
+  --card-text-color: #000000;
+  --card-text-color-secondary: #eee;
+}
+.dark-mode {
+  --card-background: #2b2d30;
+  --card-text-color: #ffffff;
+  --card-text-color-secondary: #a2a2a2;
+}
 .card {
   display: flex;
   flex-flow: column;

@@ -1,3 +1,11 @@
+:root {
+  --toolbar-before-color: #777777;
+  --toolbar-background: #ffffff;
+}
+.dark-mode {
+  --toolbar-before-color: #2b2d30;
+  --toolbar-background: #1e2228;
+}
 .toolbar {
   display: inline-flex;
   align-items: center;

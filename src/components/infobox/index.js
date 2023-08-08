@@ -30,6 +30,10 @@ export class Infobox {
     create(){
         const o = this.options
 
+        if (!exec(o.onBeforeOpen, [])) {
+            return undefined
+        }
+
         this.overlay = $(".overlay")
         if (this.overlay.length === 0) {
             this.overlay = $("<div>").addClass("overlay").appendTo("body")
@@ -43,10 +47,6 @@ export class Infobox {
         }
 
         let closer, content
-
-        if (!exec(o.onBeforeOpen, [])) {
-            return undefined
-        }
 
         this.box = $("<div>").addClass("info-box").addClass(o.clsInfobox).appendTo("body")
         this.box.append(
@@ -93,5 +93,7 @@ export class Infobox {
         return this.box
     }
 }
+
+globalThis.infobox = options => new Infobox(options)
 
 Registry.register("infobox", Infobox)

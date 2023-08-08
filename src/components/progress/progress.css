@@ -1,3 +1,17 @@
+:root {
+  --progress-background: #eeeeee;
+  --progress-bar-color: #60a917;
+  --progress-buffer-color: #CE352C;
+  --progress-line-color: #26b2f6;
+  --progress-line-background: #b3d4fc;
+}
+.dark-mode {
+  --progress-background: #2b2d30;
+  --progress-bar-color: #60a917;
+  --progress-buffer-color: #CE352C;
+  --progress-line-color: #26b2f6;
+  --progress-line-background: #b3d4fc;
+}
 .progress {
   display: block;
   position: relative;

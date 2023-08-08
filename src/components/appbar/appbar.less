@@ -2,6 +2,24 @@
 @import "../../include/colors";
 @import "../../include/mixins";
 
+:root {
+    --appbar-background: #fff;
+    --appbar-text-color: #000000;
+    --appbar-background-hover: rgba(red(#ccc),green(#ccc),blue(#ccc), .1);
+    --appbar-text-color-hover: #000000;
+}
+
+.dark-mode {
+    --appbar-background: #2b2d30;
+    --appbar-text-color: #adbaa9;
+    --appbar-background-hover: rgba(red(#000), green(#000), blue(#000), .1);;
+    --appbar-text-color-hover: #fff;
+}
+
+.with-app-bar {
+    padding-top: 52px;
+}
+
 .appbar {
     display: flex;
     position: fixed;

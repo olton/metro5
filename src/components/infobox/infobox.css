@@ -1,3 +1,11 @@
+:root {
+  --infobox-background: #ffffff;
+  --infobox-text-color: #000000;
+}
+.dark-mode {
+  --infobox-background: #ffffff;
+  --infobox-text-color: #000000;
+}
 .info-box {
   position: fixed;
   background-color: var(--infobox-background);
@@ -8,6 +16,7 @@
   max-width: calc(100vw - 100px);
   max-height: calc(100vh - 100px);
   overflow: hidden;
+  border-radius: var(--window-border-radius);
 }
 .info-box .info-box__closer {
   display: block;

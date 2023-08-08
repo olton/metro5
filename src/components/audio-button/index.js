@@ -84,7 +84,7 @@ export class AudioButton extends Component {
 
 Registry.register("audiobutton", AudioButton)
 
-Metro5.playSound = (src, volume = 0.5, cb) => {
+globalThis.playSound = (src, volume = 0.5, cb) => {
     const audio = new Audio(src)
     audio.volume = volume
 

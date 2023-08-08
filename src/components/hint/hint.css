@@ -1,3 +1,11 @@
+:root {
+  --hint-background: #fff9c3;
+  --hint-text-color: #000000;
+}
+.dark-mode {
+  --hint-background: #fff9c3;
+  --hint-text-color: #000000;
+}
 .hint {
   display: block;
   position: fixed;

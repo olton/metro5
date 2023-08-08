@@ -108,5 +108,5 @@ globalThis.downloadCsv = function(array){
 }
 
 globalThis.showInfobox = () => {
-    new Components.Infobox({overlayColor: "#f00", message: "lorem Ipsum", title: "Infobox", clsInfobox: "alert"})
+    infobox({overlayColor: "#f00", message: "lorem Ipsum", title: "Infobox", clsInfobox: "alert"})
 }

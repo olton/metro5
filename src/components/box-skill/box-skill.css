@@ -1,3 +1,15 @@
+:root {
+  --box-skill-background: #ffffff;
+  --box-skill-text-color: #000000;
+  --box-skill-avatar-background: #ffffff;
+  --box-skill-avatar-border: #ffffff;
+}
+.dark-mode {
+  --box-skill-background: #ffffff;
+  --box-skill-text-color: #000000;
+  --box-skill-avatar-background: #ffffff;
+  --box-skill-avatar-border: #ffffff;
+}
 .skill-box {
   display: block;
   position: relative;

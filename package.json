@@ -35,9 +35,8 @@
     "src"
   ],
   "scripts": {
-    "dev": "vite",
-    "start": "shx rm -rf dist/* && parcel ./demo/index.html ./demo/*.html",
-    "build:demo": "parcel build ./demo/index.html ./demo/*.html",
+    "start": "shx rm -rf dist/* && parcel ./demo/*.html",
+    "build:demo": "parcel build ./demo/*.html",
     "clear": "shx rm -rf lib/*",
     "build": "npm run clear && rollup --config && npm run minifycss",
     "minifycss": "css-minify -f lib/metro5.css -o lib",

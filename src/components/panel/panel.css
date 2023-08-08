@@ -1,3 +1,9 @@
+:root {
+  --panel-background: #ffffff;
+}
+.dark-mode {
+  --panel-background: #2b2d30;
+}
 .panel {
   display: flex;
   flex-flow: column nowrap;

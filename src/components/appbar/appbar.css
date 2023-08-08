@@ -1,3 +1,18 @@
+:root {
+  --appbar-background: #fff;
+  --appbar-text-color: #000000;
+  --appbar-background-hover: rgba(204, 204, 204, 0.1);
+  --appbar-text-color-hover: #000000;
+}
+.dark-mode {
+  --appbar-background: #2b2d30;
+  --appbar-text-color: #adbaa9;
+  --appbar-background-hover: rgba(0, 0, 0, 0.1);
+  --appbar-text-color-hover: #fff;
+}
+.with-app-bar {
+  padding-top: 52px;
+}
 .appbar {
   display: flex;
   position: fixed;

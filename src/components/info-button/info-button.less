@@ -1,5 +1,19 @@
 @import "../../include/mixins";
 
+:root {
+    --info-button-background: #ffffff;
+    --info-button-background-primary: #777777;
+    --info-button-text-color: #000000;
+    --info-button-text-color-primary: #ffffff;
+}
+
+.dark-mode {
+    --info-button-background: #2b2d30;
+    --info-button-background-primary: #1e2228;
+    --info-button-text-color: #ffffff;
+    --info-button-text-color-primary: #adbaa9;
+}
+
 .info-button {
     border: 1px solid var(--control-color);
     background-color: var(--info-button-background);

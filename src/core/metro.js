@@ -12,7 +12,7 @@ const MetroOptions = {
 }
 
 export class Metro5 {
-    version = "0.59.7"
+    version = "0.68.0"
     status = "pre-alpha"
     options = {}
     hotkeyManager = new HotkeyManager()

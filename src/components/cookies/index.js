@@ -2,7 +2,6 @@ import "./cookies.css"
 import {to_array} from "../../routines/to-array.js";
 import {merge} from "../../routines/merge.js";
 import {Component} from "../../core/component.js";
-import {exec} from "../../routines/exec.js";
 import {noop} from "../../routines/noop.js";
 import {Registry} from "../../core/registry.js";
 
@@ -80,7 +79,7 @@ export const Cookies = {
     }
 }
 
-Metro5.cookies = Cookies
+globalThis.cookies = Cookies
 
 let CookieDisclaimerDefaultOptions = {
     name: 'cookies_accepted',

@@ -98,4 +98,6 @@ export class Notify {
     }
 }
 
+globalThis.notify = options => new Notify(options)
+
 Registry.register("notify", Notify)

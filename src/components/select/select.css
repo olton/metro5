@@ -1,0 +1,246 @@
+.select {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+}
+.select .dropdown-toggle {
+  width: 36px;
+  height: 36px;
+  display: block;
+  position: relative;
+}
+.select .dropdown-toggle::before {
+  margin-left: -1.1rem;
+}
+.select .option-list {
+  margin: 0;
+  padding: 0;
+  list-style: none inside;
+  overflow-y: auto;
+  position: relative;
+  display: block;
+  background-color: var(--select--options-background);
+  color: var(--select-text-color);
+  font-size: 0.875rem;
+}
+.select .option-list li {
+  background-color: var(--select--option-background);
+  color: var(--select-text-color);
+}
+.select .option-list li,
+.select .option-list a {
+  display: block;
+}
+.select .option-list a {
+  min-width: auto;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 2rem 0 2.5rem;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+}
+.select .option-list .icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  left: 8px;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+}
+.select .option-list li:hover {
+  background-color: var(--select-option-hover-background);
+  color: var(--select-option-hover-text-color);
+}
+.select .option-list li.active {
+  background-color: var(--select-option-active-background);
+  color: var(--select-option-active-text-color);
+  font-weight: bold;
+}
+.select input[type=checkbox] {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.select select {
+  display: none;
+}
+.select .button-group {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.select .button {
+  background-color: transparent;
+  height: 34px;
+  min-width: 34px;
+}
+.select .button:focus,
+.select .button:active {
+  box-shadow: none!important;
+}
+.select .button:hover {
+  text-shadow: rgba(0, 0, 0, 0.25) 0.1em 0.1em 0.2em;
+}
+.select .input-clear-button {
+  background-color: transparent;
+}
+.select .input-clear-button:hover {
+  background-color: transparent;
+}
+.select .select-input {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  cursor: pointer;
+  width: calc(100% - .1rem);
+  height: 34px;
+  padding-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.select .select-input .icon {
+  margin: 0 4px;
+}
+.select .select-input:focus {
+  box-shadow: none;
+}
+.select select[multiple] ~ .select-input {
+  padding-left: 4px;
+}
+.select:hover input {
+  border-color: transparent;
+}
+.select .drop-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: calc(100% + 2px);
+  height: auto;
+  border: 1px solid var(--border-color);
+  padding: 2px;
+  margin-left: -1px;
+  z-index: 1000;
+  background-color: var(--select-drop-background);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
+}
+.select .drop-container .input {
+  margin: 4px 2px 6px;
+  width: calc(100% - 4px);
+}
+.select.drop-full-size .drop-container {
+  width: max-content;
+}
+.select.dropdown-toggle::before {
+  margin-left: -1.1rem;
+  left: 100%;
+  top: 14px;
+  margin-top: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+}
+.select.disabled.dropdown-toggle:before {
+  border-color: white;
+}
+.select .group-title {
+  background-color: #f6f7f8;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  padding: 0.25rem 0.5rem 0.25rem 1rem;
+  border: 0;
+  color: #646464;
+  font-weight: bold;
+}
+.select .group-title:hover {
+  background-color: #f6f7f8;
+  cursor: default;
+  border: 0;
+}
+.select ul {
+  right: 0;
+  left: 0;
+}
+.select.multiple {
+  flex-wrap: wrap;
+  height: auto;
+  min-height: 36px;
+}
+.select.multiple .dropdown-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.select.multiple > .button-group {
+  position: absolute;
+  top: 0;
+  right: 34px;
+}
+.select.multiple .select-input {
+  height: auto;
+  min-height: 36px;
+  margin-right: 34px;
+}
+.select.multiple .button-group:not(.d-none) ~ .select-input {
+  margin-right: 68px;
+}
+.select .prepend {
+  order: 1;
+}
+.select .append {
+  order: 3;
+}
+.select .select-input {
+  order: 2;
+}
+.select .button-group {
+  order: 3;
+}
+.select .dropdown-toggle {
+  order: 4;
+}
+.select[dir=rtl],
+.select.rtl {
+  flex-direction: row-reverse;
+}
+.select[dir=rtl] .select-input,
+.select.rtl .select-input {
+  order: 3;
+}
+.select[dir=rtl] .prepend,
+.select.rtl .prepend {
+  order: 4;
+}
+.select[dir=rtl] .append,
+.select.rtl .append {
+  order: 1;
+}
+.select[dir=rtl] .button-group,
+.select.rtl .button-group {
+  order: 2;
+}
+.select[dir=rtl].dropdown-toggle,
+.select.rtl.dropdown-toggle {
+  padding-right: 0!important;
+  padding-left: 0.9rem;
+}
+.select[dir=rtl].dropdown-toggle::before,
+.select.rtl.dropdown-toggle::before {
+  margin-left: 0.9rem;
+  left: 0;
+}
+.select .selected-item__group-name {
+  font-size: 0.75rem;
+  color: gray;
+}
+/*# sourceMappingURL=select.css.map */

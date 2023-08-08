@@ -1,7 +1,6 @@
 import {Component} from "../../core/component.js";
-import {merge} from "../../routines/merge.js";
+import {merge, shuffleArray} from "../../routines";
 import {Registry} from "../../core/registry.js";
-import {shuffleArray} from "../../routines/shuffle-array.js";
 
 let AdblockHunterDefaultOptions = {
     deferred: 0,

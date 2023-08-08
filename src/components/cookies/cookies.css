@@ -1,3 +1,11 @@
+:root {
+  --cookie-disclaimer-background: #ffffff;
+  --cookie-disclaimer-text-color: #000000;
+}
+.dark-mode {
+  --cookie-disclaimer-background: #ffffff;
+  --cookie-disclaimer-text-color: #000000;
+}
 .cookie-disclaimer-block {
   position: fixed;
   bottom: 0;

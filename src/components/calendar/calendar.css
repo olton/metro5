@@ -1,3 +1,33 @@
+:root {
+  --calendar-background: #ffffff;
+  --calendar-header-background: #ebebeb;
+  --calendar-header-text-color: #000000;
+  --calendar-weekday: #eeeeee;
+  --calendar-exclude: #ededed;
+  --calendar-time-background: #ffffff;
+  --calendar-time-text-color: #565656;
+  --calendar-outside-text-color: #777777;
+  --calendar-event: #e30f0f;
+  --calendar-internal-border: #f5f5f5;
+  --calendar-today-color: #565656;
+  --calendar-today-text-color: #ffffff;
+  --calendar-special-text-color: #0b98dc;
+  --calendar-weekend-text-color: #e30f0f;
+}
+.dark-mode {
+  --calendar-background: #1e2228;
+  --calendar-header-background: #2b2d30;
+  --calendar-header-text-color: #adbaa9;
+  --calendar-weekday: #2b2d30;
+  --calendar-exclude: #2f2f2f;
+  --calendar-time-background: #474b4f;
+  --calendar-time-text-color: #adbaa9;
+  --calendar-outside-text-color: #777777;
+  --calendar-event: #e30f0f;
+  --calendar-internal-border: #444c56;
+  --calendar-today-color: #adbaa9;
+  --calendar-today-text-color: #000000;
+}
 .calendar {
   display: block;
   position: relative;

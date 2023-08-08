@@ -1,3 +1,11 @@
+:root {
+  --notify-background: #ffffff;
+  --notify-text-color: #000000;
+}
+.dark-mode {
+  --notify-background: #2b2d30;
+  --notify-text-color: #ffffff;
+}
 .notify-container {
   background-color: transparent;
   position: fixed;
