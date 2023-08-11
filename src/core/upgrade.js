@@ -43,18 +43,4 @@ export const upgradeQuery = () => {
             })
         })
     }
-
-    Query.prototype.fadeIn = function({dur = 1000, ease = "linear"} = {}, cb){
-        const draw = {
-            opacity: [0,  1]
-        }
-        return this.animate({draw, dur, ease}, cb)
-    }
-
-    Query.prototype.fadeOut = function({from = 1, dur = 1000, ease = "linear"} = {}, cb){
-        const draw = {
-            opacity: [from,  0]
-        }
-        return this.animate({draw, dur, ease}, cb)
-    }
 }

@@ -25,6 +25,13 @@
     background-color: var(--tools-menu-item-background);
     color: var(--tools-menu-item-text-color);
     border-collapse: separate;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+
+    &.horizontal {
+        flex-flow: row nowrap;
+    }
 
     & > li {
         position: relative;
@@ -34,7 +41,7 @@
 
         & > a {
             display: block;
-            padding: 0 1rem;
+            padding: 0 16px;
             border-bottom: 1px var(--border-color) solid;
             position: relative;
             color: inherit;
@@ -44,9 +51,9 @@
             line-height: 60px;
 
             .icon {
-                width: 1.5rem;
-                height: 1.5rem;
-                font-size: 1.5rem;
+                width: 24px;
+                height: 24px;
+                font-size: 24px;
                 line-height: 60px;
             }
         }
@@ -68,14 +75,6 @@
     }
 
     .default-shadow();
-}
-
-.tools-menu {
-    &.horizontal {
-        & > li {
-            float: left;
-        }
-    }
 }
 
 .tools-menu {
@@ -124,7 +123,6 @@
 
 .tools-menu.horizontal {
     & > li {
-
         & > a {
             border-right: 1px var(--border-color) solid;
             border-bottom: 0;
@@ -142,13 +140,13 @@
     .tools-menu:not(.horizontal) {
         left: 0;
         top: 100% ;
-        margin-top: .3125rem ;
+        margin-top: 5px ;
         margin-left: 0 ;
 
         .tools-menu.horizontal {
             left: 100% ;
-            margin-left: .3125rem ;
-            top: -.3rem ;
+            margin-left: 5px ;
+            top: -5px;
             float: left;
         }
     }
@@ -164,16 +162,16 @@
                 line-height: 40px;
 
                 .icon {
-                    width: 1rem;
-                    height: 1rem;
-                    font-size: 1rem;
+                    width: 16px;
+                    height: 16px;
+                    font-size: 16px;
                     line-height: 40px;
                 }
             }
         }
 
         .dropdown-toggle {
-            padding-right: .7rem!important;
+            padding-right: 12px!important;
         }
     }
 }

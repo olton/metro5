@@ -115,8 +115,8 @@
   line-height: 1.2rem;
 }
 .dropdown-menu li a::before {
-  height: 38px!important;
-  line-height: 38px!important;
+  height: 32px!important;
+  line-height: 32px!important;
 }
 .dropdown-menu li.active {
   border-left: 2px solid;

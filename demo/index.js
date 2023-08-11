@@ -110,3 +110,12 @@ globalThis.downloadCsv = function(array){
 globalThis.showInfobox = () => {
     infobox({overlayColor: "#f00", message: "lorem Ipsum", title: "Infobox", clsInfobox: "alert"})
 }
+
+globalThis.resizeBox = () => {
+    Animation.animate({
+        el: document.querySelector(".testbox"),
+        draw: {
+            width: 0
+        }
+    })
+}

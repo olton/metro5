@@ -7,9 +7,11 @@ import {GlobalEvents} from "../../core/global-events.js";
 let DropdownDefaultOptions = {
     toggle: "",
     duration: 100,
+    ease: "linear",
     dropFilter: "",
+    size: "auto",
     onDropdown: noop,
-    onDropup: noop,
+    onCloseup: noop,
     onClick: e => {
         e.preventDefault()
         e.stopPropagation()
@@ -36,9 +38,15 @@ export class Dropdown extends Component {
                 element.siblings(".dropdown-toggle") :
                 panic(`No toggle defined!`)
 
-        element.css({
-            height: 0
-        })
+        if (element.hasClass("horizontal")) {
+            element.css({
+                width: 0
+            })
+        } else {
+            element.css({
+                height: 0
+            })
+        }
 
         this.closed = true
     }
@@ -58,9 +66,8 @@ export class Dropdown extends Component {
 
     open(el){
         if (!el) { el = this.elem }
-        const dropdown = Metro5.getPlugin(el, "dropdown")
+        const dropdown = $(el).plugin("dropdown")
         if (!dropdown) return;
-        let height = dropdown.elem.scrollHeight
         if (!dropdown.closed || dropdown.element.hasClass("keep-closed")) return
         const parents = dropdown.element.parents('[data-role*=dropdown]')
         $('[data-role*=dropdown]').each((i, el) => {
@@ -72,33 +79,8 @@ export class Dropdown extends Component {
             pl.close()
         })
 
-        let draw
-
-        if (dropdown.element.hasClass('horizontal')) {
-            let children_width = 0;
-            let children_height = 0;
-            $.each(dropdown.element.children('li'), function(i){
-                const el = $(this)
-                children_width += el.outerWidth(true);
-                if (dropdown.element.hasClass("tools-menu")) {
-                    children_height = dropdown.element.hasClass("compact") ? 40 : 60
-                } else {
-                    if (i === 0) children_height = el[0].scrollHeight
-                    else {
-                        if (children_height > el[0].scrollHeight) {
-                            children_height = el[0].scrollHeight
-                        }
-                    }
-                }
-            });
-            dropdown.element.css('height', children_height);
-            draw = {
-                width: [0, children_width]
-            }
-        } else {
-            draw = {
-                height: [0, height]
-            }
+        const draw = {
+            height: [0, dropdown.options.size === "auto" ? dropdown.elem.scrollHeight : dropdown.options.size]
         }
 
         exec(dropdown.options.onDropdown, [dropdown.elem])
@@ -107,10 +89,11 @@ export class Dropdown extends Component {
             el: dropdown.elem,
             draw,
             dur: dropdown.options.duration,
+            ease: dropdown.options.ease,
             onDone: () => {
                 dropdown.element.parent().addClass("dropped-container")
                 dropdown.element.addClass("dropped")
-                dropdown.element.css("height", "auto")
+                if (dropdown.options.size === "auto") dropdown.element.css("height", "auto")
                 dropdown.toggle.addClass("dropped-toggle")
                 dropdown.closed = false
             }
@@ -119,14 +102,14 @@ export class Dropdown extends Component {
 
     close(el){
         if (!el) { el = this.elem }
-        const dropdown = Metro5.getPlugin(el, "dropdown")
+        const dropdown = $(el).plugin("dropdown")
         if (!dropdown) return
         if (dropdown.closed || dropdown.element.hasClass("keep-open")) return
 
         dropdown.element.css({
             height: dropdown.element.height()
         })
-        exec(dropdown.options.onDropup, [dropdown.elem])
+        exec(dropdown.options.onCloseup, [dropdown.elem])
 
         Animation.animate({
             el: dropdown.elem,
@@ -134,6 +117,7 @@ export class Dropdown extends Component {
                 height: [0]
             },
             dur: dropdown.options.duration,
+            ease: dropdown.options.ease,
             onDone: () => {
                 dropdown.element.parent().removeClass("dropped-container")
                 dropdown.element.removeClass("dropped")
@@ -145,6 +129,7 @@ export class Dropdown extends Component {
 }
 
 Registry.register("dropdown", Dropdown)
+
 GlobalEvents.setEvent(()=>{
     $(window).on("click", function(e){
         $('[data-role-dropdown]').each((i, el) => {

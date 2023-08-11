@@ -55,6 +55,7 @@
 
 <div class="mt-10">
     <div class="row">
+        <div class="cell-md-4"></div>
         <div class="cell-md-4">
             <select data-role="select">
                 <option>item 1</option>
@@ -666,50 +667,55 @@
     </div>
 </div>
 
-
 <div class="mt-10">
-    <ul class="tools-menu open">
-        <li><a href="#"><span class="icon mif-home"></span></a></li>
-        <li>
-            <a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
-            <ul class="tools-menu horizontal" data-role="dropdown">
+    <div class="row">
+        <div class="cell-md-6">
+            <ul class="tools-menu" data-role="tools-menu" data-on-click="console.log(arguments[0])">
                 <li><a href="#"><span class="icon mif-home"></span></a></li>
-                <li><a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
-                    <ul class="tools-menu" data-role="dropdown">
+                <li>
+                    <a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
+                    <ul class="tools-menu horizontal">
                         <li><a href="#"><span class="icon mif-home"></span></a></li>
-                        <li><a href="#"><span class="icon mif-compass"></span></a></li>
+                        <li><a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
+                            <ul class="tools-menu">
+                                <li><a href="#"><span class="icon mif-home"></span></a></li>
+                                <li><a href="#"><span class="icon mif-compass"></span></a></li>
+                                <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
+                                <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
+                            </ul>
+                        </li>
                         <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
-                        <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
+                        <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
                     </ul>
                 </li>
                 <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
-                <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
+                <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
             </ul>
-        </li>
-        <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
-        <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
-    </ul>
+        </div>
 
-    <ul class="tools-menu horizontal compact open">
-        <li><a href="#"><span class="icon mif-home"></span></a></li>
-        <li><a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
-            <ul class="tools-menu compact" data-role="dropdown">
+        <div class="cell-md-6">
+            <ul class="tools-menu horizontal compact open" data-role="tools-menu">
                 <li><a href="#"><span class="icon mif-home"></span></a></li>
                 <li><a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
-                    <ul class="tools-menu compact horizontal" data-role="dropdown">
+                    <ul class="tools-menu compact">
                         <li><a href="#"><span class="icon mif-home"></span></a></li>
-                        <li><a href="#"><span class="icon mif-compass"></span></a></li>
+                        <li><a href="#" class="dropdown-toggle"><span class="icon mif-compass"></span></a>
+                            <ul class="tools-menu compact horizontal">
+                                <li><a href="#"><span class="icon mif-home"></span></a></li>
+                                <li><a href="#"><span class="icon mif-compass"></span></a></li>
+                                <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
+                                <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
+                            </ul>
+                        </li>
                         <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
-                        <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
+                        <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
                     </ul>
                 </li>
                 <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
-                <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
+                <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
             </ul>
-        </li>
-        <li><a href="#"><span class="icon mif-bubbles"></span></a></li>
-        <li><a href="#"><span class="icon mif-file-empty"></span></a></li>
-    </ul>
+        </div>
+    </div>
 </div>
 
 <div class="mt-10 text-center" id="skills" data-role="template" data-template-data="templateData">

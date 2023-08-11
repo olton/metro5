@@ -1,6 +1,23 @@
 @import "../../include/mixins";
 @import "../../include/z-index";
 
+:root {
+    --select-options-background: #ffffff;
+    --select-option-background: #ffffff;
+    --select-option-text-color: #000000;
+    --select-option-hover-background: rgba(red(#ccc),green(#ccc),blue(#ccc), .1);
+    --select-option-hover-text-color: #000000;
+    --select-option-active-background: #ffffff;
+    --select-option-active-text-color: #000000;
+    --select-drop-background: #ffffff;
+    --select-drop-text-color: #000000;
+    --select-drop-shadow: 3px 3px 5px 0 rgba(0,0,0,0.3);
+}
+
+.dark-mode {
+
+}
+
 .select {
     display: flex;
     flex-flow: row nowrap;
@@ -26,16 +43,15 @@
         margin: 0;
         padding: 0;
         list-style: none inside;
-        overflow-y: auto;
+        overflow-y: hidden;
         position: relative;
         display: block;
         background-color: var(--select--options-background);
-        color: var(--select-text-color);
         font-size: 0.875rem;
 
         li {
-            background-color: var(--select--option-background);
-            color: var(--select-text-color);
+            background-color: var(--select-option-background);
+            color: var(--select-option-text-color);
         }
 
         li, a {
@@ -143,14 +159,16 @@
         position: absolute;
         top: 100%;
         left: 0;
-        width: ~"calc(100% + 2px)";
+        width: 100%;
         height: auto;
-        border: 1px solid var(--border-color);
-        padding: 2px;
         margin-left: -1px;
         z-index: @zindex-dropdown;
         background-color: var(--select-drop-background);
-        box-shadow: 3px 3px 5px 0 rgba(0,0,0,0.3);
+        color: var(--select-drop-text-color);
+
+        &.dropped {
+            .default-shadow();
+        }
 
         .input {
             margin: 4px 2px 6px;
