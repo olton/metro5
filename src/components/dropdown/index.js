@@ -133,8 +133,7 @@ Registry.register("dropdown", Dropdown)
 GlobalEvents.setEvent(()=>{
     $(window).on("click", function(e){
         $('[data-role-dropdown]').each((i, el) => {
-            const pl = Metro5.getPlugin(el, "dropdown")
-            if (pl) pl.close()
+            $(el).plugin("dropdown").close()
         })
     })
 })
