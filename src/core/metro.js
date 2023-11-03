@@ -5,6 +5,7 @@ import {registerLocales} from "./locales.js";
 import {upgradeDatetime, upgradeQuery} from "./upgrade.js";
 import {GlobalEvents} from "./global-events.js";
 import {HotkeyManager} from "./hotkey-manager.js";
+import "./settimeout.js"
 
 const MetroOptions = {
     removeCloakTimeout: 100,
