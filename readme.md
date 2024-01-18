@@ -25,6 +25,10 @@ If you want to make use of new features as they come in you should upgrade to a 
 --- | --- | --- | --- | --- |
 Latest 2 ✔ | Latest 2 ✔ | Latest 2 ✔ | Latest 2 ✔ | Latest 2 ✔ |
 
+### Activities
+
+![Alt](https://repobeats.axiom.co/api/embed/fb58f3ae886bb9674e0c4afea23802f6f45ce5ec.svg "Repobeats analytics image")
+
 ### Thanks
 Thanks to all Metro UI community. Special thanks to all those who financially supported the project.
 
