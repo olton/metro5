@@ -35,23 +35,52 @@
         top: 0;
         left: 0;
         background-color: var(--toolbar-before-color);
-        cursor: move;
+        cursor: default;
+        display: none;
+    }
+
+    &::after {
+        content: attr(data-caption);
+        position: absolute;
+        left: 2px;
+        bottom: 100%;
+        font-size: 8px;
+        text-transform: uppercase;
+    }
+
+    &.movable {
+        padding-left: .5725rem;
+        &::before {
+            display: block;
+            cursor: move;
+        }
     }
 
     &.vertical {
         flex-flow: column nowrap;
-        padding: .5725rem 0 0 0;
+        padding: 0;
         width: 32px;
         margin-left: 0;
         margin-top: 4px;
 
         &::before {
             width: 32px;
-            height: .325rem;
+            height: 4px;
+        }
+
+        // TODO Need test this
+        &::after {
+            transform: rotate(-90deg);
+            right: 100%;
+            top: auto;
         }
 
         .tool-button {
             margin: 2px 0;
+        }
+
+        &.movable {
+            padding-top: .5725rem;
         }
     }
 }
