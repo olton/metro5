@@ -28,21 +28,45 @@
   top: 0;
   left: 0;
   background-color: var(--toolbar-before-color);
+  cursor: default;
+  display: none;
+}
+.toolbar::after {
+  content: attr(data-caption);
+  position: absolute;
+  left: 2px;
+  bottom: 100%;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+.toolbar.movable {
+  padding-left: 0.5725rem;
+}
+.toolbar.movable::before {
+  display: block;
   cursor: move;
 }
 .toolbar.vertical {
   flex-flow: column nowrap;
-  padding: 0.5725rem 0 0 0;
+  padding: 0;
   width: 32px;
   margin-left: 0;
   margin-top: 4px;
 }
 .toolbar.vertical::before {
   width: 32px;
-  height: 0.325rem;
+  height: 4px;
+}
+.toolbar.vertical::after {
+  transform: rotate(-90deg);
+  right: 100%;
+  top: auto;
 }
 .toolbar.vertical .tool-button {
   margin: 2px 0;
+}
+.toolbar.vertical.movable {
+  padding-top: 0.5725rem;
 }
 .tool-button {
   height: 32px;
