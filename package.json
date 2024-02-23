@@ -2,7 +2,7 @@
   "name": "@olton/metro5",
   "description": "Components library",
   "private": false,
-  "version": "0.68.1",
+  "version": "0.68.2",
   "type": "module",
   "funding": [
     {
@@ -49,31 +49,31 @@
     "last 1 Edge versions"
   ],
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.3",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "assert": "^2.0.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "assert": "^2.1.0",
     "css-minify": "^2.0.0",
     "events": "^3.3.0",
     "less": "^4.2.0",
-    "parcel": "^2.9.3",
-    "parcel-reporter-static-files-copy": "^1.5.2",
+    "parcel": "^2.11.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-import-css": "^3.3.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-import-css": "^3.4.0",
     "rollup-plugin-less": "^1.1.3",
     "rollup-plugin-terser": "^7.0.2",
     "shx": "^0.3.4",
     "util": "^0.12.5",
-    "vite": "^4.4.9"
+    "vite": "^5.1.1"
   },
   "dependencies": {
     "@olton/animation": "^0.1.0",
     "@olton/color": "^0.1.1",
-    "@olton/datetime": "^3.0.2",
+    "@olton/datetime": "^3.0.3",
     "@olton/html": "^0.4.1",
     "@olton/query": "^0.5.1",
-    "@olton/string": "^0.4.1"
+    "@olton/string": "^0.4.4"
   },
   "staticFiles": {
     "staticPath": "demo/images",
